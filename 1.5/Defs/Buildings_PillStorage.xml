@@ -57,6 +57,7 @@
         <designatorDropdown>Thek_PearlStorageUnit_DesignatorDropdown</designatorDropdown>
       </ThingDef>
 
+      <!-- BLANK STORAGE
       <ThingDef ParentName="Thek_PearlStorageUnit">
         <defName>Thek_PearlStorageUnit_Blank</defName>
         <label>Blank Storage Unit</label>
@@ -81,6 +82,7 @@
             </defaultStorageSettings>
         </building>
       </ThingDef>
+    -->
 
       <ThingDef ParentName="Thek_PearlStorageUnit">
         <defName>Thek_PearlStorageUnit_Crystal</defName>

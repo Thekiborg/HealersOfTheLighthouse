@@ -2,6 +2,7 @@
 <Defs>
 
     <!-- Blank -->
+	<!-- 
 	<AdaptiveStorage.GraphicsDef>
 		<defName>Thek_BlankPearlStorageUnit_GraphicDef</defName>
 		<targetDef>Thek_PearlStorageUnit_Blank</targetDef>
@@ -56,6 +57,7 @@
 		</graphics>
 		<showContainedItems>false</showContainedItems>
 	</AdaptiveStorage.GraphicsDef>
+	-->
 
     <!-- Crystal -->
 	<AdaptiveStorage.GraphicsDef>

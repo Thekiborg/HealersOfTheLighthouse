@@ -2,6 +2,7 @@
 <Defs>
 
     <!-- Blank -->
+	<!--
 	<AdaptiveStorage.GraphicsDef>
 		<defName>Thek_BlankBoosterVerticalDispenser_GraphicDef</defName>
 		<targetDef>Thek_BoosterVerticalDispenser_Blank</targetDef>
@@ -78,6 +79,7 @@
 		</graphics>
 		<showContainedItems>false</showContainedItems>
 	</AdaptiveStorage.GraphicsDef>
+	-->
 
     <!-- Burst -->
 	<AdaptiveStorage.GraphicsDef>

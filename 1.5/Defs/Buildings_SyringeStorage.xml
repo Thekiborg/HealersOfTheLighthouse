@@ -58,6 +58,7 @@
         <designatorDropdown>Thek_BoosterVerticalDispenser_DesignatorDropdown</designatorDropdown>
       </ThingDef>
 
+      <!-- BLANK STORAGE
       <ThingDef ParentName="Thek_BoosterVerticalDispenser">
         <defName>Thek_BoosterVerticalDispenser_Blank</defName>
         <label>Blank Vertical Dispenser</label>
@@ -82,6 +83,7 @@
             </defaultStorageSettings>
         </building>
       </ThingDef>
+    -->
 
       <ThingDef ParentName="Thek_BoosterVerticalDispenser">
         <defName>Thek_BoosterVerticalDispenser_Burst</defName>
