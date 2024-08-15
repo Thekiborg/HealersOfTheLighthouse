@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <DesignatorDropdownGroupDef>
+        <defName>Thek_PearlStorageUnit_DesignatorDropdown</defName>
+        <label>Storage Units</label>
+        <iconSource>Placed</iconSource>
+        <useGridMenu>false</useGridMenu>
+        <includeEyeDropperTool>true</includeEyeDropperTool>
+    </DesignatorDropdownGroupDef>
+
+    <DesignatorDropdownGroupDef>
+        <defName>Thek_BoosterVerticalDispenser_DesignatorDropdown</defName>
+        <label>Vertical Dispensers</label>
+        <iconSource>Placed</iconSource>
+        <useGridMenu>false</useGridMenu>
+        <includeEyeDropperTool>true</includeEyeDropperTool>
+    </DesignatorDropdownGroupDef>
+
+</Defs>

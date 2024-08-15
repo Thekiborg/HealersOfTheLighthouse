@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Moyo medical module</name>
+
+	<author>Thekiborg</author>
+
+	<packageId>Thekiborg.modname</packageId> <!-- a unique identifier for the mod. Special characters are not allowed, at least one dot is required. This is what gets saved in a player's mod list, and having two identical IDs leads to the mod manager becoming incapable of loading the correct mod. The game internally stores these IDs using lower case characters only -->
+
+	<description></description>
+
+	<supportedVersions>
+		<li>1.5</li> <!-- Supported versions. Place rimworld versions in separate li nodes here -->
+	</supportedVersions>
+
+	<modDependencies>
+		<li>
+		  <packageId>nemonian.my2.beta</packageId>
+		  <displayName>Moyo2.0-Blood stained business</displayName>
+		  <steamWorkshopUrl>steam://url/CommunityFilePage/3251469618</steamWorkshopUrl>
+		</li>
+	  </modDependencies>
+
+	  <loadAfter>
+		<li>nemonian.my2.beta</li>
+		<li>nemonian.my2</li>
+		<li>adaptive.storage.framework</li>
+	  </loadAfter>
+
+	<!-- More information is available here: https://rimworldwiki.com/wiki/Modding_Tutorials/About.xml -->
+</ModMetaData>
