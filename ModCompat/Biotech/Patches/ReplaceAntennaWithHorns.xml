@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+    <!-- Left Antenna -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/
+            alienPartGenerator/bodyAddons/li[name="moyo left antennae"]</xpath>
+        <value>
+            <extendedGraphics>
+                <Gene For="Thek_RapidMetabolicBreakDown">Moyo/AntennaOverride/MoyoHorn_Left</Gene>
+            </extendedGraphics>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/
+            alienPartGenerator/bodyAddons/li[name="glow(moyo left antennae)"]</xpath>
+        <value>
+            <extendedGraphics>
+                <Gene For="Thek_RapidMetabolicBreakDown">Moyo_Dummy/Dummy</Gene>
+            </extendedGraphics>
+        </value>
+    </Operation>
+
+    <!-- Right Antenna -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/
+            alienPartGenerator/bodyAddons/li[name="moyo right antennae"]</xpath>
+        <value>
+            <extendedGraphics>
+                <Gene For="Thek_RapidMetabolicBreakDown">Moyo/AntennaOverride/MoyoHorn_Right</Gene>
+            </extendedGraphics>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/
+            alienPartGenerator/bodyAddons/li[name="glow(moyo right antennae)"]</xpath>
+        <value>
+            <extendedGraphics>
+                <Gene For="Thek_RapidMetabolicBreakDown">Moyo_Dummy/Dummy</Gene>
+            </extendedGraphics>
+        </value>
+    </Operation>
+
+</Patch>

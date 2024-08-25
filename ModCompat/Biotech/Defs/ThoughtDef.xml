@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <ThoughtDef>
+        <defName>Thek_PacifistHarmedPawn</defName>
+        <thoughtClass>Thought_Memory</thoughtClass>
+        <showBubble>true</showBubble>
+        <icon>Things/Mote/ThoughtSymbol/GenericBad</icon>
+        <durationDays>1</durationDays>
+        <stackLimit>5</stackLimit>
+        <stackedEffectMultiplier>0.7</stackedEffectMultiplier>
+        <stages>
+          <li>
+            <label>attacked innocent creature</label>
+            <description>todo</description>
+            <baseMoodEffect>-8</baseMoodEffect>
+          </li>
+        </stages>
+      </ThoughtDef>
+
+</Defs>

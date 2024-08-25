@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <AbilityDef>
+        <defName>Thek_Brainstorm</defName>
+        <label>brainstorm</label>
+        <description>todo.</description>
+        <iconPath>UI/Icons/Genes/Gene_Coagulate</iconPath> <!-- -->
+        <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+        <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+        <showWhenDrafted>false</showWhenDrafted>
+        <jobDef>Thek_TakeSecondPawnToBrainstorm</jobDef>
+        <displayOrder>400</displayOrder>
+        <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <verbProperties>
+          <verbClass>Verb_CastAbilityTouch</verbClass>
+          <drawAimPie>false</drawAimPie>
+          <range>-1</range>
+          <targetParams>
+            <canTargetSelf>false</canTargetSelf>
+            <canTargetBuildings>false</canTargetBuildings>
+            <canTargetMechs>false</canTargetMechs>
+            <canTargetMutants>false</canTargetMutants>
+          </targetParams>
+        </verbProperties>
+        <!-- PREVENT THIS FROM BEING USED IF THERE'S NO RESEARCH PROJECT -->
+      </AbilityDef>
+
+</Defs>

@@ -82,7 +82,7 @@
 	-->
 
     <!-- Burst -->
-	<AdaptiveStorage.GraphicsDef>
+	<!--<AdaptiveStorage.GraphicsDef>
 		<defName>Thek_BurstBoosterVerticalDispenser_GraphicDef</defName>
 		<targetDef>Thek_BoosterVerticalDispenser_Burst</targetDef>
 		<graphics>
@@ -157,7 +157,7 @@
 			</li>
 		</graphics>
 		<showContainedItems>false</showContainedItems>
-	</AdaptiveStorage.GraphicsDef>
+	</AdaptiveStorage.GraphicsDef>-->
 
     <!-- Hydra -->
 	<AdaptiveStorage.GraphicsDef>

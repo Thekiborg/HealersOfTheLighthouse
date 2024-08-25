@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <GeneDef>
+        <defName>Thek_RapidMetabolicBreakDown</defName>
+        <label>rapid metabolic break-down</label>
+        <geneClass>MoyoMedicalExpansion.GeneClass_RapidMetabolicBreakdown</geneClass>
+        <description>todo</description>
+        <biostatMet>0</biostatMet>
+        <biostatCpx>0</biostatCpx>
+        <displayOrderInCategory>100</displayOrderInCategory>
+        <modExtensions>
+            <li Class="MoyoMedicalExpansion.ModExtension_MoyoMedicalExpansion">
+                <RMBDSettings>
+                    <li>
+                        <drugThingDef>DBPearl_Joy</drugThingDef>
+                        <dosageToTransform>2</dosageToTransform>
+                        <transformationColor></transformationColor>
+                        <abilityGiven>FireSpew</abilityGiven>
+                    </li>
+                    <li>
+                        <drugThingDef>DBPearl_Crystal</drugThingDef>
+                        <dosageToTransform>5</dosageToTransform>
+                        <transformationColor></transformationColor>
+                        <abilityGiven></abilityGiven>
+                    </li>
+                    <li>
+                        <drugThingDef>DBPearl_Thinker</drugThingDef>
+                        <dosageToTransform>5</dosageToTransform>
+                        <transformationColor></transformationColor>
+                        <abilityGiven></abilityGiven>
+                    </li>
+                </RMBDSettings>
+            </li>
+        </modExtensions>
+    </GeneDef>
+
+    <GeneDef>
+        <defName>Thek_IntellectualAffinity</defName>
+        <label>intellectual affinity</label>
+        <description>todo</description>
+        <biostatMet>0</biostatMet>
+        <biostatCpx>0</biostatCpx>
+        <displayOrderInCategory>100</displayOrderInCategory>
+    </GeneDef>
+
+    <GeneDef>
+        <defName>Thek_SwiftPractitioner</defName>
+        <label>swift practitioner</label>
+        <description>todo</description>
+        <biostatMet>0</biostatMet>
+        <biostatCpx>0</biostatCpx>
+        <displayOrderInCategory>100</displayOrderInCategory>
+        <statOffsets>
+			<MedicalTendSpeed>0.2</MedicalTendSpeed>
+            <MedicalOperationSpeed>0.2</MedicalOperationSpeed>
+		</statOffsets>
+    </GeneDef>
+
+    <GeneDef>
+        <defName>Thek_OniHair</defName>
+        <label>oni hair (rename)</label>
+        <description>todo</description>
+        <biostatMet>0</biostatMet>
+        <biostatCpx>0</biostatCpx>
+        <displayOrderInCategory>100</displayOrderInCategory>
+    </GeneDef>
+
+    <GeneDef>
+        <defName>Thek_SuctionTail</defName>
+        <label>suction tail</label>
+        <description>todo</description>
+        <biostatMet>0</biostatMet>
+        <biostatCpx>0</biostatCpx>
+        <displayOrderInCategory>100</displayOrderInCategory>
+    </GeneDef>
+
+    <GeneDef>
+        <defName>Thek_PacifistNature</defName>
+        <geneClass>MoyoMedicalExpansion.GeneClass_PacifistNature</geneClass>
+        <label>pacifist nature</label>
+        <description>todo</description>
+        <biostatMet>0</biostatMet>
+        <biostatCpx>0</biostatCpx>
+        <displayOrderInCategory>100</displayOrderInCategory>
+    </GeneDef>
+
+    <GeneDef>
+        <defName>Thek_LikesRevealingClothes</defName>
+        <label>likes revealing clothes</label>
+        <description>todo</description>
+        <biostatMet>0</biostatMet>
+        <biostatCpx>0</biostatCpx>
+        <displayOrderInCategory>100</displayOrderInCategory>
+    </GeneDef>
+
+</Defs>
