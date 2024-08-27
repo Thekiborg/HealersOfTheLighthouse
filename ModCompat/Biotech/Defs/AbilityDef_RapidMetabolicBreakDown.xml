@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-
+<!-- might change this to use actual interactions -->
+<!-- in secondPawnToTheorize, look for a chair with more chairs aroudn it-->
+<!-- fix bug where the boost is given when the ability is cancelled-->
     <AbilityDef>
-        <defName>Thek_Brainstorm</defName>
-        <label>brainstorm</label>
-        <description>todo.</description>
+        <defName>Thek_RMBD_AbilityTheorize</defName>
+        <label>theorize with someone</label>
+        <description>todo.</description> <!-- -->
         <iconPath>UI/Icons/Genes/Gene_Coagulate</iconPath> <!-- -->
         <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
         <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
         <showWhenDrafted>false</showWhenDrafted>
-        <jobDef>Thek_TakeSecondPawnToBrainstorm</jobDef>
+        <jobDef>Thek_TakeSecondPawnToTheorize</jobDef>
         <displayOrder>400</displayOrder>
         <hostile>false</hostile>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
@@ -24,6 +26,11 @@
             <canTargetMutants>false</canTargetMutants>
           </targetParams>
         </verbProperties>
+        <comps>
+          <li Class="CompProperties_AbilityEffect">
+            <compClass>MoyoMedicalExpansion.AbilityComp_Theorize</compClass>
+          </li>
+        </comps>
         <!-- PREVENT THIS FROM BEING USED IF THERE'S NO RESEARCH PROJECT -->
       </AbilityDef>
 

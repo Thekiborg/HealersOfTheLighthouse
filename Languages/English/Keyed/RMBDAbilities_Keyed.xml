@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+    <!-- Universal -->
+    <AbilityRMBD_GizmoDisabled_Used>The ability can only be used once per metabolic overdrive.</AbilityRMBD_GizmoDisabled_Used>
+
+    <!-- Brainstorm -->
+    <AbilityTheorize_CantDo>{PAWN_nameDef} couldn't find a good place to sit down and discuss.</AbilityTheorize_CantDo>
+    <AbilityTheorize_Success>{FIRSTPAWN_nameDef} and {SECONDPAWN_nameDef} have reached a breakthrough!\nThe current research project has advanced by {POINTS} points.</AbilityTheorize_Success>
+    <AbilityTheorize_NoResearchProject>{PAWN_nameDef} can't discuss the current research project because there isn't one selected!</AbilityTheorize_NoResearchProject>
+    <AbilityTheorize_GizmoDisabled_NoResearchProject>The ability cannot be used, there isn't a research project selected.</AbilityTheorize_GizmoDisabled_NoResearchProject>
+
+</LanguageData>

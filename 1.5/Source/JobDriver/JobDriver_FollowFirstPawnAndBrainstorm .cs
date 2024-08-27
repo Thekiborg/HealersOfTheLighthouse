@@ -2,11 +2,11 @@
 
 namespace MoyoMedicalExpansion
 {
-    public class JobDriver_FollowFirstPawnAndBrainstorm : JobDriver
+    public class JobDriver_FollowFirstPawnAndTheorize : JobDriver
     {
         Thing chair;
 
-        Pawn Target => job.GetTarget(TargetIndex.A).Pawn;
+        Pawn Target => job?.GetTarget(TargetIndex.A).Pawn;
         
 
         public override bool TryMakePreToilReservations(bool errorOnFailed)
@@ -22,43 +22,55 @@ namespace MoyoMedicalExpansion
             this.FailOnDespawnedOrNull(TargetIndex.A);
             this.FailOnInvalidOrDestroyed(TargetIndex.A);
 
-            Toil reserveAndGoToChair = ToilMaker.MakeToil("ReserveAndGoToChair");
-            reserveAndGoToChair.AddPreInitAction(() =>
+            Toil findAndReserveChair = ToilMaker.MakeToil("findAndReserveChair");
+            findAndReserveChair.AddPreInitAction(() =>
             {
-                chair = GenClosest.ClosestThingReachable(Target.Position, pawn.Map, ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial),
-                PathEndMode.OnCell, TraverseParms.For(pawn), validator: BaseChairValidator);
+                IntVec3 firstPawnChairPos = Target.CurJob.targetB.Thing.Position;
+                Log.Message(firstPawnChairPos);
+
+                chair = GenClosest.ClosestThingReachable(firstPawnChairPos, pawn.Map, ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial),
+                PathEndMode.OnCell, TraverseParms.For(pawn),
+                validator: (Thing t) => BaseChairValidator(t)
+                            && WanderUtility.InSameRoom(t.Position, firstPawnChairPos, Map)
+                            && firstPawnChairPos.DistanceToSquared(t.Position) <= 6 * 6);
 
                 if (chair is null)
                 {
-                    Messages.Message("Could not do", MessageTypeDefOf.RejectInput);
+                    Messages.Message("AbilityTheorize_CantDo".Translate(pawn.Named("PAWN")), MessageTypeDefOf.RejectInput);
                     EndJobWith(JobCondition.Incompletable);
-                    Target.CurJob.GetCachedDriverDirect.EndJobWith(JobCondition.Incompletable);
                     return;
                 }
 
                 pawn.Reserve(chair, job);
+            });
+            yield return findAndReserveChair;
+
+
+            Toil pathToChair = ToilMaker.MakeToil("pathToChair");
+            pathToChair.AddPreInitAction(() =>
+            {
                 pawn.pather.StartPath(chair, PathEndMode.OnCell);
             });
-            reserveAndGoToChair.defaultCompleteMode = ToilCompleteMode.PatherArrival;
-
-            yield return reserveAndGoToChair;
+            pathToChair.defaultCompleteMode = ToilCompleteMode.PatherArrival;
+            pathToChair.FailOn(() => Target.CurJobDef != MoyoMedicalExpansion_JobDefOfs.Thek_TakeSecondPawnToTheorize);
+            yield return pathToChair;
 
 
             Toil chatWithOther = ToilMaker.MakeToil("chatWithOther");
             chatWithOther.activeSkill = () => SkillDefOf.Intellectual;
             chatWithOther.socialMode = RandomSocialMode.Off;
-            chatWithOther.FailOn(() => Target.CurJobDef != MoyoMedicalExpansion_JobDefOfs.Thek_TakeSecondPawnToBrainstorm);
+            chatWithOther.FailOn(() => Target.CurJobDef != MoyoMedicalExpansion_JobDefOfs.Thek_TakeSecondPawnToTheorize);
+            chatWithOther.FailOn(() => chair.DestroyedOrNull() || chair.IsBurning());
             chatWithOther.defaultCompleteMode = ToilCompleteMode.Delay;
-            chatWithOther.defaultDuration = HelperClass_BrainstormAbility.chatDuration;
+            chatWithOther.defaultDuration = HelperClass_TheorizeAbility.chatDuration;
             chatWithOther.handlingFacing = true;
             chatWithOther.tickAction = () =>
             {
-                chatWithOther.actor.Rotation = chair.Rotation;
-                if (pawn.IsHashIntervalTick(HelperClass_BrainstormAbility.chatBubbleDelay.RandomInRange))
+                chatWithOther.actor.rotationTracker.FaceTarget(Target);
+                if (pawn.IsHashIntervalTick(HelperClass_TheorizeAbility.chatBubbleDelay.RandomInRange))
                 {
-                    // Add interaction thought ONCE
-                    // Add intellectual skill exp train
-                    MoteMaker.MakeSpeechBubble(pawn, HelperClass_BrainstormAbility.chatBubbleIcon);
+                    pawn.skills.Learn(SkillDefOf.Intellectual, 100f);
+                    MoteMaker.MakeSpeechBubble(pawn, TextureManager.chatBubbleIcon);
                 }
             };
             yield return chatWithOther;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-
+<!-- BALANCE DOSAGES -->
     <GeneDef>
         <defName>Thek_RapidMetabolicBreakDown</defName>
         <label>rapid metabolic break-down</label>
@@ -12,22 +12,54 @@
         <modExtensions>
             <li Class="MoyoMedicalExpansion.ModExtension_MoyoMedicalExpansion">
                 <RMBDSettings>
+                    <!-- Pearl -->
                     <li>
                         <drugThingDef>DBPearl_Joy</drugThingDef>
-                        <dosageToTransform>2</dosageToTransform>
-                        <transformationColor></transformationColor>
-                        <abilityGiven>FireSpew</abilityGiven>
+                        <dosageToTransform>1</dosageToTransform>
+                        <transformationColor>(218, 209, 105, 255)</transformationColor>
+                        <abilityGiven></abilityGiven>
                     </li>
                     <li>
                         <drugThingDef>DBPearl_Crystal</drugThingDef>
-                        <dosageToTransform>5</dosageToTransform>
-                        <transformationColor></transformationColor>
+                        <dosageToTransform>1</dosageToTransform>
+                        <transformationColor>(223, 118, 223, 255)</transformationColor>
                         <abilityGiven></abilityGiven>
                     </li>
                     <li>
                         <drugThingDef>DBPearl_Thinker</drugThingDef>
-                        <dosageToTransform>5</dosageToTransform>
-                        <transformationColor></transformationColor>
+                        <dosageToTransform>1</dosageToTransform>
+                        <transformationColor>(128, 243, 148, 255)</transformationColor>
+                        <abilityGiven>Thek_RMBD_AbilityTheorize</abilityGiven>
+                    </li>
+                    <li>
+                        <drugThingDef>DBPearl_Alluring</drugThingDef>
+                        <dosageToTransform>1</dosageToTransform>
+                        <transformationColor>(28, 48, 105, 255)</transformationColor>
+                        <abilityGiven></abilityGiven>
+                    </li>
+                    <li>
+                        <drugThingDef>DBPearl_Numb</drugThingDef>
+                        <dosageToTransform>1</dosageToTransform>
+                        <transformationColor>(211, 148, 106, 255)</transformationColor>
+                        <abilityGiven></abilityGiven>
+                    </li>
+                    <!-- Booster -->
+                    <li>
+                        <drugThingDef>DBBooster_Medi</drugThingDef>
+                        <dosageToTransform>1</dosageToTransform>
+                        <transformationColor>(0, 193, 120, 255)</transformationColor>
+                        <abilityGiven></abilityGiven>
+                    </li>
+                    <li>
+                        <drugThingDef>DBBooster_Orca</drugThingDef>
+                        <dosageToTransform>1</dosageToTransform>
+                        <transformationColor>(24, 23, 30, 255)</transformationColor>
+                        <abilityGiven></abilityGiven>
+                    </li>
+                    <li>
+                        <drugThingDef>DBBooster_Hydra</drugThingDef>
+                        <dosageToTransform>1</dosageToTransform>
+                        <transformationColor>(131, 45, 208, 255)</transformationColor>
                         <abilityGiven></abilityGiven>
                     </li>
                 </RMBDSettings>
@@ -42,6 +74,10 @@
         <biostatMet>0</biostatMet>
         <biostatCpx>0</biostatCpx>
         <displayOrderInCategory>100</displayOrderInCategory>
+        <passionMod>
+            <skill>Intellectual</skill>
+            <modType>AddOneLevel</modType>
+        </passionMod>
     </GeneDef>
 
     <GeneDef>
@@ -52,15 +88,15 @@
         <biostatCpx>0</biostatCpx>
         <displayOrderInCategory>100</displayOrderInCategory>
         <statOffsets>
-			<MedicalTendSpeed>0.2</MedicalTendSpeed>
-            <MedicalOperationSpeed>0.2</MedicalOperationSpeed>
+			<MedicalTendSpeed>0.25</MedicalTendSpeed>
+            <MedicalOperationSpeed>0.25</MedicalOperationSpeed>
 		</statOffsets>
     </GeneDef>
 
     <GeneDef>
         <defName>Thek_OniHair</defName>
         <label>oni hair (rename)</label>
-        <description>todo</description>
+        <description>this needs hair textures</description>
         <biostatMet>0</biostatMet>
         <biostatCpx>0</biostatCpx>
         <displayOrderInCategory>100</displayOrderInCategory>
@@ -69,10 +105,16 @@
     <GeneDef>
         <defName>Thek_SuctionTail</defName>
         <label>suction tail</label>
-        <description>todo</description>
+        <description>this needs tail textures</description>
         <biostatMet>0</biostatMet>
         <biostatCpx>0</biostatCpx>
         <displayOrderInCategory>100</displayOrderInCategory>
+        <capMods>
+            <li>
+              <capacity>Manipulation</capacity>
+              <offset>0.15</offset>
+            </li>
+        </capMods>
     </GeneDef>
 
     <GeneDef>
@@ -87,8 +129,8 @@
 
     <GeneDef>
         <defName>Thek_LikesRevealingClothes</defName>
-        <label>likes revealing clothes</label>
-        <description>todo</description>
+        <label>revealing apparel affinity</label>
+        <description>The carriers of this gene like the freedom of movement given by revealing clothes. ¿Some could say they even take pride in showing off?. Wearing certain pieces of apparel will grant the carrier a mood boost.</description>
         <biostatMet>0</biostatMet>
         <biostatCpx>0</biostatCpx>
         <displayOrderInCategory>100</displayOrderInCategory>

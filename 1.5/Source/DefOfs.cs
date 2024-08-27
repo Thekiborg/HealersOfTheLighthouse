@@ -13,6 +13,7 @@
         public static GeneDef Thek_PacifistNature;
     }
 
+
     [DefOf]
     public static class MoyoMedicalExpansion_HediffDefOfs
     {
@@ -24,6 +25,7 @@
         public static HediffDef Thek_RapidMetabolicBreakDown;
     }
 
+
     [DefOf]
     public static class MoyoMedicalExpansion_ThoughtDefOfs
     {
@@ -33,7 +35,9 @@
         }
 
         public static ThoughtDef Thek_PacifistHarmedPawn;
+        public static ThoughtDef Thek_DiscussedWithSomeone;
     }
+
 
     [DefOf]
     public static class MoyoMedicalExpansion_JobDefOfs
@@ -43,7 +47,19 @@
             DefOfHelper.EnsureInitializedInCtor(typeof(MoyoMedicalExpansion_JobDefOfs));
         }
 
-        public static JobDef Thek_FollowFirstPawnToBrainstorm;
-        public static JobDef Thek_TakeSecondPawnToBrainstorm;
+        public static JobDef Thek_FollowFirstPawnToTheorize;
+        public static JobDef Thek_TakeSecondPawnToTheorize;
+    }
+
+
+    [DefOf]
+    public static class MoyoMedicalExpansion_AbilityDefOfs
+    {
+        static MoyoMedicalExpansion_AbilityDefOfs()
+        {
+            DefOfHelper.EnsureInitializedInCtor(typeof(MoyoMedicalExpansion_AbilityDefOfs));
+        }
+
+        public static AbilityDef Thek_RMBD_AbilityTheorize;
     }
 }

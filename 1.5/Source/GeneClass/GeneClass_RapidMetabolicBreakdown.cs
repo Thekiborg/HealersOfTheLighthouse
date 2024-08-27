@@ -1,4 +1,6 @@
-﻿namespace MoyoMedicalExpansion
+﻿using AlienRace;
+
+namespace MoyoMedicalExpansion
 {
     public class GeneClass_RapidMetabolicBreakdown : Gene
     {
@@ -50,6 +52,10 @@
                     pawn.health.AddHediff(hediff);
                     currentDosage = 0;
                     isTransformed = true;
+
+                    var alienComp = pawn.GetComp<AlienPartGenerator.AlienComp>();
+                    alienComp.OverwriteColorChannel("RMBDColor", first: lockedRMBDSetting.transformationColor);
+                    alienComp.RegenerateAddonsForced();
                 }
             }
             else
@@ -69,6 +75,12 @@
                 // If it's taken a different drug and it's not one of the options in the list, reset the dosages.
                 currentDosage = 0;
             }
+        }
+
+        public override void ExposeData()
+        {
+            Scribe_Values.Look(ref currentDosage, "Thek_RapidMetabolicBreakDown_currentDosage");
+            Scribe_Values.Look(ref isTransformed, "Thek_RapidMetabolicBreakDown_isTranformed");
         }
     }
 }

@@ -4,5 +4,7 @@
     public class ModExtension_MoyoMedicalExpansion : DefModExtension
     {
         public List<RapidMetabolicBreakdown_Settings> RMBDSettings;
+
+        public bool isRevealingApparel;
     }
 }

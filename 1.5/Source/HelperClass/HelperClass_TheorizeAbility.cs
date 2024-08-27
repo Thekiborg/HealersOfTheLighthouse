@@ -1,8 +1,7 @@
 ﻿namespace MoyoMedicalExpansion
 {
-    internal class HelperClass_BrainstormAbility
+    internal class HelperClass_TheorizeAbility
     {
-        public static readonly Texture2D chatBubbleIcon = ContentFinder<Texture2D>.Get("UI/Icons/QuestionMark");
         public static readonly IntRange chatBubbleDelay = new(150, 600);
         public const int chatDuration = 10000;
 

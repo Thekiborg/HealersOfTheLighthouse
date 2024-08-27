@@ -9,10 +9,7 @@
         <isBad>false</isBad>
         <stages>
           <li>
-            <hungerRateFactor>0.1</hungerRateFactor>
-            <statOffsets>
-              <RestFallRateFactor>-0.9</RestFallRateFactor>
-            </statOffsets>
+            
           </li>
         </stages>
         <comps>
@@ -21,6 +18,6 @@
                 <showRemainingTime>true</showRemainingTime>                
             </li>
         </comps>
-      </HediffDef>
+    </HediffDef>
 
 </Defs>

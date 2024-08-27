@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+    <!-- Perhaps doing 5 bodyaddons, 2 small horns, 2 big horns, 1 veins might be the way to go here, to not override the antenna. -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/
+            alienPartGenerator/colorChannels/li</xpath>
+        <value>
+            <li>
+                <name>RMBDColor</name>
+                <first Class="ColorGenerator_Single">
+                    <color>RGBA(0, 0, 0, 255)</color>
+                  </first>
+                <second Class="ColorGenerator_Single">
+                    <color>RGBA(0, 0, 0, 255)</color>
+                  </second>
+            </li>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/
+            alienPartGenerator/bodyAddons/li[name="moyo left antennae"]/colorChannel</xpath>
+        <value>
+            <colorChannel>RMBDColor</colorChannel>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/
+            alienPartGenerator/bodyAddons/li[name="moyo right antennae"]/colorChannel</xpath>
+        <value>
+            <colorChannel>RMBDColor</colorChannel>
+        </value>
+    </Operation>
+
+</Patch>

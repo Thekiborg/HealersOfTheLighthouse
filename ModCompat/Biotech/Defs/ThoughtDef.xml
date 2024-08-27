@@ -18,4 +18,40 @@
         </stages>
       </ThoughtDef>
 
+      <ThoughtDef>
+        <defName>Thek_DiscussedWithSomeone</defName>
+        <thoughtClass>Thought_MemorySocial</thoughtClass>
+        <durationDays>10</durationDays>
+        <stackLimit>300</stackLimit>
+        <stackLimitForSameOtherPawn>1</stackLimitForSameOtherPawn>
+        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+        <nullifyingHediffs>
+          <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+        </nullifyingHediffs>
+        <stages>
+          <li>
+            <label>discussed a research project</label>
+            <description>We've discussed our current research project and made great progress!</description>
+            <baseOpinionOffset>8</baseOpinionOffset>
+          </li>
+        </stages>
+      </ThoughtDef>
+
+      <ThoughtDef>
+        <defName>Thek_WearingRevealingClothes</defName>
+        <workerClass>MoyoMedicalExpansion.ThoughtWorker_RevealingClothes</workerClass>
+        <validWhileDespawned>true</validWhileDespawned>
+        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+        <requiredGenes>
+          <li>Thek_LikesRevealingClothes</li>
+        </requiredGenes>
+        <stages>
+          <li>
+            <label>wearing revealing apparel</label>
+            <description>todo.</description>
+            <baseMoodEffect>5</baseMoodEffect>
+          </li>
+        </stages>
+      </ThoughtDef>
+
 </Defs>

@@ -2,16 +2,16 @@
 <Defs>
 
     <JobDef>
-        <defName>Thek_TakeSecondPawnToBrainstorm</defName>
-        <driverClass>MoyoMedicalExpansion.JobDriver_GetSecondPawnAndBrainstorm</driverClass>
-        <reportString>todo with TargetA.</reportString>
+        <defName>Thek_TakeSecondPawnToTheorize</defName>
+        <driverClass>MoyoMedicalExpansion.JobDriver_GetSecondPawnAndTheorize</driverClass>
+        <reportString>discussing with TargetA.</reportString>
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>
 
     <JobDef>
-        <defName>Thek_FollowFirstPawnToBrainstorm</defName>
-        <driverClass>MoyoMedicalExpansion.JobDriver_FollowFirstPawnAndBrainstorm</driverClass>
-        <reportString>todo with TargetA.</reportString>
+        <defName>Thek_FollowFirstPawnToTheorize</defName>
+        <driverClass>MoyoMedicalExpansion.JobDriver_FollowFirstPawnAndTheorize</driverClass>
+        <reportString>discussing with TargetA.</reportString>
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>
 

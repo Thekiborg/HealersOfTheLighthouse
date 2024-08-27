@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/
+            alienPartGenerator/bodyAddons</xpath>
+        <value>
+            <li>
+                <name>body veins</name>
+                <path>Moyo_Dummy/Dummy</path>
+                <colorChannel>RMBDColor</colorChannel>
+                <conditions>
+                    <BodyPart>
+                        <bodyPart>Torso</bodyPart>
+                        <drawWithoutPart>false</drawWithoutPart>
+                    </BodyPart>
+                    <RotStage>Fresh</RotStage>
+                </conditions>
+                <extendedGraphics>
+                    <!-- Female -->
+                    <BodyType For="Female">
+                        <path>Moyo_Dummy/Dummy</path>
+                            <extendedGraphics>
+                                <Hediff For="Thek_RapidMetabolicBreakDown">Moyo/MoyoVeins/BodyVeins_Female</Hediff>
+                            </extendedGraphics>
+                    </BodyType>
+                    <!-- Male -->
+                    <BodyType For="Thin">
+                        <path>Moyo_Dummy/Dummy</path>
+                            <extendedGraphics>
+                                <Hediff For="Thek_RapidMetabolicBreakDown">Moyo/MoyoVeins/BodyVeins_Thin</Hediff>
+                            </extendedGraphics>
+                    </BodyType>
+                </extendedGraphics>
+                <offsets>
+                    <north>
+                        <layerOffset>-0.279</layerOffset>
+                    </north>
+                    <south>
+                        <layerOffset>-0.305</layerOffset>
+                    </south>
+                    <east>
+                        <layerOffset>-0.305</layerOffset>
+                    </east>
+                    <west>
+                        <layerOffset>-0.305</layerOffset>
+                    </west>
+                </offsets>
+                <defaultOffset>Center</defaultOffset>
+                <userCustomizable>false</userCustomizable>
+            </li>
+        </value>
+    </Operation>
+
+</Patch>

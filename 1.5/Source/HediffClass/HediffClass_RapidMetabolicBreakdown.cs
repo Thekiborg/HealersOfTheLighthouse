@@ -1,4 +1,6 @@
-﻿namespace MoyoMedicalExpansion
+﻿using AlienRace;
+
+namespace MoyoMedicalExpansion
 {
     public class HediffClass_RapidMetabolicBreakdown : HediffWithComps
     {
@@ -22,6 +24,10 @@
             RMBDGene.currentDosage = 0;
             RMBDGene.isTransformed = false;
             pawn.abilities.RemoveAbility(abilityDefToGive);
+
+            var alienComp = pawn.GetComp<AlienPartGenerator.AlienComp>();
+            alienComp.OverwriteColorChannel("RMBDColor", first: null);
+            alienComp.RegenerateAddonsForced();
         }
     }
 }
