@@ -12,6 +12,7 @@ namespace MoyoMedicalExpansion
         public override bool TryMakePreToilReservations(bool errorOnFailed)
         {
             return true;
+
         }
 
         protected override IEnumerable<Toil> MakeNewToils()
@@ -29,10 +30,9 @@ namespace MoyoMedicalExpansion
                 Log.Message(firstPawnChairPos);
 
                 chair = GenClosest.ClosestThingReachable(firstPawnChairPos, pawn.Map, ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial),
-                PathEndMode.OnCell, TraverseParms.For(pawn),
+                PathEndMode.OnCell, TraverseParms.For(pawn), maxDistance: 100f,
                 validator: (Thing t) => BaseChairValidator(t)
-                            && WanderUtility.InSameRoom(t.Position, firstPawnChairPos, Map)
-                            && firstPawnChairPos.DistanceToSquared(t.Position) <= 6 * 6);
+                            && WanderUtility.InSameRoom(t.Position, firstPawnChairPos, Map));
 
                 if (chair is null)
                 {

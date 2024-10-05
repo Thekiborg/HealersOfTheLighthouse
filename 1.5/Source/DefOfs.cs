@@ -35,7 +35,7 @@
         }
 
         public static ThoughtDef Thek_PacifistHarmedPawn;
-        public static ThoughtDef Thek_DiscussedWithSomeone;
+        public static ThoughtDef Thek_DiscussedWithColonist;
     }
 
 
@@ -61,5 +61,17 @@
         }
 
         public static AbilityDef Thek_RMBD_AbilityTheorize;
+    }
+
+
+    [DefOf]
+    public static class MoyoMedicalExpansion_InteractionDefOfs
+    {
+        static MoyoMedicalExpansion_InteractionDefOfs()
+        {
+            DefOfHelper.EnsureInitializedInCtor(typeof(MoyoMedicalExpansion_InteractionDefOfs));
+        }
+
+        public static InteractionDef Thek_InteractionTheorize;
     }
 }

@@ -24,11 +24,10 @@ namespace MoyoMedicalExpansion
 
 
             Toil seekingChairToil = ToilMaker.MakeToil("SeekingChairToil");
-            seekingChairToil.defaultCompleteMode = ToilCompleteMode.Instant;
             seekingChairToil.AddPreInitAction(() =>
             {
                 chair = GenClosest.ClosestThingReachable(Target.Position, Map, ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial),
-                PathEndMode.OnCell, TraverseParms.For(pawn), validator: BaseChairValidator);
+                PathEndMode.OnCell, TraverseParms.For(pawn), maxDistance: 100f, validator: BaseChairValidator);
 
                 if (chair is null)
                 {
@@ -81,10 +80,15 @@ namespace MoyoMedicalExpansion
                 if (pawn.IsHashIntervalTick(HelperClass_TheorizeAbility.chatBubbleDelay.RandomInRange))
                 {
                     pawn.skills.Learn(SkillDefOf.Intellectual, 50f);
-                    MoteMaker.MakeSpeechBubble(pawn, TextureManager.chatBubbleIcon);
+                    pawn.interactions.TryInteractWith(Target, MoyoMedicalExpansion_InteractionDefOfs.Thek_InteractionTheorize);
                 }
             };
-            chatWithOther.AddFinishAction(() =>
+            yield return chatWithOther;
+
+
+            Toil addProgressToResearchProject = ToilMaker.MakeToil("addProgressToResearchProject");
+            addProgressToResearchProject.defaultCompleteMode = ToilCompleteMode.Instant;
+            addProgressToResearchProject.AddFinishAction(() =>
             {
                 ResearchManager researchManager = Find.ResearchManager;
                 ResearchProjectDef researchProject = researchManager.GetProject();
@@ -98,16 +102,16 @@ namespace MoyoMedicalExpansion
                     int researchPointsToAdd = HelperClass_TheorizeAbility.CalculateResearchPoints(researchProject.baseCost,
                         Target.skills.GetSkill(SkillDefOf.Intellectual).Level);
 
-                    Messages.Message("AbilityTheorize_Success".Translate(pawn.Named("FIRSTPAWN"), Target.Named("SECONDPAWN"), researchPointsToAdd.Named("POINTS")), 
+                    Messages.Message("AbilityTheorize_Success".Translate(pawn.Named("FIRSTPAWN"), Target.Named("SECONDPAWN"), researchPointsToAdd.Named("POINTS")),
                         MessageTypeDefOf.PositiveEvent);
-                    pawn.needs.mood.thoughts.memories.TryGainMemory(MoyoMedicalExpansion_ThoughtDefOfs.Thek_DiscussedWithSomeone, Target);
+                    pawn.needs.mood.thoughts.memories.TryGainMemory(MoyoMedicalExpansion_ThoughtDefOfs.Thek_DiscussedWithColonist, Target);
 
                     researchManager.AddProgress(researchProject, researchPointsToAdd);
 
                     pawn.abilities.GetAbility(MoyoMedicalExpansion_AbilityDefOfs.Thek_RMBD_AbilityTheorize).CompOfType<AbilityComp_Theorize>().AbilityUsed();
                 }
             });
-            yield return chatWithOther;
+            yield return addProgressToResearchProject;
         }
 
 
@@ -143,6 +147,10 @@ namespace MoyoMedicalExpansion
                 return false;
             }
             if (t.HostileTo(pawn))
+            {
+                return false;
+            }
+            if (t.GetRoom().ThingCount(t.def) <= 1)
             {
                 return false;
             }

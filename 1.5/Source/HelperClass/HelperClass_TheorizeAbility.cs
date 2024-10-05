@@ -2,7 +2,7 @@
 {
     internal class HelperClass_TheorizeAbility
     {
-        public static readonly IntRange chatBubbleDelay = new(150, 600);
+        public static readonly IntRange chatBubbleDelay = new(300, 750);
         public const int chatDuration = 10000;
 
         const float minOutput = 0.2f;

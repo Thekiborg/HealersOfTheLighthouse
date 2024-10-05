@@ -67,6 +67,8 @@
         </modExtensions>
     </GeneDef>
 
+
+    <!-- intellectual affinity -->
     <GeneDef>
         <defName>Thek_IntellectualAffinity</defName>
         <label>intellectual affinity</label>
@@ -80,6 +82,8 @@
         </passionMod>
     </GeneDef>
 
+
+    <!-- swift practitioner -->
     <GeneDef>
         <defName>Thek_SwiftPractitioner</defName>
         <label>swift practitioner</label>
@@ -93,6 +97,8 @@
 		</statOffsets>
     </GeneDef>
 
+
+    <!-- oni hair -->
     <GeneDef>
         <defName>Thek_OniHair</defName>
         <label>oni hair (rename)</label>
@@ -102,6 +108,8 @@
         <displayOrderInCategory>100</displayOrderInCategory>
     </GeneDef>
 
+
+    <!-- suction tail -->
     <GeneDef>
         <defName>Thek_SuctionTail</defName>
         <label>suction tail</label>
@@ -117,6 +125,8 @@
         </capMods>
     </GeneDef>
 
+
+    <!-- pacifist nature -->
     <GeneDef>
         <defName>Thek_PacifistNature</defName>
         <geneClass>MoyoMedicalExpansion.GeneClass_PacifistNature</geneClass>
@@ -127,6 +137,8 @@
         <displayOrderInCategory>100</displayOrderInCategory>
     </GeneDef>
 
+
+    <!-- likes revealing clothes -->
     <GeneDef>
         <defName>Thek_LikesRevealingClothes</defName>
         <label>revealing apparel affinity</label>

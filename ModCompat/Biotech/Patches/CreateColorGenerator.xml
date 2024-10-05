@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Patch>
 
-    <!-- Perhaps doing 5 bodyaddons, 2 small horns, 2 big horns, 1 veins might be the way to go here, to not override the antenna. -->
+    <!-- Perhaps doing 5 bodyaddons, 2 small horns, 2 big horns might be the way to go here, to not override the antenna. -->
     <Operation Class="PatchOperationAdd">
         <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/
             alienPartGenerator/colorChannels/li</xpath>
