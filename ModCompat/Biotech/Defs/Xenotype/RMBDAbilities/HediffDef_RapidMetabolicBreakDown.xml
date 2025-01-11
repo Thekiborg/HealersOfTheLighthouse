@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <HediffDef>
+        <defName>HOTL_RapidMetabolicBreakDown</defName>
+        <label>Metabolic Overdrive</label>
+        <hediffClass>HealersOfTheLighthouse.HediffClass_RapidMetabolicBreakdown</hediffClass>
+        <description>todo</description>
+        <isBad>false</isBad>
+        <stages>
+          <li>
+            
+          </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>60000</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>                
+            </li>
+        </comps>
+    </HediffDef>
+
+</Defs>

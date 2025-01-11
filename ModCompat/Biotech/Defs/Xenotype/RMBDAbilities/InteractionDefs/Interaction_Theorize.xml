@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <!-- HOTL_RMBD_AbilityTheorize -->
+    <InteractionDef>
+        <defName>HOTL_InteractionTheorize</defName>
+        <label>discussed research project</label>
+        <workerClass>InteractionWorker</workerClass>
+        <symbol>UI/Icons/QuestionMark</symbol>
+        <initiatorXpGainSkill>Intellectual</initiatorXpGainSkill>
+        <initiatorXpGainAmount>50</initiatorXpGainAmount>
+        <recipientXpGainSkill>Intellectual</recipientXpGainSkill>
+        <recipientXpGainAmount>100</recipientXpGainAmount>
+        <logRulesInitiator>
+          <rulesStrings>
+            <li>r_logentry->[INITIATOR_nameDef] and [RECIPIENT_nameDef] [talkedabout] the current research project (change).</li>
+            <li>r_logentry->[INITIATOR_nameDef] [talkedabout] the current research project (change) with [RECIPIENT_nameDef].</li>
+    
+            <li>talkedabout->exchanged thoughts about</li>
+            <li>talkedabout->exchanged ideas about</li>
+            <li>talkedabout->shared views on</li>
+            <li>talkedabout->discussed about</li>
+            <li>talkedabout->theorized on</li>
+            <li>talkedabout->brainstormed</li>
+    
+            <li>subject(INITIATOR_cubeInterest==false)->[TalkTopicHeavy]</li>
+            <li>subject(INITIATOR_cubeInterest==true)->[TalkTopicCube]</li>
+          </rulesStrings>
+        </logRulesInitiator>
+    </InteractionDef>
+    
+</Defs>

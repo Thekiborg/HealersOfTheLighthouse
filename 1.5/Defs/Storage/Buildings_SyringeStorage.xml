@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<ThingDef Name="HOTL_BoosterFountainBase" ParentName="FurnitureBase" Abstract="True">
+			<thingClass>Building_Storage</thingClass>
+			<passability>PassThroughOnly</passability>
+			<fillPercent>0.5</fillPercent>
+			<pathCost>50</pathCost>
+			<defaultPlacingRot>South</defaultPlacingRot>
+			<altitudeLayer>PawnUnused</altitudeLayer>
+			<drawGUIOverlay>True</drawGUIOverlay>
+			<graphicData>
+					<graphicClass>Graphic_Single</graphicClass>
+					<drawSize>(1.5,1.5)</drawSize>
+					<drawOffsetNorth>(0,0,-0.1)</drawOffsetNorth>
+					<drawOffsetSouth>(0,0,0.1)</drawOffsetSouth>
+					<drawOffsetWest>(0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(-0.1,0,0)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
+			</graphicData>
+			<size>(1,1)</size>
+			<costList>
+					<Moyo2_Abyssteel>65</Moyo2_Abyssteel>
+			</costList>
+			<statBases>
+				<Flammability>1.0</Flammability>
+				<Beauty>10</Beauty>
+			<MaxHitPoints>150</MaxHitPoints> <!-- Importante -->
+			<Mass>8</Mass>
+			<WorkToBuild>3000</WorkToBuild> <!-- Importante -->
+			</statBases>
+			<building>
+				<preventDeteriorationOnTop>true</preventDeteriorationOnTop>
+				<ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+				<maxItemsInCell>4</maxItemsInCell>
+				<blueprintClass>Blueprint_Storage</blueprintClass>
+				<paintable>false</paintable>
+				<storageGroupTag>Shelf</storageGroupTag>
+				<fixedStorageSettings>
+					<filter>
+						<disallowNotEverStorable>true</disallowNotEverStorable>
+					</filter>
+				</fixedStorageSettings>
+				<defaultStorageSettings>
+					<priority>Important</priority>
+				</defaultStorageSettings>
+			</building>
+			<inspectorTabs>
+				<li>ITab_Storage</li>
+			</inspectorTabs>
+			<surfaceType>Item</surfaceType>
+			<canOverlapZones>false</canOverlapZones>
+			<researchPrerequisites>
+				<li>ComplexFurniture</li>
+			</researchPrerequisites>
+			<designationHotKey>Misc12</designationHotKey>
+			<designatorDropdown>HOTL_BoosterFountain_DesignatorDropdown</designatorDropdown>
+	</ThingDef>
+
+	<!-- BLANK STORAGE
+	<ThingDef ParentName="HOTL_BoosterVerticalDispenser">
+		<defName>HOTL_BoosterFountain_Blank</defName>
+		<label>Blank Fountain</label>
+		<description>todo</description>
+		<graphicData>
+			<texPath>BoosterVerticalDispenser/BlankVerticalDispenser/BlankVerticalDispenser</texPath>
+		</graphicData>
+		<building>
+				<fixedStorageSettings>
+						<filter>
+								<categories>
+										<li>Moyo2_DrugCategory_Pearl</li>
+								</categories>
+						</filter>
+					</fixedStorageSettings>
+				<defaultStorageSettings>
+					<filter>
+						<categories>
+							<li>Moyo2_DrugCategory_Pearl</li>
+						</categories>
+					</filter>
+				</defaultStorageSettings>
+		</building>
+	</ThingDef>
+	-->
+
+	<!-- BLUEBURST STORAGE
+	<ThingDef ParentName="HOTL_BoosterFountainBase">
+		<defName>HOTL_BoosterFountain_Burst</defName>
+		<label>BlueBurst Fountain</label>
+		<description>A storage unit dedicated to storing syringes. A mechanism pushes a syringe up onto a tray, ensuring a syringe is always ready to be picked.\n\nThis dispenser has been customized to match the theme of the BlueBurst injector.</description>
+		<graphicData>
+			<texPath>BoosterVerticalDispenser/BurstVerticalDispenser/BurstVerticalDispenser</texPath>
+		</graphicData>
+		<building>
+				<fixedStorageSettings>
+					<filter>
+						<thingDefs>
+								<li>DBPearl_Alluring</li>
+						</thingDefs>
+					</filter>
+				</fixedStorageSettings>
+				<defaultStorageSettings>
+						<filter>
+								<thingDefs>
+										<li>DBPearl_Alluring</li>
+								</thingDefs>
+						</filter>
+				</defaultStorageSettings>
+		</building>
+		<descriptionHyperlinks>
+			<ThingDef>DBPearl_Crystal</ThingDef>
+		</descriptionHyperlinks>
+	</ThingDef>-->
+
+	<ThingDef ParentName="HOTL_BoosterFountainBase">
+		<defName>HOTL_BoosterFountain_Hydra</defName>
+		<label>Hydra Booster Fountain</label>
+		<description>A storage unit dedicated to storing syringes. A mechanism pushes a syringe up onto a tray, ensuring a syringe is always ready to be picked.\n\nThis dispenser has been customized to match the theme of the Hydra injector.</description>
+		<graphicData>
+			<texPath>BoosterVerticalDispenser/HydraVerticalDispenser/HydraVerticalDispenser</texPath>
+		</graphicData>
+		<building>
+				<fixedStorageSettings>
+					<filter>
+						<thingDefs>
+								<li>DBBooster_Hydra</li>
+						</thingDefs>
+					</filter>
+				</fixedStorageSettings>
+				<defaultStorageSettings>
+						<filter>
+								<thingDefs>
+										<li>DBBooster_Hydra</li>
+								</thingDefs>
+						</filter>
+				</defaultStorageSettings>
+		</building>
+		<descriptionHyperlinks>
+			<ThingDef>DBBooster_Hydra</ThingDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<ThingDef ParentName="HOTL_BoosterFountainBase">
+		<defName>HOTL_BoosterFountain_Medi</defName>
+		<label>Medi Booster Fountain</label>
+		<description>A storage unit dedicated to storing syringes. A mechanism pushes a syringe up onto a tray, ensuring a syringe is always ready to be picked.\n\nThis dispenser has been customized to match the theme of the Medi injector.</description>
+		<graphicData>
+			<texPath>BoosterVerticalDispenser/MediVerticalDispenser/MediVerticalDispenser</texPath>
+		</graphicData>
+		<building>
+				<fixedStorageSettings>
+					<filter>
+						<thingDefs>
+								<li>DBBooster_Medi</li>
+						</thingDefs>
+					</filter>
+				</fixedStorageSettings>
+				<defaultStorageSettings>
+						<filter>
+								<thingDefs>
+										<li>DBBooster_Medi</li>
+								</thingDefs>
+						</filter>
+				</defaultStorageSettings>
+		</building>
+		<descriptionHyperlinks>
+			<ThingDef>DBBooster_Medi</ThingDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+	<ThingDef ParentName="HOTL_BoosterFountainBase">
+		<defName>HOTL_BoosterFountain_Orca</defName>
+		<label>Orca Booster Fountain</label>
+		<description>A storage unit dedicated to storing syringes. A mechanism pushes a syringe up onto a tray, ensuring a syringe is always ready to be picked.\n\nThis dispenser has been customized to match the theme of the Orca injector.</description>
+		<graphicData>
+			<texPath>BoosterVerticalDispenser/OrcaVerticalDispenser/OrcaVerticalDispenser</texPath>
+		</graphicData>
+		<building>
+			<fixedStorageSettings>
+				<filter>
+					<thingDefs>
+						<li>DBBooster_Orca</li>
+					</thingDefs>
+				</filter>
+			</fixedStorageSettings>
+			<defaultStorageSettings>
+				<filter>
+					<thingDefs>
+						<li>DBBooster_Orca</li>
+					</thingDefs>
+				</filter>
+			</defaultStorageSettings>
+		</building>
+		<descriptionHyperlinks>
+			<ThingDef>DBBooster_Orca</ThingDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
+</Defs>
