@@ -1,4 +1,4 @@
-﻿namespace MoyoMedicalExpansion
+﻿namespace HealersOfTheLighthouse
 {
 #pragma warning disable CA1051
     public class RapidMetabolicBreakdown_Settings

@@ -4,8 +4,8 @@
     <!-- Blank -->
 	<!-- 
 	<AdaptiveStorage.GraphicsDef>
-		<defName>Thek_BlankPearlStorageUnit_GraphicDef</defName>
-		<targetDef>Thek_PearlStorageUnit_Blank</targetDef>
+		<defName>HOTL_BlankPearlStorageUnit_GraphicDef</defName>
+		<targetDef>HOTL_PearlStorageUnit_Blank</targetDef>
 		<graphics>
 			<li>
 				<graphicData>
@@ -61,8 +61,8 @@
 
     <!-- Crystal -->
 	<AdaptiveStorage.GraphicsDef>
-		<defName>Thek_CrystalPearlStorageUnit_GraphicDef</defName>
-		<targetDef>Thek_PearlStorageUnit_Crystal</targetDef>
+		<defName>HOTL_CrystalPearlStorageUnit_GraphicDef</defName>
+		<targetDef>HOTL_PearlStorageUnit_Crystal</targetDef>
 		<graphics>
 			<li>
 				<graphicData>
@@ -117,8 +117,8 @@
 
     <!-- Joy -->
 	<AdaptiveStorage.GraphicsDef>
-		<defName>Thek_JoyPearlStorageUnit_GraphicDef</defName>
-		<targetDef>Thek_PearlStorageUnit_Joy</targetDef>
+		<defName>HOTL_JoyPearlStorageUnit_GraphicDef</defName>
+		<targetDef>HOTL_PearlStorageUnit_Joy</targetDef>
 		<graphics>
 			<li>
 				<graphicData>
@@ -173,8 +173,8 @@
 
     <!-- Numb -->
 	<AdaptiveStorage.GraphicsDef>
-		<defName>Thek_NumbPearlStorageUnit_GraphicDef</defName>
-		<targetDef>Thek_PearlStorageUnit_Numb</targetDef>
+		<defName>HOTL_NumbPearlStorageUnit_GraphicDef</defName>
+		<targetDef>HOTL_PearlStorageUnit_Numb</targetDef>
 		<graphics>
 			<li>
 				<graphicData>
@@ -229,8 +229,8 @@
 
     <!-- Siren -->
 	<AdaptiveStorage.GraphicsDef>
-		<defName>Thek_SirenPearlStorageUnit_GraphicDef</defName>
-		<targetDef>Thek_PearlStorageUnit_Siren</targetDef>
+		<defName>HOTL_SirenPearlStorageUnit_GraphicDef</defName>
+		<targetDef>HOTL_PearlStorageUnit_Siren</targetDef>
 		<graphics>
 			<li>
 				<graphicData>
@@ -285,8 +285,8 @@
 
     <!-- Thinker -->
 	<AdaptiveStorage.GraphicsDef>
-		<defName>Thek_ThinkerPearlStorageUnit_GraphicDef</defName>
-		<targetDef>Thek_PearlStorageUnit_Thinker</targetDef>
+		<defName>HOTL_ThinkerPearlStorageUnit_GraphicDef</defName>
+		<targetDef>HOTL_PearlStorageUnit_Thinker</targetDef>
 		<graphics>
 			<li>
 				<graphicData>

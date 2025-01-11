@@ -4,5 +4,5 @@
 // a specific target and scoped to a namespace, type, member, etc.
 
 using System.Diagnostics.CodeAnalysis;
-[assembly: SuppressMessage("Design", "CA1051:Do not declare visible instance fields", Justification = "<Pending>", Scope = "member", Target = "~F:MoyoMedicalExpansion.JobDriver_GetSecondPawnAndTheorize.chair")]
-[assembly: SuppressMessage("Design", "CA1051:Do not declare visible instance fields", Justification = "<Pending>", Scope = "member", Target = "~F:MoyoMedicalExpansion.AbilityComp_DisableAfterUse.abilityUsed")]
+[assembly: SuppressMessage("Design", "CA1051:Do not declare visible instance fields", Justification = "<Pending>", Scope = "member", Target = "~F:HealersOfTheLighthouse.JobDriver_GetSecondPawnAndTheorize.chair")]
+[assembly: SuppressMessage("Design", "CA1051:Do not declare visible instance fields", Justification = "<Pending>", Scope = "member", Target = "~F:HealersOfTheLighthouse.AbilityComp_DisableAfterUse.abilityUsed")]

@@ -7,8 +7,8 @@
             alienPartGenerator/bodyAddons/li[name="moyo left antennae"]</xpath>
         <value>
             <extendedGraphics>
-                <Hediff For="Thek_RapidMetabolicBreakDown">Moyo/AntennaOverride/MoyoHornTall/MoyoHorn_Left</Hediff>
-                <Gene For="Thek_RapidMetabolicBreakDown">Moyo/AntennaOverride/MoyoHornShort/MoyoHorn_Left</Gene>
+                <Hediff For="HOTL_RapidMetabolicBreakDown">Moyo/AntennaOverride/MoyoHornTall/MoyoHorn_Left</Hediff>
+                <Gene For="HOTL_RapidMetabolicBreakDown">Moyo/AntennaOverride/MoyoHornShort/MoyoHorn_Left</Gene>
             </extendedGraphics>
         </value>
     </Operation>
@@ -17,7 +17,7 @@
             alienPartGenerator/bodyAddons/li[name="glow(moyo left antennae)"]</xpath>
         <value>
             <extendedGraphics>
-                <Gene For="Thek_RapidMetabolicBreakDown">Moyo_Dummy/Dummy</Gene>
+                <Gene For="HOTL_RapidMetabolicBreakDown">Moyo_Dummy/Dummy</Gene>
             </extendedGraphics>
         </value>
     </Operation>
@@ -28,8 +28,8 @@
             alienPartGenerator/bodyAddons/li[name="moyo right antennae"]</xpath>
         <value>
             <extendedGraphics>
-                <Hediff For="Thek_RapidMetabolicBreakDown">Moyo/AntennaOverride/MoyoHornTall/MoyoHorn_Right</Hediff>
-                <Gene For="Thek_RapidMetabolicBreakDown">Moyo/AntennaOverride/MoyoHornShort/MoyoHorn_Right</Gene>
+                <Hediff For="HOTL_RapidMetabolicBreakDown">Moyo/AntennaOverride/MoyoHornTall/MoyoHorn_Right</Hediff>
+                <Gene For="HOTL_RapidMetabolicBreakDown">Moyo/AntennaOverride/MoyoHornShort/MoyoHorn_Right</Gene>
             </extendedGraphics>
         </value>
     </Operation>
@@ -38,7 +38,7 @@
             alienPartGenerator/bodyAddons/li[name="glow(moyo right antennae)"]</xpath>
         <value>
             <extendedGraphics>
-                <Gene For="Thek_RapidMetabolicBreakDown">Moyo_Dummy/Dummy</Gene>
+                <Gene For="HOTL_RapidMetabolicBreakDown">Moyo_Dummy/Dummy</Gene>
             </extendedGraphics>
         </value>
     </Operation>

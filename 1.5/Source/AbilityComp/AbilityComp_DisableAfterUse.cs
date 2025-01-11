@@ -1,4 +1,4 @@
-﻿namespace MoyoMedicalExpansion
+﻿namespace HealersOfTheLighthouse
 {
     public abstract class AbilityComp_DisableAfterUse : CompAbilityEffect
     {
@@ -14,7 +14,7 @@
 
         public override void PostExposeData()
         {
-            Scribe_Values.Look(ref abilityUsed, "Thek_RMBDAbilities_abilityUsed");
+            Scribe_Values.Look(ref abilityUsed, "HOTL_RMBDAbilities_abilityUsed");
         }
     }
 }

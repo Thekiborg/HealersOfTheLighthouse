@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>Moyo medical module</name>
+	<name>Moyo: Healers of the Lighthouse</name>
 
 	<author>Thekiborg</author>
 
-	<packageId>Thekiborg.modname</packageId> <!-- a unique identifier for the mod. Special characters are not allowed, at least one dot is required. This is what gets saved in a player's mod list, and having two identical IDs leads to the mod manager becoming incapable of loading the correct mod. The game internally stores these IDs using lower case characters only -->
+	<packageId>Thekiborg.HOTL</packageId>
 
 	<description></description>
 

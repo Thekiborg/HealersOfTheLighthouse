@@ -1,4 +1,4 @@
-﻿namespace MoyoMedicalExpansion
+﻿namespace HealersOfTheLighthouse
 {
     public class ThoughtWorker_RevealingClothes : ThoughtWorker
     {
@@ -7,12 +7,13 @@
             return true;
         }
 
+
         protected override ThoughtState CurrentStateInternal(Pawn p)
         {
             List<Apparel> wornApparel = p?.apparel.WornApparel;
             foreach (Apparel apparel in wornApparel)
             {
-                var modExt = apparel.def.GetModExtension<ModExtension_MoyoMedicalExpansion>();
+                var modExt = apparel.def.GetModExtension<ModExtension>();
                 if (modExt is not null && modExt.isRevealingApparel)
                 {
                     return true;

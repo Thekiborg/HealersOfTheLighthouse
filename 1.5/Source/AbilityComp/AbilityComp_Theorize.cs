@@ -1,4 +1,4 @@
-﻿namespace MoyoMedicalExpansion
+﻿namespace HealersOfTheLighthouse
 {
     public class AbilityComp_Theorize : AbilityComp_DisableAfterUse
     {

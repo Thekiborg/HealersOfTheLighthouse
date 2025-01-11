@@ -1,24 +1,24 @@
 ﻿using AlienRace;
 
-namespace MoyoMedicalExpansion
+namespace HealersOfTheLighthouse
 {
     public class GeneClass_RapidMetabolicBreakdown : Gene
     {
-        /* Variables */
-        private ModExtension_MoyoMedicalExpansion modExt;
-
+		/* --------- Variables --------- */
+		private ModExtension modExt;
         private RapidMetabolicBreakdown_Settings lockedRMBDSetting;
 
-        internal int currentDosage;
 
+        internal int currentDosage;
         internal bool isTransformed;
 
-        /* --- Properties --- */
-        private ModExtension_MoyoMedicalExpansion ModExt
+
+		/* --------- Properties --------- */
+		private ModExtension ModExt
         {
             get
             {
-                modExt ??= def.GetModExtension<ModExtension_MoyoMedicalExpansion>();
+                modExt ??= def.GetModExtension<ModExtension>();
                 return modExt;
             }
         }
@@ -44,7 +44,7 @@ namespace MoyoMedicalExpansion
 
                 if (currentDosage >= LockedDosagesToTransform)
                 {
-                    HediffClass_RapidMetabolicBreakdown hediff = (HediffClass_RapidMetabolicBreakdown)HediffMaker.MakeHediff(MoyoMedicalExpansion_HediffDefOfs.Thek_RapidMetabolicBreakDown, pawn);
+                    HediffClass_RapidMetabolicBreakdown hediff = (HediffClass_RapidMetabolicBreakdown)HediffMaker.MakeHediff(MoyoMedicalExpansion_HediffDefOfs.HOTL_RapidMetabolicBreakDown, pawn);
                     hediff.bodyAddonColor = LockedTransformationColor;
                     hediff.abilityDefToGive = LockedAbilityGiven;
                     hediff.RMBDGene = this;
@@ -60,7 +60,7 @@ namespace MoyoMedicalExpansion
             }
             else
             {
-                // If it's taken a different drug, look for the options of the list and find the appropriate settings instance.
+                // If it's taken a different drug, look for the options of the list and find the appropriate settings.
                 for (int i = 0; i < ModExt.RMBDSettings.Count; i++)
                 {
                     RapidMetabolicBreakdown_Settings setting = ModExt.RMBDSettings[i];
@@ -79,8 +79,8 @@ namespace MoyoMedicalExpansion
 
         public override void ExposeData()
         {
-            Scribe_Values.Look(ref currentDosage, "Thek_RapidMetabolicBreakDown_currentDosage");
-            Scribe_Values.Look(ref isTransformed, "Thek_RapidMetabolicBreakDown_isTranformed");
+            Scribe_Values.Look(ref currentDosage, "HOTL_RapidMetabolicBreakDown_currentDosage");
+            Scribe_Values.Look(ref isTransformed, "HOTL_RapidMetabolicBreakDown_isTranformed");
         }
     }
 }

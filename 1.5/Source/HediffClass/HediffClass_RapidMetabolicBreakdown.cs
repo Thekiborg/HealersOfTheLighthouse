@@ -1,6 +1,6 @@
 ﻿using AlienRace;
 
-namespace MoyoMedicalExpansion
+namespace HealersOfTheLighthouse
 {
     public class HediffClass_RapidMetabolicBreakdown : HediffWithComps
     {

@@ -21,14 +21,14 @@
                     <BodyType For="Female">
                         <path>Moyo_Dummy/Dummy</path>
                             <extendedGraphics>
-                                <Hediff For="Thek_RapidMetabolicBreakDown">Moyo/MoyoVeins/BodyVeins_Female</Hediff>
+                                <Hediff For="HOTL_RapidMetabolicBreakDown">Moyo/MoyoVeins/BodyVeins_Female</Hediff>
                             </extendedGraphics>
                     </BodyType>
                     <!-- Male -->
                     <BodyType For="Thin">
                         <path>Moyo_Dummy/Dummy</path>
                             <extendedGraphics>
-                                <Hediff For="Thek_RapidMetabolicBreakDown">Moyo/MoyoVeins/BodyVeins_Thin</Hediff>
+                                <Hediff For="HOTL_RapidMetabolicBreakDown">Moyo/MoyoVeins/BodyVeins_Thin</Hediff>
                             </extendedGraphics>
                     </BodyType>
                 </extendedGraphics>

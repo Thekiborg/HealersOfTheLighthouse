@@ -1,4 +1,4 @@
-﻿namespace MoyoMedicalExpansion
+﻿namespace HealersOfTheLighthouse
 {
     public class GeneClass_PacifistNature : Gene
     {

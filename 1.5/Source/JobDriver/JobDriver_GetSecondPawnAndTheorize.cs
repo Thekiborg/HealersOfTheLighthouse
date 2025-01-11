@@ -1,160 +1,132 @@
 ﻿using Verse.AI;
 
-namespace MoyoMedicalExpansion
+namespace HealersOfTheLighthouse
 {
-    public class JobDriver_GetSecondPawnAndTheorize : JobDriver
-    {
-        Thing chair;
-
-        Pawn Target => job?.GetTarget(TargetIndex.A).Pawn;
+	public class JobDriver_GetSecondPawnAndTheorize : JobDriver
+	{
+		Thing chair;
 
 
-        public override bool TryMakePreToilReservations(bool errorOnFailed)
-        {
-            return true;
-        }
-
-        protected override IEnumerable<Toil> MakeNewToils()
-        {
-            //this.FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
-            this.FailOnDowned(TargetIndex.A);
-            this.FailOnMentalState(TargetIndex.A);
-            this.FailOnDespawnedOrNull(TargetIndex.A);
-            this.FailOnInvalidOrDestroyed(TargetIndex.A);
+		TheorizeAbilitySettings TheorizeSettings => pawn.abilities.GetAbility(MoyoMedicalExpansion_AbilityDefOfs.HOTL_RMBD_AbilityTheorize).def.GetModExtension<ModExtension>().theorizeAbilitySettings;
+		Pawn SecondPawn => job?.GetTarget(TargetIndex.A).Pawn;
 
 
-            Toil seekingChairToil = ToilMaker.MakeToil("SeekingChairToil");
-            seekingChairToil.AddPreInitAction(() =>
-            {
-                chair = GenClosest.ClosestThingReachable(Target.Position, Map, ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial),
-                PathEndMode.OnCell, TraverseParms.For(pawn), maxDistance: 100f, validator: BaseChairValidator);
-
-                if (chair is null)
-                {
-                    Messages.Message("AbilityTheorize_CantDo".Translate(pawn.Named("PAWN")), MessageTypeDefOf.RejectInput);
-                    EndJobWith(JobCondition.Incompletable);
-                    return;
-                }
-
-                job.SetTarget(TargetIndex.B, chair);
-            });
-            yield return seekingChairToil;
+		public override bool TryMakePreToilReservations(bool errorOnFailed)
+		{
+			return true;
+		}
 
 
-            yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.ClosestTouch);
+		protected override IEnumerable<Toil> MakeNewToils()
+		{
+			//this.FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
+			this.FailOnDowned(TargetIndex.A);
+			this.FailOnMentalState(TargetIndex.A);
+			this.FailOnDespawnedOrNull(TargetIndex.A);
+			this.FailOnInvalidOrDestroyed(TargetIndex.A);
 
 
-            Toil reserveAndGiveJob = ToilMaker.MakeToil("reserveAndGiveJob");
-            reserveAndGiveJob.AddPreInitAction(() =>
-            {
-                pawn.Reserve(chair, job);
+			Toil seekingChairToil = ToilMaker.MakeToil("SeekingChairToil");
+			seekingChairToil.defaultCompleteMode = ToilCompleteMode.Instant;
+			seekingChairToil.AddPreInitAction(() =>
+			{
+				chair = GenClosest.ClosestThingReachable(SecondPawn.Position,
+					Map,
+					ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial),
+					PathEndMode.OnCell,
+					TraverseParms.For(pawn),
+					maxDistance: 100f,
+					validator: (Thing t) => TheorizeUtility.SittableValidator(t, pawn));
 
-                Job followPawn = JobMaker.MakeJob(MoyoMedicalExpansion_JobDefOfs.Thek_FollowFirstPawnToTheorize, pawn);
-                Target.jobs.jobQueue.EnqueueFirst(followPawn);
-                Target.jobs.EndCurrentJob(JobCondition.InterruptForced);
-            });
-            yield return reserveAndGiveJob;
+				if (chair is null)
+				{
+					Messages.Message(
+						"AbilityTheorize_CantDo".Translate(pawn.Named("FIRSTPAWN"), SecondPawn.Named("SECONDPAWN")),
+						MessageTypeDefOf.RejectInput,
+						false);
 
+					EndJobWith(JobCondition.Incompletable);
+					return;
+				}
 
-            Toil pathToChair = ToilMaker.MakeToil("pathToChair");
-            pathToChair.AddPreInitAction(() =>
-            {
-                pawn.pather.StartPath(chair, PathEndMode.OnCell);
-            });
-            pathToChair.defaultCompleteMode = ToilCompleteMode.PatherArrival;
-            pathToChair.FailOn(() => Target.CurJobDef != MoyoMedicalExpansion_JobDefOfs.Thek_FollowFirstPawnToTheorize);
-            yield return pathToChair;
-
-
-            Toil chatWithOther = ToilMaker.MakeToil("chatWithOther");
-            chatWithOther.activeSkill = () => SkillDefOf.Intellectual;
-            chatWithOther.socialMode = RandomSocialMode.Off;
-            chatWithOther.FailOn(() => Target.CurJobDef != MoyoMedicalExpansion_JobDefOfs.Thek_FollowFirstPawnToTheorize);
-            chatWithOther.FailOn(() => chair.DestroyedOrNull() || chair.IsBurning());
-            chatWithOther.defaultCompleteMode = ToilCompleteMode.Delay;
-            chatWithOther.defaultDuration = HelperClass_TheorizeAbility.chatDuration;
-            chatWithOther.handlingFacing = true;
-            chatWithOther.tickAction = () =>
-            {
-                chatWithOther.actor.rotationTracker.FaceTarget(Target);
-                if (pawn.IsHashIntervalTick(HelperClass_TheorizeAbility.chatBubbleDelay.RandomInRange))
-                {
-                    pawn.skills.Learn(SkillDefOf.Intellectual, 50f);
-                    pawn.interactions.TryInteractWith(Target, MoyoMedicalExpansion_InteractionDefOfs.Thek_InteractionTheorize);
-                }
-            };
-            yield return chatWithOther;
+				job.SetTarget(TargetIndex.B, chair);
+			});
+			yield return seekingChairToil;
 
 
-            Toil addProgressToResearchProject = ToilMaker.MakeToil("addProgressToResearchProject");
-            addProgressToResearchProject.defaultCompleteMode = ToilCompleteMode.Instant;
-            addProgressToResearchProject.AddFinishAction(() =>
-            {
-                ResearchManager researchManager = Find.ResearchManager;
-                ResearchProjectDef researchProject = researchManager.GetProject();
-
-                if (researchProject is null)
-                {
-                    return;
-                }
-                else
-                {
-                    int researchPointsToAdd = HelperClass_TheorizeAbility.CalculateResearchPoints(researchProject.baseCost,
-                        Target.skills.GetSkill(SkillDefOf.Intellectual).Level);
-
-                    Messages.Message("AbilityTheorize_Success".Translate(pawn.Named("FIRSTPAWN"), Target.Named("SECONDPAWN"), researchPointsToAdd.Named("POINTS")),
-                        MessageTypeDefOf.PositiveEvent);
-                    pawn.needs.mood.thoughts.memories.TryGainMemory(MoyoMedicalExpansion_ThoughtDefOfs.Thek_DiscussedWithColonist, Target);
-
-                    researchManager.AddProgress(researchProject, researchPointsToAdd);
-
-                    pawn.abilities.GetAbility(MoyoMedicalExpansion_AbilityDefOfs.Thek_RMBD_AbilityTheorize).CompOfType<AbilityComp_Theorize>().AbilityUsed();
-                }
-            });
-            yield return addProgressToResearchProject;
-        }
+			yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.ClosestTouch);
 
 
-        bool BaseChairValidator(Thing t)
-        {
-            if (t.def.building == null || !t.def.building.isSittable)
-            {
-                return false;
-            }
+			Toil reserveAndGiveJob = ToilMaker.MakeToil("reserveAndGiveJob");
+			reserveAndGiveJob.AddPreInitAction(() =>
+			{
+				pawn.Reserve(chair, job);
 
-            if (!Toils_Ingest.TryFindFreeSittingSpotOnThing(t, pawn, out _))
-            {
-                return false;
-            }
-            if (t.IsForbidden(pawn))
-            {
-                return false;
-            }
-            if (pawn.IsColonist && t.Position.Fogged(t.Map))
-            {
-                return false;
-            }
-            if (!pawn.CanReserve(t))
-            {
-                return false;
-            }
-            if (!t.IsSociallyProper(pawn))
-            {
-                return false;
-            }
-            if (t.IsBurning())
-            {
-                return false;
-            }
-            if (t.HostileTo(pawn))
-            {
-                return false;
-            }
-            if (t.GetRoom().ThingCount(t.def) <= 1)
-            {
-                return false;
-            }
-            return true;
-        }
-    }
+				Job followPawn = JobMaker.MakeJob(MoyoMedicalExpansion_JobDefOfs.HOTL_FollowFirstPawnToTheorize, pawn);
+				SecondPawn.jobs.TryTakeOrderedJob(followPawn);
+			});
+			yield return reserveAndGiveJob;
+
+
+			Toil pathToChair = ToilMaker.MakeToil("pathToChair");
+			pathToChair.AddPreInitAction(() =>
+			{
+				pawn.pather.StartPath(chair, PathEndMode.OnCell);
+			});
+			pathToChair.defaultCompleteMode = ToilCompleteMode.PatherArrival;
+			pathToChair.FailOn(() => SecondPawn.CurJobDef != MoyoMedicalExpansion_JobDefOfs.HOTL_FollowFirstPawnToTheorize);
+			yield return pathToChair;
+
+
+			Toil chatWithOther = ToilMaker.MakeToil("chatWithOther");
+			chatWithOther.activeSkill = () => SkillDefOf.Intellectual;
+			chatWithOther.socialMode = RandomSocialMode.Off;
+			chatWithOther.FailOn(() => SecondPawn.CurJobDef != MoyoMedicalExpansion_JobDefOfs.HOTL_FollowFirstPawnToTheorize);
+			chatWithOther.FailOn(() => chair.DestroyedOrNull() || chair.IsBurning());
+			chatWithOther.defaultCompleteMode = ToilCompleteMode.Delay;
+			chatWithOther.defaultDuration = TheorizeSettings.chatDuration;
+			chatWithOther.handlingFacing = true;
+			chatWithOther.tickAction = () =>
+			{
+				chatWithOther.actor.rotationTracker.FaceTarget(SecondPawn);
+				if (pawn.IsHashIntervalTick(TheorizeSettings.chatBubbleDelay.RandomInRange))
+				{
+					pawn.interactions.TryInteractWith(SecondPawn, TheorizeSettings.interactionDef);
+				}
+			};
+			yield return chatWithOther;
+
+
+			Toil addProgressToResearchProject = ToilMaker.MakeToil("addProgressToResearchProject");
+			addProgressToResearchProject.defaultCompleteMode = ToilCompleteMode.Instant;
+			addProgressToResearchProject.AddFinishAction(() =>
+			{
+				ResearchManager researchManager = Find.ResearchManager;
+				ResearchProjectDef researchProject = researchManager.GetProject();
+
+				if (researchProject is null)
+				{
+					return;
+				}
+				else
+				{
+					pawn.abilities.GetAbility(MoyoMedicalExpansion_AbilityDefOfs.HOTL_RMBD_AbilityTheorize).CompOfType<AbilityComp_Theorize>().AbilityUsed();
+
+
+					int researchPointsToAdd = TheorizeUtility.CalculateResearchPoints(researchProject.baseCost,
+						SecondPawn.skills.GetSkill(SkillDefOf.Intellectual).Level,
+						TheorizeSettings);
+					researchManager.AddProgress(researchProject, researchPointsToAdd);
+
+
+					Messages.Message("AbilityTheorize_Success".Translate(pawn.Named("FIRSTPAWN"), SecondPawn.Named("SECONDPAWN"), researchPointsToAdd.Named("POINTS")),
+						MessageTypeDefOf.PositiveEvent);
+
+
+					pawn.needs.mood.thoughts.memories.TryGainMemory(MoyoMedicalExpansion_ThoughtDefOfs.HOTL_TheorizedWithColonist, SecondPawn);
+				}
+			});
+			yield return addProgressToResearchProject;
+		}
+	}
 }

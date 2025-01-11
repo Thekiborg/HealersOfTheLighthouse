@@ -4,8 +4,8 @@
     <!-- Blank -->
 	<!--
 	<AdaptiveStorage.GraphicsDef>
-		<defName>Thek_BlankBoosterVerticalDispenser_GraphicDef</defName>
-		<targetDef>Thek_BoosterVerticalDispenser_Blank</targetDef>
+		<defName>HOTL_BlankBoosterVerticalDispenser_GraphicDef</defName>
+		<targetDef>HOTL_BoosterVerticalDispenser_Blank</targetDef>
 		<graphics>
 			<li>
 				<graphicData>
@@ -83,8 +83,8 @@
 
     <!-- Burst -->
 	<!--<AdaptiveStorage.GraphicsDef>
-		<defName>Thek_BurstBoosterVerticalDispenser_GraphicDef</defName>
-		<targetDef>Thek_BoosterVerticalDispenser_Burst</targetDef>
+		<defName>HOTL_BurstBoosterVerticalDispenser_GraphicDef</defName>
+		<targetDef>HOTL_BoosterVerticalDispenser_Burst</targetDef>
 		<graphics>
 			<li>
 				<graphicData>
@@ -161,8 +161,8 @@
 
     <!-- Hydra -->
 	<AdaptiveStorage.GraphicsDef>
-		<defName>Thek_HydraBoosterVerticalDispenser_GraphicDef</defName>
-		<targetDef>Thek_BoosterVerticalDispenser_Hydra</targetDef>
+		<defName>HOTL_HydraBoosterVerticalDispenser_GraphicDef</defName>
+		<targetDef>HOTL_BoosterVerticalDispenser_Hydra</targetDef>
 		<graphics>
 			<li>
 				<graphicData>
@@ -239,8 +239,8 @@
 
     <!-- Medi -->
 	<AdaptiveStorage.GraphicsDef>
-		<defName>Thek_MediBoosterVerticalDispenser_GraphicDef</defName>
-		<targetDef>Thek_BoosterVerticalDispenser_Medi</targetDef>
+		<defName>HOTL_MediBoosterVerticalDispenser_GraphicDef</defName>
+		<targetDef>HOTL_BoosterVerticalDispenser_Medi</targetDef>
 		<graphics>
 			<li>
 				<graphicData>
@@ -317,8 +317,8 @@
 
     <!-- Orca -->
 	<AdaptiveStorage.GraphicsDef>
-		<defName>Thek_OrcaBoosterVerticalDispenser_GraphicDef</defName>
-		<targetDef>Thek_BoosterVerticalDispenser_Orca</targetDef>
+		<defName>HOTL_OrcaBoosterVerticalDispenser_GraphicDef</defName>
+		<targetDef>HOTL_BoosterVerticalDispenser_Orca</targetDef>
 		<graphics>
 			<li>
 				<graphicData>

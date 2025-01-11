@@ -1,4 +1,4 @@
-﻿namespace MoyoMedicalExpansion
+﻿namespace HealersOfTheLighthouse
 {
 #pragma warning disable IDE0019
     [HarmonyPatch(typeof(Pawn), nameof(Pawn.Notify_UsedVerb))]
@@ -7,13 +7,13 @@
         [HarmonyPostfix]
         internal static void AddCheckForPacifistNatureGene(Pawn pawn)
         {
-            GeneClass_PacifistNature gene = pawn.genes?.GetGene(MoyoMedicalExpansion_GeneDefOfs.Thek_PacifistNature) as GeneClass_PacifistNature;
+            GeneClass_PacifistNature gene = pawn.genes?.GetGene(MoyoMedicalExpansion_GeneDefOfs.HOTL_PacifistNature) as GeneClass_PacifistNature;
 
             if (gene is null) return;
 
             if (AttackingInnocentPawn(pawn))
             {
-                gene.GiveThought(MoyoMedicalExpansion_ThoughtDefOfs.Thek_PacifistHarmedPawn);
+                gene.GiveThought(MoyoMedicalExpansion_ThoughtDefOfs.HOTL_PacifistHarmedPawn);
             }
 
         }
