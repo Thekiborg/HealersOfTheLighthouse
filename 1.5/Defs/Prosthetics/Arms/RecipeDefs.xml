@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>HOTL_Install_FirePunchArm</defName>
+		<label>install bionic arm</label>
+		<description>Install a bionic arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>HOTL_Arm_FirePunch</ThingDef>
+			<HediffDef>HOTL_InstalledArm_FirePunch</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing bionic arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>HOTL_Arm_FirePunch</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>HOTL_Arm_FirePunch</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>HOTL_InstalledArm_FirePunch</addsHediff>
+	</RecipeDef>
+
+</Defs>

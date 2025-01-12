@@ -12,7 +12,13 @@
         }
 
 
-        public override void PostExposeData()
+		public void AbilityUsed()
+		{
+			abilityUsed = true;
+		}
+
+
+		public override void PostExposeData()
         {
             Scribe_Values.Look(ref abilityUsed, "HOTL_RMBDAbilities_abilityUsed");
         }

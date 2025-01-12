@@ -33,7 +33,7 @@
           <li Class="HealersOfTheLighthouse.ModExtension">
             <theorizeAbilitySettings>
               <chatBubbleDelay>300~750</chatBubbleDelay>
-              <chatDuration>10000</chatDuration>
+              <chatDuration>7500</chatDuration>
               <interactionDef>HOTL_InteractionTheorize</interactionDef>
 
               <!-- Makes low int pawns give way less points than max int pawns.-->
