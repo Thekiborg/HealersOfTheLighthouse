@@ -4,7 +4,7 @@
     <HediffDef>
         <defName>HOTL_RapidMetabolicBreakDown</defName>
         <label>Metabolic Overdrive</label>
-        <hediffClass>HealersOfTheLighthouse.HediffClass_RapidMetabolicBreakdown</hediffClass>
+        <hediffClass>HediffWithComps</hediffClass>
         <description>todo</description>
         <isBad>false</isBad>
         <stages>
@@ -16,6 +16,9 @@
             <li Class="HediffCompProperties_Disappears">
                 <disappearsAfterTicks>60000</disappearsAfterTicks>
                 <showRemainingTime>true</showRemainingTime>                
+            </li>
+            <li>
+                <compClass>HealersOfTheLighthouse.HediffComp_RapidMetabolicBreakDown</compClass>
             </li>
         </comps>
     </HediffDef>

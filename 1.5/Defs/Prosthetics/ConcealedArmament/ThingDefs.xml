@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <ThingDef Name="HOTL_FireArmBase" ParentName="HOTL_ConcealedArmamentBase" Abstract="true">
+	    <colorGenerator Class="ColorGenerator_Single">
+            <color>(255, 0, 0)</color>
+        </colorGenerator>
+	    <comps>
+            <li>
+                <compClass>CompColorable</compClass>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <!-- ######################################################### -->
+    <!-- #################### FIRE BASED ARMS #################### -->
+    <!-- ######################################################### -->
+
+    <!-- Fire punch -->
+
+    <ThingDef ParentName="HOTL_FireArmBase">
+        <defName>HOTL_Arm_FirePunch</defName>
+        <label>bionic arm</label>
+        <description>An advanced artificial arm. Silenced mini-servos give great strength, while the biogel nerve-link gives exquisite control. A lattice-dust healing system allows it to recover from damage. It is better than a biological arm in almost every way.</description>
+        <descriptionHyperlinks>
+            <RecipeDef>HOTL_Install_FirePunchArm</RecipeDef>
+        </descriptionHyperlinks>
+        <costList>
+            <Plasteel>15</Plasteel>
+            <ComponentSpacer>4</ComponentSpacer>
+        </costList>
+        <statBases>
+            <Mass>5</Mass>
+        </statBases>
+    </ThingDef>
+
+    <!-- Fire breath -->
+
+</Defs>

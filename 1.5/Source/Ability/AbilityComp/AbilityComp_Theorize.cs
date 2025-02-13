@@ -2,6 +2,9 @@
 {
     public class AbilityComp_Theorize : AbilityComp_DisableAfterUse
     {
+        public new AbilityCompProperties_Theorize Props => (AbilityCompProperties_Theorize)props;
+
+
         public override bool GizmoDisabled(out string reason)
         {
             if (Find.ResearchManager.GetProject() is null)

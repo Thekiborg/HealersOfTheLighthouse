@@ -3,7 +3,7 @@
   <v1.5>
     <li>/</li>
     <li>1.5</li>
-    <li IfModActive="adaptive.storage.framework">ModCompat/DrugStorageASF</li>
+    <li IfModActive="adaptive.storage.framework">ModCompat/AdaptiveStorageFramework</li>
     <li IfModActive="ludeon.rimworld.biotech">ModCompat/Biotech</li>
   </v1.5>
 </loadFolders>

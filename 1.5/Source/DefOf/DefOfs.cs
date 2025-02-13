@@ -1,12 +1,12 @@
 ﻿namespace HealersOfTheLighthouse
 {
 #pragma warning disable CA2211
-    [DefOf]
-    public static class MoyoMedicalExpansion_GeneDefOfs
+	[DefOf]
+    public static class HealersOfTheLighthouse_GeneDefOfs
     {
-        static MoyoMedicalExpansion_GeneDefOfs()
+        static HealersOfTheLighthouse_GeneDefOfs()
         {
-            DefOfHelper.EnsureInitializedInCtor(typeof(MoyoMedicalExpansion_GeneDefOfs));
+            DefOfHelper.EnsureInitializedInCtor(typeof(HealersOfTheLighthouse_GeneDefOfs));
         }
 
         public static GeneDef HOTL_RapidMetabolicBreakDown;
@@ -15,23 +15,11 @@
 
 
     [DefOf]
-    public static class MoyoMedicalExpansion_HediffDefOfs
+    public static class HealersOfTheLighthouse_ThoughtDefOfs
     {
-        static MoyoMedicalExpansion_HediffDefOfs()
+        static HealersOfTheLighthouse_ThoughtDefOfs()
         {
-            DefOfHelper.EnsureInitializedInCtor(typeof(MoyoMedicalExpansion_HediffDefOfs));
-        }
-
-        public static HediffDef HOTL_RapidMetabolicBreakDown;
-    }
-
-
-    [DefOf]
-    public static class MoyoMedicalExpansion_ThoughtDefOfs
-    {
-        static MoyoMedicalExpansion_ThoughtDefOfs()
-        {
-            DefOfHelper.EnsureInitializedInCtor(typeof(MoyoMedicalExpansion_ThoughtDefOfs));
+            DefOfHelper.EnsureInitializedInCtor(typeof(HealersOfTheLighthouse_ThoughtDefOfs));
         }
 
         public static ThoughtDef HOTL_PacifistHarmedPawn;
@@ -40,11 +28,11 @@
 
 
     [DefOf]
-    public static class MoyoMedicalExpansion_JobDefOfs
+    public static class HealersOfTheLighthouse_JobDefOfs
     {
-        static MoyoMedicalExpansion_JobDefOfs()
+        static HealersOfTheLighthouse_JobDefOfs()
         {
-            DefOfHelper.EnsureInitializedInCtor(typeof(MoyoMedicalExpansion_JobDefOfs));
+            DefOfHelper.EnsureInitializedInCtor(typeof(HealersOfTheLighthouse_JobDefOfs));
         }
 
         public static JobDef HOTL_FollowFirstPawnToTheorize;
@@ -53,11 +41,11 @@
 
 
     [DefOf]
-    public static class MoyoMedicalExpansion_AbilityDefOfs
+    public static class HealersOfTheLighthouse_AbilityDefOfs
     {
-        static MoyoMedicalExpansion_AbilityDefOfs()
+        static HealersOfTheLighthouse_AbilityDefOfs()
         {
-            DefOfHelper.EnsureInitializedInCtor(typeof(MoyoMedicalExpansion_AbilityDefOfs));
+            DefOfHelper.EnsureInitializedInCtor(typeof(HealersOfTheLighthouse_AbilityDefOfs));
         }
 
         public static AbilityDef HOTL_RMBD_AbilityTheorize;

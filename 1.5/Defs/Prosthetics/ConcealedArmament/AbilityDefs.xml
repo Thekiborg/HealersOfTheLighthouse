@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<AbilityDef ParentName="AbilityTouchBase">
+		<defName>HOTL_ConcealedArmament_FirePunch</defName>
+		<label>fire punch</label> <!-- find good label + lore -->
+		<description>Use special glands in the wrists to quickly tend someone's wounds.</description>
+		<iconPath>UI/Icons/Genes/Gene_Coagulate</iconPath>
+		<displayOrder>400</displayOrder>
+        <warmupPreEndSound>MeleeHit_BionicPunch</warmupPreEndSound>
+		<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		<stunTargetWhileCasting>false</stunTargetWhileCasting>
+		<cooldownTicksRange>5000</cooldownTicksRange>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<warmupTime>0.8</warmupTime>
+            <defaultCooldownTime>3</defaultCooldownTime>
+			<!--<targetParams> Default target params
+			</targetParams>-->
+		</verbProperties>
+		<comps>
+			<li Class="HealersOfTheLighthouse.AbilityCompProperties_ConcealedFirePunch">
+				<goodwillImpact>0</goodwillImpact>
+				<baseKnockbackLength>3</baseKnockbackLength>
+                <punchEffecter>HOTL_ConcealedArmament_FirePunch_SmokePuff</punchEffecter>
+				<pawnFlyerDef>HOTL_PawnFlyer_FirePunch</pawnFlyerDef>
+				<punchDamageInfo>
+					<damageDef>Flame</damageDef>
+					<amount>15</amount>
+				</punchDamageInfo>
+				<collideDamageInfo>
+					<damageDef>HOTL_CollideDamage</damageDef>
+					<amount>25</amount>
+				</collideDamageInfo>
+			</li>
+		</comps>
+	</AbilityDef>
+
+
+	<AbilityDef>
+		<defName>HOTL_ConcealedArmament_Launcher</defName>
+		<label>launcher</label> <!-- find good label + lore -->
+		<description>Use special glands in the wrists to quickly tend someone's wounds.</description>
+		<iconPath>UI/Icons/Genes/Gene_Coagulate</iconPath>
+		<gizmoClass>HealersOfTheLighthouse.ConcealedLauncherGizmo</gizmoClass>
+		<displayOrder>400</displayOrder>
+        <warmupPreEndSound>MeleeHit_BionicPunch</warmupPreEndSound>
+		<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		<stunTargetWhileCasting>false</stunTargetWhileCasting>
+		<cooldownTicksRange>5000</cooldownTicksRange>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>9</range>
+			<warmupTime>0.8</warmupTime>
+            <defaultCooldownTime>3</defaultCooldownTime>
+			<!--<targetParams> Default target params
+			</targetParams>-->
+		</verbProperties>
+		<comps>
+			<li Class="HealersOfTheLighthouse.AbilityCompProperties_ConcealedLauncher">
+				<goodwillImpact>0</goodwillImpact>
+				<ammoCapacity>5</ammoCapacity>
+				<allowedAmmo>
+					<li>Shell_EMP</li>
+					<li>Shell_Smoke</li>
+					<li>Shell_Firefoam</li>
+					<li>Shell_AntigrainWarhead</li>
+				</allowedAmmo>
+			</li>
+		</comps>
+	</AbilityDef>
+
+</Defs>

@@ -31,6 +31,11 @@
 			CA1852;CA2201;CA3075;IDE0290
 		</NoWarn>
 	</PropertyGroup>
+	<ItemGroup>
+	  <Compile Remove="TextureSource\**" />
+	  <EmbeddedResource Remove="TextureSource\**" />
+	  <None Remove="TextureSource\**" />
+	</ItemGroup>
 
 	<!-- Down here we have references to dependencies -->
 	<ItemGroup>
@@ -68,5 +73,8 @@
 	    <HintPath>..\..\..\..\..\..\workshop\content\294100\2640710953\1.5\Assemblies\AlienRace.dll</HintPath>
 	    <Private>False</Private>
 	  </Reference>
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Thing\Comp\" />
 	</ItemGroup>
 </Project>

@@ -44,10 +44,11 @@ namespace HealersOfTheLighthouse
 
                 if (currentDosage >= LockedDosagesToTransform)
                 {
-                    HediffClass_RapidMetabolicBreakdown hediff = (HediffClass_RapidMetabolicBreakdown)HediffMaker.MakeHediff(MoyoMedicalExpansion_HediffDefOfs.HOTL_RapidMetabolicBreakDown, pawn);
-                    hediff.bodyAddonColor = LockedTransformationColor;
-                    hediff.abilityDefToGive = LockedAbilityGiven;
-                    hediff.RMBDGene = this;
+                    Hediff hediff = HediffMaker.MakeHediff(ModExt.RMBDHediff, pawn);
+                    HediffComp_RapidMetabolicBreakDown rmbd = hediff.TryGetComp<HediffComp_RapidMetabolicBreakDown>();
+					rmbd.bodyAddonColor = LockedTransformationColor;
+					rmbd.abilityDefToGive = LockedAbilityGiven;
+					rmbd.RMBDGene = this;
 
                     pawn.health.AddHediff(hediff);
                     currentDosage = 0;

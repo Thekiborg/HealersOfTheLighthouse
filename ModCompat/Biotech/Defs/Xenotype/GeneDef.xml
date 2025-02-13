@@ -11,6 +11,7 @@
         <displayOrderInCategory>100</displayOrderInCategory>
         <modExtensions>
             <li Class="HealersOfTheLighthouse.ModExtension">
+                <RMBDHediff>HOTL_RapidMetabolicBreakDown</RMBDHediff>
                 <RMBDSettings>
                     <!-- Pearl -->
                     <li>

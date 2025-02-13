@@ -3,8 +3,9 @@
 
 	<HediffDef ParentName="AddedBodyPartBase">
 		<defName>HOTL_InstalledArm_FirePunch</defName>
-		<label>bionic arm</label>
+		<label>fire punch arm</label>
 		<labelNoun>a bionic arm</labelNoun>
+		<defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
 		<description>An installed bionic arm. Silenced mini-servos give great strength, while the biogel nerve-link gives exquisite control. A lattice-dust healing system allows it to recover from damage. It is better than a biological arm in almost every way.</description>
 		<descriptionHyperlinks>
 			<ThingDef>HOTL_Arm_FirePunch</ThingDef>
@@ -23,6 +24,11 @@
 						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
 					</li>
 				</tools>
+			</li>
+			<li Class="HealersOfTheLighthouse.HediffCompProperties_CombatProsthetic">
+				<combatAbilities>
+					<li>HOTL_ConcealedArmament_FirePunch</li>
+				</combatAbilities>
 			</li>
 		</comps>
 		<spawnThingOnRemoved>HOTL_Arm_FirePunch</spawnThingOnRemoved>

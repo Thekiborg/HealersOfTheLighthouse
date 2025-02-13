@@ -1,7 +1,6 @@
 ﻿namespace HealersOfTheLighthouse
 {
 #pragma warning disable CA1051
-
 	public class TheorizeAbilitySettings
     {
 		public IntRange chatBubbleDelay;
