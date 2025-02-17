@@ -2,6 +2,9 @@
 {
 	public class AbilityComp_ConcealedLauncher : CompAbilityEffect
 	{
+		Pawn Caster => parent.pawn;
+
+
 		internal (ThingDef ThingDef, bool IsLoaded)[] launcherMagazine;
 
 
@@ -21,6 +24,17 @@
 			Projectile projectile = (Projectile)GenSpawn.Spawn(launcherMagazine[0].ThingDef.projectileWhenLoaded, parent.pawn.Position, parent.pawn.Map);
 			projectile.Launch(parent.pawn, target, target, ProjectileHitFlags.NonTargetWorld);
 			
+		}
+
+
+		public override IEnumerable<Gizmo> CompGetGizmosExtra()
+		{
+			foreach (Gizmo gizmo in base.CompGetGizmosExtra())
+			{
+				yield return gizmo;
+			}
+
+			yield return new ConcealedLauncherGizmo(parent, Caster);
 		}
 	}
 }

@@ -45,13 +45,13 @@
 		<label>launcher</label> <!-- find good label + lore -->
 		<description>Use special glands in the wrists to quickly tend someone's wounds.</description>
 		<iconPath>UI/Icons/Genes/Gene_Coagulate</iconPath>
-		<gizmoClass>HealersOfTheLighthouse.ConcealedLauncherGizmo</gizmoClass>
 		<displayOrder>400</displayOrder>
         <warmupPreEndSound>MeleeHit_BionicPunch</warmupPreEndSound>
-		<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
 		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
 		<stunTargetWhileCasting>false</stunTargetWhileCasting>
 		<cooldownTicksRange>5000</cooldownTicksRange>
+		<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<showWhenDrafted>false</showWhenDrafted>
 		<verbProperties>
 			<verbClass>Verb_CastAbility</verbClass>
 			<drawAimPie>false</drawAimPie>

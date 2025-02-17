@@ -1,6 +1,9 @@
-﻿namespace HealersOfTheLighthouse
+﻿using Verse.Sound;
+
+namespace HealersOfTheLighthouse
 {
-	public class ConcealedLauncherGizmo : Command
+	[StaticConstructorOnStartup]
+	public class ConcealedLauncherGizmo : Gizmo
 	{
 		/* Fields */
 		private const float GizmoHeight = 75f;
@@ -10,10 +13,22 @@
 		private const float AmmoSlotPadding = 10f;
 		private const float AmmoSlotHeight = MagazineHeight - 2 * AmmoSlotPadding;
 
+
 		private readonly Ability ability;
 		private readonly Pawn caster;
 		private static readonly Texture2D cooldownBarTex = SolidColorMaterials.NewSolidColorTexture(new Color32(9, 203, 4, 64));
-		private new readonly Texture2D icon;
+		private readonly Texture2D icon;
+
+
+		public override bool Disabled
+		{ 
+			get
+			{
+				DisabledCheck();
+				return disabled;
+			}
+			set => base.Disabled = value;
+		}
 
 
 		/* Properties */
@@ -44,7 +59,7 @@
 				main.y + (main.height / 2 - MagazineHeight / 2),
 				main.width - ShootGizmoSize - OuterPadding * 3,
 				MagazineHeight);
-			GenUI.DrawTextureWithMaterial(magazineRectBg, BGTexture, null);
+			GenUI.DrawTextureWithMaterial(magazineRectBg, Command.BGTex, null);
 
 			float ammoSlotXPos = magazineRectBg.xMax - AmmoSlotPadding - AmmoSlotHeight;
 
@@ -56,66 +71,66 @@
 
 		private void DoShootButton(Rect buttonRect, GizmoRenderParms parms)
 		{
-			Color color = Color.white;
-			Material material = (DisabledCheck() || parms.lowLight) ? TexUI.GrayscaleGUI : null;
-			GUI.color = parms.lowLight ? LowLightBgColor : color;
-			GenUI.DrawTextureWithMaterial(buttonRect, parms.shrunk ? BGTextureShrunk : BGTexture, material);
-			Widgets.DrawTextureFitted(buttonRect, icon, iconDrawScale * 0.85f, material);
-			GUI.color = color;
-
-			if (Widgets.ButtonInvisible(buttonRect))
+			using (new TextBlock(GameFont.Tiny))
 			{
-				if (DisabledCheck())
+				MouseoverSounds.DoRegion(buttonRect, SoundDefOf.Mouseover_Command);
+				Material material = (Disabled || parms.lowLight) ? TexUI.GrayscaleGUI : null;
+				using (new TextBlock(parms.lowLight ? Command.LowLightBgColor : Color.white))
 				{
-					if (Mouse.IsOver(buttonRect) && DoTooltip)
+					GenUI.DrawTextureWithMaterial(buttonRect, parms.shrunk ? Command.BGTexShrunk : Command.BGTex, material);
+					Widgets.DrawTextureFitted(buttonRect, icon, 1f, material);
+				}
+
+				if (Widgets.ButtonInvisible(buttonRect))
+				{
+					if (Disabled)
 					{
-						TipSignal tip = Desc;
-						if (!disabledReason.NullOrEmpty())
+						if (Mouse.IsOver(buttonRect))
 						{
-							tip.text += ("\n\n" + "DisabledCommand".Translate() + ": " + disabledReason).Colorize(ColorLibrary.RedReadable);
-							Messages.Message(disabledReason, MessageTypeDefOf.RejectInput, historical: false);
+							TipSignal tip = ability.def.description;
+							if (!disabledReason.NullOrEmpty())
+							{
+								tip.text += ("\n\n" + "DisabledCommand".Translate() + ": " + disabledReason).Colorize(ColorLibrary.RedReadable);
+								Messages.Message(disabledReason, MessageTypeDefOf.RejectInput, historical: false);
+							}
+							TooltipHandler.TipRegion(buttonRect, tip);
 						}
-						tip.text += DescPostfix;
-						TooltipHandler.TipRegion(buttonRect, tip);
+					}
+					else
+					{
+						/*TargetingParameters targetingParams = new()
+						{
+							canTargetPawns = true,
+							canTargetLocations = true,
+							canTargetBuildings = true,
+						};*/
+						Find.Targeter.BeginTargeting(ability.verb.targetParams, (lti) => ability.QueueCastingJob(lti, lti), null);
 					}
 				}
-				else
+
+				bool flag = (ability.Casting || KeyBindingDefOf.QueueOrder.IsDownEvent) && !ability.CanQueueCast;
+				if (flag)
 				{
-					TargetingParameters targetingParams = new()
-					{
-						canTargetPawns = true,
-						canTargetLocations = true,
-						canTargetBuildings = true,
-					};
-					Find.Targeter.BeginTargeting(targetingParams, (lti) => ability.QueueCastingJob(lti, lti), null);
+					Widgets.FillableBar(buttonRect, 0f, cooldownBarTex, null, doBorder: false);
 				}
-			}
-
-
-			bool flag = (ability.Casting || KeyBindingDefOf.QueueOrder.IsDownEvent) && !ability.CanQueueCast;
-			if (flag)
-			{
-				Widgets.FillableBar(buttonRect, 0f, cooldownBarTex, null, doBorder: false);
-			}
-			else if (ability.CooldownTicksRemaining > 0)
-			{
-				float value = Mathf.InverseLerp(ability.CooldownTicksTotal, 0f, ability.CooldownTicksRemaining);
-				Widgets.FillableBar(buttonRect, Mathf.Clamp01(value), cooldownBarTex, null, doBorder: false);
-				if (ability.CooldownTicksRemaining > 0)
+				else if (ability.CooldownTicksRemaining > 0)
 				{
-					Text.Font = GameFont.Tiny;
-					string text = ability.CooldownTicksRemaining.ToStringTicksToPeriod();
-					Vector2 vector = Text.CalcSize(text);
-					vector.x += 2f;
-					Rect rect2 = buttonRect;
-					rect2.x = buttonRect.x + buttonRect.width / 2f - vector.x / 2f;
-					rect2.width = vector.x;
-					rect2.height = vector.y;
-					Rect position = rect2.ExpandedBy(8f, 0f);
-					Text.Anchor = TextAnchor.UpperCenter;
-					GUI.DrawTexture(position, TexUI.GrayTextBG);
-					Widgets.Label(rect2, text);
-					Text.Anchor = TextAnchor.UpperLeft;
+					float value = Mathf.InverseLerp(ability.CooldownTicksTotal, 0f, ability.CooldownTicksRemaining);
+					Widgets.FillableBar(buttonRect, Mathf.Clamp01(value), cooldownBarTex, null, doBorder: false);
+					if (ability.CooldownTicksRemaining > 0)
+					{
+						string text = ability.CooldownTicksRemaining.ToStringTicksToPeriod();
+						Vector2 vector = Text.CalcSize(text);
+						vector.x += 2f;
+						Rect rect2 = buttonRect;
+						rect2.x = buttonRect.x + buttonRect.width / 2f - vector.x / 2f;
+						rect2.width = vector.x;
+						rect2.height = vector.y;
+						Rect position = rect2.ExpandedBy(8f, 0f);
+						using TextBlock textBlock = new(TextAnchor.UpperCenter);
+						GUI.DrawTexture(position, TexUI.GrayTextBG);
+						Widgets.Label(rect2, text);
+					}
 				}
 			}
 		}
@@ -170,6 +185,16 @@
 		}
 
 
+		public new void GizmoUpdateOnMouseover()
+		{
+			if (ability.verb is Verb_CastAbility verb_CastAbility)
+			{
+				verb_CastAbility.verbProps.DrawRadiusRing_NewTemp(verb_CastAbility.caster.Position, verb_CastAbility);
+			}
+			ability.OnGizmoUpdate();
+		}
+
+
 		public override float GetWidth(float maxWidth)
 		{
 			// OuterPadding - Ammo selector - OuterPadding - Shoot gizmo - OuterPadding
@@ -179,12 +204,13 @@
 			return OuterPadding * 3 + ShootGizmoSize + AmmoSlotPadding * 2 + NumberOfSlots * AmmoSlotHeight + (OuterPadding * (NumberOfSlots - 1));
 		}
 
-
-		private bool DisabledCheck()
+		private void DisabledCheck()
 		{
-			bool isDisabled = ability.GizmoDisabled(out string reason);
-			disabledReason = reason;
-			return isDisabled;
+			disabled = ability.GizmoDisabled(out var reason);
+			if (disabled)
+			{
+				disabledReason = reason.CapitalizeFirst();
+			}
 		}
 	}
 }
