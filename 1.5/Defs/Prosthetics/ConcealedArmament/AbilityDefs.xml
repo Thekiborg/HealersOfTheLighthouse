@@ -14,7 +14,6 @@
 		<cooldownTicksRange>5000</cooldownTicksRange>
 		<verbProperties>
 			<verbClass>Verb_CastAbilityTouch</verbClass>
-			<drawAimPie>false</drawAimPie>
 			<range>-1</range>
 			<warmupTime>0.8</warmupTime>
             <defaultCooldownTime>3</defaultCooldownTime>
@@ -54,7 +53,6 @@
 		<showWhenDrafted>false</showWhenDrafted>
 		<verbProperties>
 			<verbClass>Verb_CastAbility</verbClass>
-			<drawAimPie>false</drawAimPie>
 			<range>9</range>
 			<warmupTime>0.8</warmupTime>
             <defaultCooldownTime>3</defaultCooldownTime>

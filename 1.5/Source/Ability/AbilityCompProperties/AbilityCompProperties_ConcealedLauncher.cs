@@ -10,5 +10,9 @@
 
 		public int ammoCapacity;
 		public List<ThingDef> allowedAmmo;
+		public bool displayGizmoWhileDrafted;
+		public bool displayGizmoWhileUndrafted;
+		public bool disableGizmoWhileDrafted;
+		public bool disableGizmoWhileUndrafted;
 	}
 }

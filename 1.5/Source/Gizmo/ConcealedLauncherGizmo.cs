@@ -10,16 +10,21 @@ namespace HealersOfTheLighthouse
 		private const float OuterPadding = 5f;
 		private const float ShootGizmoSize = GizmoHeight - 2 * OuterPadding;
 		private const float MagazineHeight = 40f;
-		private const float AmmoSlotPadding = 10f;
+		private const float AmmoSlotPadding = 7f;
 		private const float AmmoSlotHeight = MagazineHeight - 2 * AmmoSlotPadding;
 
 
 		private readonly Ability ability;
 		private readonly Pawn caster;
-		private static readonly Texture2D cooldownBarTex = SolidColorMaterials.NewSolidColorTexture(new Color32(9, 203, 4, 64));
+		readonly (ThingDef ThingDef, bool IsLoaded)[] magazine;
 		private readonly Texture2D icon;
 
 
+		private static readonly Texture2D cooldownBarTex = SolidColorMaterials.NewSolidColorTexture(new Color32(9, 203, 4, 64));
+		private readonly SoundDef activateSound = SoundDefOf.Tick_Tiny;
+
+
+		/* Properties */
 		public override bool Disabled
 		{ 
 			get
@@ -30,17 +35,18 @@ namespace HealersOfTheLighthouse
 			set => base.Disabled = value;
 		}
 
-
-		/* Properties */
 		private AbilityComp_ConcealedLauncher CompCL => ability.CompOfType<AbilityComp_ConcealedLauncher>();
+
 		private int NumberOfSlots => CompCL.Props.ammoCapacity;
 
 
-		public ConcealedLauncherGizmo(Ability ability, Pawn pawn) : base()
+
+		public ConcealedLauncherGizmo(Ability ability, Pawn pawn, (ThingDef, bool)[] magazine) : base()
 		{
 			this.ability = ability;
 			caster = pawn;
 			icon = ContentFinder<Texture2D>.Get(ability?.def.iconPath);
+			this.magazine = magazine;
 		}
 
 
@@ -81,30 +87,45 @@ namespace HealersOfTheLighthouse
 					Widgets.DrawTextureFitted(buttonRect, icon, 1f, material);
 				}
 
+				if (Mouse.IsOver(buttonRect))
+				{
+					using TextBlock textBlock = new(GenUI.MouseoverColor);
+
+					// Only shows up when clicking, why?
+					if (ability.verb is Verb_CastAbility verb_CastAbility)
+					{
+						verb_CastAbility.verbProps.DrawRadiusRing_NewTemp(verb_CastAbility.caster.Position, verb_CastAbility);
+					}
+					ability.OnGizmoUpdate();
+
+					TipSignal tip = ability.def.description;
+					if (!disabledReason.NullOrEmpty())
+					{
+						tip.text += ("\n\n" + "DisabledCommand".Translate() + ": " + disabledReason).Colorize(ColorLibrary.RedReadable);
+					}
+					TooltipHandler.TipRegion(buttonRect, tip);
+				}
+				
 				if (Widgets.ButtonInvisible(buttonRect))
 				{
 					if (Disabled)
 					{
-						if (Mouse.IsOver(buttonRect))
+						if (!disabledReason.NullOrEmpty())
 						{
-							TipSignal tip = ability.def.description;
-							if (!disabledReason.NullOrEmpty())
-							{
-								tip.text += ("\n\n" + "DisabledCommand".Translate() + ": " + disabledReason).Colorize(ColorLibrary.RedReadable);
-								Messages.Message(disabledReason, MessageTypeDefOf.RejectInput, historical: false);
-							}
-							TooltipHandler.TipRegion(buttonRect, tip);
+							Messages.Message(disabledReason, MessageTypeDefOf.RejectInput, historical: false);
 						}
 					}
 					else
 					{
-						/*TargetingParameters targetingParams = new()
+						activateSound.PlayOneShotOnCamera();
+						Find.DesignatorManager.Deselect();
+						TargetingParameters targetingParams = new()
 						{
 							canTargetPawns = true,
 							canTargetLocations = true,
 							canTargetBuildings = true,
-						};*/
-						Find.Targeter.BeginTargeting(ability.verb.targetParams, (lti) => ability.QueueCastingJob(lti, lti), null);
+						};
+						Find.Targeter.BeginTargeting(ability.verb);
 					}
 				}
 
@@ -141,7 +162,7 @@ namespace HealersOfTheLighthouse
 			for (int i = 0; i < NumberOfSlots; i++)
 			{
 				int index = i;
-				var slot = CompCL.launcherMagazine[index];
+				var slot = magazine[index];
 
 				Rect ammoSlotRect = new(slotXPos,
 					magazineRectBG.y + (magazineRectBG.height / 2 - AmmoSlotHeight / 2),
@@ -154,29 +175,36 @@ namespace HealersOfTheLighthouse
 
 				if (slot.ThingDef is null)
 				{
-					GUI.DrawTexture(ammoSlotRect, TexButton.CloseXSmall);
+					//GUI.DrawTexture(ammoSlotRect, TexButton.CloseXSmall);
 				}
 				else
 				{
-
 					if (slot.IsLoaded)
 					{
-						Widgets.DefIcon(ammoSlotRect, slot.ThingDef);
+						var OptionSelectedBGFillColor = GenColor.FromHex("#ccb664");
+						Widgets.DrawBoxSolid(ammoSlotRect, OptionSelectedBGFillColor);
 					}
 					else
 					{
-
+						Widgets.DrawBoxSolid(ammoSlotRect, ColorLibrary.Grey);
 					}
+					Widgets.DefIcon(ammoSlotRect, slot.ThingDef);
 				}
 
 				if (Widgets.ButtonInvisible(ammoSlotRect))
 				{
 					List<FloatMenuOption> floatMenuOptions = [];
+
+					floatMenuOptions.Add(new FloatMenuOption("Hola".Translate(), () =>
+					{
+						magazine[index] = new(null, false);
+					}));
+
 					foreach (ThingDef ammoDef in CompCL.Props.allowedAmmo)
 					{
 						floatMenuOptions.Add(new FloatMenuOption(ammoDef.LabelCap, () =>
 						{
-							CompCL.launcherMagazine[index] = new(ammoDef, true);
+							magazine[index] = new(ammoDef, true);
 						}));
 					}
 					Find.WindowStack.Add(new FloatMenu(floatMenuOptions));
@@ -185,20 +213,10 @@ namespace HealersOfTheLighthouse
 		}
 
 
-		public new void GizmoUpdateOnMouseover()
-		{
-			if (ability.verb is Verb_CastAbility verb_CastAbility)
-			{
-				verb_CastAbility.verbProps.DrawRadiusRing_NewTemp(verb_CastAbility.caster.Position, verb_CastAbility);
-			}
-			ability.OnGizmoUpdate();
-		}
-
-
 		public override float GetWidth(float maxWidth)
 		{
 			// OuterPadding - Ammo selector - OuterPadding - Shoot gizmo - OuterPadding
-			// Amoo selector is made of:
+			// Ammo selector is made of:
 			// AmmoSlotPadding - [OuterPadding - AmmoSlotHeight] - AmmoSlotPadding
 			// Where [] repeats as many times as AmmoSlots we want, with an OuterPadding between each square (if there's 5 squares, there's 4 spaces between them)
 			return OuterPadding * 3 + ShootGizmoSize + AmmoSlotPadding * 2 + NumberOfSlots * AmmoSlotHeight + (OuterPadding * (NumberOfSlots - 1));
