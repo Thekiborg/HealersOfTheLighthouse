@@ -83,7 +83,7 @@ namespace HealersOfTheLighthouse
                 chatWithOther.actor.rotationTracker.FaceTarget(FirstPawn);
                 if (pawn.IsHashIntervalTick(TheorizeSettings.chatBubbleDelay.RandomInRange))
                 {
-                    MoteMaker.MakeSpeechBubble(pawn, TextureFinder.chatBubbleIcon);
+                    MoteMaker.MakeSpeechBubble(pawn, TextureLibrary.chatBubbleIcon);
                 }
             };
             yield return chatWithOther;

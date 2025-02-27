@@ -4,7 +4,7 @@ namespace HealersOfTheLighthouse
 {
     public class GeneClass_RapidMetabolicBreakdown : Gene
     {
-		/* --------- Variables --------- */
+		// --- Variables ---
 		private ModExtension modExt;
         private RapidMetabolicBreakdown_Settings lockedRMBDSetting;
 
@@ -13,7 +13,7 @@ namespace HealersOfTheLighthouse
         internal bool isTransformed;
 
 
-		/* --------- Properties --------- */
+		// --- Properties ---
 		private ModExtension ModExt
         {
             get
@@ -23,7 +23,7 @@ namespace HealersOfTheLighthouse
             }
         }
 
-        /* Fetches fields from the locked settings */
+        // Fetches fields from the locked settings
         private ThingDef LockedDrugThingDef => lockedRMBDSetting.drugThingDef;
         private int LockedDosagesToTransform => lockedRMBDSetting.dosageToTransform;
         private Color LockedTransformationColor => lockedRMBDSetting.transformationColor;
@@ -80,6 +80,7 @@ namespace HealersOfTheLighthouse
 
         public override void ExposeData()
         {
+            base.ExposeData();
             Scribe_Values.Look(ref currentDosage, "HOTL_RapidMetabolicBreakDown_currentDosage");
             Scribe_Values.Look(ref isTransformed, "HOTL_RapidMetabolicBreakDown_isTranformed");
         }

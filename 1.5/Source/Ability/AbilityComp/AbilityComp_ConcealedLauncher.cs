@@ -1,41 +1,87 @@
 ﻿using System.Linq;
+using UnityEngine.Networking.Types;
+using Verse.AI;
 
 namespace HealersOfTheLighthouse
 {
 	// DO 3 FIRE MODES, SINGLE BURST CLUSTER
-	// CHANGE GIZMO COLOR WHEN HOVERING OVER SHOOT BUTTON
+	//		Virtual array manually filled with classes with settings
+	//		Right clicking button will change a counter in this class
+	//		Different effects called depending on that counter
 	// FIND OUT HOW TO INDICATE A ROUND IS SELECTED BUT NOT LOADED
-	// FIX HOVERING OVER GIZMO DOES NOT SHOW THE RANGE
 	public class AbilityComp_ConcealedLauncher : CompAbilityEffect
 	{
-		(ThingDef ThingDef, bool IsLoaded)[] magazine;
+		// --- Fields ---
+		private IReadOnlyList<ConcealedLauncherFireMode> fireModes;
+		private List<ConcealedLauncherMagazineData> magazine;
+		private int fireModeIndex;
 
 
+		// --- Properties ---
 		public new AbilityCompProperties_ConcealedLauncher Props => (AbilityCompProperties_ConcealedLauncher)props;
+		public int FireModeIndex { get => fireModeIndex; set => fireModeIndex = value; }
+		public int FireModesCount => fireModes.Count;
+		public ConcealedLauncherFireMode CurFireMode => fireModes[FireModeIndex];
+		private int NumberOfEmptyOrUnloadedSlots => magazine.Count(slot => slot is null || !slot.IsLoaded);
 
-
-		Pawn Caster => parent.pawn;
 
 
 		public override void Initialize(AbilityCompProperties props)
 		{
 			base.Initialize(props);
-			magazine = new (ThingDef ThingDef, bool IsLoaded)[Props.ammoCapacity];
+			magazine = [];
+			for (int i = 0; i < Props.ammoCapacity; i++)
+			{
+				magazine.Add(new ConcealedLauncherMagazineData(null, false));
+			}
+			fireModes = GetFireModes();
 		}
 
 
 		public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
 		{
 			base.Apply(target, dest);
-			for (int i = 0; i < magazine.Length; i++)
+
+			CurFireMode.Shoot(target, dest);
+		}
+
+
+		protected virtual IReadOnlyList<ConcealedLauncherFireMode> GetFireModes()
+		{
+			return new List<ConcealedLauncherFireMode>()
+			{
+				new("Single",
+					TextureLibrary.thinIcon,
+					SingleShot),
+
+				new("Cluster",
+					TextureLibrary.fatIcon,
+					(LocalTargetInfo target, LocalTargetInfo dest) =>
+					{
+						SingleShot(target, dest);
+						if (NumberOfEmptyOrUnloadedSlots < Props.ammoCapacity)
+						{
+							Log.Message("HElo");
+							Job job = JobMaker.MakeJob(JobDefOf.UseVerbOnThing, parent.pawn);
+							job.verbToUse = parent.verb;
+							parent.pawn.jobs.StartJob(job, JobCondition.InterruptForced);
+						}
+					})
+			};
+		}
+
+
+		private void SingleShot(LocalTargetInfo target, LocalTargetInfo dest)
+		{
+			for (int i = 0; i < magazine.Count; i++)
 			{
 				var slot = magazine[i];
 				if (slot.ThingDef is not null && slot.IsLoaded)
 				{
-					Projectile projectile = (Projectile)GenSpawn.Spawn(magazine[i].ThingDef.projectileWhenLoaded, parent.pawn.Position, parent.pawn.Map);
+					Projectile projectile = (Projectile)GenSpawn.Spawn(slot.ThingDef.projectileWhenLoaded, parent.pawn.Position, parent.pawn.Map);
 					projectile.Launch(parent.pawn, target, target, ProjectileHitFlags.NonTargetWorld);
 
-					magazine[i].IsLoaded = false;
+					slot.IsLoaded = false;
 					break;
 				}
 			}
@@ -49,19 +95,26 @@ namespace HealersOfTheLighthouse
 				yield return gizmo;
 			}
 
-			yield return new ConcealedLauncherGizmo(parent, Caster, magazine);
+			yield return new ConcealedLauncherGizmo(this, magazine);
 		}
 
 
 		public override bool GizmoDisabled(out string reason)
 		{
-			int numberOfEmtpySlots = magazine.Count(slot => slot.ThingDef is null || !slot.IsLoaded);
-			if (numberOfEmtpySlots == Props.ammoCapacity)
+			if (NumberOfEmptyOrUnloadedSlots >= Props.ammoCapacity)
 			{
 				reason = "Hola".Translate();
 				return true;
 			}
 			return base.GizmoDisabled(out reason);
+		}
+
+
+		public override void PostExposeData()
+		{
+			base.PostExposeData();
+			Scribe_Collections.Look(ref magazine, "HOTL_ConcealedLauncher_magazine", LookMode.Deep);
+			Scribe_Values.Look(ref fireModeIndex, "HOTL_ConcealedLauncher_fireModeIndex");
 		}
 	}
 }

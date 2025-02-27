@@ -2,11 +2,11 @@
 {
 	public class AbilityComp_ConcealedFirePunch : CompAbilityEffect // Make parent that disables on rain
 	{
-		// --------- Fields ---------
+		// --- Fields ---
 		readonly List<IntVec3> cellsToDrawPreview = [];
 
 
-		// ---------- Properties --------
+		// --- Properties ---
 		public new AbilityCompProperties_ConcealedFirePunch Props => (AbilityCompProperties_ConcealedFirePunch)props;
 		private Pawn Caster => parent.pawn;
 
