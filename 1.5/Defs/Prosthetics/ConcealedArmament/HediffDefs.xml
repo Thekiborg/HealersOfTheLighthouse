@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
 
-	<HediffDef ParentName="AddedBodyPartBase">
-		<defName>HOTL_InstalledArm_FirePunch</defName>
-		<label>fire punch arm</label>
-		<labelNoun>a bionic arm</labelNoun>
-		<defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
-		<description>An installed bionic arm. Silenced mini-servos give great strength, while the biogel nerve-link gives exquisite control. A lattice-dust healing system allows it to recover from damage. It is better than a biological arm in almost every way.</description>
+	<HediffDef Name="HOTL_AddedConcealedArmamentBase" ParentName="AddedBodyPartBase" Abstract="true">
+		<defaultLabelColor>(0.576, 0.31, 1.0)</defaultLabelColor>
+		<addedPartProps>
+			<solid>true</solid>
+			<partEfficiency>1.125</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+
+	<!-- ######################################################### -->
+    <!-- #################### FIRE BASED ARMS #################### -->
+    <!-- ######################################################### -->
+
+	<!-- Fire Arm -->
+
+	<HediffDef ParentName="HOTL_AddedConcealedArmamentBase">
+		<defName>HOTL_InstalledArm_PropelledArm</defName>
+		<label>propelled arm</label>
+		<labelNoun>a propelled arm</labelNoun>
+		<description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThis implant is part of the &lt;color=#c74228&gt;Draco Partes&lt;/color&gt;. Its flame-producing generator enables wide use in cold environments, keeping soldiers at a safe temperature as long as it remains dry.\n\nThe propelled arm is used by burly operatives, allowing them to slam their opponents against walls with ease, granting them superiority in hand-to-hand combat.</description>
 		<descriptionHyperlinks>
-			<ThingDef>HOTL_Arm_FirePunch</ThingDef>
+			<ThingDef>HOTL_Arm_PropelledArm</ThingDef>
+			<RecipeDef>HOTL_Install_PropelledArm</RecipeDef>
 		</descriptionHyperlinks>
 		<comps>
 			<li Class="HediffCompProperties_VerbGiver">
@@ -27,16 +42,51 @@
 			</li>
 			<li Class="HealersOfTheLighthouse.HediffCompProperties_CombatProsthetic">
 				<combatAbilities>
-					<li>HOTL_ConcealedArmament_FirePunch</li>
+					<li>HOTL_ConcealedArmament_PropelledArm</li>
 				</combatAbilities>
 			</li>
 		</comps>
-		<spawnThingOnRemoved>HOTL_Arm_FirePunch</spawnThingOnRemoved>
-		<addedPartProps>
-			<solid>true</solid>
-			<partEfficiency>1.25</partEfficiency>
-			<betterThanNatural>true</betterThanNatural>
-		</addedPartProps>
+		<spawnThingOnRemoved>HOTL_Arm_PropelledArm</spawnThingOnRemoved>
+	</HediffDef>
+
+	<!-- ###################################################### -->
+    <!-- #################### KINETIC ARMS #################### -->
+    <!-- ###################################################### -->
+
+    <!-- Launcher -->
+
+	<HediffDef ParentName="HOTL_AddedConcealedArmamentBase">
+		<defName>HOTL_InstalledArm_ConcealedLauncher</defName>
+		<label>launcher arm</label>
+		<labelNoun>a launcher arm</labelNoun>
+		<defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
+		<description>An installed bionic arm. Silenced mini-servos give great strength, while the biogel nerve-link gives exquisite control. A lattice-dust healing system allows it to recover from damage. It is better than a biological arm in almost every way.</description>
+		<descriptionHyperlinks>
+			<ThingDef>HOTL_Arm_ConcealedLauncher</ThingDef>
+			<RecipeDef>HOTL_Install_ConcealedLauncherArm</RecipeDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>fist</label>
+						<capacities>
+							<li>Blunt</li>
+						</capacities>
+						<power>12</power>
+						<cooldownTime>2</cooldownTime>
+						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+			<li Class="HealersOfTheLighthouse.HediffCompProperties_CombatProsthetic">
+				<combatAbilities>
+					<li>HOTL_ConcealedArmament_Launcher</li>
+				</combatAbilities>
+			</li>
+		</comps>
+		<spawnThingOnRemoved>HOTL_Arm_ConcealedLauncher</spawnThingOnRemoved>
 	</HediffDef>
 
 </Defs>

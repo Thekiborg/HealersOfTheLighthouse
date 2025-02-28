@@ -2,7 +2,7 @@
 <Defs>
 
     <EffecterDef>
-      <defName>HOTL_ConcealedArmament_FirePunch_SmokePuff</defName>
+      <defName>HOTL_ConcealedArmament_PropelledArm_SmokePuff</defName>
       <children>
         <li>
           <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
@@ -16,6 +16,6 @@
           <useTargetABodyAngle>true</useTargetABodyAngle>
         </li>
       </children>
-    </EffecterDef>
+    </EffecterDef> <!-- CHANGE THIS SO THE PUFF GOES AWAY FROM THE DIRECTION OF THE VICTIM -->
 
 </Defs>

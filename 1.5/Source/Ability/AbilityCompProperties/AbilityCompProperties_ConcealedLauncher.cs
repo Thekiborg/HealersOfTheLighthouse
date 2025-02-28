@@ -12,7 +12,6 @@
 		public List<ThingDef> allowedAmmo;
 		public bool displayGizmoWhileDrafted;
 		public bool displayGizmoWhileUndrafted;
-		public bool disableGizmoWhileDrafted;
-		public bool disableGizmoWhileUndrafted;
+		public SoundDef reloadSound;
 	}
 }

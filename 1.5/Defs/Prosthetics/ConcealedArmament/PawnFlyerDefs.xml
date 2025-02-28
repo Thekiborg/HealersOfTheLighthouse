@@ -2,9 +2,9 @@
 <Defs>
 
     <ThingDef ParentName="PawnFlyerBase">
-        <defName>HOTL_PawnFlyer_FirePunch</defName>
+        <defName>HOTL_PawnFlyer_PropelledArm</defName>
         <label>flying</label>
-        <thingClass>HealersOfTheLighthouse.PawnFlyer_FirePunched</thingClass>
+        <thingClass>HealersOfTheLighthouse.PawnFlyer_Propelled</thingClass>
         <pawnFlyer>
             <flightDurationMin>0.01</flightDurationMin>
             <flightSpeed>40</flightSpeed>

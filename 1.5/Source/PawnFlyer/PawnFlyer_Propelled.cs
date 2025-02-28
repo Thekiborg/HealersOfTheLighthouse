@@ -1,6 +1,6 @@
 ﻿namespace HealersOfTheLighthouse
 {
-	public class PawnFlyer_FirePunched : PawnFlyer
+	public class PawnFlyer_Propelled : PawnFlyer
 	{
 		private IntVec3 destinationCellInt;
 		internal bool targetHitsWall;

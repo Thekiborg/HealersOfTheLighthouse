@@ -37,7 +37,8 @@
 
         public static JobDef HOTL_FollowFirstPawnToTheorize;
         public static JobDef HOTL_TakeSecondPawnToTheorize;
-    }
+        public static JobDef HOTL_ConcealedArmament_ReloadLauncher;
+	}
 
 
     [DefOf]
@@ -49,5 +50,6 @@
         }
 
         public static AbilityDef HOTL_RMBD_AbilityTheorize;
-    }
+        public static AbilityDef HOTL_ConcealedArmament_Launcher;
+	}
 }

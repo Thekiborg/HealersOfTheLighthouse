@@ -1,29 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
 
-    <ThingDef Name="HOTL_FireArmBase" ParentName="HOTL_ConcealedArmamentBase" Abstract="true">
-	    <colorGenerator Class="ColorGenerator_Single">
-            <color>(255, 0, 0)</color>
-        </colorGenerator>
-	    <comps>
-            <li>
-                <compClass>CompColorable</compClass>
-            </li>
-        </comps>
-    </ThingDef>
-
     <!-- ######################################################### -->
     <!-- #################### FIRE BASED ARMS #################### -->
     <!-- ######################################################### -->
 
-    <!-- Fire punch -->
+    <!-- Fire Arm -->
 
-    <ThingDef ParentName="HOTL_FireArmBase">
-        <defName>HOTL_Arm_FirePunch</defName>
-        <label>bionic arm</label>
-        <description>An advanced artificial arm. Silenced mini-servos give great strength, while the biogel nerve-link gives exquisite control. A lattice-dust healing system allows it to recover from damage. It is better than a biological arm in almost every way.</description>
+    <ThingDef ParentName="HOTL_ConcealedArmamentBase">
+        <defName>HOTL_Arm_PropelledArm</defName>
+        <label>propelled arm</label>
+        <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThis implant is part of the &lt;color=#c74228&gt;Draco Partes&lt;/color&gt;. Its flame-producing generator enables wide use in cold environments, keeping soldiers at a safe temperature as long as it remains dry.\n\nThe propelled arm is used by burly operatives, allowing them to slam their opponents against walls with ease, granting them superiority in hand-to-hand combat.</description>
         <descriptionHyperlinks>
-            <RecipeDef>HOTL_Install_FirePunchArm</RecipeDef>
+            <RecipeDef>HOTL_Install_PropelledArm</RecipeDef>
+            <HediffDef>HOTL_InstalledArm_PropelledArm</HediffDef>
         </descriptionHyperlinks>
         <costList>
             <Plasteel>15</Plasteel>
@@ -35,5 +25,28 @@
     </ThingDef>
 
     <!-- Fire breath -->
+
+    <!-- ###################################################### -->
+    <!-- #################### KINETIC ARMS #################### -->
+    <!-- ###################################################### -->
+
+    <!-- Launcher -->
+
+    <ThingDef ParentName="HOTL_ConcealedArmamentBase">
+        <defName>HOTL_Arm_ConcealedLauncher</defName>
+        <label>launcher arm</label>
+        <description>An advanced artificial arm. Silenced mini-servos give great strength, while the biogel nerve-link gives exquisite control. A lattice-dust healing system allows it to recover from damage. It is better than a biological arm in almost every way.</description>
+        <descriptionHyperlinks>
+            <RecipeDef>HOTL_Install_ConcealedLauncherArm</RecipeDef>
+            <HediffDef>HOTL_InstalledArm_ConcealedLauncher</HediffDef>
+        </descriptionHyperlinks>
+        <costList>
+            <Plasteel>15</Plasteel>
+            <ComponentSpacer>4</ComponentSpacer>
+        </costList>
+        <statBases>
+            <Mass>5</Mass>
+        </statBases>
+    </ThingDef>
 
 </Defs>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+    <!-- Concealed Launcher -->
+    <ConcealedLauncher_Unloaded>The magazine is empty.</ConcealedLauncher_Unloaded>
+    <ConcealedLauncher_EmptySelection>Empty</ConcealedLauncher_EmptySelection>
+    <ConcealedLauncher_SingleFireMode>Single</ConcealedLauncher_SingleFireMode>
+    <ConcealedLauncher_ClusterFireMode>Cluster</ConcealedLauncher_ClusterFireMode>
+
+</LanguageData>

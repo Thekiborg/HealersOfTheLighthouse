@@ -1,13 +1,13 @@
 ﻿namespace HealersOfTheLighthouse
 {
-	public class AbilityComp_ConcealedFirePunch : CompAbilityEffect // Make parent that disables on rain
+	public class AbilityComp_ConcealedPropelledArm : CompAbilityEffect // Make parent that disables on rain
 	{
 		// --- Fields ---
 		readonly List<IntVec3> cellsToDrawPreview = [];
 
 
 		// --- Properties ---
-		public new AbilityCompProperties_ConcealedFirePunch Props => (AbilityCompProperties_ConcealedFirePunch)props;
+		public new AbilityCompProperties_ConcealedPropelledArm Props => (AbilityCompProperties_ConcealedPropelledArm)props;
 		private Pawn Caster => parent.pawn;
 
 
@@ -33,14 +33,14 @@
 
 			Caster.Drawer.Notify_MeleeAttackOn(targetThing);
 
-			Effecter effect = new(Props.punchEffecter);
+			Effecter effect = new(Props.ArmEffecter);
 			effect.Trigger(Caster, targetThing);
 			effect.Cleanup();
 
 			targetThing.TakeDamage(new DamageInfo(
-				Props.punchDamageInfo.damageDef,
-				Props.punchDamageInfo.amount,
-				Props.punchDamageInfo.armorPenetration,
+				Props.ArmDamageInfo.damageDef,
+				Props.ArmDamageInfo.amount,
+				Props.ArmDamageInfo.armorPenetration,
 				instigator: Caster,
 				spawnFilth: false));
 
@@ -60,7 +60,7 @@
 												destCell,
 												null,
 												null,
-												true) as PawnFlyer_FirePunched;
+												true) as PawnFlyer_Propelled;
 
 				if (targetHitsWall)
 				{

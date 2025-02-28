@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
 
-    <ThingDef Name="HOTL_BodyPartBase" ParentName="BodyPartBase" Abstract="True">
+    <ThingDef Name="HOTL_AritificalBodyPartBase" ParentName="BodyPartBase" Abstract="True">
 		<techLevel>Spacer</techLevel>
 		<thingCategories>
 			<li>BodyPartsBionic</li>
@@ -38,7 +38,7 @@
 	</ThingDef>
 
 
-    <ThingDef Name="HOTL_ConcealedArmamentBase" ParentName="HOTL_BodyPartBase" Abstract="True">
+    <ThingDef Name="HOTL_ConcealedArmamentBase" ParentName="HOTL_AritificalBodyPartBase" Abstract="True">
 	    <statBases>
             <WorkToMake>35000</WorkToMake>
         </statBases>

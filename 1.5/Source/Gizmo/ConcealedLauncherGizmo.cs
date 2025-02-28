@@ -4,10 +4,6 @@ namespace HealersOfTheLighthouse
 {
 	public class ConcealedLauncherGizmo : Gizmo
 	{
-		/// <summary>
-		///  CHANGE THE DEFAULT STATE OF NEW AMMO TO FALSE
-		/// </summary>
-
 		// --- Fields ---
 		private const float GizmoHeight = 75f;
 		private const float OuterPadding = 5f;
@@ -125,6 +121,7 @@ namespace HealersOfTheLighthouse
 				{
 					if (Event.current.button == 1)
 					{
+						activateSound.PlayOneShotOnCamera();
 						int fireModeIndex = CompCL.FireModeIndex + 1;
 						CompCL.FireModeIndex = fireModeIndex < CompCL.FireModesCount ? fireModeIndex : 0;
 					}
@@ -215,6 +212,8 @@ namespace HealersOfTheLighthouse
 						Widgets.DrawBoxSolid(ammoSlotRect, ColorLibrary.Grey);
 					}
 					Widgets.DefIcon(ammoSlotRect, slot.ThingDef);
+
+					TooltipHandler.TipRegion(ammoSlotRect, new TipSignal(slot.ThingDef.LabelCap));
 				}
 
 				// Float menu to pick the ammo type
@@ -222,20 +221,33 @@ namespace HealersOfTheLighthouse
 				{
 					List<FloatMenuOption> floatMenuOptions = [];
 
-					floatMenuOptions.Add(new FloatMenuOption("Hola".Translate(), () =>
+					floatMenuOptions.Add(new FloatMenuOption("ConcealedLauncher_EmptySelection".Translate(), () =>
 					{
-						magazine[index] = new(null, false);
+						SpawnLoadedShellIfPresent(slot);
+						slot.ThingDef = null;
 					}));
 
 					foreach (ThingDef ammoDef in CompCL.Props.allowedAmmo)
 					{
 						floatMenuOptions.Add(new FloatMenuOption(ammoDef.LabelCap, () =>
 						{
-							magazine[index] = new(ammoDef, true); // REMEMBER TO CHANGE THIS TO FALSE
+							SpawnLoadedShellIfPresent(slot);
+							slot.ThingDef = ammoDef;
+							slot.IsLoaded = false;
 						}));
 					}
 					Find.WindowStack.Add(new FloatMenu(floatMenuOptions));
 				}
+			}
+		}
+
+
+		private void SpawnLoadedShellIfPresent(ConcealedLauncherMagazineData slot)
+		{
+			if (slot.ThingDef is not null)
+			{
+				Thing ammo = ThingMaker.MakeThing(slot.ThingDef);
+				GenSpawn.Spawn(ammo, Caster.Position, Caster.Map);
 			}
 		}
 

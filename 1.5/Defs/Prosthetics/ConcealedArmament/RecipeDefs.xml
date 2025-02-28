@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
 
+    <!-- ######################################################### -->
+    <!-- #################### FIRE BASED ARMS #################### -->
+    <!-- ######################################################### -->
+
+	<!-- Fire Arm -->
+
 	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
-		<defName>HOTL_Install_FirePunchArm</defName>
-		<label>install bionic arm</label>
-		<description>Install a bionic arm.</description>
+		<defName>HOTL_Install_PropelledArm</defName>
+		<label>install propelled arm</label>
+		<description>Install a propelled arm.</description>
 		<descriptionHyperlinks>
-			<ThingDef>HOTL_Arm_FirePunch</ThingDef>
-			<HediffDef>HOTL_InstalledArm_FirePunch</HediffDef>
+			<ThingDef>HOTL_Arm_PropelledArm</ThingDef>
+			<HediffDef>HOTL_InstalledArm_PropelledArm</HediffDef>
 		</descriptionHyperlinks>
-		<jobString>Installing bionic arm.</jobString>
+		<jobString>Installing propelled arm.</jobString>
 		<ingredients>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>HOTL_Arm_FirePunch</li>
+						<li>HOTL_Arm_PropelledArm</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -22,13 +28,49 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>HOTL_Arm_FirePunch</li>
+				<li>HOTL_Arm_PropelledArm</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
 			<li>Shoulder</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>HOTL_InstalledArm_FirePunch</addsHediff>
+		<addsHediff>HOTL_InstalledArm_PropelledArm</addsHediff>
+	</RecipeDef>
+
+	<!-- ###################################################### -->
+    <!-- #################### KINETIC ARMS #################### -->
+    <!-- ###################################################### -->
+
+    <!-- Launcher -->
+
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>HOTL_Install_ConcealedLauncherArm</defName>
+		<label>install launcher arm</label>
+		<description>Install a launcher arm.</description>
+		<descriptionHyperlinks>
+			<ThingDef>HOTL_Arm_ConcealedLauncher</ThingDef>
+			<HediffDef>HOTL_InstalledArm_ConcealedLauncher</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing launcher arm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>HOTL_Arm_ConcealedLauncher</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>HOTL_Arm_ConcealedLauncher</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>HOTL_InstalledArm_ConcealedLauncher</addsHediff>
 	</RecipeDef>
 
 </Defs>

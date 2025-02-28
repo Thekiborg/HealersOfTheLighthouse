@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <!-- Fire marble -->
+    <ThingDef ParentName="BaseBullet">
+        <defName>HOTL_MarbleRound_FireProjectile</defName>
+        <label>incendiary marble</label>
+        <graphicData>
+          <texPath>Things/Projectile/ShellIncendiary</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+          <shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <thingClass>Projectile_Explosive</thingClass>
+        <projectile>
+          <damageDef>Flame</damageDef>
+          <!-- damage amount is the damage def default -->
+          <speed>41</speed>
+          <explosionRadius>2</explosionRadius>
+          <preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+          <preExplosionSpawnChance>0.25</preExplosionSpawnChance>
+          <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+          <soundExplode>MortarIncendiary_Explode</soundExplode>
+          <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+          <soundAmbient>MortarRound_Ambient</soundAmbient>
+          <ai_IsIncendiary>true</ai_IsIncendiary>
+        </projectile>
+    </ThingDef>
+
+    <!-- Tox marble -->
+    <ThingDef ParentName="BaseBullet">
+        <defName>HOTL_MarbleRound_ToxProjectile</defName>
+        <label>incendiary marble</label>
+        <graphicData>
+          <texPath>Things/Projectile/ShellIncendiary</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+          <shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <thingClass>Projectile_Explosive</thingClass>
+        <projectile>
+          <damageDef>ToxGas</damageDef>
+          <!-- damage amount is the damage def default -->
+          <speed>41</speed>
+          <explosionRadius>1.9</explosionRadius>
+          <postExplosionGasType>ToxGas</postExplosionGasType>
+          <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+          <soundExplode>MortarIncendiary_Explode</soundExplode>
+          <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+          <soundAmbient>MortarRound_Ambient</soundAmbient>
+        </projectile>
+    </ThingDef>
+</Defs>

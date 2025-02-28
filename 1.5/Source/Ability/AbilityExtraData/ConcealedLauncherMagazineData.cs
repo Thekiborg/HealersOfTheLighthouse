@@ -6,17 +6,25 @@
 		private bool isLoaded;
 
 
-		public ThingDef ThingDef => thingDef;
+		public ThingDef ThingDef
+		{
+			get => thingDef;
+			set
+			{
+				thingDef = value;
+				if (thingDef is null)
+				{
+					isLoaded = false;
+				}
+			}
+		}
+
 		public bool IsLoaded
 		{
 			get => isLoaded;
 			set
 			{
-				if (ThingDef is null)
-				{
-					isLoaded = false;
-				}
-				else
+				if (ThingDef is not null)
 				{
 					isLoaded = value;
 				}

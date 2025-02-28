@@ -1,20 +1,17 @@
 ﻿using System.Linq;
-using UnityEngine.Networking.Types;
-using Verse.AI;
 
 namespace HealersOfTheLighthouse
 {
-	// DO 3 FIRE MODES, SINGLE BURST CLUSTER
-	//		Virtual array manually filled with classes with settings
-	//		Right clicking button will change a counter in this class
-	//		Different effects called depending on that counter
 	// FIND OUT HOW TO INDICATE A ROUND IS SELECTED BUT NOT LOADED
+	// LOOK INTO HOW TO HANDLE CHANGING AMMO WHEN ITS ALREADY LOADED
 	public class AbilityComp_ConcealedLauncher : CompAbilityEffect
 	{
 		// --- Fields ---
+		private const int BurstSpreadRange = 5;
 		private IReadOnlyList<ConcealedLauncherFireMode> fireModes;
-		private List<ConcealedLauncherMagazineData> magazine;
+		internal List<ConcealedLauncherMagazineData> magazine;
 		private int fireModeIndex;
+		private int magazineSlotToReload;
 
 
 		// --- Properties ---
@@ -22,7 +19,8 @@ namespace HealersOfTheLighthouse
 		public int FireModeIndex { get => fireModeIndex; set => fireModeIndex = value; }
 		public int FireModesCount => fireModes.Count;
 		public ConcealedLauncherFireMode CurFireMode => fireModes[FireModeIndex];
-		private int NumberOfEmptyOrUnloadedSlots => magazine.Count(slot => slot is null || !slot.IsLoaded);
+		public int NumberOfUnloadedSlots => magazine.Count(slot => !slot.IsLoaded);
+		public int MagazineSlotToReload => magazineSlotToReload;
 
 
 
@@ -50,22 +48,18 @@ namespace HealersOfTheLighthouse
 		{
 			return new List<ConcealedLauncherFireMode>()
 			{
-				new("Single",
+				new("ConcealedLauncher_SingleFireMode",
 					TextureLibrary.thinIcon,
+					shotsPerBurst: 1,
 					SingleShot),
 
-				new("Cluster",
+				new("ConcealedLauncher_ClusterFireMode",
 					TextureLibrary.fatIcon,
+					shotsPerBurst: 5,
 					(LocalTargetInfo target, LocalTargetInfo dest) =>
 					{
-						SingleShot(target, dest);
-						if (NumberOfEmptyOrUnloadedSlots < Props.ammoCapacity)
-						{
-							Log.Message("HElo");
-							Job job = JobMaker.MakeJob(JobDefOf.UseVerbOnThing, parent.pawn);
-							job.verbToUse = parent.verb;
-							parent.pawn.jobs.StartJob(job, JobCondition.InterruptForced);
-						}
+						CellFinder.TryFindRandomCellNear(target.Cell, parent.pawn.Map, BurstSpreadRange, cell => !cell.Fogged(parent.pawn.Map), out IntVec3 cell);
+						SingleShot(cell, cell);
 					})
 			};
 		}
@@ -88,6 +82,21 @@ namespace HealersOfTheLighthouse
 		}
 
 
+		public bool FindReloadableSlot()
+		{
+			for (int i = 0; i < magazine.Count; i++)
+			{
+				var slot = magazine[i];
+				if (slot is null || (slot.ThingDef is not null && !slot.IsLoaded))
+				{
+					magazineSlotToReload = i;
+					return true;
+				}
+			}
+			return false;
+		}
+
+
 		public override IEnumerable<Gizmo> CompGetGizmosExtra()
 		{
 			foreach (Gizmo gizmo in base.CompGetGizmosExtra())
@@ -95,15 +104,18 @@ namespace HealersOfTheLighthouse
 				yield return gizmo;
 			}
 
-			yield return new ConcealedLauncherGizmo(this, magazine);
+			if ((Props.displayGizmoWhileDrafted && parent.pawn.Drafted) || (Props.displayGizmoWhileUndrafted && !parent.pawn.Drafted))
+			{
+				yield return new ConcealedLauncherGizmo(this, magazine);
+			}
 		}
 
 
 		public override bool GizmoDisabled(out string reason)
 		{
-			if (NumberOfEmptyOrUnloadedSlots >= Props.ammoCapacity)
+			if (NumberOfUnloadedSlots >= magazine.Count)
 			{
-				reason = "Hola".Translate();
+				reason = "ConcealedLauncher_Unloaded".Translate();
 				return true;
 			}
 			return base.GizmoDisabled(out reason);
@@ -115,6 +127,7 @@ namespace HealersOfTheLighthouse
 			base.PostExposeData();
 			Scribe_Collections.Look(ref magazine, "HOTL_ConcealedLauncher_magazine", LookMode.Deep);
 			Scribe_Values.Look(ref fireModeIndex, "HOTL_ConcealedLauncher_fireModeIndex");
+			Scribe_Values.Look(ref magazineSlotToReload, "HOTL_ConcealedLauncher_magazineSlotToReload");
 		}
 	}
 }
