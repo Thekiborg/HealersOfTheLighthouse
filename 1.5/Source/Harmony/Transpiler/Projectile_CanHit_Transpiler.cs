@@ -3,6 +3,9 @@ using Verse.AI;
 
 namespace HealersOfTheLighthouse
 {
+	/// <summary>
+	/// Allows the LightningProjectiles from my lightning abilities to hit back the launcher of the projectile
+	/// </summary>
 	[HarmonyPatch(typeof(Projectile), "CanHit")]
 	internal static class Projectile_CanHit_Transpiler
 	{
@@ -44,29 +47,28 @@ namespace HealersOfTheLighthouse
 			// Looks for the set of instructions inside instructionsToMatch
 			// If found, rests at Ldarg.1
 			codeMatcher.MatchStartForward(instructionsToMatch);
+			codeMatcher.ThrowIfInvalid("Projectile_CanHit_Transpiler couldn't patch it's intended method, find how to report it on Healers of the Lighthouse's steam page.");
 
+			/* The condition before the one we want to skp, if (!thing.Spawned), goes inside the condition we want to skip via jumping
+			 * Instead, we move the label that condition jumps to, from the condition we want to skip to the first instruction we're adding
+			 * That way, if "if (!thing.Spawned)" returns true, it will jump into our condition.
+			 * If our condition is false, it will fall into the "if (thing == launcher)" condition, following the stack without any jumps 
+			 */
+
+			// We extract (remove and store?) the label from Ldarg.1 from the instructions we matched
+			var ldarg_1_labels = codeMatcher.Instruction.ExtractLabels();
+
+			// And add those extracted labels to the ldarg.0 we are inserting
+			instructionsToInsert[0].WithLabels(ldarg_1_labels);
+			
 			// We want to jump to the same instruction bne.un.s jumps to
 			// As we're resting in Ldarg.1, Bne.un.S is 3 instructions further.
 			// Then we assign the third instruction from the ones we want to insert (Brtrue) and we assign it the operand of bne.un.s
 			// Should jump to the start of ProjectileHitFlags hitFlags = HitFlags;
 			instructionsToInsert[4].operand = codeMatcher.InstructionAt(3).operand;
 
-			if (codeMatcher.IsInvalid)
-			{
-				Log.Error("Projectile_CanHit_Transpiler couldn't patch it's intended method, find how to report it on Healers of the Lighthouse's steam page.");
-				return codeInstructions;
-			}
-			else
-			{
-				codeMatcher.Insert(instructionsToInsert); // Add instructions
-
-				foreach (var instruction in codeMatcher.Instructions())
-				{
-					Log.Message(instruction.ToString());
-				}
-
-				return codeMatcher.InstructionEnumeration(); // Return modified instructions
-			}
+			codeMatcher.Insert(instructionsToInsert);
+			return codeMatcher.InstructionEnumeration();
 		}
 	}
 }
