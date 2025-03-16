@@ -7,7 +7,7 @@ namespace HealersOfTheLighthouse
         Thing chair;
         const float maxDistanceBetweenChairs = 6f * 6f; // Squared 6 for DistanceToSquared to work.
 
-        TheorizeAbilitySettings TheorizeSettings => FirstPawn.abilities.GetAbility(HealersOfTheLighthouse_AbilityDefOfs.HOTL_RMBD_AbilityTheorize).CompOfType<AbilityComp_Theorize>().Props.theorizeAbilitySettings;
+        TheorizeAbilitySettings TheorizeSettings => FirstPawn.abilities.GetAbility(HOTL_AbilityDefOfs.HOTL_RMBD_AbilityTheorize).CompOfType<AbilityComp_Theorize>().Props.theorizeAbilitySettings;
         Pawn FirstPawn => job?.GetTarget(TargetIndex.A).Pawn;
         
 
@@ -66,14 +66,14 @@ namespace HealersOfTheLighthouse
                 pawn.pather.StartPath(chair, PathEndMode.OnCell);
             });
             pathToChair.defaultCompleteMode = ToilCompleteMode.PatherArrival;
-            pathToChair.FailOn(() => FirstPawn.CurJobDef != HealersOfTheLighthouse_JobDefOfs.HOTL_TakeSecondPawnToTheorize);
+            pathToChair.FailOn(() => FirstPawn.CurJobDef != HOTL_JobDefOfs.HOTL_TakeSecondPawnToTheorize);
             yield return pathToChair;
 
 
             Toil chatWithOther = ToilMaker.MakeToil("chatWithOther");
             chatWithOther.activeSkill = () => SkillDefOf.Intellectual;
             chatWithOther.socialMode = RandomSocialMode.Off;
-            chatWithOther.FailOn(() => FirstPawn.CurJobDef != HealersOfTheLighthouse_JobDefOfs.HOTL_TakeSecondPawnToTheorize);
+            chatWithOther.FailOn(() => FirstPawn.CurJobDef != HOTL_JobDefOfs.HOTL_TakeSecondPawnToTheorize);
             chatWithOther.FailOn(() => chair.DestroyedOrNull() || chair.IsBurning());
             chatWithOther.defaultCompleteMode = ToilCompleteMode.Delay;
             chatWithOther.defaultDuration = TheorizeSettings.chatDuration;

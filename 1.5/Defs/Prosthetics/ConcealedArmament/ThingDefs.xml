@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
 
-    <!-- ######################################################### -->
-    <!-- #################### FIRE BASED ARMS #################### -->
+	<!-- ######################################################### -->
+    <!-- ########################## FIRE ######################### -->
     <!-- ######################################################### -->
 
-    <!-- Fire Arm -->
-
+    <!-- Propelled Arm -->
     <ThingDef ParentName="HOTL_ConcealedArmamentBase">
         <defName>HOTL_Arm_PropelledArm</defName>
         <label>propelled arm</label>
@@ -24,14 +23,51 @@
         </statBases>
     </ThingDef>
 
-    <!-- Fire breath -->
+    <!-- Dragon's breath -->
+    <ThingDef ParentName="HOTL_ConcealedArmamentBase">
+        <defName>HOTL_Jaw_DragonsBreath</defName>
+        <label>dragon's breath</label>
+        <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThis implant is part of the &lt;color=#c74228&gt;Draco Partes&lt;/color&gt;. Its flame-producing generator enables wide use in cold environments, keeping soldiers at a safe temperature as long as it remains dry.\n\nThe dragon’s breath adds an opening beneath the tongue that allows the user to exhale fire. It has both helped soldiers overcome their captors and provoked unintentional injuries among lovers.</description>
+        <descriptionHyperlinks>
+            <RecipeDef>HOTL_Install_DragonsBreath</RecipeDef>
+            <HediffDef>HOTL_InstalledJaw_DragonsBreath</HediffDef>
+        </descriptionHyperlinks>
+        <costList>
+            <Plasteel>15</Plasteel>
+            <ComponentSpacer>4</ComponentSpacer>
+        </costList>
+        <statBases>
+            <Mass>5</Mass>
+        </statBases>
+    </ThingDef>
 
+    <!-- ######################################################## -->
+    <!-- ########################## TOX ######################### -->
+    <!-- ######################################################## -->
+
+    <!-- Tox breath -->
+    <ThingDef ParentName="HOTL_ConcealedArmamentBase">
+        <defName>HOTL_Jaw_ToxBreath</defName>
+        <label>tox breath</label>
+        <description>a.</description>
+        <descriptionHyperlinks>
+            <RecipeDef>HOTL_Install_ToxBreath</RecipeDef>
+            <HediffDef>HOTL_InstalledJaw_ToxBreath</HediffDef>
+        </descriptionHyperlinks>
+        <costList>
+            <Plasteel>15</Plasteel>
+            <ComponentSpacer>4</ComponentSpacer>
+        </costList>
+        <statBases>
+            <Mass>5</Mass>
+        </statBases>
+    </ThingDef>
+
+	<!-- ###################################################### -->
+    <!-- ####################### KINETIC ###################### -->
     <!-- ###################################################### -->
-    <!-- #################### KINETIC ARMS #################### -->
-    <!-- ###################################################### -->
 
-    <!-- Launcher -->
-
+    <!-- Launcher arm -->
     <ThingDef ParentName="HOTL_ConcealedArmamentBase">
         <defName>HOTL_Arm_ConcealedLauncher</defName>
         <label>launcher arm</label>

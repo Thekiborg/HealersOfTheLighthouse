@@ -2,11 +2,10 @@
 <Defs>
 
 	<!-- ######################################################### -->
-    <!-- #################### FIRE BASED ARMS #################### -->
+    <!-- ########################## FIRE ######################### -->
     <!-- ######################################################### -->
 
-	<!-- Fire Arm -->
-
+	<!-- Propelled arm -->
 	<AbilityDef ParentName="AbilityTouchBase">
 		<defName>HOTL_ConcealedArmament_PropelledArm</defName>
 		<label>propelled arm</label> <!-- find good label + lore -->
@@ -17,7 +16,7 @@
 		<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
 		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
 		<stunTargetWhileCasting>false</stunTargetWhileCasting>
-		<cooldownTicksRange>5000</cooldownTicksRange>
+		<cooldownTicksRange>7500</cooldownTicksRange>
 		<verbProperties>
 			<verbClass>Verb_CastAbilityTouch</verbClass>
 			<range>-1</range>
@@ -43,16 +42,113 @@
 			</li>
 		</comps>
 	</AbilityDef>
+	
+
+	<!-- Dragon's breath -->
+	<AbilityDef>
+    	<defName>HOTL_ConcealedArmament_DragonsBreath</defName>
+    	<label>dragon's breath</label>
+    	<description>The dragon's breath adds an opening beneath the tongue that allows the user to exhale fire. It has both helped soldiers overcome their captors and provoked unintentional injuries among lovers.</description>
+    	<iconPath>UI/Abilities/FireSpew</iconPath>
+    	<cooldownTicksRange>7500</cooldownTicksRange>
+    	<aiCanUse>true</aiCanUse>
+    	<ai_IsIncendiary>true</ai_IsIncendiary>
+    	<warmupStartSound>FireSpew_Warmup</warmupStartSound>
+    	<verbProperties>
+    	  <verbClass>Verb_CastAbility</verbClass>
+    	  <range>7.9</range>
+    	  <warmupTime>1</warmupTime>
+    	  <soundCast>FireSpew_Resolve</soundCast>
+    	  <targetParams>
+    	    <canTargetLocations>true</canTargetLocations>
+    	  </targetParams>
+    	</verbProperties>
+    	<comps>
+    	  <li Class="HealersOfTheLighthouse.AbilityCompProperties_GenericSpew">
+    	    <range>7.9</range>
+    	    <lineWidthEnd>3</lineWidthEnd>
+    	    <filthDef>Filth_FlammableBile</filthDef>
+    	    <effecterDef>Fire_Spew</effecterDef>
+    	    <canHitFilledCells>true</canHitFilledCells>
+			<spewDamageDef>Flame</spewDamageDef>
+			<chanceToStartFire>1</chanceToStartFire>
+    	  </li>
+    	</comps>
+  	</AbilityDef>
+
+	<!-- ######################################################## -->
+    <!-- ########################## TOX ######################### -->
+    <!-- ######################################################## -->
+
+	<!-- Tox breath -->
+	<!-- MAKE CLASS (INTERFACE?) TO RELOAD -->
+	<AbilityDef>
+    	<defName>HOTL_ConcealedArmament_ToxBreath</defName>
+    	<label>tox breath</label>
+    	<description>a.</description>
+    	<iconPath>UI/Abilities/FireSpew</iconPath>
+    	<cooldownTicksRange>7500</cooldownTicksRange>
+    	<aiCanUse>true</aiCanUse>
+    	<ai_IsIncendiary>true</ai_IsIncendiary>
+    	<warmupStartSound>FireSpew_Warmup</warmupStartSound>
+    	<verbProperties>
+    	  <verbClass>Verb_CastAbility</verbClass>
+    	  <range>7.9</range>
+    	  <warmupTime>1</warmupTime>
+    	  <soundCast>FireSpew_Resolve</soundCast>
+    	  <targetParams>
+    	    <canTargetLocations>true</canTargetLocations>
+    	  </targetParams>
+    	</verbProperties>
+    	<comps>
+    	  <li Class="HealersOfTheLighthouse.AbilityCompProperties_GenericSpew">
+		  	<compClass>HealersOfTheLighthouse.AbilityComp_GenericSpew</compClass>
+    	    <range>7.9</range>
+    	    <lineWidthEnd>3</lineWidthEnd>
+    	    <effecterDef>Fire_Spew</effecterDef>
+    	    <canHitFilledCells>true</canHitFilledCells>
+			<spewDamageDef>ToxGas</spewDamageDef>
+			<spewGasType>ToxGas</spewGasType>
+    	  </li>
+    	</comps>
+  	</AbilityDef>
+
+	<!-- ######################################################## -->
+    <!-- ####################### Lightning ###################### -->
+    <!-- ######################################################## -->
+
+	<AbilityDef>
+    	<defName>HOTL_ConcealedArmament_ArcThrower</defName>
+    	<label>arc thrower</label>
+    	<description>a.</description>
+    	<iconPath>UI/Abilities/FireSpew</iconPath>
+    	<cooldownTicksRange>7500</cooldownTicksRange>
+    	<aiCanUse>true</aiCanUse>
+    	<ai_IsIncendiary>true</ai_IsIncendiary>
+    	<warmupStartSound>FireSpew_Warmup</warmupStartSound>
+    	<verbProperties>
+    	  <verbClass>Verb_CastAbility</verbClass>
+    	  <range>7.9</range>
+    	  <warmupTime>1</warmupTime>
+    	  <soundCast>FireSpew_Resolve</soundCast>
+		  <!-- Default target params -->
+    	</verbProperties>
+    	<comps>
+    	  <li Class="HealersOfTheLighthouse.AbilityCompProperties_LightningProjectile">
+    	    <coneAngleDegs>120</coneAngleDegs>
+			<coneRange>20</coneRange>
+    	  </li>
+    	</comps>
+  	</AbilityDef>
 
 	<!-- ###################################################### -->
-    <!-- #################### KINETIC ARMS #################### -->
+    <!-- ####################### KINETIC ###################### -->
     <!-- ###################################################### -->
 
     <!-- Launcher -->
-
 	<AbilityDef>
 		<defName>HOTL_ConcealedArmament_Launcher</defName>
-		<label>launcher</label> <!-- find good label + lore -->
+		<label>launcher arm</label> <!-- find good label + lore -->
 		<description>Use special glands in the wrists to quickly tend someone's wounds.</description>
 		<iconPath>UI/Icons/Genes/Gene_Coagulate</iconPath>
 		<displayOrder>400</displayOrder>

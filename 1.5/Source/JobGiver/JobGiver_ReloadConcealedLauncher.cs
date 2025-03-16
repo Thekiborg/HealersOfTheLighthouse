@@ -12,7 +12,7 @@ namespace HealersOfTheLighthouse
 		{
 			if (pawn is null) return null;
 
-			CompCL = pawn.abilities?.GetAbility(HealersOfTheLighthouse_AbilityDefOfs.HOTL_ConcealedArmament_Launcher)?.CompOfType<AbilityComp_ConcealedLauncher>();
+			CompCL = pawn.abilities?.GetAbility(HOTL_AbilityDefOfs.HOTL_ConcealedArmament_Launcher)?.CompOfType<AbilityComp_ConcealedLauncher>();
 
 			if (CompCL is null) return null;
 			if (CompCL.NumberOfUnloadedSlots <= 0) return null;
@@ -34,7 +34,7 @@ namespace HealersOfTheLighthouse
 
 			if (foundAmmo.NullOrEmpty()) return null;
 
-			Job job = JobMaker.MakeJob(HealersOfTheLighthouse_JobDefOfs.HOTL_ConcealedArmament_ReloadLauncher, foundAmmo[0]);
+			Job job = JobMaker.MakeJob(HOTL_JobDefOfs.HOTL_ConcealedArmament_ReloadLauncher, foundAmmo[0]);
 			job.count = 1;
 			return job;
 		}

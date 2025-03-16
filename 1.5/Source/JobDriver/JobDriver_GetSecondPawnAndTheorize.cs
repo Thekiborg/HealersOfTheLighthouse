@@ -7,7 +7,7 @@ namespace HealersOfTheLighthouse
 		Thing chair;
 
 
-		TheorizeAbilitySettings TheorizeSettings => pawn.abilities.GetAbility(HealersOfTheLighthouse_AbilityDefOfs.HOTL_RMBD_AbilityTheorize).CompOfType<AbilityComp_Theorize>().Props.theorizeAbilitySettings;
+		TheorizeAbilitySettings TheorizeSettings => pawn.abilities.GetAbility(HOTL_AbilityDefOfs.HOTL_RMBD_AbilityTheorize).CompOfType<AbilityComp_Theorize>().Props.theorizeAbilitySettings;
 		Pawn SecondPawn => job?.GetTarget(TargetIndex.A).Pawn;
 
 
@@ -62,7 +62,7 @@ namespace HealersOfTheLighthouse
 			{
 				pawn.Reserve(chair, job);
 
-				Job followPawn = JobMaker.MakeJob(HealersOfTheLighthouse_JobDefOfs.HOTL_FollowFirstPawnToTheorize, pawn);
+				Job followPawn = JobMaker.MakeJob(HOTL_JobDefOfs.HOTL_FollowFirstPawnToTheorize, pawn);
 				SecondPawn.jobs.TryTakeOrderedJob(followPawn);
 			});
 			yield return reserveAndGiveJob;
@@ -74,14 +74,14 @@ namespace HealersOfTheLighthouse
 				pawn.pather.StartPath(chair, PathEndMode.OnCell);
 			});
 			pathToChair.defaultCompleteMode = ToilCompleteMode.PatherArrival;
-			pathToChair.FailOn(() => SecondPawn.CurJobDef != HealersOfTheLighthouse_JobDefOfs.HOTL_FollowFirstPawnToTheorize);
+			pathToChair.FailOn(() => SecondPawn.CurJobDef != HOTL_JobDefOfs.HOTL_FollowFirstPawnToTheorize);
 			yield return pathToChair;
 
 
 			Toil chatWithOther = ToilMaker.MakeToil("chatWithOther");
 			chatWithOther.activeSkill = () => SkillDefOf.Intellectual;
 			chatWithOther.socialMode = RandomSocialMode.Off;
-			chatWithOther.FailOn(() => SecondPawn.CurJobDef != HealersOfTheLighthouse_JobDefOfs.HOTL_FollowFirstPawnToTheorize);
+			chatWithOther.FailOn(() => SecondPawn.CurJobDef != HOTL_JobDefOfs.HOTL_FollowFirstPawnToTheorize);
 			chatWithOther.FailOn(() => chair.DestroyedOrNull() || chair.IsBurning());
 			chatWithOther.defaultCompleteMode = ToilCompleteMode.Delay;
 			chatWithOther.defaultDuration = TheorizeSettings.chatDuration;
@@ -110,7 +110,7 @@ namespace HealersOfTheLighthouse
 				}
 				else
 				{
-					pawn.abilities.GetAbility(HealersOfTheLighthouse_AbilityDefOfs.HOTL_RMBD_AbilityTheorize).CompOfType<AbilityComp_Theorize>().AbilityUsed();
+					pawn.abilities.GetAbility(HOTL_AbilityDefOfs.HOTL_RMBD_AbilityTheorize).CompOfType<AbilityComp_Theorize>().AbilityUsed();
 
 
 					int researchPointsToAdd = TheorizeUtility.CalculateResearchPoints(researchProject.baseCost,
@@ -123,7 +123,7 @@ namespace HealersOfTheLighthouse
 						MessageTypeDefOf.PositiveEvent);
 
 
-					pawn.needs.mood.thoughts.memories.TryGainMemory(HealersOfTheLighthouse_ThoughtDefOfs.HOTL_TheorizedWithColonist, SecondPawn);
+					pawn.needs.mood.thoughts.memories.TryGainMemory(HOTL_ThoughtDefOfs.HOTL_TheorizedWithColonist, SecondPawn);
 				}
 			});
 			yield return addProgressToResearchProject;

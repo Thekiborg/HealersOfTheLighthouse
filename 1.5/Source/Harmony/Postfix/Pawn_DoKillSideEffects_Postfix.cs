@@ -7,13 +7,13 @@
         [HarmonyPostfix]
         internal static void AddCheckForPacifistNatureGene(Pawn pawn)
         {
-            GeneClass_PacifistNature gene = pawn.genes?.GetGene(HealersOfTheLighthouse_GeneDefOfs.HOTL_PacifistNature) as GeneClass_PacifistNature;
+            GeneClass_PacifistNature gene = pawn.genes?.GetGene(HOTL_GeneDefOfs.HOTL_PacifistNature) as GeneClass_PacifistNature;
 
             if (gene is null) return;
 
             if (AttackingInnocentPawn(pawn))
             {
-                gene.GiveThought(HealersOfTheLighthouse_ThoughtDefOfs.HOTL_PacifistHarmedPawn);
+                gene.GiveThought(HOTL_ThoughtDefOfs.HOTL_PacifistHarmedPawn);
             }
 
         }

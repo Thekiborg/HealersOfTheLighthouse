@@ -11,11 +11,10 @@
 	</HediffDef>
 
 	<!-- ######################################################### -->
-    <!-- #################### FIRE BASED ARMS #################### -->
+    <!-- ########################## FIRE ######################### -->
     <!-- ######################################################### -->
 
-	<!-- Fire Arm -->
-
+	<!-- Propelled Arm -->
 	<HediffDef ParentName="HOTL_AddedConcealedArmamentBase">
 		<defName>HOTL_InstalledArm_PropelledArm</defName>
 		<label>propelled arm</label>
@@ -49,12 +48,83 @@
 		<spawnThingOnRemoved>HOTL_Arm_PropelledArm</spawnThingOnRemoved>
 	</HediffDef>
 
+	<!-- Dragon's breath -->
+	<HediffDef ParentName="HOTL_AddedConcealedArmamentBase">
+		<defName>HOTL_InstalledJaw_DragonsBreath</defName>
+		<label>dragon's breath</label>
+		<labelNoun>a dragon's breath</labelNoun>
+        <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThis implant is part of the &lt;color=#c74228&gt;Draco Partes&lt;/color&gt;. Its flame-producing generator enables wide use in cold environments, keeping soldiers at a safe temperature as long as it remains dry.\n\nThe dragon’s breath adds an opening beneath the tongue that allows the user to exhale fire. It has both helped soldiers overcome their captors and provoked unintentional injuries among lovers.</description>
+		<descriptionHyperlinks>
+			<ThingDef>HOTL_Jaw_DragonsBreath</ThingDef>
+			<RecipeDef>HOTL_Install_DragonsBreath</RecipeDef>
+		</descriptionHyperlinks>
+		<comps>
+			<!-- MIGHT ADD A BITING VERB? <li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>fist</label>
+						<capacities>
+							<li>Blunt</li>
+						</capacities>
+						<power>12</power>
+						<cooldownTime>2</cooldownTime>
+						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+					</li>
+				</tools>
+			</li> -->
+			<li Class="HealersOfTheLighthouse.HediffCompProperties_CombatProsthetic">
+				<combatAbilities>
+					<li>HOTL_ConcealedArmament_DragonsBreath</li>
+				</combatAbilities>
+			</li>
+		</comps>
+		<spawnThingOnRemoved>HOTL_Jaw_DragonsBreath</spawnThingOnRemoved>
+	</HediffDef>
+
+	<!-- ######################################################## -->
+    <!-- ########################## TOX ######################### -->
+    <!-- ######################################################## -->
+
+	<!-- Tox breath -->
+	<HediffDef ParentName="HOTL_AddedConcealedArmamentBase">
+		<defName>HOTL_InstalledJaw_ToxBreath</defName>
+		<label>tox breath</label>
+		<labelNoun>a tox breath</labelNoun>
+        <description>a</description>
+		<descriptionHyperlinks>
+			<ThingDef>HOTL_Jaw_ToxBreath</ThingDef>
+			<RecipeDef>HOTL_Install_ToxBreath</RecipeDef>
+		</descriptionHyperlinks>
+		<comps>
+			<!-- MIGHT ADD A BITING VERB? <li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>fist</label>
+						<capacities>
+							<li>Blunt</li>
+						</capacities>
+						<power>12</power>
+						<cooldownTime>2</cooldownTime>
+						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+					</li>
+				</tools>
+			</li> -->
+			<li Class="HealersOfTheLighthouse.HediffCompProperties_CombatProsthetic">
+				<combatAbilities>
+					<li>HOTL_ConcealedArmament_ToxBreath</li>
+				</combatAbilities>
+			</li>
+		</comps>
+		<spawnThingOnRemoved>HOTL_Jaw_ToxBreath</spawnThingOnRemoved>
+	</HediffDef>
+
 	<!-- ###################################################### -->
-    <!-- #################### KINETIC ARMS #################### -->
+    <!-- ####################### KINETIC ###################### -->
     <!-- ###################################################### -->
 
-    <!-- Launcher -->
-
+    <!-- Launcher arm -->
 	<HediffDef ParentName="HOTL_AddedConcealedArmamentBase">
 		<defName>HOTL_InstalledArm_ConcealedLauncher</defName>
 		<label>launcher arm</label>

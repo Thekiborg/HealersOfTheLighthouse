@@ -5,7 +5,7 @@ namespace HealersOfTheLighthouse
 {
 	public class JobDriver_ReloadConcealedLauncher : JobDriver
 	{
-		private AbilityComp_ConcealedLauncher CompCL => pawn.abilities?.GetAbility(HealersOfTheLighthouse_AbilityDefOfs.HOTL_ConcealedArmament_Launcher)?.CompOfType<AbilityComp_ConcealedLauncher>();
+		private AbilityComp_ConcealedLauncher CompCL => pawn.abilities?.GetAbility(HOTL_AbilityDefOfs.HOTL_ConcealedArmament_Launcher)?.CompOfType<AbilityComp_ConcealedLauncher>();
 
 		public override bool TryMakePreToilReservations(bool errorOnFailed)
 		{

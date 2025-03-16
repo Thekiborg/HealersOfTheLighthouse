@@ -2,8 +2,6 @@
 
 namespace HealersOfTheLighthouse
 {
-	// FIND OUT HOW TO INDICATE A ROUND IS SELECTED BUT NOT LOADED
-	// LOOK INTO HOW TO HANDLE CHANGING AMMO WHEN ITS ALREADY LOADED
 	public class AbilityComp_ConcealedLauncher : CompAbilityEffect
 	{
 		// --- Fields ---
