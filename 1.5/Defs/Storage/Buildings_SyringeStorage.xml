@@ -6,16 +6,18 @@
 		<passability>PassThroughOnly</passability>
 		<fillPercent>0.5</fillPercent>
 		<pathCost>50</pathCost>
-		<defaultPlacingRot>South</defaultPlacingRot>
+		<defaultPlacingRot>North</defaultPlacingRot>
 		<altitudeLayer>PawnUnused</altitudeLayer>
 		<drawGUIOverlay>True</drawGUIOverlay>
+		<uiIconScale>1</uiIconScale>
+		<uiIconOffset>(0, 0.15)</uiIconOffset>
 		<graphicData>
 			<graphicClass>Graphic_Single</graphicClass>
 			<drawSize>(1.5,1.5)</drawSize>
 			<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
 			<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
-			<drawOffsetWest>(0.1,0,0)</drawOffsetWest>
-			<drawOffsetEast>(-0.1,0,0)</drawOffsetEast>
+			<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+			<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
 			<drawRotated>false</drawRotated>
 		</graphicData>
 		<size>(1,1)</size>
@@ -63,7 +65,7 @@
 		<label>Blue Serum Fountain</label>
 		<description>A storage unit designed for storing syringes. A mechanism pushes a syringe up onto a tray, ensuring one is always ready to be picked.</description>
 		<graphicData>
-			<texPath>BoosterFountain/BlueSerumFountain/BlueSerumFountain</texPath>
+			<texPath>Buildings/BoosterFountain/BlueSerumFountain/BlueSerumFountain</texPath>
 		</graphicData>
 		<building>
 			<fixedStorageSettings>
@@ -93,7 +95,7 @@
 		<label>BlueBurst Fountain</label>
 		<description>A storage unit designed for storing syringes. A mechanism pushes a syringe up onto a tray, ensuring one is always ready to be picked.\n\nThis dispenser has been customized to match the theme of the BlueBurst injector.</description>
 		<graphicData>
-			<texPath>BoosterFountain/BurstFountain/BurstFountain</texPath>
+			<texPath>Buildings/BoosterFountain/BurstFountain/BurstFountain</texPath>
 		</graphicData>
 		<building>
 				<fixedStorageSettings>
@@ -122,7 +124,7 @@
 		<label>Hydra Booster Fountain</label>
 		<description>A storage unit designed for storing syringes. A mechanism pushes a syringe up onto a tray, ensuring one is always ready to be picked.\n\nThis dispenser has been customized to match the theme of the Hydra injector.</description>
 		<graphicData>
-			<texPath>BoosterFountain/HydraFountain/HydraFountain</texPath>
+			<texPath>Buildings/BoosterFountain/HydraFountain/HydraFountain</texPath>
 		</graphicData>
 		<building>
 			<fixedStorageSettings>
@@ -151,7 +153,7 @@
 		<label>Medi Booster Fountain</label>
 		<description>A storage unit designed for storing syringes. A mechanism pushes a syringe up onto a tray, ensuring one is always ready to be picked.\n\nThis dispenser has been customized to match the theme of the Medi injector.</description>
 		<graphicData>
-			<texPath>BoosterFountain/MediFountain/MediFountain</texPath>
+			<texPath>Buildings/BoosterFountain/MediFountain/MediFountain</texPath>
 		</graphicData>
 		<building>
 			<fixedStorageSettings>
@@ -180,7 +182,7 @@
 		<label>Orca Booster Fountain</label>
 		<description>A storage unit designed for storing syringes. A mechanism pushes a syringe up onto a tray, ensuring one is always ready to be picked.\n\nThis dispenser has been customized to match the theme of the Orca injector.</description>
 		<graphicData>
-			<texPath>BoosterFountain/OrcaFountain/OrcaFountain</texPath>
+			<texPath>Buildings/BoosterFountain/OrcaFountain/OrcaFountain</texPath>
 		</graphicData>
 		<building>
 			<fixedStorageSettings>

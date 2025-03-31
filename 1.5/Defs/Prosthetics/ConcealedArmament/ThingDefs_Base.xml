@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <ThingDef Name="HOTL_ConcealedArmamentBase" ParentName="HOTL_ArtificialBodyPartBase" Abstract="True">
+        <statBases>
+            <WorkToMake>35000</WorkToMake>
+        </statBases>
+        <tradeTags Inherit="False">
+            <li>ExoticMisc</li>
+            <li>AdvancedWeapon</li>
+        </tradeTags>
+        <techHediffsTags Inherit="False" />
+        <thingSetMakerTags>
+            <li>RewardStandardLowFreq</li>
+        </thingSetMakerTags>
+    </ThingDef>
+
+    <ThingDef Name="HOTL_ConcealedFireArmamentBase" ParentName="HOTL_ConcealedArmamentBase" Abstract="True">
+        <colorGenerator Class="ColorGenerator_Single">
+            <color>(204, 65, 37)</color>
+        </colorGenerator>
+    </ThingDef>
+
+    <ThingDef Name="HOTL_ConcealedLightningArmamentBase" ParentName="HOTL_ConcealedArmamentBase" Abstract="True">
+        <colorGenerator Class="ColorGenerator_Single">
+            <color>(156, 182, 226)</color>
+        </colorGenerator>
+    </ThingDef>
+
+    <ThingDef Name="HOTL_ConcealedAchlysArmamentBase" ParentName="HOTL_ConcealedArmamentBase" Abstract="True">
+        <colorGenerator Class="ColorGenerator_Single">
+            <color>(147, 196, 125)</color>
+        </colorGenerator>
+    </ThingDef>
+
+    <ThingDef Name="HOTL_ConcealedKineticArmamentBase" ParentName="HOTL_ConcealedArmamentBase" Abstract="True">
+        <colorGenerator Class="ColorGenerator_Single">
+            <color>(180, 180, 180)</color>
+        </colorGenerator>
+    </ThingDef>
+
+</Defs>

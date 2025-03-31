@@ -8,7 +8,7 @@
 		<graphics>
 			<li>
 				<graphicData>
-					<texPath>BoosterFountain/BlueSerumFountain/BlueSerumFountain</texPath>
+					<texPath>Buildings/BoosterFountain/BlueSerumFountain/BlueSerumFountain</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
@@ -21,7 +21,7 @@
 			</li>
 			<li>
 				<graphicData>
-					<texPath>BoosterFountain/BlueSerumFountain/BlueSerumFountainA</texPath>
+					<texPath>Buildings/BoosterFountain/BlueSerumFountain/BlueSerumFountainA</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
@@ -35,7 +35,7 @@
 			</li>
 			<li>
 				<graphicData>
-					<texPath>BoosterFountain/BlueSerumFountain/BlueSerumFountainB</texPath>
+					<texPath>Buildings/BoosterFountain/BlueSerumFountain/BlueSerumFountainB</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
@@ -49,7 +49,7 @@
 			</li>
 			<li>
 				<graphicData>
-					<texPath>BoosterFountain/BlueSerumFountain/BlueSerumFountainC</texPath>
+					<texPath>Buildings/BoosterFountain/BlueSerumFountain/BlueSerumFountainC</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
@@ -63,7 +63,7 @@
 			</li>
 			<li>
 				<graphicData>
-					<texPath>BoosterFountain/BlueSerumFountain/BlueSerumFountainD</texPath>
+					<texPath>Buildings/BoosterFountain/BlueSerumFountain/BlueSerumFountainD</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
@@ -87,7 +87,7 @@
 		<graphics>
 			<li>
 				<graphicData>
-					<texPath>BoosterFountain/BurstFountain/BurstFountain</texPath>
+					<texPath>Buildings/BoosterFountain/BurstFountain/BurstFountain</texPath>
                     <graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
@@ -100,7 +100,7 @@
 			</li>
 			<li>
 				<graphicData>
-					<texPath>BoosterFountain/BurstFountain/BurstFountainA</texPath>
+					<texPath>Buildings/BoosterFountain/BurstFountain/BurstFountainA</texPath>
                     <graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
@@ -114,7 +114,7 @@
 			</li>
 			<li>
 				<graphicData>
-					<texPath>BoosterFountain/BurstFountain/BurstFountainB</texPath>
+					<texPath>Buildings/BoosterFountain/BurstFountain/BurstFountainB</texPath>
                     <graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
@@ -128,7 +128,7 @@
 			</li>
             <li>
 				<graphicData>
-					<texPath>BoosterFountain/BurstFountain/BurstFountainC</texPath>
+					<texPath>Buildings/BoosterFountain/BurstFountain/BurstFountainC</texPath>
                     <graphicClass>Graphic_Multi</graphicClass>
                     <drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
@@ -142,7 +142,7 @@
 			</li>
 			<li>
 				<graphicData>
-					<texPath>BoosterFountain/BurstFountain/BurstFountainD</texPath>
+					<texPath>Buildings/BoosterFountain/BurstFountain/BurstFountainD</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
@@ -166,7 +166,7 @@
 		<graphics>
 			<li>
 				<graphicData>
-					<texPath>BoosterFountain/HydraFountain/HydraFountain</texPath>
+					<texPath>Buildings/BoosterFountain/HydraFountain/HydraFountain</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
@@ -179,7 +179,7 @@
 			</li>
 			<li>
 				<graphicData>
-					<texPath>BoosterFountain/HydraFountain/HydraFountainA</texPath>
+					<texPath>Buildings/BoosterFountain/HydraFountain/HydraFountainA</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
@@ -193,7 +193,7 @@
 			</li>
 			<li>
 				<graphicData>
-					<texPath>BoosterFountain/HydraFountain/HydraFountainB</texPath>
+					<texPath>Buildings/BoosterFountain/HydraFountain/HydraFountainB</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
@@ -207,7 +207,7 @@
 			</li>
 			<li>
 				<graphicData>
-					<texPath>BoosterFountain/HydraFountain/HydraFountainC</texPath>
+					<texPath>Buildings/BoosterFountain/HydraFountain/HydraFountainC</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
@@ -221,7 +221,7 @@
 			</li>
 			<li>
 				<graphicData>
-					<texPath>BoosterFountain/HydraFountain/HydraFountainD</texPath>
+					<texPath>Buildings/BoosterFountain/HydraFountain/HydraFountainD</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
@@ -245,7 +245,7 @@
 		<graphics>
 			<li>
 				<graphicData>
-					<texPath>BoosterFountain/MediFountain/MediFountain</texPath>
+					<texPath>Buildings/BoosterFountain/MediFountain/MediFountain</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
@@ -258,7 +258,7 @@
 			</li>
 			<li>
 				<graphicData>
-					<texPath>BoosterFountain/MediFountain/MediFountainA</texPath>
+					<texPath>Buildings/BoosterFountain/MediFountain/MediFountainA</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
@@ -272,7 +272,7 @@
 			</li>
 			<li>
 				<graphicData>
-					<texPath>BoosterFountain/MediFountain/MediFountainB</texPath>
+					<texPath>Buildings/BoosterFountain/MediFountain/MediFountainB</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
@@ -286,7 +286,7 @@
 			</li>
 			<li>
 				<graphicData>
-					<texPath>BoosterFountain/MediFountain/MediFountainC</texPath>
+					<texPath>Buildings/BoosterFountain/MediFountain/MediFountainC</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
@@ -300,7 +300,7 @@
 			</li>
 			<li>
 				<graphicData>
-					<texPath>BoosterFountain/MediFountain/MediFountainD</texPath>
+					<texPath>Buildings/BoosterFountain/MediFountain/MediFountainD</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
@@ -324,7 +324,7 @@
 		<graphics>
 			<li>
 				<graphicData>
-					<texPath>BoosterFountain/OrcaFountain/OrcaFountain</texPath>
+					<texPath>Buildings/BoosterFountain/OrcaFountain/OrcaFountain</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
@@ -337,7 +337,7 @@
 			</li>
 			<li>
 				<graphicData>
-					<texPath>BoosterFountain/OrcaFountain/OrcaFountainA</texPath>
+					<texPath>Buildings/BoosterFountain/OrcaFountain/OrcaFountainA</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
@@ -351,7 +351,7 @@
 			</li>
 			<li>
 				<graphicData>
-					<texPath>BoosterFountain/OrcaFountain/OrcaFountainB</texPath>
+					<texPath>Buildings/BoosterFountain/OrcaFountain/OrcaFountainB</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
@@ -365,7 +365,7 @@
 			</li>
 			<li>
 				<graphicData>
-					<texPath>BoosterFountain/OrcaFountain/OrcaFountainC</texPath>
+					<texPath>Buildings/BoosterFountain/OrcaFountain/OrcaFountainC</texPath>
 					<graphicClass>Graphic_Multi</graphicClass>
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
@@ -379,7 +379,7 @@
 			</li>
 			<li>
 				<graphicData>
-					<texPath>BoosterFountain/OrcaFountain/OrcaFountainD</texPath>
+					<texPath>Buildings/BoosterFountain/OrcaFountain/OrcaFountainD</texPath>
 					<graphicClass>Graphic_Single</graphicClass>
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>

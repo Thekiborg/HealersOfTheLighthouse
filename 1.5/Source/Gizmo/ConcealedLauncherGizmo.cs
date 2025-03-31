@@ -11,6 +11,7 @@ namespace HealersOfTheLighthouse
 		private const float MagazineHeight = 40f;
 		private const float AmmoSlotPadding = 7f;
 		private const float AmmoSlotHeight = MagazineHeight - 2 * AmmoSlotPadding;
+		private static readonly Color OptionSelectedBGFillColor = GenColor.FromHex("#ccb664");
 
 		private readonly AbilityComp_ConcealedLauncher CompCL;
 		private readonly List<ConcealedLauncherMagazineData> magazine;
@@ -204,14 +205,13 @@ namespace HealersOfTheLighthouse
 				{
 					if (slot.IsLoaded)
 					{
-						var OptionSelectedBGFillColor = GenColor.FromHex("#ccb664");
 						Widgets.DrawBoxSolid(ammoSlotRect, OptionSelectedBGFillColor);
 					}
 					else
 					{
 						Widgets.DrawBoxSolid(ammoSlotRect, ColorLibrary.Grey);
 					}
-					Widgets.DefIcon(ammoSlotRect, slot.ThingDef);
+					Widgets.DefIcon(ammoSlotRect, slot.ThingDef, scale: 1.8f);
 
 					TooltipHandler.TipRegion(ammoSlotRect, new TipSignal(slot.ThingDef.LabelCap));
 				}
@@ -244,7 +244,7 @@ namespace HealersOfTheLighthouse
 
 		private void SpawnLoadedShellIfPresent(ConcealedLauncherMagazineData slot)
 		{
-			if (slot.ThingDef is not null)
+			if (slot.ThingDef is not null && slot.IsLoaded)
 			{
 				Thing ammo = ThingMaker.MakeThing(slot.ThingDef);
 				GenSpawn.Spawn(ammo, Caster.Position, Caster.Map);

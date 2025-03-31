@@ -6,5 +6,6 @@
 		public DamageDef spewDamageDef;
 		public GasType spewGasType;
 		public float chanceToStartFire;
+		public bool fireAttack;
 	}
 }

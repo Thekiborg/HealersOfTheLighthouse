@@ -5,7 +5,7 @@ namespace HealersOfTheLighthouse
 {
 	public class JobDriver_ReloadConcealedLauncher : JobDriver
 	{
-		private AbilityComp_ConcealedLauncher CompCL => pawn.abilities?.GetAbility(HOTL_AbilityDefOfs.HOTL_ConcealedArmament_Launcher)?.CompOfType<AbilityComp_ConcealedLauncher>();
+		private AbilityComp_ConcealedLauncher CompCL => pawn.abilities?.GetAbility(HOTL_AbilityDefOfs.HOTL_ConcealedArmament_MarbleLauncher)?.CompOfType<AbilityComp_ConcealedLauncher>();
 
 		public override bool TryMakePreToilReservations(bool errorOnFailed)
 		{
@@ -25,7 +25,7 @@ namespace HealersOfTheLighthouse
 			{
 				initAction = () =>
 				{
-					CompCL.magazine[CompCL.MagazineSlotToReload].IsLoaded = true;
+					CompCL.Magazine[CompCL.MagazineSlotToReload].IsLoaded = true;
 					pawn.carryTracker.CarriedThing?.SplitOff(1)?.Destroy();
 					CompCL.Props.reloadSound.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map));
 				},

@@ -6,6 +6,7 @@
       <order>Append</order>
       <value>
         <li Class="HealersOfTheLighthouse.JobGiver_ReloadConcealedLauncher" />
+        <li Class="HealersOfTheLighthouse.JobGiver_ReloadAbility" />
       </value>
     </Operation>
 

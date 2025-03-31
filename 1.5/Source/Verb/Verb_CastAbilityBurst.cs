@@ -15,7 +15,7 @@
 
 					if (CompCL is not null)
 					{
-						return CompCL.CurFireMode.ShotsPerBurst;
+						return CompCL.CurFireMode.ShotsPerBurst - CompCL.NumberOfUnloadedSlots;
 					}
 				}
 				return 1;

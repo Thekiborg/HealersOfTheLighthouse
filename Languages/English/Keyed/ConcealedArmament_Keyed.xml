@@ -7,4 +7,7 @@
     <ConcealedLauncher_SingleFireMode>Single</ConcealedLauncher_SingleFireMode>
     <ConcealedLauncher_ClusterFireMode>Cluster</ConcealedLauncher_ClusterFireMode>
 
+    <!-- Fire armament -->
+    <ConcealedLauncher_WetDisabledReason>The user is wet.</ConcealedLauncher_WetDisabledReason>
+
 </LanguageData>

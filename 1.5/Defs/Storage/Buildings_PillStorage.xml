@@ -9,6 +9,8 @@
 		<defaultPlacingRot>South</defaultPlacingRot>
 		<altitudeLayer>PawnUnused</altitudeLayer>
 		<drawGUIOverlay>True</drawGUIOverlay>
+		<uiIconScale>0.7</uiIconScale>
+		<uiIconOffset>(0, 0.05)</uiIconOffset>
 		<graphicData>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(2,2)</drawSize>
@@ -62,7 +64,7 @@
 		<label>Blue Serum Shelves</label>
 		<description>A storage unit composed of racks of shelves, designed for storing bottles. It has an embedded glass door on the front that automatically opens when someone stands near it.</description>
 		<graphicData>
-			<texPath>PearlShelf/BlueSerumShelf/BlueSerumShelf</texPath>
+			<texPath>Buildings/PearlShelf/BlueSerumShelf/BlueSerumShelf</texPath>
 		</graphicData>
 		<building>
 			<fixedStorageSettings>
@@ -91,7 +93,7 @@
 		<label>Crystal Pearl Shelves</label>
 		<description>A storage unit composed of racks of shelves, designed for storing bottles. It has an embedded glass door on the front that automatically opens when someone stands near it.\n\nThis unit has been customized to match the theme of the Crystal Pearl bottle.</description>
 		<graphicData>
-			<texPath>PearlShelf/CrystalShelf/CrystalShelf</texPath>
+			<texPath>Buildings/PearlShelf/CrystalShelf/CrystalShelf</texPath>
 		</graphicData>
 		<building>
 			<fixedStorageSettings>
@@ -120,7 +122,7 @@
 		<label>Joy Pearl Shelves</label>
 		<description>A storage unit composed of racks of shelves, designed for storing bottles. It has an embedded glass door on the front that automatically opens when someone stands near it.\n\nThis unit has been customized to match the theme of the Joy Pearl bottle.</description>
 		<graphicData>
-			<texPath>PearlShelf/JoyShelf/JoyShelf</texPath>
+			<texPath>Buildings/PearlShelf/JoyShelf/JoyShelf</texPath>
 		</graphicData>
 		<building>
 			<fixedStorageSettings>
@@ -149,7 +151,7 @@
 		<label>Numb Pearl Shelves</label>
 		<description>A storage unit composed of racks of shelves, designed for storing bottles. It has an embedded glass door on the front that automatically opens when someone stands near it.\n\nThis unit has been customized to match the theme of the Numb Pearl bottle.</description>
 		<graphicData>
-			<texPath>PearlShelf/NumbShelf/NumbShelf</texPath>
+			<texPath>Buildings/PearlShelf/NumbShelf/NumbShelf</texPath>
 		</graphicData>
 		<building>
 			<fixedStorageSettings>
@@ -178,7 +180,7 @@
 		<label>Alluring Pearl Shelves</label>
 		<description>A storage unit composed of racks of shelves, designed for storing bottles. It has an embedded glass door on the front that automatically opens when someone stands near it.\n\nThis unit has been customized to match the theme of the Alluring Pearl bottle.</description>
 		<graphicData>
-			<texPath>PearlShelf/SirenShelf/SirenShelf</texPath>
+			<texPath>Buildings/PearlShelf/SirenShelf/SirenShelf</texPath>
 		</graphicData>
 		<building>
 			<fixedStorageSettings>
@@ -207,7 +209,7 @@
 		<label>Thinker Pearl Shelves</label>
 		<description>A storage unit composed of racks of shelves, designed for storing bottles. It has an embedded glass door on the front that automatically opens when someone stands near it.\n\nThis unit has been customized to match the theme of the Thinker Pearl bottle.</description>
 		<graphicData>
-			<texPath>PearlShelf/ThinkerShelf/ThinkerShelf</texPath>
+			<texPath>Buildings/PearlShelf/ThinkerShelf/ThinkerShelf</texPath>
 		</graphicData>
 		<building>
 			<fixedStorageSettings>

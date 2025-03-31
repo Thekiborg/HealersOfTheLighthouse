@@ -41,12 +41,13 @@
 
     
     <!-- Fire Marble -->
-    <ThingDef ParentName="MakeableShellBase">
+    <ThingDef ParentName="HOTL_MarbleRound_Base">
         <defName>HOTL_MarbleRound_Fire</defName>
         <label>fire marble</label>
         <description>t.</description>
+        <uiIconPath>Items/MarbleAmmo/Fire/Ammo_MarbleFireA</uiIconPath>
         <graphicData>
-          <texPath>Things/Item/Resource/Shell/Shell_Incendiary</texPath>
+          <texPath>Items/MarbleAmmo/Fire</texPath>
           <graphicClass>Graphic_StackCount</graphicClass>
         </graphicData>
         <comps>
@@ -66,18 +67,19 @@
     </ThingDef>
 
     <!-- Tox Marble -->
-    <ThingDef ParentName="MakeableShellBase">
+    <ThingDef ParentName="HOTL_MarbleRound_Base">
         <defName>HOTL_MarbleRound_Tox</defName>
         <label>tox marble</label>
         <description>t.</description>
+        <uiIconPath>Items/MarbleAmmo/Tox/Ammo_MarbleToxA</uiIconPath>
         <graphicData>
-          <texPath>Things/Item/Resource/Shell/Shell_Incendiary</texPath>
+          <texPath>Items/MarbleAmmo/Tox</texPath>
           <graphicClass>Graphic_StackCount</graphicClass>
         </graphicData>
         <comps>
           <li Class="CompProperties_Explosive">
             <explosiveDamageType>ToxGas</explosiveDamageType>
-            <explosiveRadius>3</explosiveRadius>
+            <explosiveRadius>1.9</explosiveRadius>
             <postExplosionGasType>ToxGas</postExplosionGasType>
             <explosiveExpandPerStackcount>0.4</explosiveExpandPerStackcount>
             <startWickHitPointsPercent>0.7</startWickHitPointsPercent>

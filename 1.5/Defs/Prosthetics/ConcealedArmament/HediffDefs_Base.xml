@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <HediffDef Name="HOTL_AddedConcealedArmamentBase" ParentName="HOTL_AddedBodyPartBase" Abstract="true">
+        <addedPartProps>
+            <partEfficiency>1.125</partEfficiency>
+        </addedPartProps>
+    </HediffDef>
+
+    <HediffDef Name="HOTL_AddedConcealedFireArmamentBase" ParentName="HOTL_AddedConcealedArmamentBase" Abstract="true">
+        <stages>
+            <li>
+                <statOffsets>
+                    <ComfyTemperatureMin>-10</ComfyTemperatureMin>
+                    <ComfyTemperatureMax>10</ComfyTemperatureMax>
+                </statOffsets>
+            </li>
+        </stages>
+        <defaultLabelColor>(0.8, 0.255, 0.145)</defaultLabelColor>
+    </HediffDef>
+
+    <HediffDef Name="HOTL_AddedConcealedLightningArmamentBase" ParentName="HOTL_AddedConcealedArmamentBase" Abstract="true">
+        <defaultLabelColor>(0.612, 0.714, 0.886)</defaultLabelColor>
+    </HediffDef>
+
+    <HediffDef Name="HOTL_AddedConcealedAchlysArmamentBase" ParentName="HOTL_AddedConcealedArmamentBase" Abstract="true">
+        <defaultLabelColor>(0.576, 0.769, 0.49)</defaultLabelColor>
+    </HediffDef>
+
+    <HediffDef Name="HOTL_AddedConcealedKineticArmamentBase" ParentName="HOTL_AddedConcealedArmamentBase" Abstract="true">
+        <defaultLabelColor>(0.706, 0.706, 0.706)</defaultLabelColor>
+    </HediffDef>
+
+</Defs>

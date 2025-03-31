@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<!-- 2x -->
+	<RecipeDef ParentName="SurgeryInstallImplantBase">
+		<defName>HOTL_Install_ExoArm</defName>
+		<label>install exoarm</label>
+		<description>Install an exoarm.</description>
+		<workerClass>HealersOfTheLighthouse.Recipe_InstallImplantStackable</workerClass>
+		<descriptionHyperlinks>
+			<ThingDef>HOTL_ExoArm</ThingDef>
+			<HediffDef>HOTL_Installed_ExoArm</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing an exoarm.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>HOTL_ExoArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>HOTL_ExoArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Spine</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>HOTL_Installed_ExoArm</addsHediff>
+	</RecipeDef>
+
+
+</Defs>

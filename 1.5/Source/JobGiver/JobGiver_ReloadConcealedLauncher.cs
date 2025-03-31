@@ -12,7 +12,7 @@ namespace HealersOfTheLighthouse
 		{
 			if (pawn is null) return null;
 
-			CompCL = pawn.abilities?.GetAbility(HOTL_AbilityDefOfs.HOTL_ConcealedArmament_Launcher)?.CompOfType<AbilityComp_ConcealedLauncher>();
+			CompCL = pawn.abilities?.GetAbility(HOTL_AbilityDefOfs.HOTL_ConcealedArmament_MarbleLauncher)?.CompOfType<AbilityComp_ConcealedLauncher>();
 
 			if (CompCL is null) return null;
 			if (CompCL.NumberOfUnloadedSlots <= 0) return null;
@@ -23,12 +23,12 @@ namespace HealersOfTheLighthouse
 			}
 
 			List<Thing> foundAmmo = null;
-			if (CompCL.FindReloadableSlot())
+			if (CompCL.FindEmptySlot())
 			{
 				foundAmmo = RefuelWorkGiverUtility.FindEnoughReservableThings(pawn,
 					pawn.Position,
 					WantedThings,
-					(Thing t) => t.def == CompCL.magazine[CompCL.MagazineSlotToReload].ThingDef && pawn.CanReserve(t)
+					(Thing t) => t.def == CompCL.Magazine[CompCL.MagazineSlotToReload].ThingDef && pawn.CanReserve(t)
 					);
 			}
 

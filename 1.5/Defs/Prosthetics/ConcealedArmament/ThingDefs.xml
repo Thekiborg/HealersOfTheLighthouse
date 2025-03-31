@@ -6,17 +6,21 @@
     <!-- ######################################################### -->
 
     <!-- Propelled Arm -->
-    <ThingDef ParentName="HOTL_ConcealedArmamentBase">
-        <defName>HOTL_Arm_PropelledArm</defName>
+    <ThingDef ParentName="HOTL_ConcealedFireArmamentBase">
+        <defName>HOTL_CA_PropelledArm</defName>
         <label>propelled arm</label>
-        <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThis implant is part of the &lt;color=#c74228&gt;Draco Partes&lt;/color&gt;. Its flame-producing generator enables wide use in cold environments, keeping soldiers at a safe temperature as long as it remains dry.\n\nThe propelled arm is used by burly operatives, allowing them to slam their opponents against walls with ease, granting them superiority in hand-to-hand combat.</description>
+        <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThe &lt;color=#c74228&gt;propelled arm&lt;/color&gt; is used by burly operatives, allowing them to push their opponents and clear the way with ease.</description>
+        <graphicData>
+            <texPath>Items/Prosthesis/ImplantBox_Arm</texPath>
+        </graphicData>
         <descriptionHyperlinks>
-            <RecipeDef>HOTL_Install_PropelledArm</RecipeDef>
-            <HediffDef>HOTL_InstalledArm_PropelledArm</HediffDef>
+            <RecipeDef>HOTL_Install_CA_PropelledArm</RecipeDef>
+            <HediffDef>HOTL_Installed_CA_PropelledArm</HediffDef>
         </descriptionHyperlinks>
         <costList>
-            <Plasteel>15</Plasteel>
-            <ComponentSpacer>4</ComponentSpacer>
+            <Moyo2_Abyssteel>20</Moyo2_Abyssteel>
+            <ComponentSpacer>3</ComponentSpacer>
+            <Chemfuel>40</Chemfuel>
         </costList>
         <statBases>
             <Mass>5</Mass>
@@ -24,61 +28,122 @@
     </ThingDef>
 
     <!-- Dragon's breath -->
-    <ThingDef ParentName="HOTL_ConcealedArmamentBase">
-        <defName>HOTL_Jaw_DragonsBreath</defName>
+    <ThingDef ParentName="HOTL_ConcealedFireArmamentBase">
+        <defName>HOTL_CA_DragonsBreath</defName>
         <label>dragon's breath</label>
-        <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThis implant is part of the &lt;color=#c74228&gt;Draco Partes&lt;/color&gt;. Its flame-producing generator enables wide use in cold environments, keeping soldiers at a safe temperature as long as it remains dry.\n\nThe dragon’s breath adds an opening beneath the tongue that allows the user to exhale fire. It has both helped soldiers overcome their captors and provoked unintentional injuries among lovers.</description>
+        <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThe &lt;color=#c74228&gt;dragon's breath&lt;/color&gt; adds an opening beneath the tongue that allows the user to exhale fire. It has both helped soldiers overcome their captors and provoked unintentional injuries among lovers.</description>
+        <graphicData>
+            <texPath>Items/Prosthesis/ImplantBox_Jaw</texPath>
+        </graphicData>
         <descriptionHyperlinks>
-            <RecipeDef>HOTL_Install_DragonsBreath</RecipeDef>
-            <HediffDef>HOTL_InstalledJaw_DragonsBreath</HediffDef>
+            <RecipeDef>HOTL_Install_CA_DragonsBreath</RecipeDef>
+            <HediffDef>HOTL_Installed_CA_DragonsBreath</HediffDef>
         </descriptionHyperlinks>
         <costList>
-            <Plasteel>15</Plasteel>
-            <ComponentSpacer>4</ComponentSpacer>
+            <Moyo2_Abyssteel>20</Moyo2_Abyssteel>
+            <ComponentSpacer>3</ComponentSpacer>
+            <Chemfuel>40</Chemfuel>
         </costList>
         <statBases>
             <Mass>5</Mass>
         </statBases>
     </ThingDef>
+
+    <!-- ############################################################ -->
+    <!-- ######################## LIGHTNING ######################### -->
+    <!-- ############################################################ -->
+
+    <!-- Arc thrower -->
+    <ThingDef ParentName="HOTL_ConcealedLightningArmamentBase">
+        <defName>HOTL_CA_ArcThrower</defName>
+        <label>arc thrower</label>
+        <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThe &lt;color=#9cb6e2&gt;arc thrower&lt;/color&gt; shoots arcing electricity capable of bouncing to (potentially unintended) targets. It is usually used in wet environments, in which the arcs are enhanced.</description>
+        <graphicData>
+            <texPath>Items/Prosthesis/ImplantBox_Arm</texPath>
+        </graphicData>
+        <descriptionHyperlinks>
+            <RecipeDef>HOTL_Install_CA_ArcThrower</RecipeDef>
+            <HediffDef>HOTL_Installed_CA_ArcThrower</HediffDef>
+        </descriptionHyperlinks>
+        <costList>
+            <Moyo2_Abyssteel>20</Moyo2_Abyssteel>
+            <ComponentSpacer>3</ComponentSpacer>
+            <ComponentIndustrial>4</ComponentIndustrial>
+        </costList>
+        <statBases>
+            <Mass>5</Mass>
+        </statBases>
+    </ThingDef>
+
+    <!-- Zeus breath -->
+    <ThingDef ParentName="HOTL_ConcealedLightningArmamentBase">
+        <defName>HOTL_CA_ZeusBreath</defName>
+        <label>zeus breath</label>
+        <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThe &lt;color=#9cb6e2&gt;zeus breath&lt;/color&gt; is a variant of the arc thrower that sacrifices reusability for the ability to fire multiple arcing shots at once, making it more lethal against single targets and better at handling groups of enemies.</description>
+        <graphicData>
+            <texPath>Items/Prosthesis/ImplantBox_Jaw</texPath>
+        </graphicData>
+        <descriptionHyperlinks>
+            <RecipeDef>HOTL_Install_CA_ZeusBreath</RecipeDef>
+            <HediffDef>HOTL_Installed_CA_ZeusBreath</HediffDef>
+        </descriptionHyperlinks>
+        <costList>
+            <Moyo2_Abyssteel>20</Moyo2_Abyssteel>
+            <ComponentSpacer>3</ComponentSpacer>
+            <ComponentIndustrial>4</ComponentIndustrial>
+        </costList>
+        <statBases>
+            <Mass>5</Mass>
+        </statBases>
+    </ThingDef>
+
 
     <!-- ######################################################## -->
     <!-- ########################## TOX ######################### -->
     <!-- ######################################################## -->
 
     <!-- Tox breath -->
-    <ThingDef ParentName="HOTL_ConcealedArmamentBase">
-        <defName>HOTL_Jaw_ToxBreath</defName>
+    <ThingDef ParentName="HOTL_ConcealedAchlysArmamentBase">
+        <defName>HOTL_CA_ToxBreath</defName>
         <label>tox breath</label>
-        <description>a.</description>
+        <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThe &lt;color=#93c47d&gt;tox breath&lt;/color&gt;.</description>
+        <graphicData>
+            <texPath>Items/Prosthesis/ImplantBox_Jaw</texPath>
+        </graphicData>
         <descriptionHyperlinks>
-            <RecipeDef>HOTL_Install_ToxBreath</RecipeDef>
-            <HediffDef>HOTL_InstalledJaw_ToxBreath</HediffDef>
+            <RecipeDef>HOTL_Install_CA_ToxBreath</RecipeDef>
+            <HediffDef>HOTL_Installed_CA_ToxBreath</HediffDef>
         </descriptionHyperlinks>
         <costList>
-            <Plasteel>15</Plasteel>
-            <ComponentSpacer>4</ComponentSpacer>
+            <Moyo2_Abyssteel>20</Moyo2_Abyssteel>
+            <ComponentSpacer>3</ComponentSpacer>
+            <Wastepack>20</Wastepack>
         </costList>
         <statBases>
             <Mass>5</Mass>
         </statBases>
     </ThingDef>
 
-	<!-- ###################################################### -->
+    <!-- ###################################################### -->
     <!-- ####################### KINETIC ###################### -->
     <!-- ###################################################### -->
 
-    <!-- Launcher arm -->
-    <ThingDef ParentName="HOTL_ConcealedArmamentBase">
-        <defName>HOTL_Arm_ConcealedLauncher</defName>
-        <label>launcher arm</label>
-        <description>An advanced artificial arm. Silenced mini-servos give great strength, while the biogel nerve-link gives exquisite control. A lattice-dust healing system allows it to recover from damage. It is better than a biological arm in almost every way.</description>
+    <!-- marble launcher -->
+    <ThingDef ParentName="HOTL_ConcealedKineticArmamentBase">
+        <defName>HOTL_CA_MarbleLauncher</defName>
+        <label>marble launcher</label>
+        <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThe &lt;color=#b4b4b4&gt;marble launcher&lt;/color&gt; is able to load, store and shoot different kinds of combat rounds as needed, granting the user a lot of versatility during missions.</description>
+        <graphicData>
+            <texPath>Items/Prosthesis/ImplantBox_Arm</texPath>
+        </graphicData>
         <descriptionHyperlinks>
-            <RecipeDef>HOTL_Install_ConcealedLauncherArm</RecipeDef>
-            <HediffDef>HOTL_InstalledArm_ConcealedLauncher</HediffDef>
+            <RecipeDef>HOTL_Install_CA_MarbleLauncher</RecipeDef>
+            <HediffDef>HOTL_Installed_CA_MarbleLauncher</HediffDef>
         </descriptionHyperlinks>
         <costList>
-            <Plasteel>15</Plasteel>
-            <ComponentSpacer>4</ComponentSpacer>
+            <Moyo2_Abyssteel>20</Moyo2_Abyssteel>
+            <ComponentSpacer>3</ComponentSpacer>
+            <Steel>40</Steel>
         </costList>
         <statBases>
             <Mass>5</Mass>

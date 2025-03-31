@@ -9,11 +9,6 @@ namespace HealersOfTheLighthouse
 	[HarmonyPatch(typeof(Projectile), "CanHit")]
 	internal static class Projectile_CanHit_Transpiler
 	{
-		private static void Test(Projectile proj)
-		{
-			Log.Message(proj.GetType().FullName);
-		}
-
 		[HarmonyTranspiler]
 		private static IEnumerable<CodeInstruction> AllowLightningToHitLauncher(IEnumerable<CodeInstruction> codeInstructions)
 		{
@@ -37,8 +32,6 @@ namespace HealersOfTheLighthouse
 				/*
 				 * if (this is LightningProjectile)
 				 */
-				new(OpCodes.Ldarg_0),
-				new(OpCodes.Call, AccessTools.Method(typeof(Projectile_CanHit_Transpiler), nameof(Test))),
 				new(OpCodes.Ldarg_0),
 				new(OpCodes.Isinst, typeof(LightningProjectile)),
 				new(OpCodes.Brtrue),
@@ -65,7 +58,7 @@ namespace HealersOfTheLighthouse
 			// As we're resting in Ldarg.1, Bne.un.S is 3 instructions further.
 			// Then we assign the third instruction from the ones we want to insert (Brtrue) and we assign it the operand of bne.un.s
 			// Should jump to the start of ProjectileHitFlags hitFlags = HitFlags;
-			instructionsToInsert[4].operand = codeMatcher.InstructionAt(3).operand;
+			instructionsToInsert[2].operand = codeMatcher.InstructionAt(3).operand;
 
 			codeMatcher.Insert(instructionsToInsert);
 			return codeMatcher.InstructionEnumeration();

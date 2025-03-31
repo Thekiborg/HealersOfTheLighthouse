@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<!-- ######################################################### -->
+    <!-- ########################## FIRE ######################### -->
+    <!-- ######################################################### -->
+
+	<!-- Propelled arm -->
+	<AbilityDef ParentName="AbilityTouchBase">
+		<defName>HOTL_ConcealedArmament_PropelledArm</defName>
+		<label>propelled arm</label> <!-- find good label + lore -->
+		<description>The &lt;color=#c74228&gt;propelled arm&lt;/color&gt; is used by burly operatives, allowing them to push their opponents and clear the way with ease.</description>
+		<iconPath>Abilities/Icons/Icon_PropelledArm</iconPath>
+		<displayOrder>400</displayOrder>
+        <warmupPreEndSound>MeleeHit_BionicPunch</warmupPreEndSound>
+		<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		<stunTargetWhileCasting>false</stunTargetWhileCasting>
+		<cooldownTicksRange>7500</cooldownTicksRange>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<range>-1</range>
+			<warmupTime>0.8</warmupTime>
+            <defaultCooldownTime>3</defaultCooldownTime>
+			<!--<targetParams> Default target params
+			</targetParams>-->
+		</verbProperties>
+		<comps>
+			<li Class="HealersOfTheLighthouse.AbilityCompProperties_ConcealedPropelledArm">
+				<goodwillImpact>-15</goodwillImpact>
+				<baseKnockbackLength>3</baseKnockbackLength>
+                <ArmEffecter>HOTL_ConcealedArmament_PropelledArm_SmokePuff</ArmEffecter>
+				<pawnFlyerDef>HOTL_PawnFlyer_PropelledArm</pawnFlyerDef>
+				<ArmDamageInfo>
+					<damageDef>Flame</damageDef>
+					<amount>10</amount>
+				</ArmDamageInfo>
+				<collideDamageInfo>
+					<damageDef>HOTL_CollideDamage</damageDef>
+					<amount>25</amount>
+				</collideDamageInfo>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	<!-- Dragon's breath -->
+	<AbilityDef>
+    	<defName>HOTL_ConcealedArmament_DragonsBreath</defName>
+    	<label>dragon's breath</label>
+    	<description>The &lt;color=#c74228&gt;dragon's breath&lt;/color&gt; adds an opening beneath the tongue that allows the user to exhale fire. It has both helped soldiers overcome their captors and provoked unintentional injuries among lovers.</description>
+    	<iconPath>Abilities/Icons/Icon_SpewFire</iconPath>
+    	<cooldownTicksRange>7500</cooldownTicksRange>
+    	<aiCanUse>true</aiCanUse>
+    	<ai_IsIncendiary>true</ai_IsIncendiary>
+    	<warmupStartSound>FireSpew_Warmup</warmupStartSound>
+    	<verbProperties>
+    	  <verbClass>Verb_CastAbility</verbClass>
+    	  <range>7.9</range>
+    	  <warmupTime>0.85</warmupTime>
+    	  <soundCast>FireSpew_Resolve</soundCast>
+    	  <targetParams>
+    	    <canTargetLocations>true</canTargetLocations>
+    	  </targetParams>
+    	</verbProperties>
+    	<comps>
+    	  <li Class="HealersOfTheLighthouse.AbilityCompProperties_GenericSpew">
+		  	<goodwillImpact>-15</goodwillImpact>
+    	    <range>7.9</range>
+    	    <lineWidthEnd>3</lineWidthEnd>
+    	    <filthDef>Filth_FlammableBile</filthDef>
+    	    <effecterDef>Fire_Spew</effecterDef>
+    	    <canHitFilledCells>true</canHitFilledCells>
+			<spewDamageDef>Flame</spewDamageDef>
+			<chanceToStartFire>1</chanceToStartFire>
+    	  </li>
+    	</comps>
+  	</AbilityDef>
+
+	<!-- ######################################################## -->
+    <!-- ####################### Lightning ###################### -->
+    <!-- ######################################################## -->
+
+	<AbilityDef>
+    	<defName>HOTL_ConcealedArmament_ArcThrower</defName>
+    	<label>arc thrower</label>
+    	<description>The &lt;color=#9cb6e2&gt;arc thrower&lt;/color&gt; shoots arcing electricity capable of bouncing to (potentially unintended) targets. It is usually used in wet environments, in which the arcs are enhanced.</description>
+    	<iconPath>Abilities/Icons/Icon_ArcThrowerArm</iconPath>
+    	<cooldownTicksRange>12500</cooldownTicksRange>
+    	<aiCanUse>true</aiCanUse>
+    	<warmupStartSound>FireSpew_Warmup</warmupStartSound>
+		<cooldownPerCharge>true</cooldownPerCharge>
+		<charges>3</charges>
+    	<verbProperties>
+    	  <verbClass>Verb_CastAbility</verbClass>
+    	  <range>10.9</range>
+    	  <warmupTime>1.2</warmupTime>
+    	  <soundCast>FireSpew_Resolve</soundCast>
+			<!-- Default target params -->
+    	</verbProperties>
+    	<comps>
+    	  <li Class="HealersOfTheLighthouse.AbilityCompProperties_ConcealedLightningProjectile">
+		  	<goodwillImpact>-15</goodwillImpact>
+		  	<compClass>HealersOfTheLighthouse.AbilityComp_ConcealedArcThrower</compClass>
+    	    <arcConeAngleDegs>120</arcConeAngleDegs>
+			<arcConeRange>10</arcConeRange>
+			<dryJumpsCount>5</dryJumpsCount>
+			<wetJumpsCount>10</wetJumpsCount>
+			<stunDurationTicks>120</stunDurationTicks>
+    	  </li>
+    	</comps>
+  	</AbilityDef>
+
+	<AbilityDef>
+    	<defName>HOTL_ConcealedArmament_ZeusBreath</defName>
+    	<label>zeus breath</label>
+    	<description>The &lt;color=#9cb6e2&gt;zeus breath&lt;/color&gt; is a variant of the arc thrower that sacrifices reusability for the ability to fire multiple arcing shots at once, making it more lethal against single targets and better at handling groups of enemies.</description>
+    	<iconPath>Abilities/Icons/Icon_SpewZeus</iconPath>
+    	<cooldownTicksRange>12500</cooldownTicksRange>
+    	<aiCanUse>true</aiCanUse>
+    	<warmupStartSound>FireSpew_Warmup</warmupStartSound>
+		<cooldownPerCharge>true</cooldownPerCharge>
+		<charges>1</charges>
+    	<verbProperties>
+    	  <verbClass>Verb_CastAbility</verbClass>
+    	  <range>7.9</range>
+    	  <warmupTime>1.05</warmupTime>
+    	  <soundCast>FireSpew_Resolve</soundCast>
+		  <targetParams>
+		  	<canTargetLocations>true</canTargetLocations>
+		  </targetParams>
+    	</verbProperties>
+    	<comps>
+    	  <li Class="HealersOfTheLighthouse.AbilityCompProperties_ConcealedShotgunArcThrower">
+		  	<goodwillImpact>-15</goodwillImpact>
+    	    <arcConeAngleDegs>120</arcConeAngleDegs>
+			<arcConeRange>10</arcConeRange>
+			<dryJumpsCount>5</dryJumpsCount>
+			<wetJumpsCount>10</wetJumpsCount>
+			<pelletCount>5</pelletCount>
+			<stunDurationTicks>80</stunDurationTicks>
+    	  </li>
+    	</comps>
+  	</AbilityDef>
+
+	<!-- ######################################################## -->
+	<!-- ########################## TOX ######################### -->
+	<!-- ######################################################## -->
+
+	<AbilityDef Name="AbilityCAToxBase" Abstract="true">
+		<comps>
+			<li Class="HealersOfTheLighthouse.AbilityCompProperties_Reloadable">
+				<ammoDef>Wastepack</ammoDef>
+				<baseReloadTicks>120</baseReloadTicks>
+				<ammoCountPerCharge>5</ammoCountPerCharge>
+				<soundReload>Standard_Reload</soundReload>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<!-- Tox breath -->
+	<AbilityDef ParentName="AbilityCAToxBase">
+		<defName>HOTL_ConcealedArmament_ToxBreath</defName>
+		<label>tox breath</label>
+		<description>The &lt;color=#93c47d&gt;tox breath&lt;/color&gt;.</description>
+		<iconPath>Abilities/Icons/Icon_SpewTox</iconPath>
+		<aiCanUse>true</aiCanUse>
+		<warmupStartSound>FireSpew_Warmup</warmupStartSound>
+		<charges>3</charges>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>7.9</range>
+			<warmupTime>0.85</warmupTime>
+			<soundCast>FireSpew_Resolve</soundCast>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+			<flammabilityAttachFireChanceCurve>
+				<points>
+					<li>(0, 0)</li>
+				</points>
+			</flammabilityAttachFireChanceCurve>
+		</verbProperties>
+		<comps>
+			<li Class="HealersOfTheLighthouse.AbilityCompProperties_GenericSpew">
+				<goodwillImpact>-15</goodwillImpact>
+				<compClass>HealersOfTheLighthouse.AbilityComp_GenericSpew</compClass>
+				<range>7.9</range>
+				<lineWidthEnd>3</lineWidthEnd>
+				<canHitFilledCells>true</canHitFilledCells>
+				<spewDamageDef>ToxGas</spewDamageDef>
+				<spewGasType>ToxGas</spewGasType>
+				<chanceToStartFire>0</chanceToStartFire>
+			</li>
+		</comps>
+	</AbilityDef>
+
+	<!-- ###################################################### -->
+	<!-- ####################### KINETIC ###################### -->
+	<!-- ###################################################### -->
+
+	<!-- Marble launcher -->
+	<AbilityDef>
+		<defName>HOTL_ConcealedArmament_MarbleLauncher</defName>
+		<label>marble launcher</label> <!-- find good label + lore -->
+		<description>The &lt;color=#b4b4b4&gt;marble launcher&lt;/color&gt; is able to load, store and shoot different kinds of combat rounds as needed, granting the user a lot of versatility during missions.</description>
+		<iconPath>Abilities/Icons/Icon_MarbleSingle</iconPath>
+		<displayOrder>400</displayOrder>
+        <warmupPreEndSound>MeleeHit_BionicPunch</warmupPreEndSound>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		<stunTargetWhileCasting>false</stunTargetWhileCasting>
+		<cooldownTicksRange>2500</cooldownTicksRange>
+		<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+		<showWhenDrafted>false</showWhenDrafted>
+		<verbProperties>
+			<verbClass>HealersOfTheLighthouse.Verb_CastAbilityBurst</verbClass>
+			<range>15.9</range>
+			<warmupTime>1</warmupTime>
+            <defaultCooldownTime>3</defaultCooldownTime>
+			<ticksBetweenBurstShots>60</ticksBetweenBurstShots>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="HealersOfTheLighthouse.AbilityCompProperties_ConcealedLauncher">
+				<compClass>HealersOfTheLighthouse.AbilityComp_MarbleLauncher</compClass>
+				<goodwillImpact>-15</goodwillImpact>
+				<ammoCapacity>5</ammoCapacity>
+				<burstSpreadRadiusSquared>4</burstSpreadRadiusSquared>
+				<allowedAmmo>
+					<li>HOTL_MarbleRound_Fire</li>
+					<li>HOTL_MarbleRound_Tox</li>
+				</allowedAmmo>
+				<reloadSound>Standard_Reload</reloadSound>
+				<displayGizmoWhileDrafted>true</displayGizmoWhileDrafted>
+				<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+			</li>
+		</comps>
+	</AbilityDef>
+
+</Defs>

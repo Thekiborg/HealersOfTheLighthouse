@@ -7,19 +7,19 @@
 
 	<!-- Propelled Arm -->
 	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
-		<defName>HOTL_Install_PropelledArm</defName>
+		<defName>HOTL_Install_CA_PropelledArm</defName>
 		<label>install propelled arm</label>
 		<description>Install a propelled arm.</description>
 		<descriptionHyperlinks>
-			<ThingDef>HOTL_Arm_PropelledArm</ThingDef>
-			<HediffDef>HOTL_InstalledArm_PropelledArm</HediffDef>
+			<ThingDef>HOTL_CA_PropelledArm</ThingDef>
+			<HediffDef>HOTL_Installed_CA_PropelledArm</HediffDef>
 		</descriptionHyperlinks>
 		<jobString>Installing propelled arm.</jobString>
 		<ingredients>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>HOTL_Arm_PropelledArm</li>
+						<li>HOTL_CA_PropelledArm</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -27,30 +27,30 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>HOTL_Arm_PropelledArm</li>
+				<li>HOTL_CA_PropelledArm</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
 			<li>Shoulder</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>HOTL_InstalledArm_PropelledArm</addsHediff>
+		<addsHediff>HOTL_Installed_CA_PropelledArm</addsHediff>
 	</RecipeDef>
 
 	<!-- Dragon's breath -->
 	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
-		<defName>HOTL_Install_DragonsBreath</defName>
+		<defName>HOTL_Install_CA_DragonsBreath</defName>
 		<label>install dragon's breath</label>
 		<description>Install a dragon's breath.</description>
 		<descriptionHyperlinks>
-			<ThingDef>HOTL_Jaw_DragonsBreath</ThingDef>
-			<HediffDef>HOTL_InstalledJaw_DragonsBreath</HediffDef>
+			<ThingDef>HOTL_CA_DragonsBreath</ThingDef>
+			<HediffDef>HOTL_Installed_CA_DragonsBreath</HediffDef>
 		</descriptionHyperlinks>
 		<jobString>Installing dragon's breath.</jobString>
 		<ingredients>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>HOTL_Jaw_DragonsBreath</li>
+						<li>HOTL_CA_DragonsBreath</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -58,34 +58,100 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>HOTL_Jaw_DragonsBreath</li>
+				<li>HOTL_CA_DragonsBreath</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
 			<li>Jaw</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>HOTL_InstalledArm_PropelledArm</addsHediff>
+		<addsHediff>HOTL_Installed_CA_DragonsBreath</addsHediff>
+	</RecipeDef>
+
+	<!-- ############################################################ -->
+	<!-- ######################## LIGHTNING ######################### -->
+	<!-- ############################################################ -->
+
+	<!-- Arc Thrower -->
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>HOTL_Install_CA_ArcThrower</defName>
+		<label>install arc thrower</label>
+		<description>Install an arc thrower.</description>
+		<descriptionHyperlinks>
+			<ThingDef>HOTL_CA_ArcThrower</ThingDef>
+			<HediffDef>HOTL_Installed_CA_ArcThrower</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing arc thrower.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>HOTL_CA_ArcThrower</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>HOTL_CA_ArcThrower</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Shoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>HOTL_Installed_CA_ArcThrower</addsHediff>
+	</RecipeDef>
+
+	<!-- Zeus breath -->
+	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+		<defName>HOTL_Install_CA_ZeusBreath</defName>
+		<label>install zeus breath</label>
+		<description>Install a zeus breath.</description>
+		<descriptionHyperlinks>
+			<ThingDef>HOTL_CA_ZeusBreath</ThingDef>
+			<HediffDef>HOTL_Installed_CA_ZeusBreath</HediffDef>
+		</descriptionHyperlinks>
+		<jobString>Installing zeus breath.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>HOTL_CA_ZeusBreath</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>HOTL_CA_ZeusBreath</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Jaw</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>HOTL_Installed_CA_ZeusBreath</addsHediff>
 	</RecipeDef>
 
 	<!-- ######################################################## -->
-    <!-- ########################## TOX ######################### -->
-    <!-- ######################################################## -->
+	<!-- ########################## TOX ######################### -->
+	<!-- ######################################################## -->
 
 	<!-- Tox breath -->
 	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
-		<defName>HOTL_Install_ToxBreath</defName>
+		<defName>HOTL_Install_CA_ToxBreath</defName>
 		<label>install tox breath</label>
 		<description>Install a tox breath.</description>
 		<descriptionHyperlinks>
-			<ThingDef>HOTL_Jaw_ToxBreath</ThingDef>
-			<HediffDef>HOTL_InstalledJaw_ToxBreath</HediffDef>
+			<ThingDef>HOTL_CA_ToxBreath</ThingDef>
+			<HediffDef>HOTL_Installed_CA_ToxBreath</HediffDef>
 		</descriptionHyperlinks>
 		<jobString>Installing tox breath.</jobString>
 		<ingredients>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>HOTL_Jaw_ToxBreath</li>
+						<li>HOTL_CA_ToxBreath</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -93,34 +159,34 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>HOTL_Jaw_ToxBreath</li>
+				<li>HOTL_CA_ToxBreath</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
 			<li>Jaw</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>HOTL_InstalledArm_PropelledArm</addsHediff>
+		<addsHediff>HOTL_Installed_CA_ToxBreath</addsHediff>
 	</RecipeDef>
 
 	<!-- ###################################################### -->
-    <!-- ####################### KINETIC ###################### -->
-    <!-- ###################################################### -->
+	<!-- ####################### KINETIC ###################### -->
+	<!-- ###################################################### -->
 
-    <!-- Launcher arm -->
+	<!-- marble launcher -->
 	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
-		<defName>HOTL_Install_ConcealedLauncherArm</defName>
-		<label>install launcher arm</label>
-		<description>Install a launcher arm.</description>
+		<defName>HOTL_Install_CA_MarbleLauncher</defName>
+		<label>install marble launcher</label>
+		<description>Install a marble launcher.</description>
 		<descriptionHyperlinks>
-			<ThingDef>HOTL_Arm_ConcealedLauncher</ThingDef>
-			<HediffDef>HOTL_InstalledArm_ConcealedLauncher</HediffDef>
+			<ThingDef>HOTL_CA_MarbleLauncher</ThingDef>
+			<HediffDef>HOTL_Installed_CA_MarbleLauncher</HediffDef>
 		</descriptionHyperlinks>
-		<jobString>Installing launcher arm.</jobString>
+		<jobString>Installing marble launcher.</jobString>
 		<ingredients>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>HOTL_Arm_ConcealedLauncher</li>
+						<li>HOTL_CA_MarbleLauncher</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -128,13 +194,13 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>HOTL_Arm_ConcealedLauncher</li>
+				<li>HOTL_CA_MarbleLauncher</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
 			<li>Shoulder</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>HOTL_InstalledArm_ConcealedLauncher</addsHediff>
+		<addsHediff>HOTL_Installed_CA_MarbleLauncher</addsHediff>
 	</RecipeDef>
 
 </Defs>

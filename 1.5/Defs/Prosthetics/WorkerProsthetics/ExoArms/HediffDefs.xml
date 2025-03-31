@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<HediffDef ParentName="HOTL_InstalledImplantBase">
+		<defName>HOTL_Installed_ExoArm</defName>
+		<label>exoarm</label>
+		<labelNoun>an exoarm</labelNoun>
+		<description>An articulated robotic arm that gets attached to the spine. Despite it feeling like a natural arm, it can become a nuisance to move around with.</description>
+		<hediffClass>HealersOfTheLighthouse.Hediff_NoMerge</hediffClass>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.075</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.15</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+		<descriptionHyperlinks>
+			<ThingDef>HOTL_ExoArm</ThingDef>
+			<RecipeDef>HOTL_Install_ExoArm</RecipeDef>
+		</descriptionHyperlinks>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>exoarm fist</label>
+						<capacities>
+							<li>Blunt</li>
+						</capacities>
+						<power>4</power>
+						<cooldownTime>2</cooldownTime>
+						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
+						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+		</comps>
+		<spawnThingOnRemoved>HOTL_ExoArm</spawnThingOnRemoved>
+	</HediffDef>
+
+</Defs>
