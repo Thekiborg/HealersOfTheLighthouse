@@ -106,7 +106,7 @@
     <ThingDef ParentName="HOTL_ConcealedAchlysArmamentBase">
         <defName>HOTL_CA_ToxBreath</defName>
         <label>tox breath</label>
-        <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThe &lt;color=#93c47d&gt;tox breath&lt;/color&gt;.</description>
+        <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThe &lt;color=#93c47d&gt;tox breath&lt;/color&gt;.Reloads 1 charge with x5 wastepacks.</description>
         <graphicData>
             <texPath>Items/Prosthesis/ImplantBox_Jaw</texPath>
         </graphicData>
@@ -139,6 +139,8 @@
         <descriptionHyperlinks>
             <RecipeDef>HOTL_Install_CA_MarbleLauncher</RecipeDef>
             <HediffDef>HOTL_Installed_CA_MarbleLauncher</HediffDef>
+            <ThingDef>HOTL_MarbleRound_Fire</ThingDef>
+            <ThingDef>HOTL_MarbleRound_Tox</ThingDef>
         </descriptionHyperlinks>
         <costList>
             <Moyo2_Abyssteel>20</Moyo2_Abyssteel>

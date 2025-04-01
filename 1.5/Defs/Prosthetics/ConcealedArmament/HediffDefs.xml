@@ -196,6 +196,8 @@
 		<descriptionHyperlinks>
 			<ThingDef>HOTL_CA_MarbleLauncher</ThingDef>
 			<RecipeDef>HOTL_Install_CA_MarbleLauncher</RecipeDef>
+			<ThingDef>HOTL_MarbleRound_Fire</ThingDef>
+			<ThingDef>HOTL_MarbleRound_Tox</ThingDef>
 		</descriptionHyperlinks>
 		<comps>
 			<li Class="HediffCompProperties_VerbGiver">

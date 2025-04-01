@@ -1,96 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
 
-    <ThingDef Name="HOTL_MarbleRound_Base" ParentName="ResourceBase" Abstract="True">
-        <soundInteract>Metal_Drop</soundInteract>
-        <soundDrop>Standard_Drop</soundDrop>
-        <tickerType>Normal</tickerType>
-        <stackLimit>25</stackLimit>
-        <techLevel>Industrial</techLevel>
-        <possessionCount>6</possessionCount>
-        <statBases>
-          <MaxHitPoints>60</MaxHitPoints>
-          <MarketValue>55</MarketValue>
-          <Mass>1.25</Mass>
-          <Flammability>1.0</Flammability>
-          <DeteriorationRate>1.5</DeteriorationRate>
-        </statBases>
-        <thingCategories>
-          <li>MortarShells</li>
-        </thingCategories>
-        <tradeTags>
-          <li>MortarShell</li>
-        </tradeTags>
-        <recipeMaker>
-            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
-            <effectWorking>Cook</effectWorking>
-            <soundWorking>Recipe_Machining</soundWorking>
-            <workAmount>800</workAmount>
-            <targetCountAdjustment>5</targetCountAdjustment>
-            <workSkill>Crafting</workSkill>
-            <recipeUsers>
-              <li>TableMachining</li>
-            </recipeUsers>
-            <skillRequirements>
-              <Crafting>4</Crafting>
-            </skillRequirements>
-            <displayPriority>100</displayPriority>
-            <researchPrerequisite>Bionics</researchPrerequisite>
-        </recipeMaker>
-    </ThingDef>
+  <ThingDef Name="HOTL_MarbleRound_Base" ParentName="ResourceBase" Abstract="True">
+	<soundInteract>Metal_Drop</soundInteract>
+	<soundDrop>Standard_Drop</soundDrop>
+	<tickerType>Normal</tickerType>
+	<stackLimit>25</stackLimit>
+	<techLevel>Industrial</techLevel>
+	<possessionCount>6</possessionCount>
+	<statBases>
+	  <MaxHitPoints>60</MaxHitPoints>
+	  <MarketValue>55</MarketValue>
+	  <Mass>1.25</Mass>
+	  <Flammability>1.0</Flammability>
+	  <DeteriorationRate>1.5</DeteriorationRate>
+	</statBases>
+	<thingCategories>
+	  <li>MortarShells</li>
+	</thingCategories>
+	<tradeTags>
+	  <li>MortarShell</li>
+	</tradeTags>
+	<recipeMaker>
+	  <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+	  <effectWorking>Cook</effectWorking>
+	  <soundWorking>Recipe_Machining</soundWorking>
+	  <workAmount>800</workAmount>
+	  <targetCountAdjustment>5</targetCountAdjustment>
+	  <workSkill>Crafting</workSkill>
+	  <recipeUsers>
+		<li>TableMachining</li>
+	  </recipeUsers>
+	  <skillRequirements>
+		<Crafting>4</Crafting>
+	  </skillRequirements>
+	  <displayPriority>100</displayPriority>
+	  <researchPrerequisite>Bionics</researchPrerequisite>
+	</recipeMaker>
+	<descriptionHyperlinks>
+	  <ThingDef>HOTL_CA_MarbleLauncher</ThingDef>
+	</descriptionHyperlinks>
+  </ThingDef>
 
-    
-    <!-- Fire Marble -->
-    <ThingDef ParentName="HOTL_MarbleRound_Base">
-        <defName>HOTL_MarbleRound_Fire</defName>
-        <label>fire marble</label>
-        <description>t.</description>
-        <uiIconPath>Items/MarbleAmmo/Fire/Ammo_MarbleFireA</uiIconPath>
-        <graphicData>
-          <texPath>Items/MarbleAmmo/Fire</texPath>
-          <graphicClass>Graphic_StackCount</graphicClass>
-        </graphicData>
-        <comps>
-          <li Class="CompProperties_Explosive">
-            <explosiveRadius>2</explosiveRadius>
-            <explosiveDamageType>Flame</explosiveDamageType>
-            <explosiveExpandPerStackcount>0.4</explosiveExpandPerStackcount>
-            <startWickHitPointsPercent>0.7</startWickHitPointsPercent>
-            <wickTicks>30~60</wickTicks>
-          </li>
-        </comps>
-        <projectileWhenLoaded>HOTL_MarbleRound_FireProjectile</projectileWhenLoaded>
-        <costList>
-          <Steel>10</Steel>
-          <Chemfuel>20</Chemfuel>
-        </costList>
-    </ThingDef>
 
-    <!-- Tox Marble -->
-    <ThingDef ParentName="HOTL_MarbleRound_Base">
-        <defName>HOTL_MarbleRound_Tox</defName>
-        <label>tox marble</label>
-        <description>t.</description>
-        <uiIconPath>Items/MarbleAmmo/Tox/Ammo_MarbleToxA</uiIconPath>
-        <graphicData>
-          <texPath>Items/MarbleAmmo/Tox</texPath>
-          <graphicClass>Graphic_StackCount</graphicClass>
-        </graphicData>
-        <comps>
-          <li Class="CompProperties_Explosive">
-            <explosiveDamageType>ToxGas</explosiveDamageType>
-            <explosiveRadius>1.9</explosiveRadius>
-            <postExplosionGasType>ToxGas</postExplosionGasType>
-            <explosiveExpandPerStackcount>0.4</explosiveExpandPerStackcount>
-            <startWickHitPointsPercent>0.7</startWickHitPointsPercent>
-            <wickTicks>30~60</wickTicks>
-          </li>
-        </comps>
-        <projectileWhenLoaded>HOTL_MarbleRound_ToxProjectile</projectileWhenLoaded>
-        <costList>
-          <Steel>10</Steel>
-          <Chemfuel>20</Chemfuel>
-        </costList>
-    </ThingDef>
+  <!-- Fire Marble -->
+  <ThingDef ParentName="HOTL_MarbleRound_Base">
+	<defName>HOTL_MarbleRound_Fire</defName>
+	<label>fire marble</label>
+	<description>A marble sized explosive round that ignites the surrounding area upon contact.</description>
+	<uiIconPath>Items/MarbleAmmo/Fire/Ammo_MarbleFireA</uiIconPath>
+	<graphicData>
+	  <texPath>Items/MarbleAmmo/Fire</texPath>
+	  <graphicClass>Graphic_StackCount</graphicClass>
+	</graphicData>
+	<comps>
+	  <li Class="CompProperties_Explosive">
+		<explosiveRadius>2</explosiveRadius>
+		<explosiveDamageType>Flame</explosiveDamageType>
+		<explosiveExpandPerStackcount>0.4</explosiveExpandPerStackcount>
+		<startWickHitPointsPercent>0.7</startWickHitPointsPercent>
+		<wickTicks>30~60</wickTicks>
+	  </li>
+	</comps>
+	<projectileWhenLoaded>HOTL_MarbleRound_FireProjectile</projectileWhenLoaded>
+	<costList>
+	  <Steel>10</Steel>
+	  <Chemfuel>20</Chemfuel>
+	</costList>
+  </ThingDef>
+
+  <!-- Tox Marble -->
+  <ThingDef ParentName="HOTL_MarbleRound_Base">
+	<defName>HOTL_MarbleRound_Tox</defName>
+	<label>tox marble</label>
+	<description>A marble sized explosive round that a cloud of tox gas upon contact.</description>
+	<uiIconPath>Items/MarbleAmmo/Tox/Ammo_MarbleToxA</uiIconPath>
+	<graphicData>
+	  <texPath>Items/MarbleAmmo/Tox</texPath>
+	  <graphicClass>Graphic_StackCount</graphicClass>
+	</graphicData>
+	<comps>
+	  <li Class="CompProperties_Explosive">
+		<explosiveDamageType>ToxGas</explosiveDamageType>
+		<explosiveRadius>1.9</explosiveRadius>
+		<postExplosionGasType>ToxGas</postExplosionGasType>
+		<explosiveExpandPerStackcount>0.4</explosiveExpandPerStackcount>
+		<startWickHitPointsPercent>0.7</startWickHitPointsPercent>
+		<wickTicks>30~60</wickTicks>
+	  </li>
+	</comps>
+	<projectileWhenLoaded>HOTL_MarbleRound_ToxProjectile</projectileWhenLoaded>
+	<costList>
+	  <Steel>10</Steel>
+	  <Chemfuel>20</Chemfuel>
+	</costList>
+  </ThingDef>
 
 </Defs>

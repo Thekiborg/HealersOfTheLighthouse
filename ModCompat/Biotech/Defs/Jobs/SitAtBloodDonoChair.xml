@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <WorkGiverDef>
+        <defName>HOTL_DonateBlood</defName>
+        <label>donate blood</label>
+        <giverClass>HealersOfTheLighthouse.Workgiver_DonateBlood</giverClass>
+        <workType>BasicWorker</workType>
+        <verb>donate blood</verb>
+        <gerund>donating blood</gerund>
+        <priorityInType>-100</priorityInType>
+        <requiredCapacities>
+            <li>Moving</li>
+        </requiredCapacities>
+    </WorkGiverDef>
+
+    <JobDef>
+        <defName>HOTL_DonateBlood</defName>
+        <driverClass>HealersOfTheLighthouse.JobDriver_DonateBlood</driverClass>
+        <reportString>donating blood at TargetA.</reportString>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+
+</Defs>

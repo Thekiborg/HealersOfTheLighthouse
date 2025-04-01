@@ -44,6 +44,12 @@
         <researchPrerequisites>
             <li>ComplexFurniture</li>
         </researchPrerequisites>
+        <comps>
+            <li Class="CompProperties_Forbiddable" />
+            <li>
+                <compClass>HealersOfTheLighthouse.Comp_BloodDonationChair</compClass>
+            </li>
+        </comps>
     </ThingDef>
 
 </Defs>

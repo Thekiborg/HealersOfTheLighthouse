@@ -25,6 +25,9 @@
 
     <HediffDef Name="HOTL_AddedConcealedAchlysArmamentBase" ParentName="HOTL_AddedConcealedArmamentBase" Abstract="true">
         <defaultLabelColor>(0.576, 0.769, 0.49)</defaultLabelColor>
+        <descriptionHyperlinks>
+            <ThingDef>Wastepack</ThingDef>
+        </descriptionHyperlinks>
     </HediffDef>
 
     <HediffDef Name="HOTL_AddedConcealedKineticArmamentBase" ParentName="HOTL_AddedConcealedArmamentBase" Abstract="true">

@@ -146,19 +146,9 @@
 	<!-- ########################## TOX ######################### -->
 	<!-- ######################################################## -->
 
-	<AbilityDef Name="AbilityCAToxBase" Abstract="true">
-		<comps>
-			<li Class="HealersOfTheLighthouse.AbilityCompProperties_Reloadable">
-				<ammoDef>Wastepack</ammoDef>
-				<baseReloadTicks>120</baseReloadTicks>
-				<ammoCountPerCharge>5</ammoCountPerCharge>
-				<soundReload>Standard_Reload</soundReload>
-			</li>
-		</comps>
-	</AbilityDef>
 
 	<!-- Tox breath -->
-	<AbilityDef ParentName="AbilityCAToxBase">
+	<AbilityDef ParentName="HOTL_AbilityCAToxBase">
 		<defName>HOTL_ConcealedArmament_ToxBreath</defName>
 		<label>tox breath</label>
 		<description>The &lt;color=#93c47d&gt;tox breath&lt;/color&gt;.</description>
@@ -202,7 +192,7 @@
 	<AbilityDef>
 		<defName>HOTL_ConcealedArmament_MarbleLauncher</defName>
 		<label>marble launcher</label> <!-- find good label + lore -->
-		<description>The &lt;color=#b4b4b4&gt;marble launcher&lt;/color&gt; is able to load, store and shoot different kinds of combat rounds as needed, granting the user a lot of versatility during missions.</description>
+		<description>The &lt;color=#b4b4b4&gt;marble launcher&lt;/color&gt; is able to load, store and shoot different kinds of combat rounds as needed, providing a lot of flexibility during missions.</description>
 		<iconPath>Abilities/Icons/Icon_MarbleSingle</iconPath>
 		<displayOrder>400</displayOrder>
         <warmupPreEndSound>MeleeHit_BionicPunch</warmupPreEndSound>
@@ -211,6 +201,10 @@
 		<cooldownTicksRange>2500</cooldownTicksRange>
 		<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
 		<showWhenDrafted>false</showWhenDrafted>
+		<descriptionHyperlinks>
+			<ThingDef>HOTL_MarbleRound_Fire</ThingDef>
+			<ThingDef>HOTL_MarbleRound_Tox</ThingDef>
+		</descriptionHyperlinks>
 		<verbProperties>
 			<verbClass>HealersOfTheLighthouse.Verb_CastAbilityBurst</verbClass>
 			<range>15.9</range>

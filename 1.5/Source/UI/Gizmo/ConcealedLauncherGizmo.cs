@@ -5,9 +5,8 @@ namespace HealersOfTheLighthouse
 	public class ConcealedLauncherGizmo : Gizmo
 	{
 		// --- Fields ---
-		private const float GizmoHeight = 75f;
 		private const float OuterPadding = 5f;
-		private const float ShootGizmoSize = GizmoHeight - 2 * OuterPadding;
+		private const float ShootGizmoSize = Height - 2 * OuterPadding;
 		private const float MagazineHeight = 40f;
 		private const float AmmoSlotPadding = 7f;
 		private const float AmmoSlotHeight = MagazineHeight - 2 * AmmoSlotPadding;
@@ -45,7 +44,7 @@ namespace HealersOfTheLighthouse
 
 		public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth, GizmoRenderParms parms)
 		{
-			Rect main = new(topLeft.x, topLeft.y, GetWidth(maxWidth), GizmoHeight);
+			Rect main = new(topLeft.x, topLeft.y, GetWidth(maxWidth), Height);
 			Widgets.DrawWindowBackground(main);
 
 			Rect shootButtonRect = new(main.xMax - ShootGizmoSize - OuterPadding, main.y + OuterPadding, ShootGizmoSize, ShootGizmoSize);

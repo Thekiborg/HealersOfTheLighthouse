@@ -74,7 +74,4 @@
 	    <Private>False</Private>
 	  </Reference>
 	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="Thing\Comp\" />
-	</ItemGroup>
 </Project>

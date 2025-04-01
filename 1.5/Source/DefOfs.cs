@@ -39,6 +39,7 @@
         public static JobDef HOTL_TakeSecondPawnToTheorize;
         public static JobDef HOTL_ConcealedArmament_ReloadLauncher;
         public static JobDef HOTL_ConcealedArmament_ReloadAbility;
+        public static JobDef HOTL_DonateBlood;
 	}
 
 
@@ -65,5 +66,6 @@
 
 		public static ThingDef HOTL_LightningArc;
         public static ThingDef Mote_GraserBeamBase;
+        public static ThingDef HOTL_BloodDonationChair;
 	}
 }

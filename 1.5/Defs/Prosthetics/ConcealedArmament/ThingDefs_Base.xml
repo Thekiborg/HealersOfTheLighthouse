@@ -31,6 +31,9 @@
         <colorGenerator Class="ColorGenerator_Single">
             <color>(147, 196, 125)</color>
         </colorGenerator>
+        <descriptionHyperlinks>
+            <ThingDef>Wastepack</ThingDef>
+        </descriptionHyperlinks>
     </ThingDef>
 
     <ThingDef Name="HOTL_ConcealedKineticArmamentBase" ParentName="HOTL_ConcealedArmamentBase" Abstract="True">
