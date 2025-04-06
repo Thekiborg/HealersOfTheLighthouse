@@ -52,7 +52,6 @@ namespace HealersOfTheLighthouse
 					break;
 
 				case 1: // Cluster 
-					Log.Message("Hello");
 					radius = Props.burstSpreadRadiusSquared + 1;
 					cells = GenRadial.RadialCellsAround(target.Cell, radius, true).ToList();
 					break;

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <ThoughtDef>
+        <defName>HOTL_OilMoodDummy</defName>
+        <workerClass>ThoughtWorker_AlwaysActive</workerClass>
+        <validWhileDespawned>true</validWhileDespawned>
+        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+        <requiredTraits>
+            <li>NaturalMood</li>
+        </requiredTraits>
+        <requiredTraitsDegree>2</requiredTraitsDegree>
+        <stages>
+            <li>
+                <label>sanguine</label>
+                <description>Dummy.</description>
+                <baseMoodEffect>12</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThingDef ParentName="HOTL_MarbleRound_Base">
+        <defName>HOTL_OilBottleDummy</defName>
+        <label>oil bottle</label>
+        <description>A marble sized explosive round that ignites the surrounding area upon contact.</description>
+        <uiIconPath>Items/MarbleAmmo/Fire/Ammo_MarbleFireA</uiIconPath>
+        <graphicData>
+            <texPath>Items/MarbleAmmo/Fire</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_Explosive">
+                <explosiveRadius>2</explosiveRadius>
+                <explosiveDamageType>Flame</explosiveDamageType>
+                <explosiveExpandPerStackcount>0.4</explosiveExpandPerStackcount>
+                <startWickHitPointsPercent>0.7</startWickHitPointsPercent>
+                <wickTicks>30~60</wickTicks>
+            </li>
+        </comps>
+        <projectileWhenLoaded>HOTL_MarbleRound_FireProjectile</projectileWhenLoaded>
+        <costList>
+            <Steel>10</Steel>
+            <Chemfuel>20</Chemfuel>
+        </costList>
+    </ThingDef>
+
+</Defs>

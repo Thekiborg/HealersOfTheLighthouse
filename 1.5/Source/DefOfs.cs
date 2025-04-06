@@ -40,6 +40,8 @@
         public static JobDef HOTL_ConcealedArmament_ReloadLauncher;
         public static JobDef HOTL_ConcealedArmament_ReloadAbility;
         public static JobDef HOTL_DonateBlood;
+        public static JobDef HOTL_TopMassage;
+        public static JobDef HOTL_BottomMassage;
 	}
 
 

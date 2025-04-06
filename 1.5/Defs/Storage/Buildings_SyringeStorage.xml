@@ -60,7 +60,7 @@
 	</ThingDef>
 
 
-	<ThingDef ParentName="HOTL_BoosterFountainBase">
+	<!--<ThingDef ParentName="HOTL_BoosterFountainBase">
 		<defName>HOTL_BoosterFountain_BlueSerum</defName>
 		<label>Blue Serum Fountain</label>
 		<description>A storage unit designed for storing syringes. A mechanism pushes a syringe up onto a tray, ensuring one is always ready to be picked.</description>
@@ -86,7 +86,7 @@
 		<descriptionHyperlinks>
 			<ThingDef>BlueSerum</ThingDef>
 		</descriptionHyperlinks>
-	</ThingDef>
+	</ThingDef>-->
 
 
 	<!-- BLUEBURST STORAGE

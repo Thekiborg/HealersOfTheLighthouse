@@ -29,7 +29,6 @@ namespace HealersOfTheLighthouse
 				if (index > victims.Count - 1) index = 0;
 
 				base.Apply(victims[index], dest);
-				Log.Message(victims[index]);
 
 				index++;
 			}

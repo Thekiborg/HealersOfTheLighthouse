@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <JoyGiverDef>
+        <defName>HOTL_JoyGiver_Massage</defName>
+        <giverClass>HealersOfTheLighthouse.JoyGiver_MassageBed</giverClass>
+        <baseChance>20</baseChance>
+        <requireChair>false</requireChair>
+        <desireSit>false</desireSit>
+        <canDoWhileInBed>false</canDoWhileInBed>
+        <thingDefs>
+            <li>HOTL_MassageBed</li>
+        </thingDefs>
+        <jobDef>HOTL_BottomMassage</jobDef>
+        <joyKind>HOTL_JoyKind_Massage</joyKind>
+        <requiredCapacities>
+            <li>Manipulation</li>
+        </requiredCapacities>
+        <modExtensions>
+            <li Class="HealersOfTheLighthouse.ModExtension_HOTL">
+                <OilsAndThoughts>
+                    <li>
+                        <key>HOTL_OilBottleDummy</key>
+                        <value>HOTL_OilMoodDummy</value>
+                    </li>
+                </OilsAndThoughts>
+            </li>
+        </modExtensions>
+    </JoyGiverDef>
+
+</Defs>
