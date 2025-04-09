@@ -1,4 +1,5 @@
-﻿using Verse.Sound;
+﻿using RimWorld;
+using Verse.Sound;
 
 namespace HealersOfTheLighthouse
 {
@@ -103,7 +104,8 @@ namespace HealersOfTheLighthouse
 				Widgets.DrawTextureFitted(buttonRect, CompCL.CurFireMode.Icon, 1f, material);
 
 				// Draw button label within the button's dimensions, but below the main gizmo
-				float num = Text.CalcHeight(Ability.def.LabelCap, buttonRect.width + 0.1f);
+				float num = Text.CalcHeight(Ability.def.label, buttonRect.width + 0.1f);
+				if (!parms.multipleSelected) num -= 16f; //Apparently calcheight calculates the size wrong but this text is fully stripped and it sitll happens???
 				Rect rect3 = new(buttonRect.x, mainYMax - num + 12f, buttonRect.width, num);
 				// Copied this from vanilla, i have no clue where that 12 comes from.
 
@@ -111,7 +113,12 @@ namespace HealersOfTheLighthouse
 				GUI.DrawTexture(rect3, TexUI.GrayTextBG);
 				using (new TextBlock(TextAnchor.UpperCenter))
 				{
-					Widgets.Label(rect3, CompCL.CurFireMode.Label.Translate());
+					string buttonLabel = CompCL.CurFireMode.Label.Translate();
+					if (parms.multipleSelected)
+					{
+						buttonLabel += $" ({CompCL.parent.pawn})";
+					}
+					Widgets.Label(rect3, buttonLabel);
 				}
 
 
@@ -259,6 +266,13 @@ namespace HealersOfTheLighthouse
 			// Where [] repeats as many times as AmmoSlots we want, with an OuterPadding between each square (if there's 5 slots, there's 5 - 1 spaces between them)
 			return OuterPadding * 3 + ShootGizmoSize + AmmoSlotPadding * 2 + NumberOfSlots * AmmoSlotHeight + (OuterPadding * (NumberOfSlots - 1));
 		}
+
+
+		public override bool ShowPawnDetailsWith(Gizmo gizmo)
+		{
+			return gizmo is ConcealedLauncherGizmo launcherGizmo && launcherGizmo.Ability.def == Ability.def;
+		}
+
 
 		private void DisabledCheck()
 		{

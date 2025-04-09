@@ -13,7 +13,8 @@
 			{
 				foreach (AbilityDef abilityDef in Props.combatAbilities)
 				{
-					Pawn.abilities.GainAbility(abilityDef);
+					Pawn.abilities.abilities.Add(AbilityUtility.MakeAbility(abilityDef, Pawn));
+					Pawn.abilities.Notify_TemporaryAbilitiesChanged();
 				}
 			}
 		}
