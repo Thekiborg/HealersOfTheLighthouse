@@ -1,7 +1,7 @@
 ﻿namespace HealersOfTheLighthouse
 {
     [StaticConstructorOnStartup]
-    public static class TextureLibrary
+    internal static class TextureLibrary
     {
         public static readonly Texture2D questionMarkIcon = ContentFinder<Texture2D>.Get("UI/Icons/QuestionMark");
 		public static readonly Texture2D heartIcon = ContentFinder<Texture2D>.Get("Things/Mote/SpeechSymbols/Romance");

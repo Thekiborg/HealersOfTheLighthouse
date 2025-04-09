@@ -4,18 +4,19 @@ namespace HealersOfTheLighthouse
 {
 	public class JobDriver_LayDownAndReceiveMassage : JobDriver
 	{
+		public override Rot4 ForcedLayingRotation => MassageBed.Rotation.Opposite;
+
 		Pawn Top => TargetA.Pawn;
 		static TargetIndex TopIndex => TargetIndex.A;
-		Thing MassageBed => TargetB.Thing;
+		Building_MassageBed MassageBed => (Building_MassageBed)TargetB.Thing;
 		static TargetIndex MassageBedIndex => TargetIndex.B;
-		public bool onBed;
 
 
 		public override bool TryMakePreToilReservations(bool errorOnFailed)
 		{
 			if (pawn.Reserve(Top, job))
 			{
-				return pawn.Reserve(MassageBed, job, job.def.joyMaxParticipants, 0, null, errorOnFailed);
+				return pawn.Reserve(TargetB, job, job.def.joyMaxParticipants, 0, null, errorOnFailed);
 			}
 			return false;
 		}
@@ -24,48 +25,59 @@ namespace HealersOfTheLighthouse
 		protected override IEnumerable<Toil> MakeNewToils()
 		{
 			this.FailOn(() => Top.CurJob.def != HOTL_JobDefOfs.HOTL_TopMassage);
+			this.FailOnDespawnedNullOrForbidden(MassageBedIndex);
 			this.FailOnAggroMentalState(TopIndex);
 			AddFinishAction(delegate
 			{
-				Top.jobs.EndCurrentJob(JobCondition.Errored);
+				Top.jobs.EndCurrentJob(JobCondition.Succeeded);
+				MassageBed.ResetBed();
 			});
 
-			Toil gotoBed = Toils_Bed.GotoBed(MassageBedIndex);
+			Toil gotoBed = Toils_Goto.GotoThing(MassageBedIndex, PathEndMode.OnCell);
 			gotoBed.FailOnDespawnedNullOrForbidden(MassageBedIndex);
 			gotoBed.FailOnBurningImmobile(MassageBedIndex);
+			gotoBed.AddPreInitAction(() => pawn.mindState.lastJobTag = JobTag.SatisfyingNeeds);
 			yield return gotoBed;
 
-			Toil layDownToil = Toils_LayDown.LayDown(MassageBedIndex, true, false, false, true, PawnPosture.LayingInBed, false);
-			layDownToil.handlingFacing = true;
+			Toil layDownToil = ToilMaker.MakeToil("LayOnMassageBed");
 			layDownToil.socialMode = RandomSocialMode.Off;
 			layDownToil.defaultDuration = job.def.joyDuration;
-			layDownToil.defaultCompleteMode = ToilCompleteMode.Delay;
-			layDownToil.AddPreInitAction(() => onBed = true);
+			layDownToil.defaultCompleteMode = ToilCompleteMode.Never;
+			layDownToil.AddPreInitAction(() =>
+			{
+				pawn.jobs.posture = PawnPosture.LayingInBed;
+				MassageBed.BottomOnBed = true;
+			});
+			layDownToil.AddPreTickAction(() =>
+			{
+				if (ticksLeftThisToil <= 0 || pawn.needs.joy.CurLevel >= pawn.needs.joy.MaxLevel)
+				{
+					ReadyForNextToil();
+				}
+			});
 			layDownToil.tickAction = () =>
 			{
-				// Check for top's arrival to bed signal
-				if (true && pawn.IsHashIntervalTick(450))
+				pawn.GainComfortFromCellIfPossible();
+
+				if (MassageBed.TopReached)
 				{
-					Log.Message(ticksLeftThisToil);
-					MoteMaker.MakeSpeechBubble(pawn, TextureLibrary.heartIcon);
+					if (pawn.IsHashIntervalTick(450))
+					{
+						MoteMaker.MakeSpeechBubble(pawn, TextureLibrary.heartIcon);
+					}
+					JoyUtility.JoyTickCheckEnd(pawn, JoyTickFullJoyAction.None, MassageSettings.CalculateJoyFactor(1f, pawn, Top, false), MassageBed);
 				}
 			};
 			yield return layDownToil;
 
-			yield return Toils_General.Do(() => pawn.Kill(new DamageInfo(DamageDefOf.Bullet, 20000)));
-
-			/*Toil waitToil = Toils_General.Wait(job.def.joyDuration);
-			waitToil.handlingFacing = true;
-			waitToil.socialMode = RandomSocialMode.Off;
-			waitToil.tickAction = () =>
+			yield return Toils_General.DoAtomic(() =>
 			{
-				if (pawn.IsHashIntervalTick(450))
-				{
-					Log.Error("a");
-					MoteMaker.MakeSpeechBubble(pawn, TextureLibrary.lovinHeartIcon);
-				}
-			};
-			yield return waitToil;*/
+				Thing OilBottle = Top.CurJob.GetTarget(TargetIndex.C).Thing;
+				Thought_Memory oilThought = (Thought_Memory)ThoughtMaker.MakeThought(OilBottle.def.GetModExtension<ModExtension>().massageSettings.oilThought);
+				Top.needs.mood.thoughts.memories.TryGainMemory(oilThought);
+				pawn.needs.mood.thoughts.memories.TryGainMemory(oilThought);
+				OilBottle.SplitOff(1).Destroy();
+			});
 		}
 	}
 }

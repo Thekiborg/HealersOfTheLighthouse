@@ -6,6 +6,8 @@
         public HediffDef RMBDHediff;
         public List<RapidMetabolicBreakdown_Settings> RMBDSettings;
 
+        public MassageSettings massageSettings;
+
         public bool isRevealingApparel;
     }
 }

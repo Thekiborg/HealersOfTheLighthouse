@@ -6,7 +6,7 @@ namespace HealersOfTheLighthouse
 	{
 		Pawn Bottom => TargetA.Pawn;
 		static TargetIndex BottomIndex => TargetIndex.A;
-		Thing MassageBed => TargetB.Thing;
+		Building_MassageBed MassageBed => (Building_MassageBed)TargetB.Thing;
 		static TargetIndex MassageBedIndex => TargetIndex.B;
 		Thing OilBottle => TargetC.Thing;
 		static TargetIndex OilBottleIndex => TargetIndex.C;
@@ -29,6 +29,7 @@ namespace HealersOfTheLighthouse
 			Toil gotoBottle = Toils_Goto.GotoThing(OilBottleIndex, OilBottle.Position);
 			gotoBottle.FailOnDespawnedNullOrForbidden(OilBottleIndex);
 			gotoBottle.FailOnBurningImmobile(OilBottleIndex);
+			gotoBottle.AddFinishAction(() => MassageBed.TopReached = true);
 
 
 			Toil haulBottle = Toils_Haul.StartCarryThing(OilBottleIndex);
@@ -36,17 +37,17 @@ namespace HealersOfTheLighthouse
 
 			Toil pathAroundBed = Toils_General.Do(() =>
 			{
-				GenRadial.RadialCellsAround(MassageBed.Position, 1.9f, false).TryRandomElement(cell => cell.GetFirstBuilding(Map) is null, out var cell);
+				GenRadial.RadialCellsAround(MassageBed.Position, 1.9f, false)
+					.TryRandomElement(cell =>
+						cell.GetFirstBuilding(Map) is null
+						&& cell.WalkableBy(Map, pawn),
+					out var cell);
+
 				pawn.pather.StartPath(cell, PathEndMode.OnCell);
 			});
 			pathAroundBed.FailOnDespawnedNullOrForbidden(MassageBedIndex);
 			pathAroundBed.FailOnBurningImmobile(MassageBedIndex);
 			pathAroundBed.defaultCompleteMode = ToilCompleteMode.PatherArrival;
-
-
-			// Jump toil into waitNextToBed
-			// Wait toil here just to wait for the bottom to come
-			// Jump toil into the former wait toil until the bottom in bed signal
 
 			Toil waitNextToBed = Toils_General.Wait(240, BottomIndex);
 			waitNextToBed.AddPreTickAction(() =>
@@ -55,11 +56,12 @@ namespace HealersOfTheLighthouse
 				{
 					FleckMaker.ThrowMetaIcon(pawn.Position, pawn.Map, FleckDefOf.Heart);
 				}
+				JoyUtility.JoyTickCheckEnd(pawn, JoyTickFullJoyAction.None, MassageSettings.CalculateJoyFactor(1f, pawn, Bottom, true), MassageBed);
 			});
 
 			Toil jumpWaitNextToBed = Toils_Jump.JumpIf(waitNextToBed, () =>
 			{
-				return true; //((JobDriver_LayDownAndReceiveMassage)Bottom.CurJob.GetCachedDriver(Bottom)).onBed;
+				return MassageBed.BottomOnBed;
 			});
 
 
@@ -68,7 +70,7 @@ namespace HealersOfTheLighthouse
 
 			Toil jumpKeepWaiting = Toils_Jump.JumpIf(waitForBottom, () =>
 			{
-				return !((JobDriver_LayDownAndReceiveMassage)Bottom.CurJob.GetCachedDriver(Bottom)).onBed;
+				return !MassageBed.BottomOnBed;
 			});
 
 

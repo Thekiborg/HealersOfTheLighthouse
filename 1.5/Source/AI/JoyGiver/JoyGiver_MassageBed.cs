@@ -5,7 +5,7 @@ namespace HealersOfTheLighthouse
 {
 	public class JoyGiver_MassageBed : JoyGiver
 	{
-		ModExtension_HOTL ModExt => def.GetModExtension<ModExtension_HOTL>();
+		MassageSettings ModExt => def.GetModExtension<ModExtension>().massageSettings;
 		private readonly List<Thought> bottomThoughtsTemp = [];
 		private readonly List<Thought> topThoughtsTemp = [];
 		private readonly List<Thought> fusedThoughtsTemp = [];
@@ -15,11 +15,12 @@ namespace HealersOfTheLighthouse
 		public override Job TryGiveJob(Pawn pawn)
 		{
 			Pawn bottom = pawn;
-			Pawn top = FindFreePawn(pawn);
+			Pawn top = FindFreeNonRelated(pawn);
 			if (top is null)
 			{
 				return null;
 			}
+
 
 			Thing massageBed = FindMassageBed(bottom, top);
 			if (massageBed is null)
@@ -35,7 +36,7 @@ namespace HealersOfTheLighthouse
 
 			Job topJob = JobMaker.MakeJob(HOTL_JobDefOfs.HOTL_TopMassage, bottom, massageBed, usableBottle);
 			topJob.count = 1;
-			if (!top.jobs.TryTakeOrderedJob(topJob))
+			if (!top.jobs.TryTakeOrderedJob(topJob, JobTag.SatisfyingNeeds))
 			{
 				return null;
 			}
@@ -95,12 +96,20 @@ namespace HealersOfTheLighthouse
 		}
 
 
-		private static Pawn FindFreePawn(Pawn notThisPawn)
+		private Pawn FindFreeNonRelated(Pawn notThisPawn)
 		{
+
 			foreach (Pawn pawn in notThisPawn.Map.mapPawns.FreeAdultColonistsSpawned)
 			{
+				Log.Message(pawn);
+
 				if (pawn == notThisPawn) continue;
+				if (pawn.needs.joy.tolerances.BoredOf(def.joyKind) || !CanBeGivenTo(pawn)) continue;
+				if (pawn.Drafted) continue;
 				if (!pawn.mindState.IsIdle) continue;
+				if (notThisPawn.relations.FamilyByBlood.Contains(pawn)) continue;
+
+				Log.Message(pawn);
 
 				return pawn;
 			}
@@ -117,12 +126,26 @@ namespace HealersOfTheLighthouse
 			fusedThoughtsTemp.AddRange(bottomThoughtsTemp);
 			fusedThoughtsTemp.AddRange(topThoughtsTemp);
 
-			foreach (var kvp in ModExt.OilsAndThoughts)
-			{ 
+			foreach (ThingDef oilDef in ModExt.oils)
+			{
 				// Check if any of the two pawns has the oil thought
-				if (!fusedThoughtsTemp.Any(thought => thought.def == kvp.Value))
+				if (!fusedThoughtsTemp.Any(thought => thought.def == oilDef.GetModExtension<ModExtension>().massageSettings.oilThought))
 				{
-					return GenClosest.ClosestThingReachable(massageBed.Position, bottom.Map, ThingRequest.ForDef(kvp.Key), PathEndMode.Touch, TraverseParms.For(top));
+					Thing oil = GenClosest.ClosestThingReachable(massageBed.Position,
+						bottom.Map,
+						ThingRequest.ForDef(oilDef),
+						PathEndMode.Touch,
+						TraverseParms.For(top),
+						validator: t => top.CanReserveAndReach(t, PathEndMode.Touch, Danger.None));
+
+					if (oil is null)
+					{
+						continue;
+					}
+					else
+					{
+						return oil;
+					}
 				}
 			}
 			return null;
