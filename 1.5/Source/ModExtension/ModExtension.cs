@@ -8,6 +8,8 @@
 
         public MassageSettings massageSettings;
 
+        public BloodDonationSettings bloodDonationSettings;
+
         public bool isRevealingApparel;
     }
 }

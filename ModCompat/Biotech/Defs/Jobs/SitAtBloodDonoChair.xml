@@ -12,6 +12,16 @@
         <requiredCapacities>
             <li>Moving</li>
         </requiredCapacities>
+        <modExtensions>
+            <li Class="HealersOfTheLighthouse.ModExtension">
+                <bloodDonationSettings>
+                    <disallowedGenes>
+                        <li>Hemogenic</li>
+                        <li MayRequire="redmattis.bigsmall.core">VU_NoBlood</li>
+                    </disallowedGenes>
+                </bloodDonationSettings>
+            </li>
+        </modExtensions>
     </WorkGiverDef>
 
     <JobDef>

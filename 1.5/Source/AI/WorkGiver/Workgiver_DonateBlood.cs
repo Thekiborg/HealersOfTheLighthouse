@@ -6,6 +6,7 @@ namespace HealersOfTheLighthouse
 	{
 		internal const float MinBloodlossSeverity = 0.45f;
 
+		private ModExtension ModExtension => def.GetModExtension<ModExtension>();
 		public override ThingRequest PotentialWorkThingRequest => ThingRequest.ForDef(HOTL_ThingDefOfs.HOTL_BloodDonationChair);
 		public override PathEndMode PathEndMode => PathEndMode.OnCell;
 
@@ -43,12 +44,29 @@ namespace HealersOfTheLighthouse
 			{
 				return false;
 			}
+			if (HasDisallowedGene(pawn))
+			{
+				return false;
+			}
 			Hediff bloodLoss = pawn.health?.hediffSet?.GetFirstHediffOfDef(HediffDefOf.BloodLoss);
 			if (bloodLoss is not null && bloodLoss.Severity <= MinBloodlossSeverity)
 			{
 				return false;
 			}
 			return true;
+		}
+
+
+		private bool HasDisallowedGene(Pawn pawn)
+		{
+			foreach (GeneDef geneDef in ModExtension.bloodDonationSettings.disallowedGenes)
+			{
+				if (pawn.genes.HasActiveGene(geneDef))
+				{
+					return true;
+				}
+			}
+			return false;
 		}
 
 
