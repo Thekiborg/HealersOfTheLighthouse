@@ -25,22 +25,21 @@ namespace HealersOfTheLighthouse
 			waitToil.FailOn(() =>
 			{
 				Hediff bloodLoss = pawn.health?.hediffSet?.GetFirstHediffOfDef(HediffDefOf.BloodLoss);
-				return bloodLoss is not null && bloodLoss.Severity < Workgiver_DonateBlood.MinBloodlossSeverity;
+				return bloodLoss is not null && bloodLoss.Severity <= Workgiver_DonateBlood.MinBloodlossSeverity;
 			});
 			waitToil.handlingFacing = true;
-			
 			yield return waitToil;
 
-			Toil toil = ToilMaker.MakeToil("SPAWNBLOOD");
+			Toil toil = ToilMaker.MakeToil("SpawnBlood");
 			toil.defaultCompleteMode = ToilCompleteMode.Instant;
 			toil.AddFinishAction(() =>
 			{
 				Hediff bloodloss = HediffMaker.MakeHediff(HediffDefOf.BloodLoss, pawn);
-				bloodloss.Severity = 0.45f;
-				pawn.health.AddHediff(bloodloss);
+				bloodloss.Severity = Workgiver_DonateBlood.MinBloodlossSeverity;
+				pawn?.health?.AddHediff(bloodloss);
 
 				Thing hemo = ThingMaker.MakeThing(ThingDefOf.HemogenPack);
-				GenPlace.TryPlaceThing(ThingMaker.MakeThing(ThingDefOf.HemogenPack), TargetA.Cell, Map, ThingPlaceMode.Near);
+				GenPlace.TryPlaceThing(hemo, TargetA.Cell, Map, ThingPlaceMode.Near);
 			});
 			yield return toil;
 		}
