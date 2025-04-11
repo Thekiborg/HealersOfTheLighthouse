@@ -52,7 +52,7 @@ namespace HealersOfTheLighthouse
 					cell = MassageBed.RandomAdjacentCell8Way();
 					num++;
 				}
-				while (!cell.Standable(Map) || pawn.CanReach(cell, PathEndMode.OnCell, Danger.Deadly));
+				while (!cell.Standable(Map) || !pawn.CanReach(cell, PathEndMode.OnCell, Danger.Deadly));
 
 				pawn.pather.StartPath(cell, PathEndMode.OnCell);
 			});

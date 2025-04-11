@@ -115,8 +115,6 @@ namespace HealersOfTheLighthouse
 				if (!pawn.mindState.IsIdle) continue;
 				if (notThisPawn.relations.FamilyByBlood.Contains(pawn)) continue;
 
-				Log.Message(pawn);
-
 				return pawn;
 			}
 			return null;
