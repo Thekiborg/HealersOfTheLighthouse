@@ -25,6 +25,7 @@ namespace HealersOfTheLighthouse
 		protected override IEnumerable<Toil> MakeNewToils()
 		{
 			this.FailOnAggroMentalState(BottomIndex);
+			this.FailOn(() => pawn.Drafted);
 
 			Toil gotoBottle = Toils_Goto.GotoThing(OilBottleIndex, OilBottle.Position);
 			gotoBottle.FailOnDespawnedNullOrForbidden(OilBottleIndex);
