@@ -27,12 +27,18 @@ namespace HealersOfTheLighthouse
 			{
 				return null;
 			}
+			if (!JoyGiver_PlayBilliards.ThingHasStandableSpaceOnAllSides(massageBed))
+			{
+				return null;
+			}
+
 
 			Thing usableBottle = FindOilBottle(bottom, top, massageBed);
 			if (usableBottle is null)
 			{
 				return null;
 			}
+
 
 			Job topJob = JobMaker.MakeJob(HOTL_JobDefOfs.HOTL_TopMassage, bottom, massageBed, usableBottle);
 			topJob.count = 1;

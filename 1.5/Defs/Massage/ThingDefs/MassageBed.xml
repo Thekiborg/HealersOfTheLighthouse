@@ -25,6 +25,9 @@
         <fillPercent>0.4</fillPercent>
         <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
         <pathCost>42</pathCost>
+        <placeWorkers>
+            <li>PlaceWorker_NeverAdjacentUnstandable</li>
+        </placeWorkers>
         <building>
             <joyKind>HOTL_JoyKind_Massage</joyKind>
             <paintable>true</paintable>

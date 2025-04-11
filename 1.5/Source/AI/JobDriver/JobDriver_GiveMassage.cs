@@ -1,4 +1,5 @@
 ﻿using Verse.AI;
+using static UnityEngine.GraphicsBuffer;
 
 namespace HealersOfTheLighthouse
 {
@@ -38,11 +39,20 @@ namespace HealersOfTheLighthouse
 
 			Toil pathAroundBed = Toils_General.Do(() =>
 			{
-				GenRadial.RadialCellsAround(MassageBed.Position, 1.9f, false)
-					.TryRandomElement(cell =>
-						cell.GetFirstBuilding(Map) is null
-						&& cell.WalkableBy(Map, pawn),
-					out var cell);
+				int num = 0;
+				IntVec3 cell;
+				do
+				{
+					if (num > 100)
+					{
+						Log.Error($"{pawn} could not find standable cell adjacent to {MassageBed}");
+						EndJobWith(JobCondition.Errored);
+						return;
+					}
+					cell = MassageBed.RandomAdjacentCell8Way();
+					num++;
+				}
+				while (!cell.Standable(Map) || pawn.CanReach(cell, PathEndMode.OnCell, Danger.Deadly));
 
 				pawn.pather.StartPath(cell, PathEndMode.OnCell);
 			});
