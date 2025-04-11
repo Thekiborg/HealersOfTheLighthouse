@@ -25,6 +25,7 @@
         <fillPercent>0.4</fillPercent>
         <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
         <pathCost>42</pathCost>
+        <passability>PassThroughOnly</passability>
         <placeWorkers>
             <li>PlaceWorker_NeverAdjacentUnstandable</li>
         </placeWorkers>
