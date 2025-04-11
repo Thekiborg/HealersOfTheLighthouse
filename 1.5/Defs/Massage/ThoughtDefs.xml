@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <ThoughtDef Name="HOTL_OilThought_Base" Abstract="true">
+        <thoughtClass>Thought_Memory</thoughtClass>
+        <developmentalStageFilter>Adult</developmentalStageFilter>
+        <durationDays>15</durationDays>
+    </ThoughtDef>
+
+    <ThoughtDef ParentName="HOTL_OilThought_Base">
+        <defName>HOTL_UsedOil_Transparent</defName>
+        <stages>
+            <li>
+                <label>Used transparent oil</label>
+                <description>This sticky and slimy texture sorta looks like...</description>
+                <baseMoodEffect>3</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef ParentName="HOTL_OilThought_Base">
+        <defName>HOTL_UsedOil_Honey</defName>
+        <stages>
+            <li>
+                <label>Used honey oil</label>
+                <description>I like this amber color.</description>
+                <baseMoodEffect>3</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef ParentName="HOTL_OilThought_Base">
+        <defName>HOTL_UsedOil_Choco</defName>
+        <stages>
+            <li>
+                <label>Used chocolate oil</label>
+                <description>I kinda want to taste it...</description>
+                <baseMoodEffect>3</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <ThoughtDef ParentName="HOTL_OilThought_Base">
+        <defName>HOTL_UsedOil_Strawberry</defName>
+        <stages>
+            <li>
+                <label>Used strawberry oil</label>
+                <description>Smells so good.</description>
+                <baseMoodEffect>3</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+</Defs>
