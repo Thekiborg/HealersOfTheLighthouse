@@ -21,16 +21,16 @@ namespace HealersOfTheLighthouse
 			yield return Toils_Goto.GotoThing(TargetIndex.A, TargetA.Cell);
 			yield return Toils_Haul.StartCarryThing(TargetIndex.A).FailOnDestroyedNullOrForbidden(TargetIndex.A);
 			yield return Toils_General.Wait(120).WithProgressBarToilDelay(TargetIndex.A);
-			yield return new Toil()
+			Toil reloadToil = ToilMaker.MakeToil("ReloadConcealedLauncherSlot");
+			reloadToil.AddPreInitAction(() =>
 			{
-				initAction = () =>
-				{
-					CompCL.Magazine[CompCL.MagazineSlotToReload].IsLoaded = true;
-					pawn.carryTracker.CarriedThing?.SplitOff(1)?.Destroy();
-					CompCL.Props.reloadSound.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map));
-				},
-				defaultCompleteMode = ToilCompleteMode.Instant
-			};
+				CompCL.FindEmptySlot(out int slotToReload);
+				CompCL.Magazine[slotToReload].IsLoaded = true;
+				pawn.carryTracker.CarriedThing?.SplitOff(1)?.Destroy();
+				CompCL.Props.reloadSound.PlayOneShot(new TargetInfo(pawn.Position, pawn.Map));
+			});
+			reloadToil.defaultCompleteMode = ToilCompleteMode.Instant;
+			yield return reloadToil;
 		}
 	}
 }

@@ -3,6 +3,8 @@
 
     <!-- Concealed Launcher -->
     <ConcealedLauncher_Unloaded>The magazine is empty.</ConcealedLauncher_Unloaded>
+    <ConcealedLauncher_CantReload>Cannot reload launcher</ConcealedLauncher_CantReload>
+    <ConcealedLauncher_CanReload>Prioritize reloading launcher</ConcealedLauncher_CanReload>
     <ConcealedLauncher_EmptySelection>Empty</ConcealedLauncher_EmptySelection>
     <ConcealedLauncher_SingleFireMode>Single</ConcealedLauncher_SingleFireMode>
     <ConcealedLauncher_ClusterFireMode>Cluster</ConcealedLauncher_ClusterFireMode>

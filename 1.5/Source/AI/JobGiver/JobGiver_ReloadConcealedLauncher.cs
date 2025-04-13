@@ -5,31 +5,33 @@ namespace HealersOfTheLighthouse
 	public class JobGiver_ReloadConcealedLauncher : ThinkNode_JobGiver
 	{
 		AbilityComp_ConcealedLauncher CompCL;
-		private readonly IntRange WantedThings = new(1, 1);
+		private static readonly IntRange WantedThings = new(1, 1);
 
 
 		protected override Job TryGiveJob(Pawn pawn)
 		{
 			if (pawn is null) return null;
 
-			CompCL = pawn.abilities?.GetAbility(HOTL_AbilityDefOfs.HOTL_ConcealedArmament_MarbleLauncher)?.CompOfType<AbilityComp_ConcealedLauncher>();
-
-			if (CompCL is null) return null;
-			if (CompCL.NumberOfUnloadedSlots <= 0) return null;
-
 			if (!pawn.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation))
 			{
 				return null;
 			}
 
+			CompCL = pawn.abilities?.GetAbility(HOTL_AbilityDefOfs.HOTL_ConcealedArmament_MarbleLauncher)?.CompOfType<AbilityComp_ConcealedLauncher>();
+
+			if (CompCL is null) return null;
+
 			List<Thing> foundAmmo = null;
-			if (CompCL.FindEmptySlot())
+			if (CompCL.FindEmptySlot(out int slotToReload))
 			{
 				foundAmmo = RefuelWorkGiverUtility.FindEnoughReservableThings(pawn,
 					pawn.Position,
 					WantedThings,
-					(Thing t) => t.def == CompCL.Magazine[CompCL.MagazineSlotToReload].ThingDef && pawn.CanReserve(t)
-					);
+					(Thing t) => t.def == CompCL.Magazine[slotToReload].ThingDef && pawn.CanReserve(t));
+			}
+			else
+			{
+				return null;
 			}
 
 			if (foundAmmo.NullOrEmpty()) return null;

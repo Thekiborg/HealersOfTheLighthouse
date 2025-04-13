@@ -107,8 +107,6 @@ namespace HealersOfTheLighthouse
 
 			foreach (Pawn pawn in notThisPawn.Map.mapPawns.FreeAdultColonistsSpawned)
 			{
-				Log.Message(pawn);
-
 				if (pawn == notThisPawn) continue;
 				if (pawn.needs.joy.tolerances.BoredOf(def.joyKind) || !CanBeGivenTo(pawn)) continue;
 				if (pawn.Drafted) continue;

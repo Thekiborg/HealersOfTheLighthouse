@@ -8,7 +8,6 @@ namespace HealersOfTheLighthouse
 		private IReadOnlyList<ConcealedLauncherFireMode> fireModes;
 		private List<ConcealedLauncherMagazineData> magazine;
 		private int fireModeIndex;
-		private int magazineSlotToReload;
 
 
 		// --- Properties ---
@@ -17,7 +16,6 @@ namespace HealersOfTheLighthouse
 		public int FireModesCount => fireModes.Count;
 		public ConcealedLauncherFireMode CurFireMode => fireModes[FireModeIndex];
 		public int NumberOfUnloadedSlots => magazine.Count(slot => !slot.IsLoaded);
-		public int MagazineSlotToReload => magazineSlotToReload;
 		public IReadOnlyList<ConcealedLauncherMagazineData> Magazine => magazine;
 		public ConcealedLauncherMagazineData GetFirstLoadedSlot
 		{
@@ -59,17 +57,18 @@ namespace HealersOfTheLighthouse
 		}
 
 
-		public bool FindEmptySlot()
+		public bool FindEmptySlot(out int slotToReload)
 		{
 			for (int i = 0; i < magazine.Count; i++)
 			{
 				var slot = magazine[i];
 				if (slot is null || (slot.ThingDef is not null && !slot.IsLoaded))
 				{
-					magazineSlotToReload = i;
+					slotToReload = i;
 					return true;
 				}
 			}
+			slotToReload = int.MinValue;
 			return false;
 		}
 
@@ -90,7 +89,7 @@ namespace HealersOfTheLighthouse
 
 		public override bool GizmoDisabled(out string reason)
 		{
-			if (NumberOfUnloadedSlots >= magazine.Count)
+			if (NumberOfUnloadedSlots >= Props.ammoCapacity)
 			{
 				reason = "ConcealedLauncher_Unloaded".Translate();
 				return true;
@@ -104,7 +103,6 @@ namespace HealersOfTheLighthouse
 			base.PostExposeData();
 			Scribe_Collections.Look(ref magazine, "HOTL_ConcealedLauncher_magazine", LookMode.Deep);
 			Scribe_Values.Look(ref fireModeIndex, "HOTL_ConcealedLauncher_fireModeIndex");
-			Scribe_Values.Look(ref magazineSlotToReload, "HOTL_ConcealedLauncher_magazineSlotToReload");
 		}
 	}
 }
