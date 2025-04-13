@@ -17,12 +17,11 @@ namespace HealersOfTheLighthouse
 			concealedLauncherFound.Clear();
 			concealedLauncherFound.AddRange(pawn.abilities.abilities.Where(ab => ab.CompOfType<AbilityComp_ConcealedLauncher>()?.FindEmptySlot(out slotToReload) != false));
 			// Should get both marble launcher and booster launcher
-
 			if (concealedLauncherFound.Count <= 0) return;
 
 			AbilityComp_ConcealedLauncher concealedLauncher = concealedLauncherFound.First().CompOfType<AbilityComp_ConcealedLauncher>();
-
 			if (concealedLauncher is null) return;
+
 
 			IntVec3 clickCell = IntVec3.FromVector3(clickPos);
 			foreach (Thing thing in clickCell.GetThingList(pawn.Map))
@@ -45,6 +44,7 @@ namespace HealersOfTheLighthouse
 						}
 						continue;
 					}
+
 					if (!pawn.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation))
 					{
 						opts.Add(new FloatMenuOption(
