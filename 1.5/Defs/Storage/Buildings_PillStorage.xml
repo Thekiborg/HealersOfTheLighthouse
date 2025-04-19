@@ -43,7 +43,7 @@
 				</filter>
 			</fixedStorageSettings>
 			<defaultStorageSettings>
-				<priority>Important</priority>
+				<priority>Preferred</priority>
 			</defaultStorageSettings>
 		</building>
 		<inspectorTabs>
@@ -52,7 +52,8 @@
 		<surfaceType>Item</surfaceType>
 		<canOverlapZones>false</canOverlapZones>
 		<researchPrerequisites>
-			<li>ComplexFurniture</li>
+			<li>Moyo2_Abysstech_Foundry</li>
+			<li>Moyo2_Abysstech_DeepblueSimple</li>
 		</researchPrerequisites>
 		<designationHotKey>Misc12</designationHotKey>
 		<designatorDropdown>HOTL_PearlShelf_DesignatorDropdown</designatorDropdown>

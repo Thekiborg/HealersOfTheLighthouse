@@ -5,6 +5,9 @@
         <colorGenerator Class="ColorGenerator_Single">
             <color>(226, 144, 58)</color>
         </colorGenerator>
+        <researchPrerequisites>
+            <li>HOTL_Research_WorkerProsthetics</li>
+        </researchPrerequisites>
     </ThingDef>
 
 </Defs>

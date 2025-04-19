@@ -13,6 +13,9 @@
         <thingSetMakerTags>
             <li>RewardStandardLowFreq</li>
         </thingSetMakerTags>
+        <researchPrerequisites>
+            <li>HOTL_Research_ConcealedArmament</li>
+        </researchPrerequisites>
     </ThingDef>
 
     <ThingDef Name="HOTL_ConcealedFireArmamentBase" ParentName="HOTL_ConcealedArmamentBase" Abstract="True">
