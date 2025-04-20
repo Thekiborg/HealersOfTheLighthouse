@@ -7,9 +7,10 @@
         <description>A bed to relax at while someone else gives you a massage. The oils used help moisturize the skin and bond with your partner.</description>
         <thingClass>HealersOfTheLighthouse.Building_MassageBed</thingClass>
         <graphicData>
-            <texPath>Things/Building/Furniture/Table1x2</texPath>
+            <texPath>Buildings/MassageBed/MassageBed</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>(3,4)</drawSize>
+            <drawSize>(2,2)</drawSize>
+            <shaderType>CutoutComplex</shaderType>
         </graphicData>
         <size>(1,2)</size>
         <uiIconScale>0.8</uiIconScale>
@@ -21,6 +22,7 @@
             <Beauty>0.5</Beauty>
             <Comfort>0.75</Comfort>
         </statBases>
+        <defaultPlacingRot>South</defaultPlacingRot>
         <designationCategory>Joy</designationCategory>
         <fillPercent>0.4</fillPercent>
         <constructionSkillPrerequisite>4</constructionSkillPrerequisite>

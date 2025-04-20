@@ -1,4 +1,6 @@
-﻿using Verse.AI;
+﻿using System.Linq;
+using System.Runtime.InteropServices;
+using Verse.AI;
 
 namespace HealersOfTheLighthouse
 {
@@ -33,7 +35,7 @@ namespace HealersOfTheLighthouse
 				MassageBed.ResetBed();
 			});
 
-			Toil gotoBed = Toils_Goto.GotoThing(MassageBedIndex, PathEndMode.OnCell);
+			Toil gotoBed = Toils_Goto.GotoCell(BedUtility.GetFeetSlotPos(0, MassageBed.Position, MassageBed.Rotation, MassageBed.def.size), PathEndMode.OnCell);
 			gotoBed.FailOnDespawnedNullOrForbidden(MassageBedIndex);
 			gotoBed.FailOnBurningImmobile(MassageBedIndex);
 			gotoBed.AddPreInitAction(() => pawn.mindState.lastJobTag = JobTag.SatisfyingNeeds);
