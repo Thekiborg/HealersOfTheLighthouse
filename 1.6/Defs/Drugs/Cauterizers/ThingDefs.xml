@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <ThingDef Name="HOTL_CauterizerBase" ParentName="MakeableDrugPillBase" Abstract="true">
+        <uiIconScale>1.7</uiIconScale>
+        <uiIconForStackCount>1</uiIconForStackCount>
+        <orderedTakeGroup>Medicine</orderedTakeGroup>
+        <graphicData>
+            <graphicClass>Graphic_StackCount</graphicClass>
+        </graphicData>
+        <statBases>
+            <Mass>0.1</Mass>
+        </statBases>
+        <costList>
+            <Neutroamine>2</Neutroamine>
+        </costList>
+        <stackLimit>25</stackLimit>
+        <recipeMaker>
+            <workAmount>800</workAmount>
+            <productCount>1</productCount>
+            <targetCountAdjustment>1</targetCountAdjustment>
+            <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+            <workSkill>Intellectual</workSkill>
+            <recipeUsers>
+                <li>DrugLab</li>
+            </recipeUsers>
+            <researchPrerequisite>Moyo2_Abysstech_DeepblueAdvanced</researchPrerequisite>
+            <skillRequirements>
+                <Intellectual>6</Intellectual>
+            </skillRequirements>
+        </recipeMaker>
+        <ingestible>
+            <ingestCommandString>Inject {0}</ingestCommandString>
+            <ingestReportString>Injecting {0}.</ingestReportString>
+            <drugCategory>None</drugCategory>
+            <baseIngestTicks>100</baseIngestTicks>
+            <ingestSound>Ingest_Inject</ingestSound>
+        </ingestible>
+        <tradeTags Inherit="False">
+            <li>Moyo_DrugsBooster</li>
+        </tradeTags>
+        <thingCategories Inherit="False">
+            <li>Moyo2_DrugCategory_Booster</li>
+        </thingCategories>
+    </ThingDef>
+
+
+    <ThingDef ParentName="HOTL_CauterizerBase">
+        <defName>HOTL_MildCoagulant</defName>
+        <label>mild coagulant</label>
+        <description>A first-aid chemical. When injected, it slightly increases the viscosity of blood, reducing the blood loss rate from open wounds.</description>
+        <descriptionHyperlinks>
+            <HediffDef>HOTL_MildCoagulant_Injected</HediffDef>
+        </descriptionHyperlinks>
+        <graphicData>
+            <texPath>Items/Cauterizers/Mild</texPath>
+        </graphicData>
+        <recipeMaker>
+            <researchPrerequisite>Moyo2_Abysstech_DeepblueSimple</researchPrerequisite>
+        </recipeMaker>
+        <ingestible>
+            <outcomeDoers>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>HOTL_MildCoagulant_Injected</hediffDef>
+                    <divideByBodySize>false</divideByBodySize>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+        <costList>
+            <MedicineHerbal>3</MedicineHerbal>
+        </costList>
+    </ThingDef>
+
+
+    <ThingDef ParentName="HOTL_CauterizerBase">
+        <defName>HOTL_HarshCoagulant</defName>
+        <label>harsh coagulant</label>
+        <description>A first-aid chemical. When injected, it triggers a rapid and burning reaction, cauterizing all bleeding wounds. The leftover blood clots caused by the reaction must be cleared within two days to prevent obstruction of blood flow to the heart.</description>
+        <statBases>
+            <MarketValue>47</MarketValue>
+        </statBases>
+        <descriptionHyperlinks>
+            <HediffDef>HOTL_BloodClots</HediffDef>
+            <HediffDef>HOTL_HarshCoagulant_Injected</HediffDef>
+        </descriptionHyperlinks>
+        <graphicData>
+            <texPath>Items/Cauterizers/Harsh</texPath>
+        </graphicData>
+        <ingestible>
+            <outcomeDoers>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>HOTL_BloodClots</hediffDef>
+                    <severity>0.001</severity>
+                </li>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>HOTL_HarshCoagulant_Injected</hediffDef>
+                    <severity>0.001</severity>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+        <costList Inherit="false"/>
+        <recipeMaker IsNull="True"/>
+    </ThingDef>
+
+
+    <ThingDef ParentName="HOTL_CauterizerBase">
+        <defName>HOTL_PerfectCoagulant</defName>
+        <label>"Perfect" coagulant</label>
+        <description>A first-aid chemical. When injected, a reprogrammed swarm of one-use luciferium nanites travel through the bloodstream, sealing all bleeding wounds with surgical precision before deactivating themselves.</description>
+        <descriptionHyperlinks>
+            <HediffDef>HOTL_PerfectCoagulant_Injected</HediffDef>
+        </descriptionHyperlinks>
+        <graphicData>
+            <texPath>Items/Cauterizers/Perfect</texPath>
+        </graphicData>
+        <ingestible>
+            <outcomeDoers>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>HOTL_PerfectCoagulant_Injected</hediffDef>
+                    <severity>0.6</severity>
+                    <divideByBodySize>true</divideByBodySize>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+        <costList>
+            <Luciferium>2</Luciferium>
+        </costList>
+    </ThingDef>
+
+</Defs>

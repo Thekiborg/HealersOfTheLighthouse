@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Human"]/recipes</xpath>
+        <value>
+            <li>HOTL_Uninstall_ExoArm</li>
+        </value>
+      </Operation>
+
+</Patch>

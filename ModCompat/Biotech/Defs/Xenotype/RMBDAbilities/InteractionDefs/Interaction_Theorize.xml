@@ -1,32 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
 
-    <!-- HOTL_RMBD_AbilityTheorize -->
-    <InteractionDef>
-        <defName>HOTL_InteractionTheorize</defName>
-        <label>discussed research project</label>
-        <workerClass>InteractionWorker</workerClass>
-        <symbol>UI/Icons/QuestionMark</symbol>
-        <initiatorXpGainSkill>Intellectual</initiatorXpGainSkill>
-        <initiatorXpGainAmount>50</initiatorXpGainAmount>
-        <recipientXpGainSkill>Intellectual</recipientXpGainSkill>
-        <recipientXpGainAmount>100</recipientXpGainAmount>
-        <logRulesInitiator>
-          <rulesStrings>
-            <li>r_logentry->[INITIATOR_nameDef] and [RECIPIENT_nameDef] [talkedabout] the current research project (change).</li>
-            <li>r_logentry->[INITIATOR_nameDef] [talkedabout] the current research project (change) with [RECIPIENT_nameDef].</li>
-    
-            <li>talkedabout->exchanged thoughts about</li>
-            <li>talkedabout->exchanged ideas about</li>
-            <li>talkedabout->shared views on</li>
-            <li>talkedabout->discussed about</li>
-            <li>talkedabout->theorized on</li>
-            <li>talkedabout->brainstormed</li>
-    
-            <li>subject(INITIATOR_cubeInterest==false)->[TalkTopicHeavy]</li>
-            <li>subject(INITIATOR_cubeInterest==true)->[TalkTopicCube]</li>
-          </rulesStrings>
-        </logRulesInitiator>
-    </InteractionDef>
-    
+	<!-- HOTL_RMBD_AbilityTheorize -->
+	<InteractionDef>
+		<defName>HOTL_InteractionTheorize</defName>
+		<label>discussed research project</label>
+		<workerClass>InteractionWorker</workerClass>
+		<symbol>UI/Icons/QuestionMark</symbol>
+		<initiatorXpGainSkill>Intellectual</initiatorXpGainSkill>
+		<initiatorXpGainAmount>50</initiatorXpGainAmount>
+		<recipientXpGainSkill>Intellectual</recipientXpGainSkill>
+		<recipientXpGainAmount>100</recipientXpGainAmount>
+		<logRulesInitiator>
+			<rulesStrings>
+				<li>r_logentry->[INITIATOR_nameDef] and [RECIPIENT_nameDef] [talkedabout] [currentResearch].</li>
+				<li>r_logentry->[INITIATOR_nameDef] [talkedabout] [currentResearch] with [RECIPIENT_nameDef].</li>
+				<!-- -->
+				<li>r_logentry->[INITIATOR_nameDef] [talkedabout] the latest findings on [currentResearch] alongside [RECIPIENT_nameDef].</li>
+				<li>r_logentry->[INITIATOR_nameDef] and [RECIPIENT_nameDef] [talkedabout] recent developments in [currentResearch].</li>
+				<li>r_logentry->[INITIATOR_nameDef] [talkedabout] insights regarding [currentResearch] with [RECIPIENT_nameDef].</li>
+				<li>r_logentry->[INITIATOR_nameDef] and [RECIPIENT_nameDef] [talkedabout] breakthroughs in [currentResearch].</li>
+				<li>r_logentry->[INITIATOR_nameDef] [talkedabout] theories about [currentResearch] alongside [RECIPIENT_nameDef].</li>
+				<!-- -->
+				<li>r_logentry->[INITIATOR_nameDef] and [RECIPIENT_nameDef] engaged in a discussion about [currentResearch].</li>
+				<li>r_logentry->[INITIATOR_nameDef] joined [RECIPIENT_nameDef] in exploring [currentResearch].</li>
+				<li>r_logentry->[INITIATOR_nameDef] contributed to [RECIPIENT_nameDef]'s exploration of [currentResearch].</li>
+				<li>r_logentry->[INITIATOR_nameDef] offered feedback as [RECIPIENT_nameDef] explored [currentResearch].</li>
+				<li>r_logentry->[INITIATOR_nameDef] and [RECIPIENT_nameDef] reviewed aspects of [currentResearch].</li>
+				<li>r_logentry->[INITIATOR_nameDef] proposed new ideas about [currentResearch] to [RECIPIENT_nameDef].</li>
+				<li>r_logentry->[INITIATOR_nameDef] questioned [RECIPIENT_nameDef] on their approach to [currentResearch].</li>
+				<li>r_logentry->[INITIATOR_nameDef] and [RECIPIENT_nameDef] dove deep into [currentResearch].</li>
+
+				<li>talkedabout->exchanged thoughts about</li>
+				<li>talkedabout->exchanged ideas about</li>
+				<li>talkedabout->exchanged views about</li>
+				<li>talkedabout->shared views on</li>
+				<li>talkedabout->shared thoughts on</li>
+				<li>talkedabout->shared ideas on</li>
+				<li>talkedabout->discussed about</li>
+				<li>talkedabout->theorized on</li>
+				<li>talkedabout->brainstormed</li>
+				<!-- -->
+				<li>talkedabout->debated</li>
+				<li>talkedabout->analyzed</li>
+				<li>talkedabout->explored</li>
+				<li>talkedabout->delved into</li>
+				<li>talkedabout->reviewed</li>
+				<li>talkedabout->considered</li>
+				<li>talkedabout->commented on</li>
+				<li>talkedabout->contemplated</li>
+				<li>talkedabout->reflected on</li>
+
+			</rulesStrings>
+			<rulesRaw>
+				<li Class="HealersOfTheLighthouse.Rule_CurrentResearch">
+					<keyword>currentResearch</keyword>
+				</li>
+			</rulesRaw>
+		</logRulesInitiator>
+	</InteractionDef>
+
 </Defs>

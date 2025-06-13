@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <EffecterDef>
+      <defName>HOTL_ConcealedArmament_PropelledArm_SmokePuff</defName>
+      <children>
+        <li>
+          <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+          <fleckDef>DustPuff</fleckDef>
+          <burstCount>15</burstCount>
+          <scale>1</scale>
+          <rotationRate>-5~5</rotationRate>
+          <angle>-20~20</angle>
+          <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+          <speed>10</speed>
+          <useTargetABodyAngle>true</useTargetABodyAngle>
+        </li>
+      </children>
+    </EffecterDef> <!-- CHANGE THIS SO THE PUFF GOES AWAY FROM THE DIRECTION OF THE VICTIM -->
+
+</Defs>

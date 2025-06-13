@@ -3,75 +3,103 @@
 
     <!-- Blue Serum -->
 	<AdaptiveStorage.GraphicsDef>
-		<defName>HOTL_BlueSerumPearlShelf_GraphicDef</defName>
+		<defName>HOTL_BlueSerumPearlShelf_BaseGraphicDef</defName>
+		<targetDef>HOTL_PearlShelf_BlueSerum</targetDef>
+		<showContainedItems>false</showContainedItems>
+		<allowedRotations>
+			<li>North</li>
+			<li>East</li>
+			<li>West</li>
+		</allowedRotations>
+	</AdaptiveStorage.GraphicsDef>
+	<AdaptiveStorage.GraphicsDef>
+		<defName>HOTL_BlueSerumPearlShelf_ContentGraphicDef</defName>
 		<targetDef>HOTL_PearlShelf_BlueSerum</targetDef>
 		<graphics>
 			<li>
 				<graphicData>
-					<texPath>Buildings/PearlShelf/BlueSerumShelf/BlueSerumShelf</texPath>
-                    <graphicClass>Graphic_Multi</graphicClass>
+					<texPath>Buildings/PearlShelf/BlueSerumShelf/BlueSerumShelf_south</texPath>
+                    <graphicClass>Graphic_Single</graphicClass>
                     <drawSize>(2,2)</drawSize>
                     <drawOffsetNorth>(0,0,0.5)</drawOffsetNorth>
                     <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
                     <drawOffsetWest>(0,0,0.5)</drawOffsetWest>
                     <drawOffsetEast>(0,0,0.5)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
 				</graphicData>
 			</li>
 			<li>
 				<graphicData>
 					<texPath>Buildings/PearlShelf/BlueSerumShelf/BlueSerumShelfQuarter</texPath>
-                    <graphicClass>Graphic_Multi</graphicClass>
+                    <graphicClass>Graphic_Single</graphicClass>
                     <drawSize>(2,2)</drawSize>
                     <drawOffsetNorth>(0,0,0.5)</drawOffsetNorth>
                     <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
                     <drawOffsetWest>(0,0,0.5)</drawOffsetWest>
                     <drawOffsetEast>(0,0,0.5)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
 				</graphicData>
 				<minimumStackCount>1</minimumStackCount>
 			</li>
 			<li>
 				<graphicData>
 					<texPath>Buildings/PearlShelf/BlueSerumShelf/BlueSerumShelfHalf</texPath>
-                    <graphicClass>Graphic_Multi</graphicClass>
+                    <graphicClass>Graphic_Single</graphicClass>
                     <drawSize>(2,2)</drawSize>
                     <drawOffsetNorth>(0,0,0.5)</drawOffsetNorth>
                     <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
                     <drawOffsetWest>(0,0,0.5)</drawOffsetWest>
                     <drawOffsetEast>(0,0,0.5)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
 				</graphicData>
 				<minimumStackCount>2</minimumStackCount>
 			</li>
             <li>
 				<graphicData>
 					<texPath>Buildings/PearlShelf/BlueSerumShelf/BlueSerumShelfFull</texPath>
-                    <graphicClass>Graphic_Multi</graphicClass>
+                    <graphicClass>Graphic_Single</graphicClass>
                     <drawSize>(2,2)</drawSize>
                     <drawOffsetNorth>(0,0,0.5)</drawOffsetNorth>
                     <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
                     <drawOffsetWest>(0,0,0.5)</drawOffsetWest>
                     <drawOffsetEast>(0,0,0.5)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
 				</graphicData>
 				<minimumStackCount>3</minimumStackCount>
 			</li>
 		</graphics>
 		<showContainedItems>false</showContainedItems>
+		<allowedRotations>
+			<li>South</li>
+		</allowedRotations>
 	</AdaptiveStorage.GraphicsDef>
 
 
-    <!-- Crystal -->
+	<!-- Crystal -->
 	<AdaptiveStorage.GraphicsDef>
-		<defName>HOTL_CrystalPearlShelf_GraphicDef</defName>
+		<defName>HOTL_CrystalPearlShelf_BaseGraphicDef</defName>
+		<targetDef>HOTL_PearlShelf_Crystal</targetDef>
+		<showContainedItems>false</showContainedItems>
+		<allowedRotations>
+			<li>North</li>
+			<li>East</li>
+			<li>West</li>
+		</allowedRotations>
+	</AdaptiveStorage.GraphicsDef>
+	<AdaptiveStorage.GraphicsDef>
+		<defName>HOTL_CrystalPearlShelf_ContentGraphicDef</defName>
 		<targetDef>HOTL_PearlShelf_Crystal</targetDef>
 		<graphics>
 			<li>
 				<graphicData>
-					<texPath>Buildings/PearlShelf/CrystalShelf/CrystalShelf</texPath>
+					<texPath>Buildings/PearlShelf/CrystalShelf/CrystalShelf_south</texPath>
                     <graphicClass>Graphic_Multi</graphicClass>
                     <drawSize>(2,2)</drawSize>
                     <drawOffsetNorth>(0,0,0.5)</drawOffsetNorth>
                     <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
                     <drawOffsetWest>(0,0,0.5)</drawOffsetWest>
                     <drawOffsetEast>(0,0,0.5)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
 				</graphicData>
 			</li>
 			<li>
@@ -83,6 +111,7 @@
                     <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
                     <drawOffsetWest>(0,0,0.5)</drawOffsetWest>
                     <drawOffsetEast>(0,0,0.5)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
 				</graphicData>
 				<minimumStackCount>1</minimumStackCount>
 			</li>
@@ -95,6 +124,7 @@
                     <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
                     <drawOffsetWest>(0,0,0.5)</drawOffsetWest>
                     <drawOffsetEast>(0,0,0.5)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
 				</graphicData>
 				<minimumStackCount>2</minimumStackCount>
 			</li>
@@ -107,28 +137,43 @@
                     <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
                     <drawOffsetWest>(0,0,0.5)</drawOffsetWest>
                     <drawOffsetEast>(0,0,0.5)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
 				</graphicData>
 				<minimumStackCount>3</minimumStackCount>
 			</li>
 		</graphics>
 		<showContainedItems>false</showContainedItems>
+		<allowedRotations>
+			<li>South</li>
+		</allowedRotations>
 	</AdaptiveStorage.GraphicsDef>
 
 
-    <!-- Joy -->
+	<!-- Joy -->
 	<AdaptiveStorage.GraphicsDef>
-		<defName>HOTL_JoyPearlShelf_GraphicDef</defName>
+		<defName>HOTL_JoyPearlShelf_BaseGraphicDef</defName>
+		<targetDef>HOTL_PearlShelf_Joy</targetDef>
+		<showContainedItems>false</showContainedItems>
+		<allowedRotations>
+			<li>North</li>
+			<li>East</li>
+			<li>West</li>
+		</allowedRotations>
+	</AdaptiveStorage.GraphicsDef>
+	<AdaptiveStorage.GraphicsDef>
+		<defName>HOTL_JoyPearlShelf_ContentGraphicDef</defName>
 		<targetDef>HOTL_PearlShelf_Joy</targetDef>
 		<graphics>
 			<li>
 				<graphicData>
-					<texPath>Buildings/PearlShelf/JoyShelf/JoyShelf</texPath>
+					<texPath>Buildings/PearlShelf/JoyShelf/JoyShelf_south</texPath>
                     <graphicClass>Graphic_Multi</graphicClass>
                     <drawSize>(2,2)</drawSize>
                     <drawOffsetNorth>(0,0,0.5)</drawOffsetNorth>
                     <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
                     <drawOffsetWest>(0,0,0.5)</drawOffsetWest>
                     <drawOffsetEast>(0,0,0.5)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
 				</graphicData>
 			</li>
 			<li>
@@ -140,6 +185,7 @@
                     <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
                     <drawOffsetWest>(0,0,0.5)</drawOffsetWest>
                     <drawOffsetEast>(0,0,0.5)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
 				</graphicData>
 				<minimumStackCount>1</minimumStackCount>
 			</li>
@@ -152,6 +198,7 @@
                     <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
                     <drawOffsetWest>(0,0,0.5)</drawOffsetWest>
                     <drawOffsetEast>(0,0,0.5)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
 				</graphicData>
 				<minimumStackCount>2</minimumStackCount>
 			</li>
@@ -164,28 +211,43 @@
                     <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
                     <drawOffsetWest>(0,0,0.5)</drawOffsetWest>
                     <drawOffsetEast>(0,0,0.5)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
 				</graphicData>
 				<minimumStackCount>3</minimumStackCount>
 			</li>
 		</graphics>
 		<showContainedItems>false</showContainedItems>
+		<allowedRotations>
+			<li>South</li>
+		</allowedRotations>
 	</AdaptiveStorage.GraphicsDef>
 
 
-    <!-- Numb -->
+	<!-- Numb -->
 	<AdaptiveStorage.GraphicsDef>
-		<defName>HOTL_NumbPearlShelf_GraphicDef</defName>
+		<defName>HOTL_NumbPearlShelf_BaseGraphicDef</defName>
+		<targetDef>HOTL_PearlShelf_Numb</targetDef>
+		<showContainedItems>false</showContainedItems>
+		<allowedRotations>
+			<li>North</li>
+			<li>East</li>
+			<li>West</li>
+		</allowedRotations>
+	</AdaptiveStorage.GraphicsDef>
+	<AdaptiveStorage.GraphicsDef>
+		<defName>HOTL_NumbPearlShelf_ContentGraphicDef</defName>
 		<targetDef>HOTL_PearlShelf_Numb</targetDef>
 		<graphics>
 			<li>
 				<graphicData>
-					<texPath>Buildings/PearlShelf/NumbShelf/NumbShelf</texPath>
+					<texPath>Buildings/PearlShelf/NumbShelf/NumbShelf_south</texPath>
                     <graphicClass>Graphic_Multi</graphicClass>
                     <drawSize>(2,2)</drawSize>
                     <drawOffsetNorth>(0,0,0.5)</drawOffsetNorth>
                     <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
                     <drawOffsetWest>(0,0,0.5)</drawOffsetWest>
                     <drawOffsetEast>(0,0,0.5)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
 				</graphicData>
 			</li>
 			<li>
@@ -197,6 +259,7 @@
                     <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
                     <drawOffsetWest>(0,0,0.5)</drawOffsetWest>
                     <drawOffsetEast>(0,0,0.5)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
 				</graphicData>
 				<minimumStackCount>1</minimumStackCount>
 			</li>
@@ -209,6 +272,7 @@
                     <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
                     <drawOffsetWest>(0,0,0.5)</drawOffsetWest>
                     <drawOffsetEast>(0,0,0.5)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
 				</graphicData>
 				<minimumStackCount>2</minimumStackCount>
 			</li>
@@ -221,28 +285,43 @@
                     <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
                     <drawOffsetWest>(0,0,0.5)</drawOffsetWest>
                     <drawOffsetEast>(0,0,0.5)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
 				</graphicData>
 				<minimumStackCount>3</minimumStackCount>
 			</li>
 		</graphics>
 		<showContainedItems>false</showContainedItems>
+		<allowedRotations>
+			<li>South</li>
+		</allowedRotations>
 	</AdaptiveStorage.GraphicsDef>
 
 
-    <!-- Siren -->
+	<!-- Siren -->
 	<AdaptiveStorage.GraphicsDef>
-		<defName>HOTL_SirenPearlShelf_GraphicDef</defName>
+		<defName>HOTL_SirenPearlShelf_BaseGraphicDef</defName>
+		<targetDef>HOTL_PearlShelf_Siren</targetDef>
+		<showContainedItems>false</showContainedItems>
+		<allowedRotations>
+			<li>North</li>
+			<li>East</li>
+			<li>West</li>
+		</allowedRotations>
+	</AdaptiveStorage.GraphicsDef>
+	<AdaptiveStorage.GraphicsDef>
+		<defName>HOTL_SirenPearlShelf_ContentGraphicDef</defName>
 		<targetDef>HOTL_PearlShelf_Siren</targetDef>
 		<graphics>
 			<li>
 				<graphicData>
-					<texPath>Buildings/PearlShelf/SirenShelf/SirenShelf</texPath>
+					<texPath>Buildings/PearlShelf/SirenShelf/SirenShelf_south</texPath>
                     <graphicClass>Graphic_Multi</graphicClass>
                     <drawSize>(2,2)</drawSize>
                     <drawOffsetNorth>(0,0,0.5)</drawOffsetNorth>
                     <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
                     <drawOffsetWest>(0,0,0.5)</drawOffsetWest>
                     <drawOffsetEast>(0,0,0.5)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
 				</graphicData>
 			</li>
 			<li>
@@ -254,6 +333,7 @@
                     <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
                     <drawOffsetWest>(0,0,0.5)</drawOffsetWest>
                     <drawOffsetEast>(0,0,0.5)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
 				</graphicData>
 				<minimumStackCount>1</minimumStackCount>
 			</li>
@@ -266,6 +346,7 @@
                     <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
                     <drawOffsetWest>(0,0,0.5)</drawOffsetWest>
                     <drawOffsetEast>(0,0,0.5)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
 				</graphicData>
 				<minimumStackCount>2</minimumStackCount>
 			</li>
@@ -278,28 +359,43 @@
                     <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
                     <drawOffsetWest>(0,0,0.5)</drawOffsetWest>
                     <drawOffsetEast>(0,0,0.5)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
 				</graphicData>
 				<minimumStackCount>3</minimumStackCount>
 			</li>
 		</graphics>
 		<showContainedItems>false</showContainedItems>
+		<allowedRotations>
+			<li>South</li>
+		</allowedRotations>
 	</AdaptiveStorage.GraphicsDef>
 
 
-    <!-- Thinker -->
+	<!-- Thinker -->
 	<AdaptiveStorage.GraphicsDef>
-		<defName>HOTL_ThinkerPearlShelf_GraphicDef</defName>
+		<defName>HOTL_ThinkerPearlShelf_BaseGraphicDef</defName>
+		<targetDef>HOTL_PearlShelf_Thinker</targetDef>
+		<showContainedItems>false</showContainedItems>
+		<allowedRotations>
+			<li>North</li>
+			<li>East</li>
+			<li>West</li>
+		</allowedRotations>
+	</AdaptiveStorage.GraphicsDef>
+	<AdaptiveStorage.GraphicsDef>
+		<defName>HOTL_ThinkerPearlShelf_ContentGraphicDef</defName>
 		<targetDef>HOTL_PearlShelf_Thinker</targetDef>
 		<graphics>
 			<li>
 				<graphicData>
-					<texPath>Buildings/PearlShelf/ThinkerShelf/ThinkerShelf</texPath>
+					<texPath>Buildings/PearlShelf/ThinkerShelf/ThinkerShelf_south</texPath>
                     <graphicClass>Graphic_Multi</graphicClass>
                     <drawSize>(2,2)</drawSize>
                     <drawOffsetNorth>(0,0,0.5)</drawOffsetNorth>
                     <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
                     <drawOffsetWest>(0,0,0.5)</drawOffsetWest>
                     <drawOffsetEast>(0,0,0.5)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
 				</graphicData>
 			</li>
 			<li>
@@ -311,6 +407,7 @@
                     <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
                     <drawOffsetWest>(0,0,0.5)</drawOffsetWest>
                     <drawOffsetEast>(0,0,0.5)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
 				</graphicData>
 				<minimumStackCount>1</minimumStackCount>
 			</li>
@@ -323,6 +420,7 @@
                     <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
                     <drawOffsetWest>(0,0,0.5)</drawOffsetWest>
                     <drawOffsetEast>(0,0,0.5)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
 				</graphicData>
 				<minimumStackCount>2</minimumStackCount>
 			</li>
@@ -335,11 +433,15 @@
                     <drawOffsetSouth>(0,0,0.3)</drawOffsetSouth>
                     <drawOffsetWest>(0,0,0.5)</drawOffsetWest>
                     <drawOffsetEast>(0,0,0.5)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
 				</graphicData>
 				<minimumStackCount>3</minimumStackCount>
 			</li>
 		</graphics>
 		<showContainedItems>false</showContainedItems>
+		<allowedRotations>
+			<li>South</li>
+		</allowedRotations>
 	</AdaptiveStorage.GraphicsDef>
 
 </Defs>

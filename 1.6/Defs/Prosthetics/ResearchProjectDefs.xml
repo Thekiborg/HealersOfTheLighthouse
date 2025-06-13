@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <ResearchProjectDef ParentName="Moyo2_Abysstech">
+        <defName>HOTL_Research_ConcealedArmament</defName>
+        <label>concealed armament</label>
+        <description>Research the creation of bionics that hide weapons within.</description>
+        <baseCost>2500</baseCost>
+        <prerequisites>
+            <li>Moyo2_Abysstech_Foundry</li>
+        </prerequisites>
+        <researchViewX>2.00</researchViewX>
+        <researchViewY>3.60</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="Moyo2_Abysstech">
+        <defName>HOTL_Research_WorkerProsthetics</defName>
+        <label>worker abysstech prosthetics</label>
+        <description>Research the creation of civil enhancements.</description>
+        <baseCost>2000</baseCost>
+        <prerequisites>
+            <li>Moyo2_Abysstech_Foundry</li>
+        </prerequisites>
+        <researchViewX>2.00</researchViewX>
+        <researchViewY>4.30</researchViewY>
+    </ResearchProjectDef>
+
+</Defs>

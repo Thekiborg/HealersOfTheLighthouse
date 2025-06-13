@@ -2,7 +2,7 @@
 <Defs>
 
 	<!-- Blue Serum -->
-	<AdaptiveStorage.GraphicsDef>
+	<!--<AdaptiveStorage.GraphicsDef>
 		<defName>HOTL_BlueSerumBoosterFountain_GraphicDef</defName>
 		<targetDef>HOTL_BoosterFountain_BlueSerum</targetDef>
 		<graphics>
@@ -13,8 +13,8 @@
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
 					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
-					<drawOffsetWest>(0.1,0,0)</drawOffsetWest>
-					<drawOffsetEast>(-0.1,0,0)</drawOffsetEast>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
 					<drawRotated>false</drawRotated>
 					<allowFlip>false</allowFlip>
 				</graphicData>
@@ -26,8 +26,8 @@
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
 					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
-					<drawOffsetWest>(0.1,0,0)</drawOffsetWest>
-					<drawOffsetEast>(-0.1,0,0)</drawOffsetEast>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
 					<drawRotated>false</drawRotated>
 					<allowFlip>false</allowFlip>
 				</graphicData>
@@ -40,8 +40,8 @@
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
 					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
-					<drawOffsetWest>(0.1,0,0)</drawOffsetWest>
-					<drawOffsetEast>(-0.1,0,0)</drawOffsetEast>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
 					<drawRotated>false</drawRotated>
 					<allowFlip>false</allowFlip>
 				</graphicData>
@@ -54,8 +54,8 @@
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
 					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
-					<drawOffsetWest>(0.1,0,0)</drawOffsetWest>
-					<drawOffsetEast>(-0.1,0,0)</drawOffsetEast>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
 					<drawRotated>false</drawRotated>
 					<allowFlip>false</allowFlip>
 				</graphicData>
@@ -68,8 +68,8 @@
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
 					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
-					<drawOffsetWest>(0.1,0,0)</drawOffsetWest>
-					<drawOffsetEast>(-0.1,0,0)</drawOffsetEast>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
 					<drawRotated>false</drawRotated>
 					<allowFlip>false</allowFlip>
 				</graphicData>
@@ -77,7 +77,7 @@
 			</li>
 		</graphics>
 		<showContainedItems>false</showContainedItems>
-	</AdaptiveStorage.GraphicsDef>
+	</AdaptiveStorage.GraphicsDef>-->
 
 
 	<!-- Burst -->
@@ -92,8 +92,8 @@
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
 					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
-					<drawOffsetWest>(0.1,0,0)</drawOffsetWest>
-					<drawOffsetEast>(-0.1,0,0)</drawOffsetEast>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
 					<drawRotated>false</drawRotated>
 					<allowFlip>false</allowFlip>
 				</graphicData>
@@ -105,8 +105,8 @@
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
 					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
-					<drawOffsetWest>(0.1,0,0)</drawOffsetWest>
-					<drawOffsetEast>(-0.1,0,0)</drawOffsetEast>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
 					<drawRotated>false</drawRotated>
 					<allowFlip>false</allowFlip>
 				</graphicData>
@@ -119,8 +119,8 @@
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
 					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
-					<drawOffsetWest>(0.1,0,0)</drawOffsetWest>
-					<drawOffsetEast>(-0.1,0,0)</drawOffsetEast>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
 					<drawRotated>false</drawRotated>
 					<allowFlip>false</allowFlip>
 				</graphicData>
@@ -133,8 +133,8 @@
                     <drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
 					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
-					<drawOffsetWest>(0.1,0,0)</drawOffsetWest>
-					<drawOffsetEast>(-0.1,0,0)</drawOffsetEast>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
 					<drawRotated>false</drawRotated>
 					<allowFlip>false</allowFlip>
 				</graphicData>
@@ -147,8 +147,8 @@
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
 					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
-					<drawOffsetWest>(0.1,0,0)</drawOffsetWest>
-					<drawOffsetEast>(-0.1,0,0)</drawOffsetEast>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
 					<drawRotated>false</drawRotated>
 					<allowFlip>false</allowFlip>
 				</graphicData>
@@ -171,8 +171,8 @@
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
 					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
-					<drawOffsetWest>(0.1,0,0)</drawOffsetWest>
-					<drawOffsetEast>(-0.1,0,0)</drawOffsetEast>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
 					<drawRotated>false</drawRotated>
 					<allowFlip>false</allowFlip>
 				</graphicData>
@@ -184,8 +184,8 @@
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
 					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
-					<drawOffsetWest>(0.1,0,0)</drawOffsetWest>
-					<drawOffsetEast>(-0.1,0,0)</drawOffsetEast>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
 					<drawRotated>false</drawRotated>
 					<allowFlip>false</allowFlip>
 				</graphicData>
@@ -198,8 +198,8 @@
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
 					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
-					<drawOffsetWest>(0.1,0,0)</drawOffsetWest>
-					<drawOffsetEast>(-0.1,0,0)</drawOffsetEast>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
 					<drawRotated>false</drawRotated>
 					<allowFlip>false</allowFlip>
 				</graphicData>
@@ -212,8 +212,8 @@
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
 					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
-					<drawOffsetWest>(0.1,0,0)</drawOffsetWest>
-					<drawOffsetEast>(-0.1,0,0)</drawOffsetEast>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
 					<drawRotated>false</drawRotated>
 					<allowFlip>false</allowFlip>
 				</graphicData>
@@ -226,8 +226,8 @@
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
 					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
-					<drawOffsetWest>(0.1,0,0)</drawOffsetWest>
-					<drawOffsetEast>(-0.1,0,0)</drawOffsetEast>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
 					<drawRotated>false</drawRotated>
 					<allowFlip>false</allowFlip>
 				</graphicData>
@@ -250,8 +250,8 @@
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
 					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
-					<drawOffsetWest>(0.1,0,0)</drawOffsetWest>
-					<drawOffsetEast>(-0.1,0,0)</drawOffsetEast>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
 					<drawRotated>false</drawRotated>
 					<allowFlip>false</allowFlip>
 				</graphicData>
@@ -263,8 +263,8 @@
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
 					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
-					<drawOffsetWest>(0.1,0,0)</drawOffsetWest>
-					<drawOffsetEast>(-0.1,0,0)</drawOffsetEast>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
 					<drawRotated>false</drawRotated>
 					<allowFlip>false</allowFlip>
 				</graphicData>
@@ -277,8 +277,8 @@
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
 					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
-					<drawOffsetWest>(0.1,0,0)</drawOffsetWest>
-					<drawOffsetEast>(-0.1,0,0)</drawOffsetEast>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
 					<drawRotated>false</drawRotated>
 					<allowFlip>false</allowFlip>
 				</graphicData>
@@ -291,8 +291,8 @@
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
 					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
-					<drawOffsetWest>(0.1,0,0)</drawOffsetWest>
-					<drawOffsetEast>(-0.1,0,0)</drawOffsetEast>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
 					<drawRotated>false</drawRotated>
 					<allowFlip>false</allowFlip>
 				</graphicData>
@@ -305,8 +305,8 @@
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
 					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
-					<drawOffsetWest>(0.1,0,0)</drawOffsetWest>
-					<drawOffsetEast>(-0.1,0,0)</drawOffsetEast>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
 					<drawRotated>false</drawRotated>
 					<allowFlip>false</allowFlip>
 				</graphicData>
@@ -329,8 +329,8 @@
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
 					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
-					<drawOffsetWest>(0.1,0,0)</drawOffsetWest>
-					<drawOffsetEast>(-0.1,0,0)</drawOffsetEast>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
 					<drawRotated>false</drawRotated>
 					<allowFlip>false</allowFlip>
 				</graphicData>
@@ -342,8 +342,8 @@
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
 					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
-					<drawOffsetWest>(0.1,0,0)</drawOffsetWest>
-					<drawOffsetEast>(-0.1,0,0)</drawOffsetEast>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
 					<drawRotated>false</drawRotated>
 					<allowFlip>false</allowFlip>
 				</graphicData>
@@ -356,8 +356,8 @@
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
 					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
-					<drawOffsetWest>(0.1,0,0)</drawOffsetWest>
-					<drawOffsetEast>(-0.1,0,0)</drawOffsetEast>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
 					<drawRotated>false</drawRotated>
 					<allowFlip>false</allowFlip>
 				</graphicData>
@@ -370,8 +370,8 @@
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
 					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
-					<drawOffsetWest>(0.1,0,0)</drawOffsetWest>
-					<drawOffsetEast>(-0.1,0,0)</drawOffsetEast>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
 					<drawRotated>false</drawRotated>
 					<allowFlip>false</allowFlip>
 				</graphicData>
@@ -384,8 +384,8 @@
 					<drawSize>(1.5,1.5)</drawSize>
 					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
 					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
-					<drawOffsetWest>(0.1,0,0)</drawOffsetWest>
-					<drawOffsetEast>(-0.1,0,0)</drawOffsetEast>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
 					<drawRotated>false</drawRotated>
 					<allowFlip>false</allowFlip>
 				</graphicData>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <RecipeDef Name="HOTL_Recipe_Coagulant_Base" Abstract="true">
+        <workAmount>800</workAmount>
+        <targetCountAdjustment>1</targetCountAdjustment>
+        <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+        <workSkill>Intellectual</workSkill>
+        <recipeUsers>
+            <li>DrugLab</li>
+        </recipeUsers>
+        <skillRequirements>
+            <Intellectual>6</Intellectual>
+        </skillRequirements>
+    </RecipeDef>
+
+
+    <RecipeDef ParentName="HOTL_Recipe_Coagulant_Base">
+        <defName>HOTL_Recipe_HarshCoagulant</defName>
+        <label>harsh coagulant</label>
+        <description>Make a harsh coagulant.</description>
+        <jobString>Synthetizing harsh coagulant.</jobString>
+        <researchPrerequisite>Moyo2_Abysstech_DeepblueAdvanced</researchPrerequisite>
+        <uiIconPath>Items/Cauterizers/Harsh/CauterizerHarsh_a</uiIconPath>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Neutroamine</li>
+                    </thingDefs>
+                </filter>
+                <count>2</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Meat_Megaspider</li>
+                        <li>Ambrosia</li>
+                    </thingDefs>
+                </filter>
+                <count>10</count>
+            </li>
+        </ingredients>
+        <defaultIngredientFilter>
+            <thingDefs>
+                <li>Meat_Megaspider</li>
+                <li>Ambrosia</li>
+            </thingDefs>
+        </defaultIngredientFilter>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>Meat_Megaspider</li>
+                <li>Ambrosia</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <products>
+            <HOTL_HarshCoagulant>1</HOTL_HarshCoagulant>
+        </products>
+    </RecipeDef>
+
+
+    <RecipeDef ParentName="HOTL_Recipe_Coagulant_Base">
+        <defName>HOTL_Recipe_HarshCoagulant_Bulk</defName>
+        <label>harsh coagulant x4</label>
+        <description>Make a harsh coagulant x4.</description>
+        <jobString>Synthetizing harsh coagulant x4.</jobString>
+        <researchPrerequisite>Moyo2_Abysstech_DeepblueAdvanced</researchPrerequisite>
+        <uiIconPath>Items/Cauterizers/Harsh/CauterizerHarsh_a</uiIconPath>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Neutroamine</li>
+                    </thingDefs>
+                </filter>
+                <count>8</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Meat_Megaspider</li>
+                        <li>Ambrosia</li>
+                    </thingDefs>
+                </filter>
+                <count>40</count>
+            </li>
+        </ingredients>
+        <defaultIngredientFilter>
+            <thingDefs>
+                <li>Meat_Megaspider</li>
+                <li>Ambrosia</li>
+            </thingDefs>
+        </defaultIngredientFilter>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>Meat_Megaspider</li>
+                <li>Ambrosia</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <products>
+            <HOTL_HarshCoagulant>4</HOTL_HarshCoagulant>
+        </products>
+    </RecipeDef>
+
+</Defs>

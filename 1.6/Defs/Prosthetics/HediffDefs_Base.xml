@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <!-- Replaces body part -->
+    <HediffDef Name="HOTL_AddedBodyPartBase" ParentName="AddedBodyPartBase" Abstract="true">
+        <defaultLabelColor>(0.576, 0.31, 1.0)</defaultLabelColor>
+        <addedPartProps>
+            <solid>true</solid>
+            <betterThanNatural>true</betterThanNatural>
+        </addedPartProps>
+    </HediffDef>
+
+    <!-- Adds to the bodypart -->
+    <HediffDef Name="HOTL_InstalledImplantBase" ParentName="ImplantHediffBase" Abstract="true">
+        <defaultLabelColor>(0.576, 0.31, 1.0)</defaultLabelColor>
+        <addedPartProps>
+            <solid>true</solid>
+            <betterThanNatural>true</betterThanNatural>
+        </addedPartProps>
+    </HediffDef>
+
+</Defs>

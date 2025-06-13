@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <JobDef>
+        <defName>HOTL_ConcealedArmament_ReloadLauncher</defName>
+        <driverClass>HealersOfTheLighthouse.JobDriver_ReloadConcealedLauncher</driverClass>
+        <reportString>loading TargetA into marble launcher.</reportString>
+        <suspendable>false</suspendable>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+
+    <JobDef>
+        <defName>HOTL_ConcealedArmament_ReloadAbility</defName>
+        <driverClass>HealersOfTheLighthouse.JobDriver_ReloadAbility</driverClass>
+        <reportString>reloading ability.</reportString>
+        <suspendable>false</suspendable>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+
+</Defs>
