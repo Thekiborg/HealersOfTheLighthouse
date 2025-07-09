@@ -9,7 +9,8 @@
 	<description></description>
 
 	<supportedVersions>
-		<li>1.5</li> <!-- Supported versions. Place rimworld versions in separate li nodes here -->
+		<li>1.5</li>
+		<li>1.6</li>
 	</supportedVersions>
 
 	<modDependencies>

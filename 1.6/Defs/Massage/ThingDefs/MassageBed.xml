@@ -4,7 +4,7 @@
     <ThingDef ParentName="ArtableFurnitureBase">
         <defName>HOTL_MassageBed</defName>
         <label>massage bed</label>
-        <description>A bed to relax at while someone else gives you a massage. The oils used help moisturize the skin and bond with your partner.</description>
+        <description>A bed to relax at while someone else gives you a massage. The oils used help moisturize the skin and bond with your partner.\n\nIt's not for sleeping.</description>
         <thingClass>HealersOfTheLighthouse.Building_MassageBed</thingClass>
         <graphicData>
             <texPath>Buildings/MassageBed/MassageBed</texPath>
@@ -22,6 +22,13 @@
             <Beauty>0.5</Beauty>
             <Comfort>0.75</Comfort>
         </statBases>
+        <costList>
+            <Steel>50</Steel>
+        </costList>
+        <researchPrerequisites>
+            <li>DrugProduction</li>
+            <li>ComplexFurniture</li>
+        </researchPrerequisites>
         <defaultPlacingRot>South</defaultPlacingRot>
         <designationCategory>Joy</designationCategory>
         <fillPercent>0.4</fillPercent>

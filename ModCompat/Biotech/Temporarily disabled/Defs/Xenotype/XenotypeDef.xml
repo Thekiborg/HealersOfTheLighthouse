@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
 
-    <XenotypeDef>
+    <!--<XenotypeDef>
         <defName>HOTL_todo</defName>
         <label>todo</label>
         <description>Sanguophages are a type of archotech-enhanced xenohuman. Powered by archites, their abilities go far beyond normal genetic enhancements. They are mentally adept and preternaturally beautiful. In combat, they can launch deadly spines and heal injured friends. They don't age or die naturally and never suffer from disease or poison. A sanguophage can make a new sanguophage by reimplanting their own xenogerm into a person.\n\nSanguophages must regularly consume hemogen derived from human blood, and they must periodically deathrest for long periods. They're easily destroyed by fire, and slowed down by UV light.\n\nThe first sanguophage appeared thousands of years ago when the lord-explorer Varan-Dur sought to control a hyperintelligent archotech and found himself transformed by it instead. Every sanguophage is descended from him. Since then, sanguophages have often been hunted because of their destabilizing power and their need for blood. Since they can pass for baseliners, many live in hiding among typical humans.\n\nTheir numbers are unknown. Some think they are legends or rare irrelevancies. Some believe sanguophages secretly direct entire human civilizations. The stories speak of eternal lords ruling billions from slate-black space stations, or directing blood sacrifices at conferences in the underlayers of the deepest urbworlds.</description>
@@ -20,6 +20,6 @@
             <li>HOTL_PacifistNature</li>
             <li>HOTL_LikesRevealingClothes</li>
         </genes>
-      </XenotypeDef>
+      </XenotypeDef>-->
     
 </Defs>

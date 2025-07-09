@@ -21,7 +21,7 @@
             <canTargetSelf>false</canTargetSelf>
             <canTargetBuildings>false</canTargetBuildings>
             <canTargetMechs>false</canTargetMechs>
-            <canTargetMutants>false</canTargetMutants>
+            <canTargetSubhumans>false</canTargetSubhumans>
           </targetParams>
         </verbProperties>
         <comps>

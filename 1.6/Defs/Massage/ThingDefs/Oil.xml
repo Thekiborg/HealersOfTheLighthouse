@@ -35,7 +35,10 @@
                 <Intellectual>4</Intellectual>
             </skillRequirements>
             <displayPriority>100</displayPriority>
-            <researchPrerequisite>DrugProduction</researchPrerequisite>
+            <researchPrerequisites>
+                <li>DrugProduction</li>
+                <li>ComplexFurniture</li>
+            </researchPrerequisites>
         </recipeMaker>
         <descriptionHyperlinks>
             <ThingDef>HOTL_MassageBed</ThingDef>
