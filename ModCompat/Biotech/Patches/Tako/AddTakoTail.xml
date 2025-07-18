@@ -17,8 +17,9 @@
         </value>
     </Operation>
 
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/alienPartGenerator/bodyAddons</xpath>
+    <Operation Class="PatchOperationInsert">
+        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[name="glow(moyo tail)"]</xpath>
+        <order>Append</order>
         <value>
             <li>
                 <name>tako tail glow</name>

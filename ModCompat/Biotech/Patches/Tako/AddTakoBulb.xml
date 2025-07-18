@@ -36,7 +36,6 @@
     <!-- Bulbs -->
     <Operation Class="PatchOperationAdd">
         <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/alienPartGenerator/bodyAddons</xpath>
-        <order>Prepend</order>
         <value>
             <li>
                 <name>tako bulb</name>
@@ -58,13 +57,13 @@
                 </conditions>
                 <offsets>
                     <south>
-                        <layerOffset>-0.279</layerOffset>
+                        <layerOffset>-0.278</layerOffset>
                     </south>
                     <east>
-                        <layerOffset>-0.279</layerOffset>
+                        <layerOffset>-0.278</layerOffset>
                     </east>
                     <west>
-                        <layerOffset>-0.279</layerOffset>
+                        <layerOffset>-0.278</layerOffset>
                     </west>
                 </offsets>
                 <!-- - -->
@@ -98,13 +97,13 @@
                 </conditions>
                 <offsets>
                     <south>
-                        <layerOffset>-0.2739</layerOffset>
+                        <layerOffset>-0.2779</layerOffset>
                     </south>
                     <east>
-                        <layerOffset>-0.2739</layerOffset>
+                        <layerOffset>-0.2779</layerOffset>
                     </east>
                     <west>
-                        <layerOffset>-0.2739</layerOffset>
+                        <layerOffset>-0.2779</layerOffset>
                     </west>
                 </offsets>
                 <!-- - -->

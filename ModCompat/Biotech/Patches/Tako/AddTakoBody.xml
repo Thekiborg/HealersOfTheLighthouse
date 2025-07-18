@@ -8,8 +8,8 @@
             <Gene For="HOTL_RapidMetabolicBreakDown">
                 <path>MoyoBodyReplacer/Body/Takobody_Female</path>
                 <extendedGraphics>
-                    <Body For="Female">MoyoBodyReplacer/Body/Takobody_Female</Body>
-                    <Body For="Thin">MoyoBodyReplacer/Body/Takobody_Thin</Body>
+                    <Gender For="Female">MoyoBodyReplacer/Body/Takobody_Female</Gender>
+                    <Gender For="Male">MoyoBodyReplacer/Body/Takobody_Thin</Gender>
                     <!--<Body For="Child">Moyo/Body_Chemskin/Naked_Child</Body>
                     <Body For="Baby">Moyo/Body_Chemskin/Naked_Baby</Body>-->
                 </extendedGraphics>
