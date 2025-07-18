@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+    <!-- Hide left antenna -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[name="moyo left antennae"]/extendedGraphics</xpath>
+        <order>Prepend</order>
+        <value>
+            <Gene For="HOTL_RapidMetabolicBreakDown">Moyo_Dummy/Dummy</Gene>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[name="glow(moyo left antennae)"]/extendedGraphics</xpath>
+        <order>Prepend</order>
+        <value>
+            <Gene For="HOTL_RapidMetabolicBreakDown">Moyo_Dummy/Dummy</Gene>
+        </value>
+    </Operation>
+
+    <!-- Hide right antenna -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[name="moyo right antennae"]/extendedGraphics</xpath>
+        <order>Prepend</order>
+        <value>
+            <Gene For="HOTL_RapidMetabolicBreakDown">Moyo_Dummy/Dummy</Gene>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[name="glow(moyo right antennae)"]/extendedGraphics</xpath>
+        <order>Prepend</order>
+        <value>
+            <Gene For="HOTL_RapidMetabolicBreakDown">Moyo_Dummy/Dummy</Gene>
+        </value>
+    </Operation>
+
+    <!-- Bulbs -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/alienPartGenerator/bodyAddons</xpath>
+        <order>Prepend</order>
+        <value>
+            <li>
+                <name>tako bulb</name>
+                <path>Moyo_Dummy/Dummy</path>
+                <shaderType>Cutout</shaderType>
+                <colorChannel>skin</colorChannel>
+                <alignWithHead>true</alignWithHead>
+                <!-- - -->
+                <conditions>
+                    <RotStage>Fresh,Rotting</RotStage>
+                    <Apparel>
+                        <!-- <hiddenUnderApparelFor> -->
+                        <!-- <li>FullHead</li> -->
+                        <!-- </hiddenUnderApparelFor> -->
+                        <!-- <hiddenUnderApparelTag> -->
+                        <!-- <li>MoyoTuque</li> -->
+                        <!-- </hiddenUnderApparelTag> -->
+                    </Apparel>
+                </conditions>
+                <offsets>
+                    <south>
+                        <layerOffset>-0.279</layerOffset>
+                    </south>
+                    <east>
+                        <layerOffset>-0.279</layerOffset>
+                    </east>
+                    <west>
+                        <layerOffset>-0.279</layerOffset>
+                    </west>
+                </offsets>
+                <!-- - -->
+                <inFrontOfBody>true</inFrontOfBody>
+                <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+                <defaultOffset>Center</defaultOffset>
+                <!-- - -->
+                <userCustomizable>false</userCustomizable>
+                <extendedGraphics>
+                    <Gene For="HOTL_RapidMetabolicBreakDown">MoyoBodyReplacer/Bulb/TakoBulb</Gene>
+                </extendedGraphics>
+            </li>
+            <li>
+                <name>tako bulb glow</name>
+                <path>Moyo_Dummy/Dummy</path>
+                <shaderType>MoteGlow</shaderType>
+                <colorChannel>RMBDColor</colorChannel>
+                <alignWithHead>true</alignWithHead>
+                <linkVariantIndexWithPrevious>true</linkVariantIndexWithPrevious>
+                <!-- - -->
+                <conditions>
+                    <RotStage>Fresh,Rotting</RotStage>
+                    <Apparel>
+                        <!-- <hiddenUnderApparelFor> -->
+                        <!-- <li>FullHead</li> -->
+                        <!-- </hiddenUnderApparelFor> -->
+                        <!-- <hiddenUnderApparelTag> -->
+                        <!-- <li>MoyoTuque</li> -->
+                        <!-- </hiddenUnderApparelTag> -->
+                    </Apparel>
+                </conditions>
+                <offsets>
+                    <south>
+                        <layerOffset>-0.2739</layerOffset>
+                    </south>
+                    <east>
+                        <layerOffset>-0.2739</layerOffset>
+                    </east>
+                    <west>
+                        <layerOffset>-0.2739</layerOffset>
+                    </west>
+                </offsets>
+                <!-- - -->
+                <inFrontOfBody>true</inFrontOfBody>
+                <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+                <defaultOffset>Center</defaultOffset>
+                <!-- - -->
+                <userCustomizable>false</userCustomizable>
+                <extendedGraphics>
+                    <Gene For="HOTL_RapidMetabolicBreakDown">MoyoBodyReplacer/Bulb/TakoBulbGlow</Gene>
+                </extendedGraphics>
+            </li>
+        </value>
+    </Operation>
+
+
+</Patch>

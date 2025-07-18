@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/graphicPaths/body/extendedGraphics</xpath>
+        <order>Prepend</order>
+        <value>
+            <Gene For="HOTL_RapidMetabolicBreakDown">
+                <path>MoyoBodyReplacer/Body/Takobody_Female</path>
+                <extendedGraphics>
+                    <Body For="Female">MoyoBodyReplacer/Body/Takobody_Female</Body>
+                    <Body For="Thin">MoyoBodyReplacer/Body/Takobody_Thin</Body>
+                    <!--<Body For="Child">Moyo/Body_Chemskin/Naked_Child</Body>
+                    <Body For="Baby">Moyo/Body_Chemskin/Naked_Baby</Body>-->
+                </extendedGraphics>
+            </Gene>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[name="glow(body)"]/extendedGraphics</xpath>
+        <order>Prepend</order>
+        <value>
+            <Gene For="HOTL_RapidMetabolicBreakDown">Moyo_Dummy/Dummy</Gene>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/alienPartGenerator/bodyAddons</xpath>
+        <value>
+            <li>
+                <name>tako body glow</name>
+                <path>Moyo_Dummy/Dummy</path>
+                <shaderType>MoteGlow</shaderType>
+                <colorChannel>RMBDColor</colorChannel>
+                <!-- - -->
+                <conditions>
+                    <BodyPart>
+                        <bodyPart>Torso</bodyPart>
+                        <drawWithoutPart>false</drawWithoutPart>
+                    </BodyPart>
+                    <RotStage>Fresh,Rotting</RotStage>
+                    <Apparel>
+                        <hiddenUnderApparelFor>
+                            <li>Torso</li>
+                        </hiddenUnderApparelFor>
+                    </Apparel>
+                </conditions>
+                <extendedGraphics>
+                    <Gene For="HOTL_RapidMetabolicBreakDown">
+                        <path>MoyoBodyReplacer/Body/TakobodyGlow_Female</path>
+                        <extendedGraphics>
+                            <Body For="Female">MoyoBodyReplacer/Body/TakobodyGlow_Female</Body>
+                            <Body For="Thin">MoyoBodyReplacer/Body/TakobodyGlow_Thin</Body>
+                            <!--<Body For="Child">Moyo/Body_Chemskin/Naked_Child</Body>
+                            <Body For="Baby">Moyo/Body_Chemskin/Naked_Baby</Body>-->
+                        </extendedGraphics>
+                    </Gene>
+                </extendedGraphics>
+                <offsets>
+                    <south>
+                        <layerOffset>-0.32</layerOffset>
+                        <bodyTypes>
+                            <Female>(0.0, 0.0)</Female>
+                            <Thin>(0.0, 0.0)</Thin>
+                            <Baby MayRequire="ludeon.rimworld.biotech">(0.0, 0.0)</Baby>
+                            <Child MayRequire="ludeon.rimworld.biotech">(0.0, 0.0)</Child>
+                        </bodyTypes>
+                    </south>
+                    <north>
+                        <layerOffset>-0.28</layerOffset>
+                        <bodyTypes>
+                            <Female>(0.0, 0.0)</Female>
+                            <Thin>(0.0, 0.0)</Thin>
+                            <Baby MayRequire="ludeon.rimworld.biotech">(0.0, 0.0)</Baby>
+                            <Child MayRequire="ludeon.rimworld.biotech">(0.0, 0.0)</Child>
+                        </bodyTypes>
+                    </north>
+                    <east>
+                        <layerOffset>-0.32</layerOffset>
+                        <bodyTypes>
+                            <Female>(0.0, 0.0)</Female>
+                            <Thin>(0.0, 0.0)</Thin>
+                            <Baby MayRequire="ludeon.rimworld.biotech">(0.1,-0.04)</Baby>
+                            <Child MayRequire="ludeon.rimworld.biotech">(0.1,-0.04)</Child>
+                        </bodyTypes>
+                    </east>
+                </offsets>
+                <!-- - -->
+                <defaultOffset>Center</defaultOffset>
+                <!-- - -->
+                <userCustomizable>false</userCustomizable>
+            </li>
+        </value>
+    </Operation>
+
+</Patch>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[name="moyo tail"]/extendedGraphics</xpath>
+        <order>Prepend</order>
+        <value>
+            <Gene For="HOTL_RapidMetabolicBreakDown">MoyoBodyReplacer/Tail/TakoTail</Gene>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[name="glow(moyo tail)"]/extendedGraphics</xpath>
+        <order>Prepend</order>
+        <value>
+            <Gene For="HOTL_RapidMetabolicBreakDown">Moyo_Dummy/Dummy</Gene>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/alienPartGenerator/bodyAddons</xpath>
+        <value>
+            <li>
+                <name>tako tail glow</name>
+                <path>Moyo_Dummy/Dummy</path>
+                <shaderType>MoteGlow</shaderType>
+                <colorChannel>RMBDColor</colorChannel>
+                <linkVariantIndexWithPrevious>true</linkVariantIndexWithPrevious>
+                <!-- - -->
+                <conditions>
+                    <BodyPart>
+                        <bodyPartLabel>tail</bodyPartLabel>
+                        <drawWithoutPart>false</drawWithoutPart>
+                    </BodyPart>
+                    <RotStage>Fresh,Rotting</RotStage>
+                    <Posture>
+                        <drawnStanding>true</drawnStanding>
+                        <drawnLaying>true</drawnLaying>
+                        <drawnInBed>false</drawnInBed>
+                    </Posture>
+                </conditions>
+                <!-- - -->
+                <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>
+                <defaultOffset>MoyoTail</defaultOffset>
+                <!-- - -->
+                <userCustomizable>false</userCustomizable>
+                <extendedGraphics>
+                    <Gene For="HOTL_RapidMetabolicBreakDown">MoyoBodyReplacer/Tail/TakoTailGlow</Gene>
+                </extendedGraphics>
+            </li>
+        </value>
+    </Operation>
+
+</Patch>

@@ -2,6 +2,7 @@
 
 namespace HealersOfTheLighthouse
 {
+	// MOVE THIS TO HEDIFF CLASS
     public class HediffComp_RapidMetabolicBreakDown : HediffComp
     {
         internal AbilityDef abilityDefToGive;
@@ -22,7 +23,6 @@ namespace HealersOfTheLighthouse
 
 		public override void CompPostPostRemoved()
 		{
-			base.CompPostPostRemoved();
 			RMBDGene.currentDosage = 0;
 			RMBDGene.isTransformed = false;
 			Pawn.abilities.RemoveAbility(abilityDefToGive);
@@ -30,6 +30,7 @@ namespace HealersOfTheLighthouse
 			var alienComp = Pawn.GetComp<AlienPartGenerator.AlienComp>();
 			alienComp.OverwriteColorChannel("RMBDColor", first: null);
 			alienComp.RegenerateAddonsForced();
+			base.CompPostPostRemoved();
 		}
-    }
+	}
 }
