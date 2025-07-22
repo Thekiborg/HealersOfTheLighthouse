@@ -31,7 +31,7 @@
     <ThingDef ParentName="HOTL_ConcealedFireArmamentBase">
         <defName>HOTL_CA_DragonsBreath</defName>
         <label>dragon's breath</label>
-        <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThe &lt;color=#c74228&gt;dragon's breath&lt;/color&gt; adds an opening beneath the tongue that allows the user to exhale fire. It has both helped soldiers overcome their captors and provoked unintentional injuries among lovers.</description>
+        <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThe &lt;color=#c74228&gt;dragon's breath&lt;/color&gt; adds an opening beneath the tongue that allows the user to exhale fire.</description>
         <graphicData>
             <texPath>Items/Prosthesis/ImplantBox_Jaw</texPath>
         </graphicData>
@@ -79,7 +79,7 @@
     <ThingDef ParentName="HOTL_ConcealedLightningArmamentBase">
         <defName>HOTL_CA_ZeusBreath</defName>
         <label>zeus breath</label>
-        <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThe &lt;color=#9cb6e2&gt;zeus breath&lt;/color&gt; is a variant of the arc thrower that sacrifices reusability for the ability to fire multiple arcing shots at once.</description>
+        <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThe &lt;color=#9cb6e2&gt;zeus breath&lt;/color&gt; is a variant of the arc thrower that sacrifices its reusability for the ability to fire multiple arcing shots at once.</description>
         <graphicData>
             <texPath>Items/Prosthesis/ImplantBox_Jaw</texPath>
         </graphicData>
@@ -106,7 +106,7 @@
     <ThingDef ParentName="HOTL_ConcealedAchlysArmamentBase">
         <defName>HOTL_CA_ToxBreath</defName>
         <label>tox breath</label>
-        <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThe &lt;color=#93c47d&gt;tox breath&lt;/color&gt;.Reloads 1 charge with x5 wastepacks.</description>
+        <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThe &lt;color=#93c47d&gt;tox breath&lt;/color&gt; allows the user to blow a cloud of tox gas at close range.\n\nTox gas burns the lungs and eyes, causing a temporary shortness of breath and reduction in sight. Continued exposure to tox gas results in toxic buildup that can be lethal.\n\nReloads 1 charge with x5 wastepacks.</description>
         <graphicData>
             <texPath>Items/Prosthesis/ImplantBox_Jaw</texPath>
         </graphicData>
@@ -132,7 +132,7 @@
     <ThingDef ParentName="HOTL_ConcealedKineticArmamentBase">
         <defName>HOTL_CA_MarbleLauncher</defName>
         <label>marble launcher</label>
-        <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThe &lt;color=#b4b4b4&gt;marble launcher&lt;/color&gt; is able to load, store and shoot different kinds of combat rounds as needed, granting the user a lot of versatility during missions.</description>
+        <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThe &lt;color=#b4b4b4&gt;marble launcher&lt;/color&gt; is able to load, store and shoot different kinds of combat rounds as needed, allowing for great versatility.</description>
         <graphicData>
             <texPath>Items/Prosthesis/ImplantBox_Arm</texPath>
         </graphicData>
@@ -156,7 +156,7 @@
     <ThingDef ParentName="HOTL_ConcealedKineticArmamentBase">
         <defName>HOTL_CA_BoosterLauncher</defName>
         <label>booster launcher</label>
-        <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThe &lt;color=#b4b4b4&gt;booster launcher&lt;/color&gt; is able to load and shoot multiple syringes, allowing field medics to provide support to their teammates from a distance.</description>
+        <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThe &lt;color=#b4b4b4&gt;booster launcher&lt;/color&gt; is able to load and fire multiple syringes, allowing for support from a distance.</description>
         <graphicData>
             <texPath>Items/Prosthesis/ImplantBox_Arm</texPath>
         </graphicData>

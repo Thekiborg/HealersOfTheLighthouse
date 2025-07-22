@@ -81,8 +81,8 @@ namespace HealersOfTheLighthouse
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look(ref currentDosage, "HOTL_RapidMetabolicBreakDown_currentDosage");
-            Scribe_Values.Look(ref isTransformed, "HOTL_RapidMetabolicBreakDown_isTranformed");
+            Scribe_Values.Look(ref currentDosage, "HOTL_SpecialiedDeepblueBreakdown_currentDosage");
+            Scribe_Values.Look(ref isTransformed, "HOTL_SpecialiedDeepblueBreakdown_isTranformed");
         }
     }
 }

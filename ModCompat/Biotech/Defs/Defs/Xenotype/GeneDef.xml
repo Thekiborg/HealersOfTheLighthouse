@@ -2,16 +2,23 @@
 <Defs>
 <!-- BALANCE DOSAGES -->
     <GeneDef>
-        <defName>HOTL_RapidMetabolicBreakDown</defName>
-        <label>rapid metabolic break-down</label>
+        <defName>HOTL_SpecialiedDeepblueBreakdown</defName>
+        <label>specialized deepblue breakdown</label>
         <geneClass>HealersOfTheLighthouse.GeneClass_RapidMetabolicBreakdown</geneClass>
         <description>todo</description>
         <biostatMet>0</biostatMet>
         <biostatCpx>0</biostatCpx>
         <displayOrderInCategory>100</displayOrderInCategory>
+        <exclusionTags>
+            <li>Moyo2_Skin_Chemskin</li>
+            <li>Moyo2_Skin_Depthborn</li>
+            <li>Moyo2_Glow_Blue</li>
+            <li>Moyo2_Glow_Purple</li>
+            <li>Moyo2_Glow_Violet</li>
+        </exclusionTags>
         <modExtensions>
             <li Class="HealersOfTheLighthouse.ModExtension">
-                <RMBDHediff>HOTL_RapidMetabolicBreakDown</RMBDHediff>
+                <RMBDHediff>HOTL_SpecialiedDeepblueBreakdown</RMBDHediff>
                 <RMBDSettings>
                     <!-- Pearl -->
                     <li>
@@ -84,10 +91,10 @@
     </GeneDef>
 
 
-    <!-- swift practitioner -->
+    <!-- nimble doctor -->
     <GeneDef>
-        <defName>HOTL_SwiftPractitioner</defName>
-        <label>swift practitioner</label>
+        <defName>HOTL_NimbleDoctor</defName>
+        <label>nimble doctor</label>
         <description>todo</description>
         <biostatMet>0</biostatMet>
         <biostatCpx>0</biostatCpx>
@@ -98,22 +105,10 @@
 		</statOffsets>
     </GeneDef>
 
-
-    <!-- oni hair -->
-    <GeneDef>
-        <defName>HOTL_OniHair</defName>
-        <label>oni hair (rename)</label>
-        <description>this needs hair textures</description>
-        <biostatMet>0</biostatMet>
-        <biostatCpx>0</biostatCpx>
-        <displayOrderInCategory>100</displayOrderInCategory>
-    </GeneDef>
-
-
     <!-- suction tail -->
     <GeneDef>
-        <defName>HOTL_SuctionTail</defName>
-        <label>suction tail</label>
+        <defName>HOTL_TakoTail</defName>
+        <label>tako tail</label>
         <description>this needs tail textures</description>
         <biostatMet>0</biostatMet>
         <biostatCpx>0</biostatCpx>

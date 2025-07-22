@@ -6,14 +6,14 @@
         <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[name="moyo left antennae"]/extendedGraphics</xpath>
         <order>Prepend</order>
         <value>
-            <Gene For="HOTL_RapidMetabolicBreakDown">Moyo_Dummy/Dummy</Gene>
+            <Gene For="HOTL_SpecialiedDeepblueBreakdown">Moyo_Dummy/Dummy</Gene>
         </value>
     </Operation>
     <Operation Class="PatchOperationAdd">
         <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[name="glow(moyo left antennae)"]/extendedGraphics</xpath>
         <order>Prepend</order>
         <value>
-            <Gene For="HOTL_RapidMetabolicBreakDown">Moyo_Dummy/Dummy</Gene>
+            <Gene For="HOTL_SpecialiedDeepblueBreakdown">Moyo_Dummy/Dummy</Gene>
         </value>
     </Operation>
 
@@ -22,14 +22,14 @@
         <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[name="moyo right antennae"]/extendedGraphics</xpath>
         <order>Prepend</order>
         <value>
-            <Gene For="HOTL_RapidMetabolicBreakDown">Moyo_Dummy/Dummy</Gene>
+            <Gene For="HOTL_SpecialiedDeepblueBreakdown">Moyo_Dummy/Dummy</Gene>
         </value>
     </Operation>
     <Operation Class="PatchOperationAdd">
         <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[name="glow(moyo right antennae)"]/extendedGraphics</xpath>
         <order>Prepend</order>
         <value>
-            <Gene For="HOTL_RapidMetabolicBreakDown">Moyo_Dummy/Dummy</Gene>
+            <Gene For="HOTL_SpecialiedDeepblueBreakdown">Moyo_Dummy/Dummy</Gene>
         </value>
     </Operation>
 
@@ -73,7 +73,7 @@
                 <!-- - -->
                 <userCustomizable>false</userCustomizable>
                 <extendedGraphics>
-                    <Gene For="HOTL_RapidMetabolicBreakDown">MoyoBodyReplacer/Bulb/TakoBulb</Gene>
+                    <Gene For="HOTL_SpecialiedDeepblueBreakdown">MoyoBodyReplacer/Bulb/TakoBulb</Gene>
                 </extendedGraphics>
             </li>
             <li>
@@ -113,7 +113,7 @@
                 <!-- - -->
                 <userCustomizable>false</userCustomizable>
                 <extendedGraphics>
-                    <Gene For="HOTL_RapidMetabolicBreakDown">MoyoBodyReplacer/Bulb/TakoBulbGlow</Gene>
+                    <Gene For="HOTL_SpecialiedDeepblueBreakdown">MoyoBodyReplacer/Bulb/TakoBulbGlow</Gene>
                 </extendedGraphics>
             </li>
         </value>

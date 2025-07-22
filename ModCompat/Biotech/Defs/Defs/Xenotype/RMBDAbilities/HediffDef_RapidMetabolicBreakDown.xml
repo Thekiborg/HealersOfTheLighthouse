@@ -2,7 +2,7 @@
 <Defs>
 
     <HediffDef>
-        <defName>HOTL_RapidMetabolicBreakDown</defName>
+        <defName>HOTL_SpecialiedDeepblueBreakdown</defName>
         <label>Metabolic Overdrive</label>
         <hediffClass>HediffWithComps</hediffClass>
         <description>todo</description>

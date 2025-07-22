@@ -106,7 +106,7 @@
     <ThingDef ParentName="HOTL_CauterizerBase">
         <defName>HOTL_PerfectCoagulant</defName>
         <label>"Perfect" coagulant</label>
-        <description>A first-aid chemical. When injected, a reprogrammed swarm of one-use luciferium nanites travel through the bloodstream, sealing all bleeding wounds with surgical precision before deactivating themselves.</description>
+        <description>A first-aid chemical. When injected, a reprogrammed swarm of one-use luciferium nanites travel through the bloodstream, sealing all bleeding wounds before deactivating themselves.</description>
         <descriptionHyperlinks>
             <HediffDef>HOTL_PerfectCoagulant_Injected</HediffDef>
         </descriptionHyperlinks>

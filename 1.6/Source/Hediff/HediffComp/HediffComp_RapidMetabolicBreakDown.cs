@@ -3,21 +3,21 @@
 namespace HealersOfTheLighthouse
 {
 	// MOVE THIS TO HEDIFF CLASS
-    public class HediffComp_RapidMetabolicBreakDown : HediffComp
-    {
-        internal AbilityDef abilityDefToGive;
-        internal Color bodyAddonColor;
-        internal GeneClass_RapidMetabolicBreakdown RMBDGene;
+	public class HediffComp_RapidMetabolicBreakDown : HediffComp
+	{
+		internal AbilityDef abilityDefToGive;
+		internal Color bodyAddonColor;
+		internal GeneClass_RapidMetabolicBreakdown RMBDGene;
 
 
 		public override void CompPostPostAdd(DamageInfo? dinfo)
 		{
 			base.CompPostPostAdd(dinfo);
 
-            if (abilityDefToGive is not null)
-            {
-                Pawn.abilities.GainAbility(abilityDefToGive);
-            }
+			if (abilityDefToGive is not null)
+			{
+				Pawn.abilities.GainAbility(abilityDefToGive);
+			}
 		}
 
 

@@ -21,7 +21,7 @@
             DefOfHelper.EnsureInitializedInCtor(typeof(HOTL_GeneDefOfs));
         }
 
-        public static GeneDef HOTL_RapidMetabolicBreakDown;
+        public static GeneDef HOTL_SpecialiedDeepblueBreakdown;
         public static GeneDef HOTL_PacifistNature;
     }
 

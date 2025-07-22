@@ -5,7 +5,7 @@
         <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/graphicPaths/body/extendedGraphics</xpath>
         <order>Prepend</order>
         <value>
-            <Gene For="HOTL_RapidMetabolicBreakDown">
+            <Gene For="HOTL_SpecialiedDeepblueBreakdown">
                 <path>MoyoBodyReplacer/Body/Takobody_Female</path>
                 <extendedGraphics>
                     <Gender For="Female">MoyoBodyReplacer/Body/Takobody_Female</Gender>
@@ -21,7 +21,7 @@
         <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[name="glow(body)"]/extendedGraphics</xpath>
         <order>Prepend</order>
         <value>
-            <Gene For="HOTL_RapidMetabolicBreakDown">Moyo_Dummy/Dummy</Gene>
+            <Gene For="HOTL_SpecialiedDeepblueBreakdown">Moyo_Dummy/Dummy</Gene>
         </value>
     </Operation>
 
@@ -47,7 +47,7 @@
                     </Apparel>
                 </conditions>
                 <extendedGraphics>
-                    <Gene For="HOTL_RapidMetabolicBreakDown">
+                    <Gene For="HOTL_SpecialiedDeepblueBreakdown">
                         <path>MoyoBodyReplacer/Body/TakobodyGlow_Female</path>
                         <extendedGraphics>
                             <Body For="Female">MoyoBodyReplacer/Body/TakobodyGlow_Female</Body>
