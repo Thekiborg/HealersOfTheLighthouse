@@ -11,7 +11,7 @@ namespace HealersOfTheLighthouse
 
 
 		// --- Properties ---
-		public virtual new AbilityCompProperties_ConcealedLauncher Props => (AbilityCompProperties_ConcealedLauncher)props;
+		public new virtual AbilityCompProperties_ConcealedLauncher Props => (AbilityCompProperties_ConcealedLauncher)props;
 		public int FireModeIndex { get => fireModeIndex; set => fireModeIndex = value; }
 		public int FireModesCount => fireModes.Count;
 		public ConcealedLauncherFireMode CurFireMode => fireModes[FireModeIndex];

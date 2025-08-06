@@ -167,11 +167,19 @@
 					<defaultData>
 						<layer>-10</layer>
 						<offset>(0, 0, -0.10)</offset>
-						<rotationOffset>19</rotationOffset>
+						<rotationOffset>-19</rotationOffset>
 					</defaultData>
 					<dataNorth>
 						<layer>45</layer>
 					</dataNorth>
+					<dataEast>
+						<offset>(0, 0, -0.10)</offset>
+						<rotationOffset>-17</rotationOffset>
+					</dataEast>
+					<dataWest>
+						<offset>(0, 0, -0.10)</offset>
+						<rotationOffset>17</rotationOffset>
+					</dataWest>
 				</drawData>
 			</li>
 			<li Class="HealersOfTheLighthouse.PawnRenderNodeProperties_ExoArm">
@@ -212,11 +220,19 @@
 					<defaultData>
 						<layer>-10</layer>
 						<offset>(0, 0, -0.20)</offset>
-						<rotationOffset>38</rotationOffset>
+						<rotationOffset>-38</rotationOffset>
 					</defaultData>
 					<dataNorth>
 						<layer>45</layer>
 					</dataNorth>
+					<dataEast>
+						<offset>(0, 0, -0.20)</offset>
+						<rotationOffset>-34</rotationOffset>
+					</dataEast>
+					<dataWest>
+						<offset>(0, 0, -0.20)</offset>
+						<rotationOffset>34</rotationOffset>
+					</dataWest>
 				</drawData>
 			</li>
 		</renderNodeProperties>

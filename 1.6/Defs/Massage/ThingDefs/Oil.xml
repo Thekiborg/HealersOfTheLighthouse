@@ -53,7 +53,7 @@
             <texPath>Items/OilBottles/CumOil</texPath>
         </graphicData>
         <costList>
-            <MedicineHerbal>5</MedicineHerbal>
+            <MedicineHerbal>2</MedicineHerbal>
         </costList>
         <modExtensions>
             <li Class="HealersOfTheLighthouse.ModExtension">
@@ -72,8 +72,8 @@
             <texPath>Items/OilBottles/ChocoOil</texPath>
         </graphicData>
         <costList>
-            <MedicineHerbal>3</MedicineHerbal>
-            <Chocolate>5</Chocolate>
+            <MedicineHerbal>1</MedicineHerbal>
+            <Chocolate>2</Chocolate>
         </costList>
         <modExtensions>
             <li Class="HealersOfTheLighthouse.ModExtension">
@@ -92,8 +92,8 @@
             <texPath>Items/OilBottles/HoneyOil</texPath>
         </graphicData>
         <costList>
-            <MedicineHerbal>3</MedicineHerbal>
-            <WoodLog>5</WoodLog>
+            <MedicineHerbal>1</MedicineHerbal>
+            <WoodLog>2</WoodLog>
         </costList>
         <modExtensions>
             <li Class="HealersOfTheLighthouse.ModExtension">
@@ -112,8 +112,8 @@
             <texPath>Items/OilBottles/StrawberryOil</texPath>
         </graphicData>
         <costList>
-            <MedicineHerbal>3</MedicineHerbal>
-            <RawBerries>5</RawBerries>
+            <MedicineHerbal>1</MedicineHerbal>
+            <RawBerries>2</RawBerries>
         </costList>
         <modExtensions>
             <li Class="HealersOfTheLighthouse.ModExtension">

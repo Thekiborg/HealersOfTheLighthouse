@@ -4,21 +4,13 @@
     <HediffDef>
         <defName>HOTL_SpecialiedDeepblueBreakdown</defName>
         <label>Metabolic Overdrive</label>
-        <hediffClass>HediffWithComps</hediffClass>
+        <hediffClass>HealersOfTheLighthouse.Hediff_SpecializedDeepblueBreakdown</hediffClass>
         <description>todo</description>
         <isBad>false</isBad>
-        <stages>
-          <li>
-            
-          </li>
-        </stages>
         <comps>
             <li Class="HediffCompProperties_Disappears">
                 <disappearsAfterTicks>60000</disappearsAfterTicks>
                 <showRemainingTime>true</showRemainingTime>                
-            </li>
-            <li>
-                <compClass>HealersOfTheLighthouse.HediffComp_RapidMetabolicBreakDown</compClass>
             </li>
         </comps>
     </HediffDef>

@@ -7,7 +7,7 @@
             alienPartGenerator/colorChannels/li</xpath>
         <value>
             <li>
-                <name>RMBDColor</name>
+                <name>SDBDColor</name>
                 <first Class="ColorGenerator_Single">
                     <color>RGBA(0, 0, 0, 255)</color>
                   </first>
@@ -22,7 +22,7 @@
         <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/
             alienPartGenerator/bodyAddons/li[name="moyo left antennae"]/colorChannel</xpath>
         <value>
-            <colorChannel>RMBDColor</colorChannel>
+            <colorChannel>SDBDColor</colorChannel>
         </value>
     </Operation>
 
@@ -30,7 +30,7 @@
         <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/
             alienPartGenerator/bodyAddons/li[name="moyo right antennae"]/colorChannel</xpath>
         <value>
-            <colorChannel>RMBDColor</colorChannel>
+            <colorChannel>SDBDColor</colorChannel>
         </value>
     </Operation>
 

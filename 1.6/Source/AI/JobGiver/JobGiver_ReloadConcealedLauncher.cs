@@ -5,7 +5,7 @@ namespace HealersOfTheLighthouse
 {
 	public class JobGiver_ReloadConcealedLauncher : ThinkNode_JobGiver
 	{
-		AbilityComp_ConcealedLauncher CompCL;
+		private AbilityComp_ConcealedLauncher CompCL;
 		private static readonly IntRange WantedThings = new(1, 1);
 
 

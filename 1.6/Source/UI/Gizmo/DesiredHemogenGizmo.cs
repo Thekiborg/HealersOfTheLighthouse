@@ -36,7 +36,7 @@
 			{
 				GameComponent_HOTL.WantedHemogenCount--;
 			}
-			
+
 			Rect counterRect = new(addButton.x - Padding - CounterRectWidth, addButton.y, CounterRectWidth, Height - 2 * Padding);
 			using (new TextBlock(GameFont.Medium, TextAnchor.MiddleCenter))
 			{

@@ -4,11 +4,11 @@ namespace HealersOfTheLighthouse
 {
 	public class JobDriver_GetSecondPawnAndTheorize : JobDriver
 	{
-		Thing chair;
+		private Thing chair;
 
 
-		TheorizeAbilitySettings TheorizeSettings => pawn.abilities.GetAbility(HOTL_AbilityDefOfs.HOTL_RMBD_AbilityTheorize).CompOfType<AbilityComp_Theorize>().Props.theorizeAbilitySettings;
-		Pawn SecondPawn => job?.GetTarget(TargetIndex.A).Pawn;
+		private TheorizeAbilitySettings TheorizeSettings => pawn.abilities.GetAbility(HOTL_AbilityDefOfs.HOTL_SDBD_AbilityTheorize).CompOfType<AbilityComp_Theorize>().Props.theorizeAbilitySettings;
+		private Pawn SecondPawn => job?.GetTarget(TargetIndex.A).Pawn;
 
 
 		public override bool TryMakePreToilReservations(bool errorOnFailed)
@@ -110,7 +110,7 @@ namespace HealersOfTheLighthouse
 				}
 				else
 				{
-					pawn.abilities.GetAbility(HOTL_AbilityDefOfs.HOTL_RMBD_AbilityTheorize).CompOfType<AbilityComp_Theorize>().AbilityUsed();
+					pawn.abilities.GetAbility(HOTL_AbilityDefOfs.HOTL_SDBD_AbilityTheorize).CompOfType<AbilityComp_Theorize>().AbilityUsed();
 
 
 					int researchPointsToAdd = TheorizeUtility.CalculateResearchPoints(researchProject.baseCost,

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
 
-	<!-- HOTL_RMBD_AbilityTheorize -->
+	<!-- HOTL_SDBD_AbilityTheorize -->
 	<InteractionDef>
 		<defName>HOTL_InteractionTheorize</defName>
 		<label>discussed research project</label>

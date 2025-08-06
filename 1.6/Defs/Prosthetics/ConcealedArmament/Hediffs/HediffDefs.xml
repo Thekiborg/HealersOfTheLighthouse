@@ -150,7 +150,7 @@
 	<!-- ######################################################## -->
 
 	<!-- Tox breath -->
-	<HediffDef ParentName="HOTL_AddedConcealedAchlysArmamentBase">
+	<!--<HediffDef ParentName="HOTL_AddedConcealedAchlysArmamentBase">
 		<defName>HOTL_Installed_CA_ToxBreath</defName>
 		<label>tox breath</label>
 		<labelNoun>a tox breath</labelNoun>
@@ -159,7 +159,7 @@
 			<ThingDef>HOTL_CA_ToxBreath</ThingDef>
 			<RecipeDef>HOTL_Install_CA_ToxBreath</RecipeDef>
 		</descriptionHyperlinks>
-		<comps>
+		<comps>-->
 			<!-- MIGHT ADD A BITING VERB? <li Class="HediffCompProperties_VerbGiver">
 				<tools>
 					<li>
@@ -174,14 +174,14 @@
 					</li>
 				</tools>
 			</li> -->
-			<li Class="HealersOfTheLighthouse.HediffCompProperties_CombatProsthetic">
+			<!--<li Class="HealersOfTheLighthouse.HediffCompProperties_CombatProsthetic">
 				<combatAbilities>
 					<li>HOTL_ConcealedArmament_ToxBreath</li>
 				</combatAbilities>
 			</li>
 		</comps>
 		<spawnThingOnRemoved>HOTL_CA_ToxBreath</spawnThingOnRemoved>
-	</HediffDef>
+	</HediffDef>-->
 
 	<!-- ###################################################### -->
 	<!-- ####################### KINETIC ###################### -->
@@ -228,7 +228,7 @@
 		<defName>HOTL_Installed_CA_BoosterLauncher</defName>
 		<label>booster launcher</label>
 		<labelNoun>a booster launcher</labelNoun>
-		<description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThe &lt;color=#b4b4b4&gt;booster launcher&lt;/color&gt; is able to load and shoot multiple syringes, allowing field medics to provide support to their teammates from a distance.</description>
+		<description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThe &lt;color=#b4b4b4&gt;booster launcher&lt;/color&gt; is able to load and shoot syringes, allowing field medics to provide support to their teammates from a distance.</description>
 		<descriptionHyperlinks>
 			<ThingDef>HOTL_CA_BoosterLauncher</ThingDef>
 			<RecipeDef>HOTL_Install_CA_BoosterLauncher</RecipeDef>

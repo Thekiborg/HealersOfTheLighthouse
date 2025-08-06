@@ -1,5 +1,5 @@
-﻿using Verse.AI;
-using System.Linq;
+﻿using System.Linq;
+using Verse.AI;
 
 namespace HealersOfTheLighthouse
 {
@@ -12,7 +12,7 @@ namespace HealersOfTheLighthouse
 		private readonly List<Thing> potentialMassageBedTemp = [];
 
 
-		MassageSettings MassageSettings
+		private MassageSettings MassageSettings
 		{
 			get
 			{
@@ -52,14 +52,17 @@ namespace HealersOfTheLighthouse
 
 			Job topJob = JobMaker.MakeJob(HOTL_JobDefOfs.HOTL_TopMassage, bottom, massageBed, usableBottle);
 			topJob.count = 1;
-			if (!top.jobs.TryTakeOrderedJob(topJob, JobTag.SatisfyingNeeds))
+			top.jobs.jobQueue.EnqueueFirst(topJob, JobTag.SatisfyingNeeds);
+
+			if (top.jobs.curJob != null)
 			{
-				return null;
+				top.jobs.EndCurrentJob(JobCondition.InterruptForced);
 			}
 			else
 			{
-				return JobMaker.MakeJob(def.jobDef, top, massageBed);
+				top.jobs.CheckForJobOverride(0f, ignoreQueue: false);
 			}
+			return JobMaker.MakeJob(def.jobDef, top, massageBed);
 		}
 
 

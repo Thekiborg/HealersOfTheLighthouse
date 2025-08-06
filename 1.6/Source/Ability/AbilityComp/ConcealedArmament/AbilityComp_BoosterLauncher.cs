@@ -5,13 +5,14 @@ namespace HealersOfTheLighthouse
 	{
 		protected override IReadOnlyList<ConcealedLauncherFireMode> GetFireModes()
 		{
-			return new List<ConcealedLauncherFireMode>
-			{
+			return
+			[
 				new("ConcealedLauncher_SingleFireMode",
 				TextureLibrary.marbleMedicineShotIcon,
 				shotsPerBurst: 1,
+				descOverride: null,
 				SingleShot)
-			};
+			];
 		}
 
 

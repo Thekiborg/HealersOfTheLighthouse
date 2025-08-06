@@ -2,14 +2,11 @@
 {
 	public class GameComponent_HOTL : GameComponent
 	{
-		static int wantedHemogenCount = 10;
+		private static int wantedHemogenCount = 10;
 		internal static int WantedHemogenCount
 		{
 			get => wantedHemogenCount;
-			set
-			{
-				wantedHemogenCount = Math.Max(value, 0);
-			}
+			set => wantedHemogenCount = Math.Max(value, 0);
 		}
 
 		public GameComponent_HOTL(Game game) { }

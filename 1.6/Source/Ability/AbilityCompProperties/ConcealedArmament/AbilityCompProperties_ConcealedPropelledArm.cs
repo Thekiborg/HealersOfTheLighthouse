@@ -1,6 +1,5 @@
 ﻿namespace HealersOfTheLighthouse
 {
-#pragma warning disable CA1051
 	public class AbilityCompProperties_ConcealedPropelledArm : CompProperties_AbilityEffect
 	{
 		public AbilityCompProperties_ConcealedPropelledArm()

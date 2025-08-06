@@ -148,7 +148,7 @@
 
 
 	<!-- Tox breath -->
-	<AbilityDef ParentName="HOTL_AbilityCAToxBase">
+	<!--<AbilityDef ParentName="HOTL_AbilityCAToxBase">
 		<defName>HOTL_ConcealedArmament_ToxBreath</defName>
 		<label>tox breath</label>
 		<description>The &lt;color=#93c47d&gt;tox breath&lt;/color&gt;.</description>
@@ -182,7 +182,7 @@
 				<chanceToStartFire>0</chanceToStartFire>
 			</li>
 		</comps>
-	</AbilityDef>
+	</AbilityDef>-->
 
 	<!-- ###################################################### -->
 	<!-- ####################### KINETIC ###################### -->
@@ -192,7 +192,7 @@
 	<AbilityDef>
 		<defName>HOTL_ConcealedArmament_MarbleLauncher</defName>
 		<label>marble launcher</label> <!-- find good label + lore -->
-		<description>The &lt;color=#b4b4b4&gt;marble launcher&lt;/color&gt; is able to load, store and shoot different kinds of combat rounds as needed, providing a lot of flexibility during missions.</description>
+		<description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThe &lt;color=#b4b4b4&gt;marble launcher&lt;/color&gt; is able to load, store and shoot different kinds of combat rounds as needed, allowing for great versatility</description>
 		<iconPath>Abilities/Icons/Icon_MarbleSingle</iconPath>
 		<displayOrder>400</displayOrder>
         <warmupPreEndSound>MeleeHit_BionicPunch</warmupPreEndSound>
@@ -236,11 +236,11 @@
 	<AbilityDef>
 		<defName>HOTL_ConcealedArmament_BoosterLauncher</defName>
 		<label>booster launcher</label> <!-- find good label + lore -->
-		<description>The &lt;color=#b4b4b4&gt;booster launcher&lt;/color&gt; is able to load and shoot multiple syringes, allowing field medics to provide support to their teammates from a distance.</description>
+		<description>The &lt;color=#b4b4b4&gt;booster launcher&lt;/color&gt; is able to load and shoot syringes, allowing field medics to provide support to their teammates from a distance.</description>
 		<iconPath>Abilities/Icons/Icon_MarbleHeal</iconPath>
 		<displayOrder>400</displayOrder>
 		<warmupPreEndSound>MeleeHit_BionicPunch</warmupPreEndSound>
-		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
 		<stunTargetWhileCasting>false</stunTargetWhileCasting>
 		<cooldownTicksRange>2500</cooldownTicksRange>
 		<displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>

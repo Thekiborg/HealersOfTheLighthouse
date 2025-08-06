@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
 
-    <!-- HOTL_RMBD_AbilityTheorize -->
+    <!-- HOTL_SDBD_AbilityTheorize -->
     <JobDef>
         <defName>HOTL_TakeSecondPawnToTheorize</defName>
         <driverClass>HealersOfTheLighthouse.JobDriver_GetSecondPawnAndTheorize</driverClass>

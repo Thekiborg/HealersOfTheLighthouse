@@ -4,9 +4,9 @@ namespace HealersOfTheLighthouse
 {
 	public class AbilityComp_ConcealedShotgunArcThrower : AbilityComp_ConcealedArcThrower
 	{
-		Pawn Caster => parent.pawn;
-		const float tempvalue = 5f;
-		const int anothertempvalue = 5;
+		private Pawn Caster => parent.pawn;
+		private const float tempvalue = 5f;
+		private const int anothertempvalue = 5;
 
 		public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
 		{
@@ -36,7 +36,7 @@ namespace HealersOfTheLighthouse
 
 		public override void DrawEffectPreview(LocalTargetInfo target)
 		{
-			List<IntVec3> cells = GenRadial.RadialCellsAround(target.Cell, tempvalue, true).ToList();
+			List<IntVec3> cells = [.. GenRadial.RadialCellsAround(target.Cell, tempvalue, true)];
 			GenDraw.DrawFieldEdges(cells);
 			base.DrawEffectPreview(target);
 		}

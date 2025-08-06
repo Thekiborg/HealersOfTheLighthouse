@@ -1,27 +1,27 @@
-﻿using System.Linq;
-
-namespace HealersOfTheLighthouse
+﻿namespace HealersOfTheLighthouse
 {
 	public class AbilityComp_MarbleLauncher : AbilityComp_ConcealedLauncher
 	{
 		protected override IReadOnlyList<ConcealedLauncherFireMode> GetFireModes()
 		{
-			return new List<ConcealedLauncherFireMode>()
-			{
+			return
+			[
 				new("ConcealedLauncher_SingleFireMode",
 					TextureLibrary.marbleSingleShotIcon,
 					shotsPerBurst: 1,
+					descOverride: "MarbleLauncher_Single_Description",
 					SingleShot),
 
 				new("ConcealedLauncher_ClusterFireMode",
 					TextureLibrary.marbleClusterShotIcon,
 					shotsPerBurst: 5,
+					descOverride: "MarbleLauncher_Cluster_Description",
 					(LocalTargetInfo target, LocalTargetInfo dest) =>
 					{
 						CellFinder.TryFindRandomCellNear(target.Cell, parent.pawn.Map, Props.burstSpreadRadiusSquared, cell => !cell.Fogged(parent.pawn.Map), out IntVec3 cell);
 						SingleShot(cell, cell);
 					})
-			};
+			];
 		}
 
 
@@ -48,12 +48,12 @@ namespace HealersOfTheLighthouse
 			{
 				case 0: // Single
 					radius = round.projectileWhenLoaded.projectile.explosionRadius + round.projectileWhenLoaded.projectile.explosionRadiusDisplayPadding;
-					cells = GenRadial.RadialCellsAround(target.Cell, radius, true).ToList();
+					cells = [.. GenRadial.RadialCellsAround(target.Cell, radius, true)];
 					break;
 
 				case 1: // Cluster 
 					radius = Props.burstSpreadRadiusSquared + 1;
-					cells = GenRadial.RadialCellsAround(target.Cell, radius, true).ToList();
+					cells = [.. GenRadial.RadialCellsAround(target.Cell, radius, true)];
 					break;
 			}
 

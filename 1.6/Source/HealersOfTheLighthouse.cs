@@ -1,21 +1,20 @@
-﻿global using System;
-global using System.Collections.Generic;
-global using System.Reflection;
+﻿global using HarmonyLib;
 global using RimWorld;
-global using Verse;
+global using System;
+global using System.Collections.Generic;
 global using UnityEngine;
-global using HarmonyLib;
+global using Verse;
 
 namespace HealersOfTheLighthouse
 {
-    [StaticConstructorOnStartup]
-    internal static class HealersOfTheLighthouse
-    {
-        static HealersOfTheLighthouse()
-        {
-            Harmony harmony = new("Thekiborg.HealersOfTheLighthouse");
+	[StaticConstructorOnStartup]
+	internal static class HealersOfTheLighthouse
+	{
+		static HealersOfTheLighthouse()
+		{
+			Harmony harmony = new("Thekiborg.HealersOfTheLighthouse");
 
-            harmony.PatchAll();
-        }
-    }
+			harmony.PatchAll();
+		}
+	}
 }

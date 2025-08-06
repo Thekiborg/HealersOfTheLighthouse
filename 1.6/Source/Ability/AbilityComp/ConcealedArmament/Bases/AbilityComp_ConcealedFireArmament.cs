@@ -2,7 +2,7 @@
 {
 	public abstract class AbilityComp_ConcealedFireArmament : CompAbilityEffect, IFireAbility
 	{
-		Pawn Caster => parent.pawn;
+		private Pawn Caster => parent.pawn;
 
 
 		public override bool GizmoDisabled(out string reason)

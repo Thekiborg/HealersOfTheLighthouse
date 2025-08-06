@@ -80,7 +80,7 @@
                 <name>tako bulb glow</name>
                 <path>Moyo_Dummy/Dummy</path>
                 <shaderType>MoteGlow</shaderType>
-                <colorChannel>RMBDColor</colorChannel>
+                <colorChannel>SDBDColor</colorChannel>
                 <alignWithHead>true</alignWithHead>
                 <linkVariantIndexWithPrevious>true</linkVariantIndexWithPrevious>
                 <!-- - -->

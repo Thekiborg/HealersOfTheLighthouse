@@ -4,7 +4,7 @@
     <GeneDef>
         <defName>HOTL_SpecialiedDeepblueBreakdown</defName>
         <label>specialized deepblue breakdown</label>
-        <geneClass>HealersOfTheLighthouse.GeneClass_RapidMetabolicBreakdown</geneClass>
+        <geneClass>HealersOfTheLighthouse.GeneClass_SpecializedDeepblueBreakdown</geneClass>
         <description>todo</description>
         <biostatMet>0</biostatMet>
         <biostatCpx>0</biostatCpx>
@@ -18,8 +18,8 @@
         </exclusionTags>
         <modExtensions>
             <li Class="HealersOfTheLighthouse.ModExtension">
-                <RMBDHediff>HOTL_SpecialiedDeepblueBreakdown</RMBDHediff>
-                <RMBDSettings>
+                <SDBDHediff>HOTL_SpecialiedDeepblueBreakdown</SDBDHediff>
+                <SDBDSettings>
                     <!-- Pearl -->
                     <li>
                         <drugThingDef>DBPearl_Joy</drugThingDef>
@@ -37,7 +37,7 @@
                         <drugThingDef>DBPearl_Thinker</drugThingDef>
                         <dosageToTransform>1</dosageToTransform>
                         <transformationColor>(128, 243, 148, 255)</transformationColor>
-                        <abilityGiven>HOTL_RMBD_AbilityTheorize</abilityGiven>
+                        <abilityGiven>HOTL_SDBD_AbilityTheorize</abilityGiven>
                     </li>
                     <li>
                         <drugThingDef>DBPearl_Alluring</drugThingDef>
@@ -70,7 +70,7 @@
                         <transformationColor>(131, 45, 208, 255)</transformationColor>
                         <abilityGiven></abilityGiven>
                     </li>
-                </RMBDSettings>
+                </SDBDSettings>
             </li>
         </modExtensions>
     </GeneDef>

@@ -1,16 +1,18 @@
 ﻿using Verse.AI;
-using static UnityEngine.GraphicsBuffer;
 
 namespace HealersOfTheLighthouse
 {
 	public class JobDriver_GiveMassage : JobDriver
 	{
-		Pawn Bottom => TargetA.Pawn;
-		static TargetIndex BottomIndex => TargetIndex.A;
-		Building_MassageBed MassageBed => (Building_MassageBed)TargetB.Thing;
-		static TargetIndex MassageBedIndex => TargetIndex.B;
-		Thing OilBottle => TargetC.Thing;
-		static TargetIndex OilBottleIndex => TargetIndex.C;
+		private Pawn Bottom => TargetA.Pawn;
+		private static TargetIndex BottomIndex => TargetIndex.A;
+		private Building_MassageBed MassageBed => (Building_MassageBed)TargetB.Thing;
+		private static TargetIndex MassageBedIndex => TargetIndex.B;
+		private Thing OilBottle => TargetC.Thing;
+		private static TargetIndex OilBottleIndex => TargetIndex.C;
+
+
+		private float joyFactor = -1f;
 
 
 		public override bool TryMakePreToilReservations(bool errorOnFailed)
@@ -27,6 +29,16 @@ namespace HealersOfTheLighthouse
 		{
 			this.FailOnAggroMentalState(BottomIndex);
 			this.FailOn(() => pawn.Drafted);
+
+			yield return Toils_General.Do(() =>
+			{
+				joyFactor = MassageSettings.CalculateJoyFactor(pawn, Bottom, true);
+				if (joyFactor < 0f)
+				{
+					Log.Error("JobDriver_GiveMassage couldn't calculate the joy factor. Aborting.");
+					EndJobWith(JobCondition.Errored);
+				}
+			});
 
 			Toil gotoBottle = Toils_Goto.GotoThing(OilBottleIndex, OilBottle.Position);
 			gotoBottle.FailOnDespawnedNullOrForbidden(OilBottleIndex);
@@ -59,21 +71,31 @@ namespace HealersOfTheLighthouse
 			pathAroundBed.FailOnDespawnedNullOrForbidden(MassageBedIndex);
 			pathAroundBed.FailOnBurningImmobile(MassageBedIndex);
 			pathAroundBed.defaultCompleteMode = ToilCompleteMode.PatherArrival;
+			pathAroundBed.socialMode = RandomSocialMode.Off;
 
 			Toil waitNextToBed = Toils_General.Wait(240, BottomIndex);
+			waitNextToBed.AddPreTickIntervalAction((int delta) =>
+			{
+				if (ticksLeftThisToil <= 0 || pawn.needs.joy.CurLevel >= pawn.needs.joy.MaxLevel)
+				{
+					ReadyForNextToil();
+				}
+			});
 			waitNextToBed.AddPreTickIntervalAction((int delta) =>
 			{
 				if (pawn.IsHashIntervalTick(80))
 				{
 					FleckMaker.ThrowMetaIcon(pawn.Position, pawn.Map, FleckDefOf.Heart);
 				}
-				JoyUtility.JoyTickCheckEnd(pawn, delta, JoyTickFullJoyAction.None, MassageSettings.CalculateJoyFactor(1f, pawn, Bottom, true), MassageBed);
+				JoyUtility.JoyTickCheckEnd(pawn, delta, JoyTickFullJoyAction.None, joyFactor, MassageBed);
 			});
+			waitNextToBed.socialMode = RandomSocialMode.Off;
 
 			Toil jumpWaitNextToBed = Toils_Jump.JumpIf(waitNextToBed, () =>
 			{
 				return MassageBed.BottomOnBed;
 			});
+			jumpWaitNextToBed.socialMode = RandomSocialMode.Off;
 
 
 			Toil waitForBottom = Toils_General.Wait(300);
@@ -94,6 +116,13 @@ namespace HealersOfTheLighthouse
 			yield return waitNextToBed;
 			yield return pathAroundBed;
 			yield return Toils_Jump.Jump(waitNextToBed);
+		}
+
+
+		public override void ExposeData()
+		{
+			base.ExposeData();
+			Scribe_Values.Look(ref joyFactor, "HOTL_GiveMassage_JoyFactor", -1f, true);
 		}
 	}
 }

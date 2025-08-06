@@ -138,7 +138,7 @@
 	<!-- ######################################################## -->
 
 	<!-- Tox breath -->
-	<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
+	<!--<RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
 		<defName>HOTL_Install_CA_ToxBreath</defName>
 		<label>install tox breath</label>
 		<description>Install a tox breath.</description>
@@ -166,7 +166,7 @@
 			<li>Jaw</li>
 		</appliedOnFixedBodyParts>
 		<addsHediff>HOTL_Installed_CA_ToxBreath</addsHediff>
-	</RecipeDef>
+	</RecipeDef>-->
 
 	<!-- ###################################################### -->
 	<!-- ####################### KINETIC ###################### -->

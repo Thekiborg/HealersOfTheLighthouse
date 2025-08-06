@@ -1,6 +1,5 @@
 ﻿namespace HealersOfTheLighthouse
 {
-#pragma warning disable CA1051
 	public class PawnRenderNodeProperties_ExoArm : PawnRenderNodeProperties
 	{
 		public PawnRenderNodeProperties_ExoArm()

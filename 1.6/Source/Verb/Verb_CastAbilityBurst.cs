@@ -2,7 +2,7 @@
 {
 	public class Verb_CastAbilityBurst : Verb_CastAbility
 	{
-		AbilityComp_ConcealedLauncher CompCL;
+		private AbilityComp_ConcealedLauncher CompCL;
 
 
 		protected override int ShotsPerBurst

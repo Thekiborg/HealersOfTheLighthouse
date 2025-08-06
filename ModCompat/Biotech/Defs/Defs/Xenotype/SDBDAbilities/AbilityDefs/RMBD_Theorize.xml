@@ -2,7 +2,7 @@
 <Defs>
 
     <AbilityDef>
-        <defName>HOTL_RMBD_AbilityTheorize</defName>
+        <defName>HOTL_SDBD_AbilityTheorize</defName>
         <label>theorize with someone</label>
         <description>todo.</description> <!-- -->
         <iconPath>UI/Icons/Genes/Gene_Coagulate</iconPath> <!-- -->

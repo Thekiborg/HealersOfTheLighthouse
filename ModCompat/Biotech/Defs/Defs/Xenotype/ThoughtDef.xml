@@ -20,7 +20,7 @@
     </ThoughtDef>
 
       
-    <!-- Used by the ability HOTL_RMBD_AbilityTheorize -->
+    <!-- Used by the ability HOTL_SDBD_AbilityTheorize -->
     <ThoughtDef>
       <defName>HOTL_TheorizedWithColonist</defName>
       <thoughtClass>Thought_MemorySocial</thoughtClass>

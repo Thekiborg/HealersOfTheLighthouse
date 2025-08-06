@@ -9,7 +9,7 @@
 		{
 			base.CompPostPostAdd(dinfo);
 
-			if (!Props.combatAbilities.NullOrEmpty() )
+			if (!Props.combatAbilities.NullOrEmpty())
 			{
 				foreach (AbilityDef abilityDef in Props.combatAbilities)
 				{

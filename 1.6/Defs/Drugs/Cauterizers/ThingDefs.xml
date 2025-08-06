@@ -55,6 +55,7 @@
         <graphicData>
             <texPath>Items/Cauterizers/Mild</texPath>
         </graphicData>
+        <projectileWhenLoaded>HOTL_MildCoagulant_Projectile</projectileWhenLoaded>
         <recipeMaker>
             <researchPrerequisite>Moyo2_Abysstech_DeepblueSimple</researchPrerequisite>
         </recipeMaker>
@@ -86,6 +87,7 @@
         <graphicData>
             <texPath>Items/Cauterizers/Harsh</texPath>
         </graphicData>
+        <projectileWhenLoaded>HOTL_HarshCoagulant_Projectile</projectileWhenLoaded>
         <ingestible>
             <outcomeDoers>
                 <li Class="IngestionOutcomeDoer_GiveHediff">
@@ -113,6 +115,7 @@
         <graphicData>
             <texPath>Items/Cauterizers/Perfect</texPath>
         </graphicData>
+        <projectileWhenLoaded>HOTL_PerfectCoagulant_Projectile</projectileWhenLoaded>
         <ingestible>
             <outcomeDoers>
                 <li Class="IngestionOutcomeDoer_GiveHediff">

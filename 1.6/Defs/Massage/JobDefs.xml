@@ -6,7 +6,7 @@
         <driverClass>HealersOfTheLighthouse.JobDriver_LayDownAndReceiveMassage</driverClass>
         <reportString>receiving a massage at TargetB by TargetA.</reportString>
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
-        <joyDuration>15000</joyDuration>
+        <joyDuration>10000</joyDuration>
         <joyKind>HOTL_JoyKind_Massage</joyKind>
         <joyMaxParticipants>2</joyMaxParticipants>
     </JobDef>

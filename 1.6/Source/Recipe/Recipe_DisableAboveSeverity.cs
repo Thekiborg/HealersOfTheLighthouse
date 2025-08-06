@@ -4,7 +4,7 @@ namespace HealersOfTheLighthouse
 {
 	public class Recipe_DisableAboveSeverity : Recipe_InstallImplant
 	{
-		ModExtension extension;
+		private ModExtension extension;
 
 
 		public override IEnumerable<BodyPartRecord> GetPartsToApplyOn(Pawn pawn, RecipeDef recipe)

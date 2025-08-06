@@ -1,8 +1,5 @@
-﻿using System.Linq;
-
-namespace HealersOfTheLighthouse
+﻿namespace HealersOfTheLighthouse
 {
-#pragma warning disable CA1002, CA1051
 	public class MassageSettings
 	{
 		public List<ThingDef> oils;
@@ -25,7 +22,9 @@ namespace HealersOfTheLighthouse
 		private const int SocialMin = 0;
 		private const int SocialMax = 20;
 
-		internal static float CalculateJoyFactor(float extraJoyGainFactor, Pawn firstPawn, Pawn secondPawn, bool firstIsTop)
+		private const float baseJoyGainFactor = 2f;
+
+		internal static float CalculateJoyFactor(Pawn firstPawn, Pawn secondPawn, bool firstIsTop)
 		{
 			float clampedBeauty = Mathf.Clamp(secondPawn.GetStatValue(StatDefOf.PawnBeauty), BeautyMin, BeautyMax);
 			float beautyF = MathUtils.NormalizationCustom(clampedBeauty, BeautyMin, BeautyMax, BeautyMinNormValue, BeautyMaxNormValue);
@@ -44,11 +43,19 @@ namespace HealersOfTheLighthouse
 
 				float clampedSocial = Mathf.Clamp(secondPawn.skills.GetSkill(SkillDefOf.Social).Level, SocialMin, SocialMax);
 				float socialF = MathUtils.NormalizationCustom(clampedSocial, SocialMin, SocialMax, SocialMinNormValue, SocialMaxNormValue);
-				return extraJoyGainFactor * beautyF * opinionF * manF * socialF;
+				//Log.Message($"For: {firstPawn}. Beauty is {clampedBeauty} and factor is {beautyF}. Matches gender? {RelationsUtility.AttractedToGender(firstPawn, secondPawn.gender)}");
+				//Log.Message($"Opinion is {clampedOpinion} and factor is {opinionF}");
+				//Log.Message($"Manipulation is {manF} and social is {clampedSocial} and social factor is {socialF}");
+				//Log.Message($"From {extraJoyGainFactor} we get {extraJoyGainFactor * beautyF * opinionF * manF * socialF}");
+				return baseJoyGainFactor * beautyF * opinionF * manF * socialF;
 			}
 			else
 			{
-				return extraJoyGainFactor * beautyF * opinionF;
+				//Log.Message($"For: {firstPawn}. Beauty is {clampedBeauty} and factor is {beautyF}. Matches gender? {RelationsUtility.AttractedToGender(firstPawn, secondPawn.gender)}");
+				//Log.Message($"Opinion is {clampedOpinion} and factor is {opinionF}");
+				//Log.Message($"From {extraJoyGainFactor} we get {extraJoyGainFactor * beautyF * opinionF}");
+				//Log.Message(extraJoyGainFactor * beautyF * opinionF);
+				return baseJoyGainFactor * beautyF * opinionF;
 			}
 		}
 	}

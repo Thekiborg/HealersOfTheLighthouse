@@ -1,8 +1,5 @@
-﻿using RimWorld;
-using RimWorld.Utility;
-using Verse;
+﻿using System.Linq;
 using Verse.AI;
-using System.Linq;
 
 namespace HealersOfTheLighthouse
 {
@@ -27,7 +24,7 @@ namespace HealersOfTheLighthouse
 			}
 
 			Job job = JobMaker.MakeJob(HOTL_JobDefOfs.HOTL_ConcealedArmament_ReloadAbility);
-			job.targetQueueB = foundAmmo.Select((Thing t) => new LocalTargetInfo(t)).ToList();
+			job.targetQueueB = [.. foundAmmo.Select((Thing t) => new LocalTargetInfo(t))];
 
 			int jobCount = foundAmmo.Sum((Thing t) => t.stackCount);
 			job.count = Math.Min(jobCount, reloadableComp.MaxAmmoNeeded(true));

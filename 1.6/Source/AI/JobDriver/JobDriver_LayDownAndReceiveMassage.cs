@@ -6,10 +6,13 @@ namespace HealersOfTheLighthouse
 	{
 		public override Rot4 ForcedLayingRotation => MassageBed.Rotation.Opposite;
 
-		Pawn Top => TargetA.Pawn;
-		static TargetIndex TopIndex => TargetIndex.A;
-		Building_MassageBed MassageBed => (Building_MassageBed)TargetB.Thing;
-		static TargetIndex MassageBedIndex => TargetIndex.B;
+		private Pawn Top => TargetA.Pawn;
+		private static TargetIndex TopIndex => TargetIndex.A;
+		private Building_MassageBed MassageBed => (Building_MassageBed)TargetB.Thing;
+		private static TargetIndex MassageBedIndex => TargetIndex.B;
+
+
+		private float joyFactor = -1f;
 
 
 		public override bool TryMakePreToilReservations(bool errorOnFailed)
@@ -31,6 +34,16 @@ namespace HealersOfTheLighthouse
 			{
 				Top.jobs.EndCurrentJob(JobCondition.Succeeded);
 				MassageBed.ResetBed();
+			});
+
+			yield return Toils_General.Do(() =>
+			{
+				joyFactor = MassageSettings.CalculateJoyFactor(pawn, Top, false);
+				if (joyFactor < 0f)
+				{
+					Log.Error("JobDriver_GiveMassage couldn't calculate the joy factor. Aborting.");
+					EndJobWith(JobCondition.Errored);
+				}
 			});
 
 			Toil gotoBed = Toils_Goto.GotoCell(BedUtility.GetFeetSlotPos(0, MassageBed.Position, MassageBed.Rotation, MassageBed.def.size), PathEndMode.OnCell);
@@ -65,7 +78,7 @@ namespace HealersOfTheLighthouse
 					{
 						MoteMaker.MakeSpeechBubble(pawn, TextureLibrary.heartIcon);
 					}
-					JoyUtility.JoyTickCheckEnd(pawn, delta, JoyTickFullJoyAction.None, MassageSettings.CalculateJoyFactor(1f, pawn, Top, false), MassageBed);
+					JoyUtility.JoyTickCheckEnd(pawn, delta, JoyTickFullJoyAction.None, joyFactor, MassageBed);
 				}
 			};
 			yield return layDownToil;
@@ -78,6 +91,13 @@ namespace HealersOfTheLighthouse
 				pawn.needs.mood.thoughts.memories.TryGainMemory(oilThought);
 				OilBottle.SplitOff(1).Destroy();
 			});
+		}
+
+
+		public override void ExposeData()
+		{
+			base.ExposeData();
+			Scribe_Values.Look(ref joyFactor, "HOTL_ReceiveMassage_JoyFactor", -1f, true);
 		}
 	}
 }

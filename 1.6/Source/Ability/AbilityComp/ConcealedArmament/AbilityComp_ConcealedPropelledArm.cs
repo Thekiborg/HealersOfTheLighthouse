@@ -3,7 +3,7 @@
 	public class AbilityComp_ConcealedPropelledArm : AbilityComp_ConcealedFireArmament // Make parent that disables on rain
 	{
 		// --- Fields ---
-		readonly List<IntVec3> cellsToDrawPreview = [];
+		private readonly List<IntVec3> cellsToDrawPreview = [];
 
 
 		// --- Properties ---

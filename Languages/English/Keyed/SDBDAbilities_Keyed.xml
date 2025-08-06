@@ -2,7 +2,7 @@
 <LanguageData>
 
     <!-- Universal -->
-    <AbilityRMBD_GizmoDisabled_Used>The ability can only be used once per metabolic overdrive.</AbilityRMBD_GizmoDisabled_Used>
+    <AbilitySDBD_GizmoDisabled_Used>The ability can only be used once per metabolic overdrive.</AbilitySDBD_GizmoDisabled_Used>
 
     <!-- Brainstorm -->
     <AbilityTheorize_CantDo>{FIRSTPAWN_nameDef} couldn't find a good place to sit down and discuss with {SECONDPAWN_nameDef}.</AbilityTheorize_CantDo>

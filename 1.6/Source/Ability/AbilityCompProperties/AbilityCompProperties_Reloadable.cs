@@ -1,7 +1,5 @@
 ﻿namespace HealersOfTheLighthouse
 {
-#pragma warning disable CA1051
-
 	public class AbilityCompProperties_Reloadable : AbilityCompProperties
 	{
 		public AbilityCompProperties_Reloadable()

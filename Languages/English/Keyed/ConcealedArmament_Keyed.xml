@@ -9,6 +9,9 @@
     <ConcealedLauncher_SingleFireMode>Single</ConcealedLauncher_SingleFireMode>
     <ConcealedLauncher_ClusterFireMode>Cluster</ConcealedLauncher_ClusterFireMode>
 
+    <MarbleLauncher_Single_Description>Shoot the right-most marble.</MarbleLauncher_Single_Description>
+    <MarbleLauncher_Cluster_Description>Shoot all the remaining marbles in a volley.</MarbleLauncher_Cluster_Description>
+
     <!-- Fire armament -->
     <ConcealedLauncher_WetDisabledReason>The user is wet.</ConcealedLauncher_WetDisabledReason>
 

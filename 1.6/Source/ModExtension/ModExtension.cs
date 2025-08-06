@@ -1,19 +1,18 @@
 ﻿namespace HealersOfTheLighthouse
 {
-#pragma warning disable CA1002, CA1051
-    public class ModExtension : DefModExtension
-    {
-        public HediffDef RMBDHediff;
-        public List<RapidMetabolicBreakdown_Settings> RMBDSettings;
+	public class ModExtension : DefModExtension
+	{
+		public HediffDef SDBDHediff;
+		public List<SpecializedDeepblueBreakdown_Settings> SDBDSettings;
 
-        public MassageSettings massageSettings;
+		public MassageSettings massageSettings;
 
-        public BloodDonationSettings bloodDonationSettings;
+		public BloodDonationSettings bloodDonationSettings;
 
-        public ProjectileDrugSettings projectileDrugSettings;
+		public ProjectileDrugSettings projectileDrugSettings;
 
 		public bool isRevealingApparel;
-        public float severityToDisable;
+		public float severityToDisable;
 
-    }
+	}
 }

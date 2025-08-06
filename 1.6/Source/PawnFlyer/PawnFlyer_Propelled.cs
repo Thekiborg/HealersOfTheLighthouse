@@ -7,7 +7,7 @@
 		internal DamageInfo collideDamageInfo;
 
 
-		IntVec3 DestinationCell
+		private IntVec3 DestinationCell
 		{
 			get
 			{
@@ -22,7 +22,7 @@
 
 		protected override void TickInterval(int delta)
 		{
-			base.Tick();
+			base.TickInterval(delta);
 
 			if (PositionHeld != DestinationCell && MapHeld is not null)
 			{

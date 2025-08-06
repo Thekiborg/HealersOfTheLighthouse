@@ -4,9 +4,9 @@ namespace HealersOfTheLighthouse
 {
 	public class LightningProjectile : Bullet
 	{
-		Mote mote;
-		Thing lastHitThing;
-		int curJumpCount;
+		private Mote mote;
+		private Thing lastHitThing;
+		private int curJumpCount;
 		internal float coneRange;
 		internal int coneAngleDegs;
 		internal int maxJumpCount;

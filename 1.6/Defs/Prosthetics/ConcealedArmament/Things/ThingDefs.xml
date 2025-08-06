@@ -103,7 +103,7 @@
     <!-- ######################################################## -->
 
     <!-- Tox breath -->
-    <ThingDef ParentName="HOTL_ConcealedAchlysArmamentBase">
+    <!--<ThingDef ParentName="HOTL_ConcealedAchlysArmamentBase">
         <defName>HOTL_CA_ToxBreath</defName>
         <label>tox breath</label>
         <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThe &lt;color=#93c47d&gt;tox breath&lt;/color&gt; allows the user to blow a cloud of tox gas at close range.\n\nTox gas burns the lungs and eyes, causing a temporary shortness of breath and reduction in sight. Continued exposure to tox gas results in toxic buildup that can be lethal.\n\nReloads 1 charge with x5 wastepacks.</description>
@@ -122,7 +122,7 @@
         <statBases>
             <Mass>5</Mass>
         </statBases>
-    </ThingDef>
+    </ThingDef>-->
 
     <!-- ###################################################### -->
     <!-- ####################### KINETIC ###################### -->

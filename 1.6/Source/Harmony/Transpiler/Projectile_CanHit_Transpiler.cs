@@ -1,5 +1,4 @@
 ﻿using System.Reflection.Emit;
-using Verse.AI;
 
 namespace HealersOfTheLighthouse
 {
@@ -53,7 +52,7 @@ namespace HealersOfTheLighthouse
 
 			// And add those extracted labels to the ldarg.0 we are inserting
 			instructionsToInsert[0].WithLabels(ldarg_1_labels);
-			
+
 			// We want to jump to the same instruction bne.un.s jumps to
 			// As we're resting in Ldarg.1, Bne.un.S is 3 instructions further.
 			// Then we assign the third instruction from the ones we want to insert (Brtrue) and we assign it the operand of bne.un.s

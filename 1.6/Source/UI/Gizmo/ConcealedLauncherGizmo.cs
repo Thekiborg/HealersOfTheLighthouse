@@ -1,5 +1,4 @@
-﻿using RimWorld;
-using Verse.Sound;
+﻿using Verse.Sound;
 
 namespace HealersOfTheLighthouse
 {
@@ -16,7 +15,7 @@ namespace HealersOfTheLighthouse
 		private readonly AbilityComp_ConcealedLauncher CompCL;
 		private readonly List<ConcealedLauncherMagazineData> magazine;
 		private readonly Texture2D icon;
-		
+
 		private readonly SoundDef activateSound = SoundDefOf.Tick_Tiny;
 
 
@@ -84,7 +83,7 @@ namespace HealersOfTheLighthouse
 					}
 
 					// Create tooltip
-					TipSignal tip = Ability.def.description;
+					TipSignal tip = CompCL.CurFireMode.DescriptionOverride is null ? Ability.def.description : CompCL.CurFireMode.DescriptionOverride.Translate();
 					if (!disabledReason.NullOrEmpty())
 					{
 						tip.text += ("\n\n" + "DisabledCommand".Translate() + ": " + disabledReason).Colorize(ColorLibrary.RedReadable);
