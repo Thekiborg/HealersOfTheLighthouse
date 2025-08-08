@@ -3,7 +3,7 @@
 
     <!-- HOTL_SDBD_AbilityTheorize -->
     <JobDef>
-        <defName>HOTL_TakeSecondPawnToTheorize</defName>
+        <defName>HOTL_GetSecondPawnAndTheorize</defName>
         <driverClass>HealersOfTheLighthouse.JobDriver_GetSecondPawnAndTheorize</driverClass>
         <reportString>discussing with TargetA.</reportString>
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
@@ -13,6 +13,13 @@
         <defName>HOTL_FollowFirstPawnToTheorize</defName>
         <driverClass>HealersOfTheLighthouse.JobDriver_FollowFirstPawnAndTheorize</driverClass>
         <reportString>discussing with TargetA.</reportString>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+
+    <JobDef>
+        <defName>HOTL_Hug</defName>
+        <driverClass>HealersOfTheLighthouse.JobDriver_Hug</driverClass>
+        <reportString>hugging TargetA.</reportString>
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>
 

@@ -1,6 +1,6 @@
 ﻿namespace HealersOfTheLighthouse
 {
-	public class TheorizeAbilitySettings
+	public class SDBDTheorizeSettings
 	{
 		public IntRange chatBubbleDelay;
 		public int chatDuration;
@@ -9,7 +9,5 @@
 		public float maxSkillFactorOutput;
 		public float minDiminishingOutput;
 		public float maxDiminishingOutput;
-
-		public InteractionDef interactionDef;
 	}
 }

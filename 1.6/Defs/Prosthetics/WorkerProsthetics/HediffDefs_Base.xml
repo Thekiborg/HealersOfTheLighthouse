@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <HediffDef Name="HOTL_InstalledWorkerProstheticBase" ParentName="HOTL_InstalledImplantBase" Abstract="true">
+        <defaultLabelColor>(1, 0.624, 0)</defaultLabelColor>
+    </HediffDef>
+
+</Defs>

@@ -6,7 +6,7 @@
 		<defName>HOTL_InteractionTheorize</defName>
 		<label>discussed research project</label>
 		<workerClass>InteractionWorker</workerClass>
-		<symbol>UI/Icons/QuestionMark</symbol>
+		<symbol>Motes/SDBDThinker</symbol>
 		<initiatorXpGainSkill>Intellectual</initiatorXpGainSkill>
 		<initiatorXpGainAmount>50</initiatorXpGainAmount>
 		<recipientXpGainSkill>Intellectual</recipientXpGainSkill>
@@ -57,6 +57,22 @@
 					<keyword>currentResearch</keyword>
 				</li>
 			</rulesRaw>
+		</logRulesInitiator>
+	</InteractionDef>
+
+
+	<!-- HOTL_SDBD_AbilityHug -->
+	<InteractionDef>
+		<defName>HOTL_InteractionHug</defName>
+		<label>hugged</label>
+		<workerClass>InteractionWorker</workerClass>
+		<symbol>Motes/SDBDJoy</symbol>
+		<initiatorXpGainSkill>Social</initiatorXpGainSkill>
+		<initiatorXpGainAmount>500</initiatorXpGainAmount>
+		<logRulesInitiator>
+			<rulesStrings>
+				<li>r_logentry->[INITIATOR_nameDef] hugged [RECIPIENT_nameDef] to make [RECIPIENT_objective] feel better.</li>
+			</rulesStrings>
 		</logRulesInitiator>
 	</InteractionDef>
 

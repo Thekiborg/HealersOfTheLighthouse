@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<!-- Used by the gene HOTL_PacifistNature -->
+	<ThoughtDef>
+		<defName>HOTL_PacifistHarmedPawn</defName>
+		<thoughtClass>Thought_Memory</thoughtClass>
+		<showBubble>true</showBubble>
+		<icon>Things/Mote/ThoughtSymbol/GenericBad</icon>
+		<durationDays>1</durationDays>
+		<stackLimit>5</stackLimit>
+		<stackedEffectMultiplier>0.7</stackedEffectMultiplier>
+		<developmentalStageFilter>Child, Adult</developmentalStageFilter>
+		<nullifyingHediffs>
+			<li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+		</nullifyingHediffs>
+		<stages>
+			<li>
+				<label>attacked innocent creature</label>
+				<description>todo</description>
+				<baseMoodEffect>-8</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+
+	<!-- Used by the ability HOTL_SDBD_AbilityTheorize -->
+	<ThoughtDef>
+		<defName>HOTL_TheorizedWithColonist</defName>
+		<thoughtClass>Thought_MemorySocial</thoughtClass>
+		<durationDays>10</durationDays>
+		<stackLimit>300</stackLimit>
+		<stackedEffectMultiplier>0.5</stackedEffectMultiplier>
+		<developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+		<nullifyingHediffs>
+			<li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+		</nullifyingHediffs>
+		<stages>
+			<li>
+				<label>discussed a research project</label>
+				<description>We've discussed our current research project and made great progress!</description>
+				<baseOpinionOffset>8</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+	<!-- Used by the ability HOTL_SDBD_AbilityTheorize -->
+	<ThoughtDef>
+		<defName>HOTL_HuggedColonist</defName>
+		<thoughtClass>Thought_MemorySocial</thoughtClass>
+		<durationDays>10</durationDays>
+		<stackLimit>300</stackLimit>
+		<stackedEffectMultiplier>0.5</stackedEffectMultiplier>
+		<developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+		<nullifyingHediffs>
+			<li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+		</nullifyingHediffs>
+		<stages>
+			<li>
+				<label>got hugged</label>
+				<description>They hugged me to make me feel better.</description>
+				<baseOpinionOffset>8</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+</Defs>

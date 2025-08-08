@@ -5,16 +5,12 @@
         <defName>HOTL_SpecialiedDeepblueBreakdown</defName>
         <label>specialized deepblue breakdown</label>
         <geneClass>HealersOfTheLighthouse.GeneClass_SpecializedDeepblueBreakdown</geneClass>
-        <description>todo</description>
-        <biostatMet>0</biostatMet>
-        <biostatCpx>0</biostatCpx>
+        <description>Carriers of this gene are able to make the most out of deepblue drugs, enhanced with multiple dosages.\n\nDifferent drugs have different dosages, and upon reaching them, the pawn will gain a temporary ability related to the drug's effects.</description>
+        <biostatMet>-6</biostatMet>
+        <biostatCpx>7</biostatCpx>
         <displayOrderInCategory>100</displayOrderInCategory>
         <exclusionTags>
-            <li>Moyo2_Skin_Chemskin</li>
-            <li>Moyo2_Skin_Depthborn</li>
-            <li>Moyo2_Glow_Blue</li>
-            <li>Moyo2_Glow_Purple</li>
-            <li>Moyo2_Glow_Violet</li>
+            <li>SkinColorOverride</li>
         </exclusionTags>
         <modExtensions>
             <li Class="HealersOfTheLighthouse.ModExtension">
@@ -25,7 +21,7 @@
                         <drugThingDef>DBPearl_Joy</drugThingDef>
                         <dosageToTransform>1</dosageToTransform>
                         <transformationColor>(218, 209, 105, 255)</transformationColor>
-                        <abilityGiven></abilityGiven>
+                        <abilityGiven>HOTL_SDBD_AbilityHug</abilityGiven>
                     </li>
                     <li>
                         <drugThingDef>DBPearl_Crystal</drugThingDef>
@@ -80,9 +76,9 @@
     <GeneDef>
         <defName>HOTL_IntellectualAffinity</defName>
         <label>intellectual affinity</label>
-        <description>todo</description>
-        <biostatMet>0</biostatMet>
-        <biostatCpx>0</biostatCpx>
+        <description>Carriers of this gene are biologically good at intellectual jobs.</description>
+        <biostatMet>-2</biostatMet>
+        <biostatCpx>1</biostatCpx>
         <displayOrderInCategory>100</displayOrderInCategory>
         <passionMod>
             <skill>Intellectual</skill>
@@ -95,28 +91,18 @@
     <GeneDef>
         <defName>HOTL_NimbleDoctor</defName>
         <label>nimble doctor</label>
-        <description>todo</description>
-        <biostatMet>0</biostatMet>
-        <biostatCpx>0</biostatCpx>
+        <description>Carriers of this gene are faster at medical jobs, and more precise with their hands overall.</description>
+        <biostatMet>-2</biostatMet>
+        <biostatCpx>1</biostatCpx>
         <displayOrderInCategory>100</displayOrderInCategory>
         <statOffsets>
 			<MedicalTendSpeed>0.25</MedicalTendSpeed>
             <MedicalOperationSpeed>0.25</MedicalOperationSpeed>
 		</statOffsets>
-    </GeneDef>
-
-    <!-- suction tail -->
-    <GeneDef>
-        <defName>HOTL_TakoTail</defName>
-        <label>tako tail</label>
-        <description>this needs tail textures</description>
-        <biostatMet>0</biostatMet>
-        <biostatCpx>0</biostatCpx>
-        <displayOrderInCategory>100</displayOrderInCategory>
         <capMods>
             <li>
-              <capacity>Manipulation</capacity>
-              <offset>0.15</offset>
+                <capacity>Manipulation</capacity>
+                <offset>0.15</offset>
             </li>
         </capMods>
     </GeneDef>
@@ -127,21 +113,11 @@
         <defName>HOTL_PacifistNature</defName>
         <geneClass>HealersOfTheLighthouse.GeneClass_PacifistNature</geneClass>
         <label>pacifist nature</label>
-        <description>todo</description>
-        <biostatMet>0</biostatMet>
-        <biostatCpx>0</biostatCpx>
+        <description>Carriers of this gene will sadden if attacking an innocent creature.</description>
+        <biostatMet>1</biostatMet>
+        <biostatCpx>1</biostatCpx>
         <displayOrderInCategory>100</displayOrderInCategory>
     </GeneDef>
 
-
-    <!-- likes revealing clothes -->
-    <GeneDef>
-        <defName>HOTL_LikesRevealingClothes</defName>
-        <label>revealing apparel affinity</label>
-        <description>The carriers of this gene like the freedom of movement given by revealing clothes. ¿Some could say they even take pride in showing off?. Wearing certain pieces of apparel will grant the carrier a mood boost.</description>
-        <biostatMet>0</biostatMet>
-        <biostatCpx>0</biostatCpx>
-        <displayOrderInCategory>100</displayOrderInCategory>
-    </GeneDef>
 
 </Defs>

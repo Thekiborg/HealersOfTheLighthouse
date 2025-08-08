@@ -41,6 +41,10 @@
 				{
 					return false;
 				}
+				if (!targetPawn.InMentalState || targetPawn.MentalState.causedByDamage || targetPawn.MentalState.causedByPsycast)
+				{
+					return true;
+				}
 				return true;
 			}
 

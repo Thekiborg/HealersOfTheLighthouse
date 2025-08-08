@@ -36,6 +36,7 @@
 
 		public static ThoughtDef HOTL_PacifistHarmedPawn;
 		public static ThoughtDef HOTL_TheorizedWithColonist;
+		public static ThoughtDef HOTL_HuggedColonist;
 	}
 
 
@@ -48,7 +49,7 @@
 		}
 
 		public static JobDef HOTL_FollowFirstPawnToTheorize;
-		public static JobDef HOTL_TakeSecondPawnToTheorize;
+		public static JobDef HOTL_GetSecondPawnAndTheorize;
 		public static JobDef HOTL_ConcealedArmament_ReloadLauncher;
 		public static JobDef HOTL_ConcealedArmament_ReloadAbility;
 		public static JobDef HOTL_DonateBlood;
@@ -66,6 +67,7 @@
 		}
 
 		public static AbilityDef HOTL_SDBD_AbilityTheorize;
+		public static AbilityDef HOTL_SDBD_AbilityHug;
 		public static AbilityDef HOTL_ConcealedArmament_MarbleLauncher;
 	}
 

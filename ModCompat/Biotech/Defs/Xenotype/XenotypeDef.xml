@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <XenotypeDef>
+        <defName>HOTL_Tako</defName>
+        <label>tako</label>
+        <description>Medically specialized Moyos that form the elite of the Lighthouse's laboratories. Their bodies are made to test newly synthesized deepblue drugs, and to receive a stronger effect out of the already “perfected” and popularized ones.</description>
+        <descriptionShort>Medically specialized Moyos that form the elite of the Lighthouse's laboratories. Their bodies are made to test newly synthesized deepblue drugs, and to receive a stronger effect out of the already “perfected” and popularized ones.</descriptionShort>
+        <iconPath>taco</iconPath>
+        <combatPowerFactor>0</combatPowerFactor>
+        <displayPriority>0</displayPriority>
+        <factionlessGenerationWeight>0</factionlessGenerationWeight>
+        <genes>
+            <li>HOTL_SpecialiedDeepblueBreakdown</li>
+            <li>AptitudeRemarkable_Medicine</li>
+            <li>HOTL_IntellectualAffinity</li>
+            <li>HOTL_NimbleDoctor</li>
+            <li>HOTL_PacifistNature</li>
+            <li>Moyo2_MoveSpeed_Slug</li>
+            <li>Moyo2_WorkSpeed_Slow</li>
+            <li>MinTemp_SmallDecrease</li>
+            <li>MaxTemp_SmallDecrease</li>
+            <li>Moyo2_DeepblueMetabolism</li>
+        </genes>
+      </XenotypeDef>
+
+</Defs>

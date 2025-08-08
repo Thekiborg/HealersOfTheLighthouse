@@ -1,4 +1,5 @@
-﻿namespace HealersOfTheLighthouse
+﻿
+namespace HealersOfTheLighthouse
 {
 	public abstract class AbilityComp_DisableAfterUse : CompAbilityEffect
 	{
@@ -7,7 +8,7 @@
 
 		public override bool GizmoDisabled(out string reason)
 		{
-			reason = "AbilitySDBD_GizmoDisabled_Used".Translate();
+			reason = "HOTL_AbilitySDBD_GizmoDisabled_Used".Translate();
 			return abilityUsed;
 		}
 

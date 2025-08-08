@@ -5,9 +5,17 @@ namespace HealersOfTheLighthouse
 	public class JobDriver_GetSecondPawnAndTheorize : JobDriver
 	{
 		private Thing chair;
+		private AbilityComp_Theorize compTheorize;
 
 
-		private TheorizeAbilitySettings TheorizeSettings => pawn.abilities.GetAbility(HOTL_AbilityDefOfs.HOTL_SDBD_AbilityTheorize).CompOfType<AbilityComp_Theorize>().Props.theorizeAbilitySettings;
+		private AbilityComp_Theorize CompTheorize
+		{
+			get
+			{
+				compTheorize ??= pawn.abilities.GetAbility(HOTL_AbilityDefOfs.HOTL_SDBD_AbilityTheorize).CompOfType<AbilityComp_Theorize>();
+				return compTheorize;
+			}
+		}
 		private Pawn SecondPawn => job?.GetTarget(TargetIndex.A).Pawn;
 
 
@@ -36,12 +44,12 @@ namespace HealersOfTheLighthouse
 					PathEndMode.OnCell,
 					TraverseParms.For(pawn),
 					maxDistance: 100f,
-					validator: (Thing t) => TheorizeUtility.SittableValidator(t, pawn));
+					validator: (Thing t) => SDBDUtilities.SittableValidator(t, pawn));
 
 				if (chair is null)
 				{
 					Messages.Message(
-						"AbilityTheorize_CantDo".Translate(pawn.Named("FIRSTPAWN"), SecondPawn.Named("SECONDPAWN")),
+						"HOTL_AbilityTheorize_CantDo".Translate(pawn.Named("FIRSTPAWN"), SecondPawn.Named("SECONDPAWN")),
 						MessageTypeDefOf.RejectInput,
 						false);
 
@@ -84,14 +92,14 @@ namespace HealersOfTheLighthouse
 			chatWithOther.FailOn(() => SecondPawn.CurJobDef != HOTL_JobDefOfs.HOTL_FollowFirstPawnToTheorize);
 			chatWithOther.FailOn(() => chair.DestroyedOrNull() || chair.IsBurning());
 			chatWithOther.defaultCompleteMode = ToilCompleteMode.Delay;
-			chatWithOther.defaultDuration = TheorizeSettings.chatDuration;
+			chatWithOther.defaultDuration = CompTheorize.Props.theorizeSettings.chatDuration;
 			chatWithOther.handlingFacing = true;
 			chatWithOther.tickIntervalAction = (int delta) =>
 			{
 				chatWithOther.actor.rotationTracker.FaceTarget(SecondPawn);
-				if (pawn.IsHashIntervalTick(TheorizeSettings.chatBubbleDelay.RandomInRange))
+				if (pawn.IsHashIntervalTick(CompTheorize.Props.theorizeSettings.chatBubbleDelay.RandomInRange))
 				{
-					pawn.interactions.TryInteractWith(SecondPawn, TheorizeSettings.interactionDef);
+					pawn.interactions.TryInteractWith(SecondPawn, CompTheorize.Props.interactionDef);
 				}
 			};
 			yield return chatWithOther;
@@ -110,16 +118,15 @@ namespace HealersOfTheLighthouse
 				}
 				else
 				{
-					pawn.abilities.GetAbility(HOTL_AbilityDefOfs.HOTL_SDBD_AbilityTheorize).CompOfType<AbilityComp_Theorize>().AbilityUsed();
+					CompTheorize.AbilityUsed();
 
-
-					int researchPointsToAdd = TheorizeUtility.CalculateResearchPoints(researchProject.baseCost,
+					int researchPointsToAdd = SDBDUtilities.CalculateResearchPoints(researchProject.baseCost,
 						SecondPawn.skills.GetSkill(SkillDefOf.Intellectual).Level,
-						TheorizeSettings);
+						CompTheorize.Props.theorizeSettings);
 					researchManager.AddProgress(researchProject, researchPointsToAdd);
 
 
-					Messages.Message("AbilityTheorize_Success".Translate(pawn.Named("FIRSTPAWN"), SecondPawn.Named("SECONDPAWN"), researchPointsToAdd.Named("POINTS")),
+					Messages.Message("HOTL_AbilityTheorize_Success".Translate(pawn.Named("FIRSTPAWN"), SecondPawn.Named("SECONDPAWN"), researchPointsToAdd.Named("POINTS")),
 						MessageTypeDefOf.PositiveEvent);
 
 

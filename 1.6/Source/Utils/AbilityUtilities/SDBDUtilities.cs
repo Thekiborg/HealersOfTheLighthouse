@@ -2,7 +2,7 @@
 
 namespace HealersOfTheLighthouse
 {
-	internal static class TheorizeUtility
+	internal static class SDBDUtilities
 	{
 		/// <summary>
 		/// <para>
@@ -16,9 +16,9 @@ namespace HealersOfTheLighthouse
 		/// </summary>
 		/// <param name="researchTotalPoints">The baseCost from the current research project.</param>
 		/// <param name="researcherLevel">The intellectual skill level that we want to take into consideration.</param>
-		/// <param name="settings">The settings for the ability, located in the def's modextension.</param>
+		/// <param name="settings">The settings for the ability.</param>
 		/// <returns>Some amount of research points to be added to the current progress.</returns>
-		public static int CalculateResearchPoints(float researchTotalPoints, float researcherLevel, TheorizeAbilitySettings settings)
+		public static int CalculateResearchPoints(float researchTotalPoints, float researcherLevel, SDBDTheorizeSettings settings)
 		{
 			int maxResearchPoints = -1;
 
@@ -53,7 +53,7 @@ namespace HealersOfTheLighthouse
 		/// </summary>
 		/// <param name="researcherLevel"></param>
 		/// <returns></returns>
-		private static float NormalizeSkillFactor(float researcherLevel, TheorizeAbilitySettings settings)
+		private static float NormalizeSkillFactor(float researcherLevel, SDBDTheorizeSettings settings)
 		{
 			return settings.minSkillFactorOutput + (researcherLevel / SkillRecord.MaxLevel * (settings.maxSkillFactorOutput - settings.minSkillFactorOutput));
 		}
@@ -63,7 +63,7 @@ namespace HealersOfTheLighthouse
 		/// Creates a factor inbetween 1.5f and 0.65f, meant to make the curve higher when having a low intellectual skill<br></br>
 		/// while considerably lowering it when having a high intellectual skill.
 		/// </summary>
-		private static float NormalizedBalanceFactor(float researcherLevel, TheorizeAbilitySettings settings)
+		private static float NormalizedBalanceFactor(float researcherLevel, SDBDTheorizeSettings settings)
 		{
 			return settings.minDiminishingOutput + (researcherLevel / SkillRecord.MaxLevel * (settings.maxDiminishingOutput - settings.minDiminishingOutput));
 		}
@@ -114,6 +114,29 @@ namespace HealersOfTheLighthouse
 				return false;
 			}*/
 			return true;
+		}
+
+
+		public static bool TryToStopMentalState(Pawn pawn)
+		{
+			MentalBreakDef foundMentalBreak = null;
+			foreach (MentalBreakDef mentalBreak in DefDatabase<MentalBreakDef>.AllDefsListForReading)
+			{
+				if (mentalBreak.mentalState == pawn.MentalStateDef)
+				{
+					foundMentalBreak = mentalBreak;
+					break;
+				}
+			}
+
+			if (foundMentalBreak is null) return false;
+
+			return foundMentalBreak.intensity switch
+			{
+				MentalBreakIntensity.Major => Rand.Range(0f, 1f) > 0.3f,
+				MentalBreakIntensity.Extreme => Rand.Range(0f, 1f) > 0.5f,
+				_ => true,
+			};
 		}
 	}
 }

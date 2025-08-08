@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+	<AbilityDef>
+		<defName>HOTL_SDBD_AbilityTheorize</defName>
+		<label>theorize</label>
+		<description>Disscuss the current research project with someone.</description> <!-- -->
+		<iconPath>UI/Icons/Genes/Gene_Coagulate</iconPath>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<showWhenDrafted>false</showWhenDrafted>
+		<jobDef>HOTL_GetSecondPawnAndTheorize</jobDef>
+		<displayOrder>400</displayOrder>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetMechs>false</canTargetMechs>
+				<canTargetSubhumans>false</canTargetSubhumans>
+				<canTargetAnimals>false</canTargetAnimals>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="HealersOfTheLighthouse.AbilityCompProperties_Theorize">
+				<theorizeSettings>
+					<chatBubbleDelay>300~750</chatBubbleDelay>
+					<chatDuration>7500</chatDuration>
+
+					<!-- Makes low int pawns give way less points than max int pawns.-->
+					<minSkillFactorOutput>0.2</minSkillFactorOutput>
+					<maxSkillFactorOutput>1.2</maxSkillFactorOutput>
+
+					<!-- Makes the curve larger with low skill while making the curve smaller with high skill -->
+					<minDiminishingOutput>1.5</minDiminishingOutput>
+					<maxDiminishingOutput>0.65</maxDiminishingOutput>
+				</theorizeSettings>
+				<interactionDef>HOTL_InteractionTheorize</interactionDef>
+			</li>
+		</comps>
+	</AbilityDef>
+
+
+	<AbilityDef>
+		<defName>HOTL_SDBD_AbilityHug</defName>
+		<label>hug</label>
+		<description>Hug someone to calm them down.</description> <!-- -->
+		<iconPath>UI/Icons/Genes/Gene_Coagulate</iconPath>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<showWhenDrafted>false</showWhenDrafted>
+		<jobDef>HOTL_Hug</jobDef>
+		<displayOrder>400</displayOrder>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityTouch</verbClass>
+			<drawAimPie>false</drawAimPie>
+			<range>-1</range>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="HealersOfTheLighthouse.AbilityCompProperties_Hug">
+				<interactionDef>HOTL_InteractionHug</interactionDef>
+			</li>
+		</comps>
+	</AbilityDef>
+
+</Defs>
