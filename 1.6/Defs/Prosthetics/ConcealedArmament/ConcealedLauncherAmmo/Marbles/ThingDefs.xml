@@ -63,7 +63,7 @@
 		<projectileWhenLoaded>HOTL_MarbleRound_FireProjectile</projectileWhenLoaded>
 		<costList>
 			<Steel>10</Steel>
-			<Chemfuel>20</Chemfuel>
+			<Chemfuel>15</Chemfuel>
 		</costList>
 	</ThingDef>
 
@@ -90,7 +90,7 @@
 		<projectileWhenLoaded>HOTL_MarbleRound_ToxProjectile</projectileWhenLoaded>
 		<costList>
 			<Steel>10</Steel>
-			<Chemfuel>20</Chemfuel>
+			<Chemfuel>15</Chemfuel>
 		</costList>
 	</ThingDef>
 

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <!--<PawnKindDef ParentName="Moyo2_NPCBase">
+        <defName>Moyo2_NPCBottomCivil</defName>
+        <label>moyo bottomlayer civilian</label>
+        <combatPower>70</combatPower>
+        <trader>true</trader>
+        <factionLeader>true</factionLeader>
+        <apparelTags>
+            <li>Moyo2_SuitAdvanced</li>
+            <li>IndustrialAdvanced</li>
+        </apparelTags>
+        <apparelRequired>
+            <li>Moyo2_AdvancedSuit</li>
+        </apparelRequired>
+        <gearHealthRange>1.5~3</gearHealthRange>
+        <backstoryFiltersOverride>
+            <li>
+                <categories>
+                    <li>Moyo2_BotCivil</li>
+                </categories>
+            </li>
+        </backstoryFiltersOverride>
+        <apparelAllowHeadgearChance>0.8</apparelAllowHeadgearChance>
+        <apparelMoney>1500~3000</apparelMoney>
+        <weaponTags>
+            <li>Moyo2_PistolLMR</li>
+        </weaponTags>
+        <weaponMoney>1180~1400</weaponMoney>
+        <techHediffsChance>0.6</techHediffsChance>
+        <techHediffsMoney>300</techHediffsMoney>
+        <techHediffsTags>
+            <li>Moyo2_DeepBlueExtracterAdvanced</li>
+        </techHediffsTags>
+        <inventoryOptions>
+            <subOptionsChooseOne>
+                <li>
+                    <thingDef>Silver</thingDef>
+                    <countRange>225~520</countRange>
+                </li>
+            </subOptionsChooseOne>
+        </inventoryOptions>
+    </PawnKindDef>
+    I want backstories fitting them so this is postponed for the moment
+    -->
+
+</Defs>

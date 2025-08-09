@@ -6,26 +6,27 @@
 
 	<packageId>Thekiborg.HOTL</packageId>
 
-	<description></description>
+	<description>Healers because they're medics and lighthouse because that's the city of the moyo</description>
 
 	<supportedVersions>
-		<li>1.5</li>
 		<li>1.6</li>
 	</supportedVersions>
 
 	<modDependencies>
 		<li>
-		  <packageId>nemonian.my2.beta</packageId>
-		  <displayName>Moyo2.0-Blood stained business</displayName>
-		  <steamWorkshopUrl>steam://url/CommunityFilePage/3251469618</steamWorkshopUrl>
+			<packageId>nemonian.my2.beta</packageId>
+			<displayName>Moyo2.0-Blood stained business</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/3251469618</steamWorkshopUrl>
+			<alternativePackageIds>
+				<li>nemonian.my2</li>
+			</alternativePackageIds>
 		</li>
-	  </modDependencies>
+	</modDependencies>
 
-	  <loadAfter>
+	<loadAfter>
 		<li>nemonian.my2.beta</li>
 		<li>nemonian.my2</li>
 		<li>adaptive.storage.framework</li>
-	  </loadAfter>
+	</loadAfter>
 
-	<!-- More information is available here: https://rimworldwiki.com/wiki/Modding_Tutorials/About.xml -->
 </ModMetaData>

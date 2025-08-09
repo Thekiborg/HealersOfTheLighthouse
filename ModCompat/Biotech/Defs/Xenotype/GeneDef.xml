@@ -19,7 +19,7 @@
                     <!-- Pearl -->
                     <li>
                         <drugThingDef>DBPearl_Joy</drugThingDef>
-                        <dosageToTransform>1</dosageToTransform>
+                        <dosageToTransform>2</dosageToTransform>
                         <transformationColor>(218, 209, 105, 255)</transformationColor>
                         <abilityGiven>HOTL_SDBD_AbilityHug</abilityGiven>
                     </li>
@@ -31,7 +31,7 @@
                     </li>
                     <li>
                         <drugThingDef>DBPearl_Thinker</drugThingDef>
-                        <dosageToTransform>1</dosageToTransform>
+                        <dosageToTransform>3</dosageToTransform>
                         <transformationColor>(128, 243, 148, 255)</transformationColor>
                         <abilityGiven>HOTL_SDBD_AbilityTheorize</abilityGiven>
                     </li>
