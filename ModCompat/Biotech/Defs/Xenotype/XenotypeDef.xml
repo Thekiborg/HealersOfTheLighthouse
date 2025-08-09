@@ -2,8 +2,8 @@
 <Defs>
 
     <XenotypeDef>
-        <defName>HOTL_Tako</defName>
-        <label>tako</label>
+        <defName>HOTL_Deepweaver</defName>
+        <label>Deepweaver</label>
         <description>Medically specialized Moyos that form the elite of the Lighthouse's laboratories. Their bodies are made to test newly synthesized deepblue drugs, and to receive a stronger effect out of the already “perfected” and popularized ones.</description>
         <descriptionShort>Medically specialized Moyos that form the elite of the Lighthouse's laboratories. Their bodies are made to test newly synthesized deepblue drugs, and to receive a stronger effect out of the already “perfected” and popularized ones.</descriptionShort>
         <iconPath>taco</iconPath>
