@@ -206,4 +206,38 @@
 		</descriptionHyperlinks>
 	</ThingDef>
 
+	<ThingDef ParentName="HOTL_BoosterFountainBase">
+		<defName>HOTL_BoosterFountain_Cauterizers</defName>
+		<label>Cauterizer Booster Fountain</label>
+		<description>A storage unit designed for storing syringes. A mechanism pushes a syringe up onto a tray, ensuring one is always ready to be picked.\n\nThis dispenser has been customized to match the theme of the cauterizers.</description>
+		<graphicData>
+			<texPath>Buildings/BoosterFountain/CauterizerFountain/CauterizerFountain</texPath>
+		</graphicData>
+		<building>
+			<fixedStorageSettings>
+				<filter>
+					<thingDefs>
+						<li>HOTL_MildCoagulant</li>
+						<li>HOTL_HarshCoagulant</li>
+						<li>HOTL_PerfectCoagulant</li>
+					</thingDefs>
+				</filter>
+			</fixedStorageSettings>
+			<defaultStorageSettings>
+				<filter>
+					<thingDefs>
+						<li>HOTL_MildCoagulant</li>
+						<li>HOTL_HarshCoagulant</li>
+						<li>HOTL_PerfectCoagulant</li>
+					</thingDefs>
+				</filter>
+			</defaultStorageSettings>
+		</building>
+		<descriptionHyperlinks>
+			<ThingDef>HOTL_MildCoagulant</ThingDef>
+			<ThingDef>HOTL_HarshCoagulant</ThingDef>
+			<ThingDef>HOTL_PerfectCoagulant</ThingDef>
+		</descriptionHyperlinks>
+	</ThingDef>
+
 </Defs>

@@ -395,4 +395,83 @@
 		<showContainedItems>false</showContainedItems>
 	</AdaptiveStorage.GraphicsDef>
 
+
+	<!-- Cauterizers -->
+	<AdaptiveStorage.GraphicsDef>
+		<defName>HOTL_CauterizersFountain_GraphicDef</defName>
+		<targetDef>HOTL_BoosterFountain_Cauterizers</targetDef>
+		<graphics>
+			<li>
+				<graphicData>
+					<texPath>Buildings/BoosterFountain/CauterizerFountain/CauterizerFountain</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>(1.5,1.5)</drawSize>
+					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
+					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
+					<allowFlip>false</allowFlip>
+				</graphicData>
+			</li>
+			<li>
+				<graphicData>
+					<texPath>Buildings/BoosterFountain/CauterizerFountain/CauterizerFountainA</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>(1.5,1.5)</drawSize>
+					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
+					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
+					<allowFlip>false</allowFlip>
+				</graphicData>
+				<minimumStackCount>1</minimumStackCount>
+			</li>
+			<li>
+				<graphicData>
+					<texPath>Buildings/BoosterFountain/CauterizerFountain/CauterizerFountainB</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>(1.5,1.5)</drawSize>
+					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
+					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
+					<allowFlip>false</allowFlip>
+				</graphicData>
+				<minimumStackCount>2</minimumStackCount>
+			</li>
+			<li>
+				<graphicData>
+					<texPath>Buildings/BoosterFountain/CauterizerFountain/CauterizerFountainC</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>(1.5,1.5)</drawSize>
+					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
+					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
+					<allowFlip>false</allowFlip>
+				</graphicData>
+				<minimumStackCount>3</minimumStackCount>
+			</li>
+			<li>
+				<graphicData>
+					<texPath>Buildings/BoosterFountain/CauterizerFountain/CauterizerFountainD</texPath>
+					<graphicClass>Graphic_Single</graphicClass>
+					<drawSize>(1.5,1.5)</drawSize>
+					<drawOffsetNorth>(0,0,0.1)</drawOffsetNorth>
+					<drawOffsetSouth>(0,0,-0.1)</drawOffsetSouth>
+					<drawOffsetWest>(-0.1,0,0)</drawOffsetWest>
+					<drawOffsetEast>(0.1,0,0)</drawOffsetEast>
+					<drawRotated>false</drawRotated>
+					<allowFlip>false</allowFlip>
+				</graphicData>
+				<minimumStackCount>4</minimumStackCount>
+			</li>
+		</graphics>
+		<showContainedItems>false</showContainedItems>
+	</AdaptiveStorage.GraphicsDef>
+
 </Defs>
