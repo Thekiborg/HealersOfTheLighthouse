@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Patch>
 
+    <!--
     <Operation Class="PatchOperationAdd">
         <xpath>Defs/AlienRace.ThingDef_AlienRace[defName="Alien_Moyo"]/alienRace/generalSettings/alienPartGenerator/bodyAddons/li[name="glow(face)"]/extendedGraphics</xpath>
         <order>Prepend</order>
@@ -8,5 +9,6 @@
             <Gene For="HOTL_SpecialiedDeepblueBreakdown">Moyo_Dummy/Dummy</Gene>
         </value>
     </Operation>
-
+    -->
+    
 </Patch>

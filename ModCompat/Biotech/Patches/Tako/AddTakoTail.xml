@@ -39,6 +39,11 @@
                         <drawnLaying>true</drawnLaying>
                         <drawnInBed>false</drawnInBed>
                     </Posture>
+                    <Apparel>
+                        <hiddenUnderApparelTag>
+                            <li>Moyo2_HideTail</li>
+                        </hiddenUnderApparelTag>
+                    </Apparel>
                 </conditions>
                 <!-- - -->
                 <scaleWithPawnDrawsize>true</scaleWithPawnDrawsize>

@@ -47,23 +47,20 @@
                 <conditions>
                     <RotStage>Fresh,Rotting</RotStage>
                     <Apparel>
-                        <!-- <hiddenUnderApparelFor> -->
-                        <!-- <li>FullHead</li> -->
-                        <!-- </hiddenUnderApparelFor> -->
-                        <!-- <hiddenUnderApparelTag> -->
-                        <!-- <li>MoyoTuque</li> -->
-                        <!-- </hiddenUnderApparelTag> -->
+                        <hiddenUnderApparelTag>
+                            <!--<li>Moyo2_HideAntenna</li>-->
+                        </hiddenUnderApparelTag>
                     </Apparel>
                 </conditions>
                 <offsets>
                     <south>
-                        <layerOffset>-0.278</layerOffset>
+                        <layerOffset>-0.2785</layerOffset>
                     </south>
                     <east>
-                        <layerOffset>-0.278</layerOffset>
+                        <layerOffset>-0.2785</layerOffset>
                     </east>
                     <west>
-                        <layerOffset>-0.278</layerOffset>
+                        <layerOffset>-0.2785</layerOffset>
                     </west>
                 </offsets>
                 <!-- - -->
@@ -87,12 +84,9 @@
                 <conditions>
                     <RotStage>Fresh,Rotting</RotStage>
                     <Apparel>
-                        <!-- <hiddenUnderApparelFor> -->
-                        <!-- <li>FullHead</li> -->
-                        <!-- </hiddenUnderApparelFor> -->
-                        <!-- <hiddenUnderApparelTag> -->
-                        <!-- <li>MoyoTuque</li> -->
-                        <!-- </hiddenUnderApparelTag> -->
+                        <hiddenUnderApparelTag>
+                           <!--<li>Moyo2_HideAntenna</li>-->
+                        </hiddenUnderApparelTag>
                     </Apparel>
                 </conditions>
                 <offsets>

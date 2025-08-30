@@ -41,9 +41,9 @@
                     </BodyPart>
                     <RotStage>Fresh,Rotting</RotStage>
                     <Apparel>
-                        <hiddenUnderApparelFor>
-                            <li>Torso</li>
-                        </hiddenUnderApparelFor>
+                        <hiddenUnderApparelTag>
+                            <!--<li>Moyo2_HideBodyGlow</li>-->
+                        </hiddenUnderApparelTag>
                     </Apparel>
                 </conditions>
                 <extendedGraphics>
@@ -59,7 +59,7 @@
                 </extendedGraphics>
                 <offsets>
                     <south>
-                        <layerOffset>-0.32</layerOffset>
+                        <layerOffset>-0.301</layerOffset>
                         <bodyTypes>
                             <Female>(0.0, 0.0)</Female>
                             <Thin>(0.0, 0.0)</Thin>
@@ -68,7 +68,7 @@
                         </bodyTypes>
                     </south>
                     <north>
-                        <layerOffset>-0.28</layerOffset>
+                        <layerOffset>-0.295</layerOffset>
                         <bodyTypes>
                             <Female>(0.0, 0.0)</Female>
                             <Thin>(0.0, 0.0)</Thin>
@@ -77,7 +77,7 @@
                         </bodyTypes>
                     </north>
                     <east>
-                        <layerOffset>-0.32</layerOffset>
+                        <layerOffset>-0.301</layerOffset>
                         <bodyTypes>
                             <Female>(0.0, 0.0)</Female>
                             <Thin>(0.0, 0.0)</Thin>
