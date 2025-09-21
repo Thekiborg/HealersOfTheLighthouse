@@ -84,5 +84,6 @@
 		public static ThingDef Mote_GraserBeamBase;
 		public static ThingDef HOTL_BloodDonationChair;
 		public static ThingDef HOTL_MassageBed;
+		public static ThingDef HOTL_OperatingBed;
 	}
 }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <WorkTypeDef>
+        <defName>HOTL_Surgeon</defName>
+        <labelShort>surgeon</labelShort>
+        <pawnLabel>Surgeon</pawnLabel>
+        <gerundLabel>operating</gerundLabel>
+        <description>Perform surgeries on patients in operating rooms and treat critical injuries. Surgeons won't feed or entertain patients.</description>
+        <verb>Operate</verb>
+        <naturalPriority>1340</naturalPriority>
+        <relevantSkills>
+            <li>Medicine</li>
+        </relevantSkills>
+        <workTags>
+            <li>Caring</li>
+            <li>Commoner</li>
+            <li>AllWork</li>
+        </workTags>
+    </WorkTypeDef>
+
+</Defs>

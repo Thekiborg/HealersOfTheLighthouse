@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+    <!-- RETHEME DOCTORING INTO NURSERING -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/WorkTypeDef[defName="Doctor"]/labelShort</xpath>
+        <value>
+            <labelShort>nurse</labelShort>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/WorkTypeDef[defName="Doctor"]/pawnLabel</xpath>
+        <value>
+            <pawnLabel>Nurse</pawnLabel>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/WorkTypeDef[defName="Doctor"]/gerundLabel</xpath>
+        <value>
+            <gerundLabel>nursering</gerundLabel>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/WorkTypeDef[defName="Doctor"]/description</xpath>
+        <value>
+            <description>Treat the sick, bring them food and cheer them up. Nurses will care for both colonists and prisoners.</description>
+        </value>
+    </Operation>
+
+    <!-- Disable surgeries for nurses -->
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/WorkGiverDef[defName="DoBillsMedicalHumanOperation"]/workType</xpath>
+        <value>
+            <workType>HOTL_Surgeon</workType>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/WorkGiverDef[defName="DoBillsMedicalAnimalOperation"]/workType</xpath>
+        <value>
+            <workType>HOTL_Surgeon</workType>
+        </value>
+    </Operation>
+
+    <!-- Paramedics are surgeons and nurses -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Mech_Paramedic"]/race/mechEnabledWorkTypes</xpath>
+        <value>
+            <li>HOTL_Surgeon</li>
+        </value>
+    </Operation>
+
+</Patch>

@@ -54,13 +54,13 @@
                 </conditions>
                 <offsets>
                     <south>
-                        <layerOffset>-0.2785</layerOffset>
+                        <layerOffset>-0.27815</layerOffset>
                     </south>
                     <east>
-                        <layerOffset>-0.2785</layerOffset>
+                        <layerOffset>-0.2781</layerOffset>
                     </east>
                     <west>
-                        <layerOffset>-0.2785</layerOffset>
+                        <layerOffset>-0.2781</layerOffset>
                     </west>
                 </offsets>
                 <!-- - -->

@@ -5,26 +5,26 @@
 		public List<ThingDef> oils;
 		public ThoughtDef oilThought;
 
-		private const float BeautyMinNormValue = 0.5f;
-		private const float BeautyMaxNormValue = 1.5f;
-		private const int BeautyMin = -4;
-		private const int BeautyMax = 4;
+		public float BeautyMinNormValue;
+		public float BeautyMaxNormValue;
+		public int BeautyMin;
+		public int BeautyMax;
 
-		private const float OpinionMinNormValue = 0.3f;
-		private const float OpinionMaxNormValue = 1.7f;
-		private const int OpinionMin = -100;
-		private const int OpinionMax = 100;
+		public float OpinionMinNormValue;
+		public float OpinionMaxNormValue;
+		public int OpinionMin;
+		public int OpinionMax;
 
-		private const float MaxManipulationAllowed = 5f;
+		public float MaxManipulationAllowed;
 
-		private const float SocialMinNormValue = 0.3f;
-		private const float SocialMaxNormValue = 1.7f;
-		private const int SocialMin = 0;
-		private const int SocialMax = 20;
+		public float SocialMinNormValue;
+		public float SocialMaxNormValue;
+		public int SocialMin;
+		public int SocialMax;
 
-		private const float baseJoyGainFactor = 2f;
+		public float baseJoyGainFactor;
 
-		internal static float CalculateJoyFactor(Pawn firstPawn, Pawn secondPawn, bool firstIsTop)
+		internal float CalculateJoyFactor(Pawn firstPawn, Pawn secondPawn, bool firstIsTop)
 		{
 			float clampedBeauty = Mathf.Clamp(secondPawn.GetStatValue(StatDefOf.PawnBeauty), BeautyMin, BeautyMax);
 			float beautyF = MathUtils.NormalizationCustom(clampedBeauty, BeautyMin, BeautyMax, BeautyMinNormValue, BeautyMaxNormValue);

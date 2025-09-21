@@ -1,15 +1,25 @@
-﻿using Verse.AI;
+﻿using Verse;
+using Verse.AI;
 
 namespace HealersOfTheLighthouse
 {
 	public class JobDriver_GiveMassage : JobDriver
 	{
+		private MassageSettings massageSettings;
 		private Pawn Bottom => TargetA.Pawn;
 		private static TargetIndex BottomIndex => TargetIndex.A;
 		private Building_MassageBed MassageBed => (Building_MassageBed)TargetB.Thing;
 		private static TargetIndex MassageBedIndex => TargetIndex.B;
 		private Thing OilBottle => TargetC.Thing;
 		private static TargetIndex OilBottleIndex => TargetIndex.C;
+		private MassageSettings MassageSettings
+		{
+			get
+			{
+				massageSettings ??= job.def.joyKind.GetModExtension<ModExtension>().massageSettings;
+				return massageSettings;
+			}
+		}
 
 
 		private float joyFactor = -1f;

@@ -16,6 +16,11 @@
         <requiredCapacities>
             <li>Manipulation</li>
         </requiredCapacities>
+    </JoyGiverDef>
+
+    <JoyKindDef>
+        <defName>HOTL_JoyKind_Massage</defName>
+        <label>special care</label>
         <modExtensions>
             <li Class="HealersOfTheLighthouse.ModExtension">
                 <massageSettings>
@@ -26,28 +31,27 @@
                         <li>HOTL_OilBottle_Transparent</li>
                     </oils>
                     <!-- Beauty -->
-                    <!--<BeautyMinNormValue>0.5</BeautyMinNormValue>
+                    <BeautyMinNormValue>0.5</BeautyMinNormValue>
                     <BeautyMaxNormValue>1.5</BeautyMaxNormValue>
                     <BeautyMin>-4</BeautyMin>
-                    <BeautyMax>4</BeautyMax>-->
+                    <BeautyMax>4</BeautyMax>
                     <!-- Opinion -->
-                    <!--<OpinionMinNormValue>0.3</OpinionMinNormValue>
+                    <OpinionMinNormValue>0.3</OpinionMinNormValue>
                     <OpinionMaxNormValue>1.7</OpinionMaxNormValue>
                     <OpinionMin>-100</OpinionMin>
-                    <OpinionMax>100</OpinionMax>-->
+                    <OpinionMax>100</OpinionMax>
+                    <!-- Manipulation -->
+                    <MaxManipulationAllowed>5</MaxManipulationAllowed>
                     <!-- Social -->
-                    <!--<SocialMinNormValue>0.3</SocialMinNormValue>
+                    <SocialMinNormValue>0.3</SocialMinNormValue>
                     <SocialMaxNormValue>1.7</SocialMaxNormValue>
                     <SocialMin>0</SocialMin>
-                    <SocialMax>20</SocialMax>-->
+                    <SocialMax>20</SocialMax>
+                    <!-- Joy -->
+                    <baseJoyGainFactor>2</baseJoyGainFactor>
                 </massageSettings>
             </li>
         </modExtensions>
-    </JoyGiverDef>
-
-    <JoyKindDef>
-        <defName>HOTL_JoyKind_Massage</defName>
-        <label>special care</label>
     </JoyKindDef>
 
 </Defs>

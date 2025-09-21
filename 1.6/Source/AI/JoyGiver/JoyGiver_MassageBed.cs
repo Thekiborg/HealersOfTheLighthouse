@@ -16,7 +16,7 @@ namespace HealersOfTheLighthouse
 		{
 			get
 			{
-				massageSettings ??= def.GetModExtension<ModExtension>().massageSettings;
+				massageSettings ??= def.joyKind.GetModExtension<ModExtension>().massageSettings;
 				return massageSettings;
 			}
 		}

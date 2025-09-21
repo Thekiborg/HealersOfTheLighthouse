@@ -5,7 +5,7 @@
 		<defName>HOTL_SDBD_AbilityTheorize</defName>
 		<label>theorize</label>
 		<description>Disscuss the current research project with someone.</description> <!-- -->
-		<iconPath>UI/Icons/Genes/Gene_Coagulate</iconPath>
+		<iconPath>Motes/SDBDThinker</iconPath>
 		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
 		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
 		<showWhenDrafted>false</showWhenDrafted>
@@ -49,7 +49,7 @@
 		<defName>HOTL_SDBD_AbilityHug</defName>
 		<label>hug</label>
 		<description>Hug someone to calm them down.</description> <!-- -->
-		<iconPath>UI/Icons/Genes/Gene_Coagulate</iconPath>
+		<iconPath>Motes/SDBDJoy</iconPath>
 		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
 		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
 		<showWhenDrafted>false</showWhenDrafted>
