@@ -18,17 +18,16 @@
             <Mass>35</Mass>
             <Flammability>1.0</Flammability>
             <BedRestEffectiveness>0.75</BedRestEffectiveness>
-            <Comfort>0.80</Comfort>
-            <ImmunityGainSpeedFactor>1.11</ImmunityGainSpeedFactor>
-            <MedicalTendQualityOffset>0.10</MedicalTendQualityOffset>
-            <SurgerySuccessChanceFactor>1.1</SurgerySuccessChanceFactor>
+            <Comfort>0.75</Comfort>
+            <ImmunityGainSpeedFactor>1</ImmunityGainSpeedFactor>
+            <MedicalTendQualityOffset>0.05</MedicalTendQualityOffset>
+            <SurgerySuccessChanceFactor>1.2</SurgerySuccessChanceFactor>
             <BirthRitualQualityOffset MayRequire="Ludeon.RimWorld.Biotech">5</BirthRitualQualityOffset>
         </statBases>
         <comps>
             <li Class="CompProperties_AffectedByFacilities">
                 <linkableFacilities>
                     <li>VitalsMonitor</li>
-                    <li MayRequire="Ludeon.RimWorld.Ideology">SleepAccelerator</li>
                 </linkableFacilities>
             </li>
         </comps>
@@ -36,10 +35,9 @@
         <stuffCategories>
             <li>Metallic</li>
         </stuffCategories>
-        <costStuffCount>40</costStuffCount>
+        <costStuffCount>60</costStuffCount>
         <costList>
-            <Steel>80</Steel>
-            <ComponentIndustrial>5</ComponentIndustrial>
+            <Steel>50</Steel>
         </costList>
         <building>
             <bed_showSleeperBody>true</bed_showSleeperBody>

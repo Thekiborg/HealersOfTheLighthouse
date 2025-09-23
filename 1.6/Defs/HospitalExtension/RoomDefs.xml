@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <RoomRoleDef>
+        <defName>HOTL_OperatingRoom</defName>
+        <label>Operating room</label>
+        <workerClass>HealersOfTheLighthouse.RoomRoleWorker_OperatingRoom</workerClass>
+        <relatedStats>
+            <li>Cleanliness</li>
+        </relatedStats>
+    </RoomRoleDef>
+
+</Defs>

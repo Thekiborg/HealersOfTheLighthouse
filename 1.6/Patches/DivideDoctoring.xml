@@ -17,7 +17,7 @@
     <Operation Class="PatchOperationReplace">
         <xpath>Defs/WorkTypeDef[defName="Doctor"]/gerundLabel</xpath>
         <value>
-            <gerundLabel>nursering</gerundLabel>
+            <gerundLabel>nursing</gerundLabel>
         </value>
     </Operation>
     <Operation Class="PatchOperationReplace">

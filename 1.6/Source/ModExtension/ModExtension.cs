@@ -11,8 +11,6 @@
 
 		public ProjectileDrugSettings projectileDrugSettings;
 
-		public bool isRevealingApparel;
 		public float severityToDisable;
-
 	}
 }

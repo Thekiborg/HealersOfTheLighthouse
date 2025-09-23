@@ -17,15 +17,31 @@
     </WorkGiverDef>
 
     <WorkGiverDef>
-        <defName>HOTL_MoveInAndOutOperatingBeds</defName>
+        <defName>HOTL_MovePatientToOperatingBed</defName>
         <label>take people to operating beds</label>
-        <giverClass>HealersOfTheLighthouse.Workgiver_PopulateOperatingBeds</giverClass>
-        <workType>Doctor</workType>
-        <priorityInType>30</priorityInType>
+        <giverClass>HealersOfTheLighthouse.Workgiver_TakePatientToOperatingBed</giverClass>
+        <workType>HOTL_Surgeon</workType>
+        <priorityInType>90</priorityInType>
         <billGiversAllAnimals>true</billGiversAllAnimals>
         <billGiversAllAnimalsCorpses>true</billGiversAllAnimalsCorpses>
-        <verb>operate on</verb>
-        <gerund>operating on</gerund>
+        <verb>take to</verb>
+        <gerund>taking to</gerund>
+        <requiredCapacities>
+            <li>Manipulation</li>
+        </requiredCapacities>
+        <prioritizeSustains>true</prioritizeSustains>
+    </WorkGiverDef>
+
+    <WorkGiverDef>
+        <defName>HOTL_ClearOperatingBed</defName>
+        <label>clear operating beds</label>
+        <giverClass>HealersOfTheLighthouse.Workgiver_ClearOperatingBed</giverClass>
+        <workType>HOTL_Surgeon</workType>
+        <priorityInType>100</priorityInType>
+        <billGiversAllAnimals>true</billGiversAllAnimals>
+        <billGiversAllAnimalsCorpses>true</billGiversAllAnimalsCorpses>
+        <verb>clear</verb>
+        <gerund>clearing</gerund>
         <requiredCapacities>
             <li>Manipulation</li>
         </requiredCapacities>

@@ -1,8 +1,9 @@
 ﻿namespace HealersOfTheLighthouse
 {
-	public class RoomRoleWorker_Spa : RoomRoleWorker
+	public class RoomRoleWorker_OperatingRoom : RoomRoleWorker
 	{
-		private const float ScorePerBuilding = 50f;
+		private const float HospitalScore = 100000f;
+		private const float ScorePerBuilding = 100f;
 
 		public override float GetScore(Room room)
 		{
@@ -10,12 +11,13 @@
 			List<Thing> containedAndAdjacentThings = room.ContainedAndAdjacentThings;
 			foreach (Thing thing in containedAndAdjacentThings)
 			{
-				if (thing.def == HOTL_ThingDefOfs.HOTL_MassageBed)
+				if (thing.def == HOTL_ThingDefOfs.HOTL_OperatingBed)
 				{
 					buildingCount++;
+					break;
 				}
 			}
-			return ScorePerBuilding * buildingCount;
+			return (HospitalScore + ScorePerBuilding) * buildingCount;
 		}
 	}
 }

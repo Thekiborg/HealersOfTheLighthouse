@@ -55,6 +55,8 @@
 		public static JobDef HOTL_DonateBlood;
 		public static JobDef HOTL_TopMassage;
 		public static JobDef HOTL_BottomMassage;
+		public static JobDef HOTL_MovePatientToOperatingBed;
+		public static JobDef HOTL_ClearOperatingBed;
 	}
 
 
