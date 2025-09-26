@@ -1,9 +1,8 @@
-﻿using System.Linq;
-using Verse.AI;
+﻿using Verse.AI;
 
 namespace HealersOfTheLighthouse
 {
-	public class Workgiver_TakePatientToOperatingBed : WorkGiver_Scanner
+	public class WorkGiver_TakePatientToOperatingBed : WorkGiver_Scanner
 	{
 		private Building_Bed foundBed;
 		public override ThingRequest PotentialWorkThingRequest => ThingRequest.ForGroup(ThingRequestGroup.Pawn);

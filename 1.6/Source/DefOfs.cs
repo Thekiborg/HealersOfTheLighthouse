@@ -57,6 +57,7 @@
 		public static JobDef HOTL_BottomMassage;
 		public static JobDef HOTL_MovePatientToOperatingBed;
 		public static JobDef HOTL_ClearOperatingBed;
+		public static JobDef HOTL_AssistSurgery;
 	}
 
 

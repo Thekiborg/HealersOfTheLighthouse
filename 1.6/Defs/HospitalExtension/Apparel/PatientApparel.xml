@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <ThingDef ParentName="ArmorMachineableBase"> <!-- Change unfinished item -->
+        <defName>HOTL_Wheelchair</defName>
+        <description>A chair that provides mobility driven by the user's arms. Its speed depends on manipulation.</description>
+        <label>wheelchair</label>
+        <possessionCount>1</possessionCount>
+        <recipeMaker>
+            <researchPrerequisites>
+                <li>ComplexFurniture</li>
+                <li>MedicineProduction</li>
+            </researchPrerequisites>
+            <displayPriority>215</displayPriority>
+        </recipeMaker>
+        <graphicData>
+            <texPath>Things/Pawn/Humanlike/Apparel/Duster/Duster</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>1</drawSize>
+        </graphicData>
+        <costStuffCount>50</costStuffCount>
+        <stuffCategories>
+            <li>Fabric</li>
+            <li>Leathery</li>
+        </stuffCategories>
+        <costList>
+            <Steel>50</Steel>
+        </costList>
+        <recipeMaker>
+            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+            <workSkill>Crafting</workSkill>
+            <effectWorking>Smith</effectWorking>
+            <soundWorking>Recipe_Machining</soundWorking>
+            <recipeUsers>
+                <li>TableMachining</li>
+            </recipeUsers>
+        </recipeMaker>
+        <thingCategories>
+            <li>Medicine</li>
+        </thingCategories>
+        <statBases>
+            <MaxHitPoints>200</MaxHitPoints>
+            <WorkToMake>9000</WorkToMake>
+            <Mass>15</Mass>
+            <StuffEffectMultiplierArmor>0.3</StuffEffectMultiplierArmor>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Duster/Duster</wornGraphicPath>
+            <layers>
+                <li>Shell</li>
+            </layers>
+            <tags>
+                <li>HOTL_Wheelchair</li>
+            </tags>
+            <!--<defaultOutfitTags>
+                <li>Worker</li>
+            </defaultOutfitTags>-->
+            <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+        </apparel>
+        <tradeTags>
+            <li>Clothing</li>
+        </tradeTags>
+        <comps>
+            <li>
+                <compClass>HealersOfTheLighthouse.TrackerComp_Wheelchair</compClass>
+            </li>
+        </comps>
+    </ThingDef>
+
+</Defs>

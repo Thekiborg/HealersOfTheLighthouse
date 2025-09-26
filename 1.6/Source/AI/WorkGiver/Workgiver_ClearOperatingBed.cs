@@ -3,7 +3,7 @@ using Verse.AI;
 
 namespace HealersOfTheLighthouse
 {
-	public class Workgiver_ClearOperatingBed : WorkGiver_Scanner
+	public class WorkGiver_ClearOperatingBed : WorkGiver_Scanner
 	{
 		private Building_Bed restingBed;
 		private Pawn foundPawn;
@@ -16,7 +16,7 @@ namespace HealersOfTheLighthouse
 		{
 			get
 			{
-				if (slabBedInfo is null) Log.Error("HealersOfTheLighthouse.Workgiver_ClearOperatingBed.slabBedInfo is null. Check the new name in RestUtility.");
+				if (slabBedInfo is null) Log.Error("HealersOfTheLighthouse.WorkGiver_ClearOperatingBed.slabBedInfo is null. Check the new name in RestUtility.");
 				return slabBedInfo;
 			}
 		}
@@ -24,7 +24,7 @@ namespace HealersOfTheLighthouse
 		{
 			get
 			{
-				if (bedInfo is null) Log.Error("HealersOfTheLighthouse.Workgiver_ClearOperatingBed.bedInfo is null. Check the new name in RestUtility.");
+				if (bedInfo is null) Log.Error("HealersOfTheLighthouse.WorkGiver_ClearOperatingBed.bedInfo is null. Check the new name in RestUtility.");
 				return bedInfo;
 			}
 		}

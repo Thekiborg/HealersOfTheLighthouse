@@ -25,7 +25,7 @@ namespace HealersOfTheLighthouse
 			waitToil.FailOn(() =>
 			{
 				Hediff bloodLoss = pawn.health?.hediffSet?.GetFirstHediffOfDef(HediffDefOf.BloodLoss);
-				return bloodLoss is not null && bloodLoss.Severity <= Workgiver_DonateBlood.MinBloodlossSeverity;
+				return bloodLoss is not null && bloodLoss.Severity <= WorkGiver_DonateBlood.MinBloodlossSeverity;
 			});
 			waitToil.handlingFacing = true;
 			yield return waitToil;
@@ -35,7 +35,7 @@ namespace HealersOfTheLighthouse
 			toil.AddFinishAction(() =>
 			{
 				Hediff bloodloss = HediffMaker.MakeHediff(HediffDefOf.BloodLoss, pawn);
-				bloodloss.Severity = Workgiver_DonateBlood.MinBloodlossSeverity;
+				bloodloss.Severity = WorkGiver_DonateBlood.MinBloodlossSeverity;
 				pawn?.health?.AddHediff(bloodloss);
 
 				Thing hemo = ThingMaker.MakeThing(ThingDefOf.HemogenPack);

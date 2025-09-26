@@ -18,7 +18,7 @@
 					descOverride: "MarbleLauncher_Cluster_Description",
 					(LocalTargetInfo target, LocalTargetInfo dest) =>
 					{
-						CellFinder.TryFindRandomCellNear(target.Cell, parent.pawn.Map, Props.burstSpreadRadiusSquared, cell => !cell.Fogged(parent.pawn.Map), out IntVec3 cell);
+						CellFinder.TryFindRandomCellNear(target.Cell, parent.pawn.Map, base.Props.burstSpreadRadiusSquared, cell => !cell.Fogged(parent.pawn.Map), out IntVec3 cell);
 						SingleShot(cell, cell);
 					})
 			];

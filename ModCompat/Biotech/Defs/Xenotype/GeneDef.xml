@@ -6,6 +6,7 @@
         <label>specialized deepblue breakdown</label>
         <geneClass>HealersOfTheLighthouse.GeneClass_SpecializedDeepblueBreakdown</geneClass>
         <description>Carriers of this gene are able to make the most out of deepblue drugs, enhanced with multiple dosages.\n\nDifferent drugs have different dosages, and upon reaching them, the pawn will gain a temporary ability related to the drug's effects.</description>
+        <iconPath>Icon_ThekiHeart</iconPath>
         <biostatMet>-6</biostatMet>
         <biostatCpx>7</biostatCpx>
         <displayOrderInCategory>100</displayOrderInCategory>

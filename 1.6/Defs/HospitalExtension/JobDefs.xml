@@ -15,4 +15,11 @@
         <casualInterruptible>false</casualInterruptible>
     </JobDef>
 
+    <JobDef>
+        <defName>HOTL_AssistSurgery</defName>
+        <driverClass>HealersOfTheLighthouse.JobDriver_AssistSurgery</driverClass>
+        <reportString>assisting TargetA.</reportString>
+        <casualInterruptible>false</casualInterruptible>
+    </JobDef>
+
 </Defs>

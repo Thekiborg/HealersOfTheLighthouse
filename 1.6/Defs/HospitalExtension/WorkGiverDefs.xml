@@ -19,9 +19,9 @@
     <WorkGiverDef>
         <defName>HOTL_MovePatientToOperatingBed</defName>
         <label>take people to operating beds</label>
-        <giverClass>HealersOfTheLighthouse.Workgiver_TakePatientToOperatingBed</giverClass>
+        <giverClass>HealersOfTheLighthouse.WorkGiver_TakePatientToOperatingBed</giverClass>
         <workType>HOTL_Surgeon</workType>
-        <priorityInType>90</priorityInType>
+        <priorityInType>80</priorityInType>
         <billGiversAllAnimals>true</billGiversAllAnimals>
         <billGiversAllAnimalsCorpses>true</billGiversAllAnimalsCorpses>
         <verb>take to</verb>
@@ -35,9 +35,26 @@
     <WorkGiverDef>
         <defName>HOTL_ClearOperatingBed</defName>
         <label>clear operating beds</label>
-        <giverClass>HealersOfTheLighthouse.Workgiver_ClearOperatingBed</giverClass>
+        <giverClass>HealersOfTheLighthouse.WorkGiver_ClearOperatingBed</giverClass>
         <workType>HOTL_Surgeon</workType>
         <priorityInType>100</priorityInType>
+        <billGiversAllAnimals>true</billGiversAllAnimals>
+        <billGiversAllAnimalsCorpses>true</billGiversAllAnimalsCorpses>
+        <verb>clear</verb>
+        <gerund>clearing</gerund>
+        <requiredCapacities>
+            <li>Manipulation</li>
+        </requiredCapacities>
+        <prioritizeSustains>true</prioritizeSustains>
+    </WorkGiverDef>
+
+
+    <WorkGiverDef>
+        <defName>HOTL_AssistSurgery</defName>
+        <label>assist surgery</label>
+        <giverClass>HealersOfTheLighthouse.WorkGiver_AssistSurgery</giverClass>
+        <workType>HOTL_Surgeon</workType>
+        <priorityInType>30</priorityInType>
         <billGiversAllAnimals>true</billGiversAllAnimals>
         <billGiversAllAnimalsCorpses>true</billGiversAllAnimalsCorpses>
         <verb>clear</verb>

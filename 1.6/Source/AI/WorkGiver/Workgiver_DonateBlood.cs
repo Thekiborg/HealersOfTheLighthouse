@@ -2,7 +2,7 @@
 
 namespace HealersOfTheLighthouse
 {
-	public class Workgiver_DonateBlood : WorkGiver_Scanner
+	public class WorkGiver_DonateBlood : WorkGiver_Scanner
 	{
 		private BloodDonationSettings bloodDonoSettings;
 		internal const float MinBloodlossSeverity = 0.45f;
