@@ -6,7 +6,7 @@
         <label>Deepweaver moyo</label>
         <description>Medically specialized Moyos that form the elite of the Lighthouse's laboratories. Their bodies are made to test newly synthesized deepblue drugs, and to receive a stronger effect out of the already “perfected” and popularized ones.</description>
         <descriptionShort>Medically specialized Moyos that form the elite of the Lighthouse's laboratories. Their bodies are made to test newly synthesized deepblue drugs, and to receive a stronger effect out of the already “perfected” and popularized ones.</descriptionShort>
-        <iconPath>taco</iconPath>
+        <iconPath>Genes/Icon_Deepweaver</iconPath>
         <combatPowerFactor>0</combatPowerFactor>
         <displayPriority>0</displayPriority>
         <factionlessGenerationWeight>0</factionlessGenerationWeight>
