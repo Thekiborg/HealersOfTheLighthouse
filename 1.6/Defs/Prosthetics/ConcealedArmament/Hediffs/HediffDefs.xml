@@ -1,78 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-
-	<!-- ######################################################### -->
-    <!-- ########################## FIRE ######################### -->
-    <!-- ######################################################### -->
-
-	<!-- Propelled Arm -->
-	<HediffDef ParentName="HOTL_AddedConcealedFireArmamentBase">
-		<defName>HOTL_Installed_CA_PropelledArm</defName>
-		<label>propelled arm</label>
-		<labelNoun>a propelled arm</labelNoun>
-		<description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThe &lt;color=#c74228&gt;propelled arm&lt;/color&gt; is used by burly operatives, allowing them to push their opponents and clear the way with ease.</description>
-		<descriptionHyperlinks>
-			<ThingDef>HOTL_CA_PropelledArm</ThingDef>
-			<RecipeDef>HOTL_Install_CA_PropelledArm</RecipeDef>
-		</descriptionHyperlinks>
-		<comps>
-			<li Class="HediffCompProperties_VerbGiver">
-				<tools>
-					<li>
-						<label>fist</label>
-						<capacities>
-							<li>Blunt</li>
-						</capacities>
-						<power>12</power>
-						<cooldownTime>2</cooldownTime>
-						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
-						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
-					</li>
-				</tools>
-			</li>
-			<li Class="HealersOfTheLighthouse.HediffCompProperties_CombatProsthetic">
-				<combatAbilities>
-					<li>HOTL_ConcealedArmament_PropelledArm</li>
-				</combatAbilities>
-			</li>
-		</comps>
-		<spawnThingOnRemoved>HOTL_CA_PropelledArm</spawnThingOnRemoved>
-	</HediffDef>
-
-	<!-- Dragon's breath -->
-	<HediffDef ParentName="HOTL_AddedConcealedFireArmamentBase">
-		<defName>HOTL_Installed_CA_DragonsBreath</defName>
-		<label>dragon's breath</label>
-		<labelNoun>a dragon's breath</labelNoun>
-        <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThe &lt;color=#c74228&gt;dragon's breath&lt;/color&gt; adds an opening beneath the tongue that allows the user to exhale fire. It has both helped soldiers overcome their captors and provoked unintentional injuries among lovers.</description>
-		<descriptionHyperlinks>
-			<ThingDef>HOTL_CA_DragonsBreath</ThingDef>
-			<RecipeDef>HOTL_Install_CA_DragonsBreath</RecipeDef>
-		</descriptionHyperlinks>
-		<comps>
-			<!-- MIGHT ADD A BITING VERB? <li Class="HediffCompProperties_VerbGiver">
-				<tools>
-					<li>
-						<label>fist</label>
-						<capacities>
-							<li>Blunt</li>
-						</capacities>
-						<power>12</power>
-						<cooldownTime>2</cooldownTime>
-						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
-						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
-					</li>
-				</tools>
-			</li> -->
-			<li Class="HealersOfTheLighthouse.HediffCompProperties_CombatProsthetic">
-				<combatAbilities>
-					<li>HOTL_ConcealedArmament_DragonsBreath</li>
-				</combatAbilities>
-			</li>
-		</comps>
-		<spawnThingOnRemoved>HOTL_CA_DragonsBreath</spawnThingOnRemoved>
-	</HediffDef>
-
 	<!-- ############################################################ -->
 	<!-- ######################## LIGHTNING ######################### -->
 	<!-- ############################################################ -->
@@ -144,44 +71,6 @@
 		</comps>
 		<spawnThingOnRemoved>HOTL_CA_ZeusBreath</spawnThingOnRemoved>
 	</HediffDef>
-
-	<!-- ######################################################## -->
-	<!-- ########################## TOX ######################### -->
-	<!-- ######################################################## -->
-
-	<!-- Tox breath -->
-	<!--<HediffDef ParentName="HOTL_AddedConcealedAchlysArmamentBase">
-		<defName>HOTL_Installed_CA_ToxBreath</defName>
-		<label>tox breath</label>
-		<labelNoun>a tox breath</labelNoun>
-        <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThe &lt;color=#93c47d&gt;tox breath&lt;/color&gt;.</description>
-		<descriptionHyperlinks>
-			<ThingDef>HOTL_CA_ToxBreath</ThingDef>
-			<RecipeDef>HOTL_Install_CA_ToxBreath</RecipeDef>
-		</descriptionHyperlinks>
-		<comps>-->
-			<!-- MIGHT ADD A BITING VERB? <li Class="HediffCompProperties_VerbGiver">
-				<tools>
-					<li>
-						<label>fist</label>
-						<capacities>
-							<li>Blunt</li>
-						</capacities>
-						<power>12</power>
-						<cooldownTime>2</cooldownTime>
-						<soundMeleeHit>MeleeHit_BionicPunch</soundMeleeHit>
-						<soundMeleeMiss>MeleeMiss_BionicPunch</soundMeleeMiss>
-					</li>
-				</tools>
-			</li> -->
-			<!--<li Class="HealersOfTheLighthouse.HediffCompProperties_CombatProsthetic">
-				<combatAbilities>
-					<li>HOTL_ConcealedArmament_ToxBreath</li>
-				</combatAbilities>
-			</li>
-		</comps>
-		<spawnThingOnRemoved>HOTL_CA_ToxBreath</spawnThingOnRemoved>
-	</HediffDef>-->
 
 	<!-- ###################################################### -->
 	<!-- ####################### KINETIC ###################### -->

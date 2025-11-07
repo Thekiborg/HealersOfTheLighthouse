@@ -93,6 +93,7 @@
     <GeneDef>
         <defName>HOTL_NimbleDoctor</defName>
         <label>nimble doctor</label>
+        <iconPath>Icon_ThekiDeft2_part2_theboogaloo</iconPath>
         <description>Carriers of this gene are faster at medical jobs, and more precise with their hands overall.</description>
         <biostatMet>-2</biostatMet>
         <biostatCpx>1</biostatCpx>
@@ -115,6 +116,7 @@
         <defName>HOTL_PacifistNature</defName>
         <geneClass>HealersOfTheLighthouse.GeneClass_PacifistNature</geneClass>
         <label>pacifist nature</label>
+        <iconPath>Icon_ThekiPacifist</iconPath>
         <description>Carriers of this gene will sadden if attacking an innocent creature.</description>
         <biostatMet>1</biostatMet>
         <biostatCpx>1</biostatCpx>

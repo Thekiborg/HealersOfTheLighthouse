@@ -18,7 +18,7 @@ namespace HealersOfTheLighthouse
 					if (doBill.CurToilString != "DoRecipeWork") return false;
 
 					patient = doBill.job.targetA.Pawn;
-					if (patient.CurrentBed() is not null)
+					if (patient?.CurrentBed() is not null)
 					{
 						cellAroundPatient = FindFreeCellAroundPatient(pawn, patient);
 						return true;

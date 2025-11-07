@@ -1,54 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-
-	<!-- ######################################################### -->
-    <!-- ########################## FIRE ######################### -->
-    <!-- ######################################################### -->
-
-    <!-- Propelled Arm -->
-    <ThingDef ParentName="HOTL_ConcealedFireArmamentBase">
-        <defName>HOTL_CA_PropelledArm</defName>
-        <label>propelled arm</label>
-        <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThe &lt;color=#c74228&gt;propelled arm&lt;/color&gt; is used by burly operatives, allowing them to push their opponents and clear the way with ease.</description>
-        <graphicData>
-            <texPath>Items/Prosthesis/ImplantBox_Arm</texPath>
-        </graphicData>
-        <descriptionHyperlinks>
-            <RecipeDef>HOTL_Install_CA_PropelledArm</RecipeDef>
-            <HediffDef>HOTL_Installed_CA_PropelledArm</HediffDef>
-        </descriptionHyperlinks>
-        <costList>
-            <Moyo2_Abyssteel>20</Moyo2_Abyssteel>
-            <ComponentSpacer>3</ComponentSpacer>
-            <Chemfuel>40</Chemfuel>
-        </costList>
-        <statBases>
-            <Mass>5</Mass>
-        </statBases>
-    </ThingDef>
-
-    <!-- Dragon's breath -->
-    <ThingDef ParentName="HOTL_ConcealedFireArmamentBase">
-        <defName>HOTL_CA_DragonsBreath</defName>
-        <label>dragon's breath</label>
-        <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThe &lt;color=#c74228&gt;dragon's breath&lt;/color&gt; adds an opening beneath the tongue that allows the user to exhale fire.</description>
-        <graphicData>
-            <texPath>Items/Prosthesis/ImplantBox_Jaw</texPath>
-        </graphicData>
-        <descriptionHyperlinks>
-            <RecipeDef>HOTL_Install_CA_DragonsBreath</RecipeDef>
-            <HediffDef>HOTL_Installed_CA_DragonsBreath</HediffDef>
-        </descriptionHyperlinks>
-        <costList>
-            <Moyo2_Abyssteel>20</Moyo2_Abyssteel>
-            <ComponentSpacer>3</ComponentSpacer>
-            <Chemfuel>40</Chemfuel>
-        </costList>
-        <statBases>
-            <Mass>5</Mass>
-        </statBases>
-    </ThingDef>
-
     <!-- ############################################################ -->
     <!-- ######################## LIGHTNING ######################### -->
     <!-- ############################################################ -->
@@ -96,34 +47,6 @@
             <Mass>5</Mass>
         </statBases>
     </ThingDef>
-
-
-    <!-- ######################################################## -->
-    <!-- ########################## TOX ######################### -->
-    <!-- ######################################################## -->
-
-    <!-- Tox breath -->
-    <!--<ThingDef ParentName="HOTL_ConcealedAchlysArmamentBase">
-        <defName>HOTL_CA_ToxBreath</defName>
-        <label>tox breath</label>
-        <description>Military synthetic prosthesis identical to an organic limb. It sacrifices the superior performance of bionics for the capacity to conceal armament within its hull.\n\nThe &lt;color=#93c47d&gt;tox breath&lt;/color&gt; allows the user to blow a cloud of tox gas at close range.\n\nTox gas burns the lungs and eyes, causing a temporary shortness of breath and reduction in sight. Continued exposure to tox gas results in toxic buildup that can be lethal.\n\nReloads 1 charge with x5 wastepacks.</description>
-        <graphicData>
-            <texPath>Items/Prosthesis/ImplantBox_Jaw</texPath>
-        </graphicData>
-        <descriptionHyperlinks>
-            <RecipeDef>HOTL_Install_CA_ToxBreath</RecipeDef>
-            <HediffDef>HOTL_Installed_CA_ToxBreath</HediffDef>
-        </descriptionHyperlinks>
-        <costList>
-            <Moyo2_Abyssteel>20</Moyo2_Abyssteel>
-            <ComponentSpacer>3</ComponentSpacer>
-            <Wastepack>20</Wastepack>
-        </costList>
-        <statBases>
-            <Mass>5</Mass>
-        </statBases>
-    </ThingDef>-->
-
     <!-- ###################################################### -->
     <!-- ####################### KINETIC ###################### -->
     <!-- ###################################################### -->

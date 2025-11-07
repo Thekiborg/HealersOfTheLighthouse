@@ -124,7 +124,7 @@ namespace HealersOfTheLighthouse
 			yield return jumpKeepWaiting;
 			yield return waitNextToBed;
 			yield return pathAroundBed;
-			yield return Toils_Jump.Jump(waitNextToBed);
+			yield return Toils_Jump.JumpIf(waitNextToBed, () => !(pawn.needs.joy.CurLevel >= pawn.needs.joy.MaxLevel));
 		}
 
 

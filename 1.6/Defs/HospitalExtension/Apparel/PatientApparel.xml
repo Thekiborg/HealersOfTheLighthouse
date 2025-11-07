@@ -35,9 +35,6 @@
                 <li>TableMachining</li>
             </recipeUsers>
         </recipeMaker>
-        <thingCategories>
-            <li>Medicine</li>
-        </thingCategories>
         <statBases>
             <MaxHitPoints>200</MaxHitPoints>
             <WorkToMake>9000</WorkToMake>
