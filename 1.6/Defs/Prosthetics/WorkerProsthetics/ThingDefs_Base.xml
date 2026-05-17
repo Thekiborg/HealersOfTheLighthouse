@@ -6,7 +6,8 @@
             <color>(226, 144, 58)</color>
         </colorGenerator>
         <researchPrerequisites>
-            <li>HOTL_Research_WorkerProsthetics</li>
+            <li>Moyo2_Abysstech_Foundry</li>
+            <li>Bionics</li>
         </researchPrerequisites>
     </ThingDef>
 

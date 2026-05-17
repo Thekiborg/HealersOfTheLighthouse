@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <ThingDef ParentName="ArmorMachineableBase"> <!-- Change unfinished item -->
+        <defName>HOTL_Wheelchair</defName>
+        <description>A chair that provides mobility driven by the user's arms. Its speed depends on manipulation.</description>
+        <label>wheelchair</label>
+        <possessionCount>1</possessionCount>
+        <recipeMaker>
+            <researchPrerequisites>
+                <li>ComplexFurniture</li>
+                <li>MedicineProduction</li>
+            </researchPrerequisites>
+            <displayPriority>215</displayPriority>
+        </recipeMaker>
+        <graphicData>
+            <texPath>Things/Pawn/Humanlike/Apparel/Duster/Duster</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>1</drawSize>
+        </graphicData>
+        <costStuffCount>50</costStuffCount>
+        <stuffCategories>
+            <li>Fabric</li>
+            <li>Leathery</li>
+        </stuffCategories>
+        <costList>
+            <Steel>50</Steel>
+        </costList>
+        <recipeMaker>
+            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+            <workSkill>Crafting</workSkill>
+            <effectWorking>Smith</effectWorking>
+            <soundWorking>Recipe_Machining</soundWorking>
+            <recipeUsers>
+                <li>TableMachining</li>
+            </recipeUsers>
+        </recipeMaker>
+        <statBases>
+            <MaxHitPoints>200</MaxHitPoints>
+            <WorkToMake>9000</WorkToMake>
+            <Mass>15</Mass>
+            <StuffEffectMultiplierArmor>0.3</StuffEffectMultiplierArmor>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Pawn/Humanlike/Apparel/Duster/Duster</wornGraphicPath>
+            <layers>
+                <li>Shell</li>
+            </layers>
+            <tags>
+                <li>HOTL_Wheelchair</li>
+            </tags>
+            <!--<defaultOutfitTags>
+                <li>Worker</li>
+            </defaultOutfitTags>-->
+            <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+        </apparel>
+        <tradeTags>
+            <li>Clothing</li>
+        </tradeTags>
+        <comps>
+            <li>
+                <compClass>HealersOfTheLighthouse.TrackerComp_Wheelchair</compClass>
+            </li>
+        </comps>
+    </ThingDef>
+
+
+    <ThingDef ParentName="Moyo2_ApparelCategory_LightHouse">
+        <defName>HOTL_NurseOutfit</defName>
+        <label>Nurse gear</label>
+        <description>A bodysuit designed for tending work. Includes a swappable apron that allows nurses to quickly get clean after treating a bloody patient.</description>
+        <possessionCount>1</possessionCount>
+        <recipeMaker>
+            <researchPrerequisites>
+                <li>Moyo2_Abysstech_LaminarTheory</li>
+                <li>MedicineProduction</li>
+            </researchPrerequisites>
+            <displayPriority>215</displayPriority>
+        </recipeMaker>
+        <graphicData>
+            <texPath>Apparel/NurseGearIcon</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>1.2</drawSize>
+        </graphicData>
+        <costList>
+            <ComponentIndustrial>3</ComponentIndustrial>
+            <Moyo2_Cloth_Depthweave>90</Moyo2_Cloth_Depthweave>
+            <Moyo2_BlueMedicine>3</Moyo2_BlueMedicine>
+        </costList>
+        <thingCategories>
+            <li>ApparelMisc</li>
+        </thingCategories>
+        <statBases>
+            <MaxHitPoints>200</MaxHitPoints>
+            <WorkToMake>10000</WorkToMake>
+            <Mass>2</Mass>
+            <StuffEffectMultiplierArmor>0.3</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.60</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.85</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <MedicalTendQuality>0.10</MedicalTendQuality>
+            <MedicalTendSpeed>0.13</MedicalTendSpeed>
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Neck</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Hands</li>
+                <li>Legs</li>
+                <li>Feet</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Apparel/NurseGear</wornGraphicPath>
+            <useWornGraphicMask>false</useWornGraphicMask>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+            <renderNodeProperties>
+                <li Class="Moyo2.PawnRenderNodeProperties_Gendered">
+                    <nodeClass>Moyo2.PawnRenderNode_ApparelCustomPath</nodeClass>
+                    <texPath>Apparel/NurseGear_Apron</texPath>
+                    <visibleFacing>
+                        <li>East</li>
+                        <li>West</li>
+                        <li>South</li>
+                    </visibleFacing>
+                    <baseLayer>73</baseLayer>
+                    <gendered>true</gendered>
+                </li>
+            </renderNodeProperties>
+            <tags Inherit="False">
+                <!--<li>IndustrialBasic</li>
+                <li>Western</li>-->
+            </tags>
+            <defaultOutfitTags Inherit="False">
+                <!--<li>Worker</li>-->
+            </defaultOutfitTags>
+        </apparel>
+        <tradeTags>
+            <li>BasicClothing</li>
+        </tradeTags>
+        <colorGenerator Class="ColorGenerator_Options">
+            <options>
+                <li>
+                    <weight>1</weight>
+                    <only>(1.0,1.0,1.0)</only>
+                </li>
+            </options>
+        </colorGenerator>
+    </ThingDef>
+
+</Defs>

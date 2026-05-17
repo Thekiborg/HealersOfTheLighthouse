@@ -48,7 +48,7 @@
                     <SocialMin>0</SocialMin>
                     <SocialMax>20</SocialMax>
                     <!-- Joy -->
-                    <baseJoyGainFactor>2</baseJoyGainFactor>
+                    <baseJoyGainFactor>2.6</baseJoyGainFactor>
                 </massageSettings>
             </li>
         </modExtensions>

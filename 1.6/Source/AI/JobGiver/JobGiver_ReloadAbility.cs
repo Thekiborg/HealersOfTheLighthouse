@@ -13,11 +13,11 @@ namespace HealersOfTheLighthouse
 
 			if (reloadableComp is null) return null;
 
-			if (pawn.carryTracker.AvailableStackSpace(reloadableComp.AmmoDef) < reloadableComp.MinAmmoNeeded(true))
+			if (pawn.carryTracker.AvailableStackSpace(reloadableComp.AmmoDef) < reloadableComp.MinAmmoNeeded())
 			{
 				return null;
 			}
-			List<Thing> foundAmmo = FindEnoughAmmo(pawn, pawn.Position, reloadableComp, forceReload: false);
+			List<Thing> foundAmmo = FindEnoughAmmo(pawn, pawn.Position, reloadableComp);
 			if (foundAmmo.NullOrEmpty())
 			{
 				return null;
@@ -27,7 +27,7 @@ namespace HealersOfTheLighthouse
 			job.targetQueueB = [.. foundAmmo.Select((Thing t) => new LocalTargetInfo(t))];
 
 			int jobCount = foundAmmo.Sum((Thing t) => t.stackCount);
-			job.count = Math.Min(jobCount, reloadableComp.MaxAmmoNeeded(true));
+			job.count = Math.Min(jobCount, reloadableComp.MaxAmmoNeeded());
 			job.ability = ability;
 			return job;
 		}
@@ -38,7 +38,7 @@ namespace HealersOfTheLighthouse
 			foreach (Ability ability in pawn.abilities?.abilities)
 			{
 				AbilityComp_Reloadable comp = ability.CompOfType<AbilityComp_Reloadable>();
-				if (comp != null && comp.NeedsReload(true))
+				if (comp != null && comp.NeedsReload())
 				{
 					reloadableComp = comp;
 					return ability;
@@ -49,13 +49,13 @@ namespace HealersOfTheLighthouse
 		}
 
 
-		private static List<Thing> FindEnoughAmmo(Pawn pawn, IntVec3 rootCell, AbilityComp_Reloadable reloadable, bool forceReload)
+		private static List<Thing> FindEnoughAmmo(Pawn pawn, IntVec3 rootCell, AbilityComp_Reloadable reloadable)
 		{
 			if (reloadable == null)
 			{
 				return null;
 			}
-			IntRange desiredQuantity = new(reloadable.MinAmmoNeeded(forceReload), reloadable.MaxAmmoNeeded(forceReload));
+			IntRange desiredQuantity = new(reloadable.MinAmmoNeeded(), reloadable.MaxAmmoNeeded());
 			return RefuelWorkGiverUtility.FindEnoughReservableThings(pawn, rootCell, desiredQuantity, (Thing t) => t.def == reloadable.AmmoDef);
 		}
 

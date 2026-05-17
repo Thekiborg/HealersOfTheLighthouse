@@ -32,7 +32,7 @@
 			</skillRequirements>
 			<researchPrerequisite>Bionics</researchPrerequisite>
 			<recipeUsers>
-				<li>FabricationBench</li>
+				<li>Moyo2_FabricationBench</li>
 			</recipeUsers>
 			<displayPriority>300</displayPriority>
 		</recipeMaker>

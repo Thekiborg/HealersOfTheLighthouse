@@ -22,7 +22,13 @@ namespace HealersOfTheLighthouse
 
 		public override bool ShouldSkip(Pawn pawn, bool forced = false)
 		{
-			return pawn?.Map.GetComponent<MapComponent_HOTL>().TrackedHemogen.Count >= GameComponent_HOTL.WantedHemogenCount;
+			int totalStackCount = 0;
+			foreach (Thing hemo in pawn?.Map.listerThings.ThingsOfDef(ThingDefOf.HemogenPack))
+			{
+				totalStackCount += hemo.stackCount;
+			}
+
+			return totalStackCount >= pawn?.Map.GetComponent<MapComponent_HOTL>().WantedHemogenCount;
 		}
 
 

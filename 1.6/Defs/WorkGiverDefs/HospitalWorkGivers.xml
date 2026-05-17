@@ -48,7 +48,6 @@
         <prioritizeSustains>true</prioritizeSustains>
     </WorkGiverDef>
 
-
     <WorkGiverDef>
         <defName>HOTL_AssistSurgery</defName>
         <label>assist surgery</label>

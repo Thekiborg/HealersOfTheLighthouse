@@ -55,6 +55,11 @@ namespace HealersOfTheLighthouse
 				if (ORbed.GetCurOccupant(0) is Pawn pawnOnBed && !pawnOnBed.BillStack.AnyShouldDoNow)
 				{
 					foundPawn = pawnOnBed;
+					if (pawn.CanReserve(foundPawn))
+					{
+						return false;
+					}
+
 					FindRestingBedFor(pawn, pawnOnBed);
 					return true;
 				}

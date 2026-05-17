@@ -28,19 +28,25 @@
 			Rect addButton = new(main.xMax - ButtonWidth - Padding, main.y + Padding, ButtonWidth, ButtonHeight);
 			if (Widgets.ButtonImage(addButton, TexButton.ReorderUp))
 			{
-				GameComponent_HOTL.WantedHemogenCount++;
+				mapComp.WantedHemogenCount++;
 			}
 
 			Rect substractButton = new(addButton.x, addButton.yMax + Padding, ButtonWidth, ButtonHeight);
 			if (Widgets.ButtonImage(substractButton, TexButton.ReorderDown))
 			{
-				GameComponent_HOTL.WantedHemogenCount--;
+				mapComp.WantedHemogenCount--;
 			}
 
 			Rect counterRect = new(addButton.x - Padding - CounterRectWidth, addButton.y, CounterRectWidth, Height - 2 * Padding);
 			using (new TextBlock(GameFont.Medium, TextAnchor.MiddleCenter))
 			{
-				Widgets.Label(counterRect, $"{mapComp.TrackedHemogen.Count}/{GameComponent_HOTL.WantedHemogenCount}");
+				int totalStackCount = 0;
+				foreach (Thing hemo in mapComp.map.listerThings.ThingsOfDef(ThingDefOf.HemogenPack))
+				{
+					totalStackCount += hemo.stackCount;
+				}
+
+				Widgets.Label(counterRect, $"{totalStackCount}/{mapComp.WantedHemogenCount}");
 			}
 			Rect infoRect = new(counterRect.x, counterRect.y, counterRect.width, counterRect.height);
 			using (new TextBlock(GameFont.Tiny, TextAnchor.LowerCenter))

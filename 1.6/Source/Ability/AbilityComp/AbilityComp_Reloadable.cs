@@ -18,7 +18,7 @@ namespace HealersOfTheLighthouse
 		{
 			if (RemainingCharges <= 0)
 			{
-				reason = DisabledReason(MinAmmoNeeded(false), MaxAmmoNeeded(false));
+				reason = DisabledReason(MinAmmoNeeded(), MaxAmmoNeeded());
 				return false;
 			}
 			return parent.GizmoDisabled(out reason);
@@ -37,32 +37,32 @@ namespace HealersOfTheLighthouse
 			return Props.ammoCountPerCharge * MaxCharges;
 		}
 
-		public int MaxAmmoNeeded(bool allowForcedReload)
+		public int MaxAmmoNeeded()
 		{
-			if (!NeedsReload(allowForcedReload))
+			if (!NeedsReload())
 			{
 				return 0;
 			}
 			return Props.ammoCountPerCharge * (MaxCharges - RemainingCharges);
 		}
 
-		public int MinAmmoNeeded(bool allowForcedReload)
+		public int MinAmmoNeeded()
 		{
-			if (!NeedsReload(allowForcedReload))
+			if (!NeedsReload())
 			{
 				return 0;
 			}
 			return Props.ammoCountPerCharge;
 		}
 
-		public bool NeedsReload(bool allowForceReload)
+		public bool NeedsReload()
 		{
 			return RemainingCharges != MaxCharges;
 		}
 
 		public void ReloadFrom(Thing ammo)
 		{
-			if (!NeedsReload(true))
+			if (!NeedsReload())
 			{
 				return;
 			}

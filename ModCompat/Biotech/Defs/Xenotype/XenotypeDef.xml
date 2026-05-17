@@ -11,7 +11,7 @@
         <displayPriority>0</displayPriority>
         <factionlessGenerationWeight>0</factionlessGenerationWeight>
         <genes>
-            <li>HOTL_SpecialiedDeepblueBreakdown</li>
+            <li>HOTL_SpecializedDeepblueBreakdown</li>
             <li>AptitudeRemarkable_Medicine</li>
             <li>HOTL_IntellectualAffinity</li>
             <li>HOTL_NimbleDoctor</li>

@@ -4,7 +4,7 @@
     <ThingDef ParentName="BedWithQualityBase">
         <defName>HOTL_OperatingBed</defName>
         <label>operating bed</label>
-        <description>A bed specially designed for use in operating rooms. It improves surgical outcomes over normal and hospital beds, but it is quite uncomfortable.</description>
+        <description>A bed specially designed for use in operating rooms. It improves surgical outcomes over regular and hospital beds. However, it is quite uncomfortable.</description>
         <graphicData>
             <texPath>Things/Building/Furniture/Bed/HospitalBed</texPath>
             <graphicClass>Graphic_Multi</graphicClass>

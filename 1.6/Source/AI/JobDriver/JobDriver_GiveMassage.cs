@@ -87,6 +87,8 @@ namespace HealersOfTheLighthouse
 			{
 				if (ticksLeftThisToil <= 0 || pawn.needs.joy.CurLevel >= pawn.needs.joy.MaxLevel)
 				{
+					JobDriver_LayDownAndReceiveMassage jd = Bottom.CurJob.GetCachedDriverDirect as JobDriver_LayDownAndReceiveMassage;
+					jd?.ApplyOilBonuses();
 					ReadyForNextToil();
 				}
 			});

@@ -44,7 +44,7 @@
 		</stages>
 	</ThoughtDef>
 
-	<!-- Used by the ability HOTL_SDBD_AbilityTheorize -->
+	<!-- Used by the ability HOTL_SDBD_AbilityHug -->
 	<ThoughtDef>
 		<defName>HOTL_HuggedColonist</defName>
 		<thoughtClass>Thought_MemorySocial</thoughtClass>

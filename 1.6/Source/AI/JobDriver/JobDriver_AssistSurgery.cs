@@ -47,7 +47,10 @@ namespace HealersOfTheLighthouse
 			{
 				return Surgeon.jobs.curDriver is not JobDriver_DoBill ? JobCondition.Succeeded : JobCondition.Ongoing;
 			});
-
+			AddFinishAction((JobCondition condition) =>
+			{
+				pawn.ClearReservationsForJob(job);
+			});
 
 			yield return Toils_Goto.GotoCell(CellAroundPatient, PathEndMode.OnCell);
 			Toil assistToil = ToilMaker.MakeToil("AssistToil");

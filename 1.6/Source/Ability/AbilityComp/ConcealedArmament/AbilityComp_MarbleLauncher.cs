@@ -7,13 +7,13 @@
 			return
 			[
 				new("ConcealedLauncher_SingleFireMode",
-					TextureLibrary.marbleSingleShotIcon,
+					TextureLibrary.MarbleSingleShotIcon,
 					shotsPerBurst: 1,
 					descOverride: "MarbleLauncher_Single_Description",
 					SingleShot),
 
 				new("ConcealedLauncher_ClusterFireMode",
-					TextureLibrary.marbleClusterShotIcon,
+					TextureLibrary.MarbleClusterShotIcon,
 					shotsPerBurst: 5,
 					descOverride: "MarbleLauncher_Cluster_Description",
 					(LocalTargetInfo target, LocalTargetInfo dest) =>

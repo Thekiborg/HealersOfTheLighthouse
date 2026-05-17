@@ -10,4 +10,10 @@
         </relatedStats>
     </RoomRoleDef>
 
+    <RoomRoleDef>
+        <defName>HOTL_Spa</defName>
+        <label>Spa</label>
+        <workerClass>HealersOfTheLighthouse.RoomRoleWorker_Spa</workerClass>
+    </RoomRoleDef>
+
 </Defs>

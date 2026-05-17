@@ -4,7 +4,7 @@
     <JobDef>
         <defName>HOTL_ConcealedArmament_ReloadLauncher</defName>
         <driverClass>HealersOfTheLighthouse.JobDriver_ReloadConcealedLauncher</driverClass>
-        <reportString>loading TargetA into marble launcher.</reportString>
+        <reportString>loading TargetA into launcher.</reportString>
         <suspendable>false</suspendable>
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>

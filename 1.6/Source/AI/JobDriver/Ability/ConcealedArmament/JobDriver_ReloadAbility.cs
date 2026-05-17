@@ -16,7 +16,7 @@ namespace HealersOfTheLighthouse
 		protected override IEnumerable<Toil> MakeNewToils()
 		{
 			this.FailOn(() => Reloadable is null);
-			this.FailOn(() => !Reloadable.NeedsReload(allowForceReload: true));
+			this.FailOn(() => !Reloadable.NeedsReload());
 			this.FailOnIncapable(PawnCapacityDefOf.Manipulation);
 			Toil getNextIngredient = Toils_General.Label();
 			yield return getNextIngredient;
@@ -48,7 +48,7 @@ namespace HealersOfTheLighthouse
 		private IEnumerable<Toil> ReloadAsMuchAsPossible(AbilityComp_Reloadable reloadable)
 		{
 			Toil done = Toils_General.Label();
-			yield return Toils_Jump.JumpIf(done, () => pawn.carryTracker.CarriedThing == null || pawn.carryTracker.CarriedThing.stackCount < reloadable.MinAmmoNeeded(allowForcedReload: true));
+			yield return Toils_Jump.JumpIf(done, () => pawn.carryTracker.CarriedThing == null || pawn.carryTracker.CarriedThing.stackCount < reloadable.MinAmmoNeeded());
 			yield return Toils_General.Wait(reloadable.BaseReloadTicks).WithProgressBarToilDelay(TargetIndex.A);
 			Toil toil = ToilMaker.MakeToil("ReloadAsMuchAsPossible");
 			toil.initAction = delegate

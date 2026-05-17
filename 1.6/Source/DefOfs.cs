@@ -21,7 +21,7 @@
 			DefOfHelper.EnsureInitializedInCtor(typeof(HOTL_GeneDefOfs));
 		}
 
-		public static GeneDef HOTL_SpecialiedDeepblueBreakdown;
+		public static GeneDef HOTL_SpecializedDeepblueBreakdown;
 		public static GeneDef HOTL_PacifistNature;
 	}
 
@@ -71,7 +71,6 @@
 
 		public static AbilityDef HOTL_SDBD_AbilityTheorize;
 		public static AbilityDef HOTL_SDBD_AbilityHug;
-		public static AbilityDef HOTL_ConcealedArmament_MarbleLauncher;
 	}
 
 

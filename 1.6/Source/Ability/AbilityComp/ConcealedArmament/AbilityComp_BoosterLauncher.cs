@@ -8,7 +8,7 @@ namespace HealersOfTheLighthouse
 			return
 			[
 				new("ConcealedLauncher_SingleFireMode",
-				TextureLibrary.marbleMedicineShotIcon,
+				TextureLibrary.MarbleMedicineShotIcon,
 				shotsPerBurst: 1,
 				descOverride: null,
 				SingleShot)

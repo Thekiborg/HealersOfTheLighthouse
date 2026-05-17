@@ -73,6 +73,7 @@ namespace HealersOfTheLighthouse
 			{
 				if (ticksLeftThisToil <= 0 || pawn.needs.joy.CurLevel >= pawn.needs.joy.MaxLevel)
 				{
+					ApplyOilBonuses();
 					ReadyForNextToil();
 				}
 			});
@@ -84,21 +85,32 @@ namespace HealersOfTheLighthouse
 				{
 					if (pawn.IsHashIntervalTick(450))
 					{
-						MoteMaker.MakeSpeechBubble(pawn, TextureLibrary.heartIcon);
+						MoteMaker.MakeSpeechBubble(pawn, TextureLibrary.HeartIcon);
 					}
 					JoyUtility.JoyTickCheckEnd(pawn, delta, JoyTickFullJoyAction.None, joyFactor, MassageBed);
 				}
 			};
 			yield return layDownToil;
 
-			yield return Toils_General.DoAtomic(() =>
+			yield return Toils_General.Do(() =>
 			{
+				Log.Message("runs");
 				Thing OilBottle = Top.CurJob.GetTarget(TargetIndex.C).Thing;
 				Thought_Memory oilThought = (Thought_Memory)ThoughtMaker.MakeThought(OilBottle.def.GetModExtension<ModExtension>().massageSettings.oilThought);
 				Top.needs.mood.thoughts.memories.TryGainMemory(oilThought);
 				pawn.needs.mood.thoughts.memories.TryGainMemory(oilThought);
 				OilBottle.SplitOff(1).Destroy();
 			});
+		}
+
+
+		public void ApplyOilBonuses()
+		{
+			Thing OilBottle = Top.CurJob.GetTarget(TargetIndex.C).Thing;
+			Thought_Memory oilThought = (Thought_Memory)ThoughtMaker.MakeThought(OilBottle.def.GetModExtension<ModExtension>().massageSettings.oilThought);
+			Top.needs.mood.thoughts.memories.TryGainMemory(oilThought);
+			pawn.needs.mood.thoughts.memories.TryGainMemory(oilThought);
+			OilBottle.SplitOff(1).Destroy();
 		}
 
 

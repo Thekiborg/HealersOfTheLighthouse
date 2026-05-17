@@ -22,4 +22,15 @@
         <casualInterruptible>false</casualInterruptible>
     </JobDef>
 
+<!-- 
+Spawned a bunch of mayo
+Maxed all skills and assigned everyone to doctoring
+Had them perform an operation
+Error    
+
+Couldnt reserve and 10 jobs per tick
+Pawns who cant make it cause the error
+
+-->
+
 </Defs>

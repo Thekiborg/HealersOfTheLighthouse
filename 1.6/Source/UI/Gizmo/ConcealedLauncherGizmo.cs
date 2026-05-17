@@ -153,13 +153,13 @@ namespace HealersOfTheLighthouse
 				bool flag = (Ability.Casting || KeyBindingDefOf.QueueOrder.IsDownEvent) && !Ability.CanQueueCast;
 				if (flag)
 				{
-					Widgets.FillableBar(buttonRect, 0f, TextureLibrary.cooldownBarTex, null, doBorder: false);
+					Widgets.FillableBar(buttonRect, 0f, TextureLibrary.CooldownBarTex, null, doBorder: false);
 				}
 				// Does the cooldown bar that progressively gets fuller
 				else if (Ability.CooldownTicksRemaining > 0)
 				{
 					float value = Mathf.InverseLerp(Ability.CooldownTicksTotal, 0f, Ability.CooldownTicksRemaining);
-					Widgets.FillableBar(buttonRect, Mathf.Clamp01(value), TextureLibrary.cooldownBarTex, null, doBorder: false);
+					Widgets.FillableBar(buttonRect, Mathf.Clamp01(value), TextureLibrary.CooldownBarTex, null, doBorder: false);
 					if (Ability.CooldownTicksRemaining > 0)
 					{
 						string text = Ability.CooldownTicksRemaining.ToStringTicksToPeriod();

@@ -16,6 +16,7 @@
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>
 
+    <!-- HOTL_SDBD_AbilityHug -->
     <JobDef>
         <defName>HOTL_Hug</defName>
         <driverClass>HealersOfTheLighthouse.JobDriver_Hug</driverClass>
